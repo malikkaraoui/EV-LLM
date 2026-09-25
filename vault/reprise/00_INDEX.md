@@ -1,11 +1,11 @@
 ---
-date: AAAA-MM-JJ
+date: 2026-09-25
 tags: [reprise, sessions, tableau-de-bord]
 maintenu_par: orchestrateur
-derniere_maj: AAAA-MM-JJTHH:MM:SS+00:00
+derniere_maj: 2026-09-25T21:30:40+02:00
 ---
 
-# Tableau de bord — sessions du projet <projet>
+# Tableau de bord — sessions du projet ev-llm
 
 <!-- rotation-index -->
 > **Index court (rotation).** Seuls les derniers jours d'activité sont ici. L'historique complet
@@ -39,3 +39,9 @@ Exemple (à supprimer à la première entrée réelle) :
 - Symptôme d'origine rejoué avant/après ; tests re-mesurés par le doubleur, pas repris du rapport d'auteur.
 - Réserve non bloquante : <réserve nommée, ou « aucune »>.
 -->
+
+## 2026-09-25T21:30:40+02:00 — M0001 (F01) posé : sonde Jev e001, en attente de rendu
+
+- Mandat : `vault/echanges/F01.md` ; branche à créer `exp/e001-sonde-jev` depuis `origin/main` = `343e839`.
+- Périmètre : ignorer `.env` (dépôt public), script Python stdlib `research/experiments/E001-jev-sonde/run.py`, 7 cas préregistrés, sortie brute conservée.
+- Décision : GO de Malik 25/09 21:30 (« Lance !! »).
