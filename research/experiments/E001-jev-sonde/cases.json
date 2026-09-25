@@ -1,0 +1,64 @@
+{
+  "preregistre_le": "2026-09-25",
+  "note": "Attentes fixees par l'orchestrateur AVANT tout appel. Ne jamais modifier apres lancement.",
+  "cases": [
+    {
+      "id": "T1-A",
+      "famille": "savoir-regle-donnee",
+      "state": "Faits : A > B. B > C. C > D. E > A. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "statut": {"type": "choice", "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?", "criteria": {"contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits", "coherent": "Aucune regle donnee n'est violee", "indetermine": "Il manque une definition ou une regle pour trancher"}},
+        "e_sup_d": {"type": "boolean", "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"}
+      },
+      "attendu": {"statut": "contradiction", "e_sup_d": true}
+    },
+    {
+      "id": "T1-B",
+      "famille": "savoir-regle-donnee",
+      "state": "Faits : A > B. B > C. C > D. E > A. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Aucune regle ne definit ce que signifie incompatible.",
+      "questions": {
+        "statut": {"type": "choice", "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?", "criteria": {"contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits", "coherent": "Aucune regle donnee n'est violee", "indetermine": "Il manque une definition ou une regle pour trancher"}},
+        "e_sup_d": {"type": "boolean", "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"}
+      },
+      "attendu": {"statut": "indetermine", "e_sup_d": true}
+    },
+    {
+      "id": "T1-C",
+      "famille": "controle-trivial",
+      "state": "Faits : A > B. B > C. Regle 1 : si X > Y et Y > Z alors X > Z.",
+      "questions": {
+        "a_sup_c": {"type": "boolean", "instructions": "Peut-on deduire A > C uniquement a partir des faits et regles donnes ?"},
+        "c_sup_a": {"type": "boolean", "instructions": "Peut-on deduire C > A uniquement a partir des faits et regles donnes ?"}
+      },
+      "attendu": {"a_sup_c": true, "c_sup_a": false}
+    },
+    {
+      "id": "T2-1",
+      "famille": "erreur-invisible-e-er",
+      "state": "Phrase ecrite par un eleve : « Hier, il a manger une pomme. »",
+      "questions": {"correcte": {"type": "boolean", "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"}},
+      "attendu": {"correcte": false}
+    },
+    {
+      "id": "T2-2",
+      "famille": "erreur-invisible-e-er",
+      "state": "Phrase ecrite par un eleve : « Il va manger une pomme. »",
+      "questions": {"correcte": {"type": "boolean", "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"}},
+      "attendu": {"correcte": true}
+    },
+    {
+      "id": "T2-3",
+      "famille": "erreur-invisible-accord-etre",
+      "state": "Phrase ecrite par un eleve : « Elle est tombée dans l'escalier. »",
+      "questions": {"correcte": {"type": "boolean", "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"}},
+      "attendu": {"correcte": true}
+    },
+    {
+      "id": "T2-4",
+      "famille": "erreur-invisible-accord-etre",
+      "state": "Phrase ecrite par un eleve : « Ils sont tombé dans l'escalier. »",
+      "questions": {"correcte": {"type": "boolean", "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"}},
+      "attendu": {"correcte": false}
+    }
+  ]
+}
