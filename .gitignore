@@ -37,3 +37,6 @@ vault/runtime/events.jsonl
 .env
 .env.*
 !.env.example
+
+# E001 : sorties brutes completes (en-tetes de reponse) jamais versionnees
+research/experiments/*/results/**/raw.jsonl
