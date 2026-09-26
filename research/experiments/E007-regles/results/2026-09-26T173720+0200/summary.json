@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T173720+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": "rythme (min 26.0 s), 8 appels",
+    "cases_sha256": "d1680d7e0e52f951b6f1aead9406b46567e91f995f3c4a69d0d0fb1d0cd0b004",
+    "n_appels": 8,
+    "n_http_200": 8,
+    "budget_consomme": 8,
+    "budget": 100
+  },
+  "rows": [
+    {
+      "case_id": "D-LOG-VRAI",
+      "famille": "D-controle",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 892.8,
+      "obtenu": true,
+      "p": 0.975,
+      "stabilite": [
+        0.97,
+        0.98
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "D-LOG-FAUX",
+      "famille": "D-controle",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 420.15,
+      "obtenu": false,
+      "p": 0.02,
+      "stabilite": [
+        0.02,
+        0.02
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "D-GRAM-FAUX",
+      "famille": "D-controle",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 535.9,
+      "obtenu": false,
+      "p": 0.08,
+      "stabilite": [
+        0.08,
+        0.08
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "D-GRAM-OK",
+      "famille": "D-controle",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 661.05,
+      "obtenu": true,
+      "p": 0.97,
+      "stabilite": [
+        0.97,
+        0.97
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    }
+  ]
+}

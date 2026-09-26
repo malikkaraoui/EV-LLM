@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T181503+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": "rythme (min 26.0 s), 2 appels",
+    "cases_sha256": "d1680d7e0e52f951b6f1aead9406b46567e91f995f3c4a69d0d0fb1d0cd0b004",
+    "n_appels": 2,
+    "n_http_200": 2,
+    "budget_consomme": 90,
+    "budget": 100
+  },
+  "rows": [
+    {
+      "case_id": "B-REGLE",
+      "famille": "B-distracteur",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 419.5,
+      "obtenu": "coherent",
+      "p": 0.61,
+      "stabilite": [
+        0.61,
+        0.61
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "B-REGLE",
+      "famille": "B-distracteur",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 419.5,
+      "obtenu": true,
+      "p": 0.62,
+      "stabilite": [
+        0.62,
+        0.62
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "B-NEUTRE",
+      "famille": "B-distracteur",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 407.5,
+      "obtenu": "coherent",
+      "p": 0.5700000000000001,
+      "stabilite": [
+        0.5700000000000001,
+        0.5700000000000001
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "B-NEUTRE",
+      "famille": "B-distracteur",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 407.5,
+      "obtenu": true,
+      "p": 0.74,
+      "stabilite": [
+        0.74,
+        0.74
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    }
+  ]
+}

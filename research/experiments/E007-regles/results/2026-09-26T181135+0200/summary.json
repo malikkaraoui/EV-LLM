@@ -1,0 +1,173 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T181135+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": "rythme (min 26.0 s), 8 appels",
+    "cases_sha256": "d1680d7e0e52f951b6f1aead9406b46567e91f995f3c4a69d0d0fb1d0cd0b004",
+    "n_appels": 8,
+    "n_http_200": 8,
+    "budget_consomme": 88,
+    "budget": 100
+  },
+  "rows": [
+    {
+      "case_id": "B-REGLE",
+      "famille": "B-distracteur",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 495.5,
+      "obtenu": "coherent",
+      "p": 0.595,
+      "stabilite": [
+        0.58,
+        0.61
+      ],
+      "repartition": {
+        "\"coherent\"": 2
+      },
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "B-REGLE",
+      "famille": "B-distracteur",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 495.5,
+      "obtenu": true,
+      "p": 0.575,
+      "stabilite": [
+        0.53,
+        0.62
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "B-NEUTRE",
+      "famille": "B-distracteur",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 669.05,
+      "obtenu": "contradiction",
+      "p": 0.5700000000000001,
+      "stabilite": [
+        0.51,
+        0.63
+      ],
+      "repartition": {
+        "\"contradiction\"": 1,
+        "\"coherent\"": 1
+      },
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "B-NEUTRE",
+      "famille": "B-distracteur",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 669.05,
+      "obtenu": true,
+      "p": 0.71,
+      "stabilite": [
+        0.69,
+        0.73
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "B-FAIT",
+      "famille": "B-distracteur",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 519.4000000000001,
+      "obtenu": "contradiction",
+      "p": 0.645,
+      "stabilite": [
+        0.55,
+        0.74
+      ],
+      "repartition": {
+        "\"contradiction\"": 1,
+        "\"coherent\"": 1
+      },
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "B-FAIT",
+      "famille": "B-distracteur",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 519.4000000000001,
+      "obtenu": false,
+      "p": 0.185,
+      "stabilite": [
+        0.17,
+        0.2
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "B-FAIT2",
+      "famille": "B-distracteur",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 561.8,
+      "obtenu": "contradiction",
+      "p": 0.71,
+      "stabilite": [
+        0.64,
+        0.78
+      ],
+      "repartition": {
+        "\"contradiction\"": 2
+      },
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "B-FAIT2",
+      "famille": "B-distracteur",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 561.8,
+      "obtenu": false,
+      "p": 0.47,
+      "stabilite": [
+        0.42,
+        0.52
+      ],
+      "conforme": false,
+      "faux_et_sur": false
+    }
+  ]
+}

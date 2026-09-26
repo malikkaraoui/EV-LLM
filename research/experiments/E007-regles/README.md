@@ -47,4 +47,84 @@ python3 analyse.py
 
 ## Résultats
 
-*(à remplir après les appels)*
+### Appels (2026-09-26, 17:37:20 → 18:15:55)
+
+Corpus committé et poussé avant le premier appel : commit `7e4284a` (17:37:13), `cases.json` sha256 `d1680d7e0e52f951b6f1aead9406b46567e91f995f3c4a69d0d0fb1d0cd0b004` ; premier appel 17:37:20. 12 invocations de `run_e007.py` (11 × 8 + 1 × 2), puis code 5 (« rien à faire »). **90 appels, 90 × HTTP 200** (budget 100) ; aucun 429, 503, 401/403/404 ; aucune fuite (garde anti-fuite à chaque invocation). Intervalles entre départs : **n = 89, min 26,0 s, max 26,0 s**. Fournisseur final : `typesafe-ai` × 80, `digitalocean` × 10. 117 évaluations, 0 NON_PARSE. Toutes les cibles atteintes.
+
+Agrégat `aggregate.py` : [`results/agregat-2026-09-26T181559+0200/summary.md`](results/agregat-2026-09-26T181559+0200/summary.md). Analyse appel par appel : [`results/analyse.md`](results/analyse.md) (+ `analyse.json`).
+
+### D — contrôles : 12/12 conformes
+
+A > C 0.98 ; C > A 0.02 ; « Les enfants mange » 0.08 ; « Le chat dort » 0.97 (médianes, 3 appels chacun).
+
+### C — règle d'accord écrite (5 appels par cas)
+
+| paire | forme | P(correcte) sans règle (E006, méd.) | rappel C0 E007 (méd.) | **avec règle** (méd., étendue) | Δ avec − sans |
+|---|---|---|---|---|---|
+| « se sont lavé(es) les mains » | fautive | 0.84 | — | **0.09** (0.08–0.09) | −0.75 |
+| | correcte | 0.61 | 0.54 | **0.86** (0.86–0.90) | +0.25 |
+| « se sont parlé(s) » | fautive | 0.84 | — | **0.05** (0.05–0.06) | −0.79 |
+| | correcte | 0.90 | 0.92 | **0.93** (0.92–0.93) | +0.03 |
+| « a fait(es) faire » | fautive | 0.86 | — | **0.09** (0.08–0.09) | −0.77 |
+| | correcte | 0.67 | 0.74 | **0.88** (0.86–0.88) | +0.21 |
+
+Écart correcte − fautive : sans règle −0.23 / +0.06 / −0.19 ; **avec règle +0.77 / +0.88 / +0.79**. Critère préenregistré « corrige son jugement » : **3/3 paires**. 30/30 conformes avec règle.
+
+### A — ablation (3 appels par variante ; médianes)
+
+| base, mesure | (i) présente | (ii) retirée | (iii) inversée | (iv) remplacée hors sujet | (v) présente + hors sujet |
+|---|---|---|---|---|---|
+| A1 (T1-A, R2) — P(contradiction) | 0.77 | 0.70 (Δ −0.07) | **0.34 (Δ −0.43)** | 0.63 (Δ −0.14) | 0.70 (Δ −0.07) |
+| A1 — choix `statut` | contradiction ×3 | contradiction ×3 | coherent ×3 | contradiction ×3 | contradiction ×3 |
+| A1 — P(E > D), attendu true | 0.59 | 0.65 | 0.63 | 0.70 | 0.54 |
+| A2 (A > D, R1) — P(true) | 0.95 | 0.90 (Δ −0.05) | **0.28 (Δ −0.67)** | 0.85 (Δ −0.10) | 0.96 (Δ +0.01) |
+| attendu | vrai / contradiction | faux / coherent | faux / coherent | faux / coherent | vrai / contradiction |
+
+Verdict préenregistré, par base : **partiellement** (A1 et A2) — (iii) change, (ii) et (iv) ne changent pas, (v) ne change pas.
+
+### B — distracteur isolé (T1-A, 3 appels ; médianes)
+
+| distracteur | choix `statut` | P(contradiction) | tue (< 0.5) | P(E > D) |
+|---|---|---|---|---|
+| aucun (A1-i) | contradiction ×3 | 0.77 | non | 0.59 |
+| fait redondant A > C (= L-DIS1 E006) | coherent ×2, contradiction ×1 | 0.34 | **oui** | 0.19 |
+| fait redondant B > D | contradiction ×3 | 0.78 | non | 0.43 |
+| règle 3 non pertinente seule | coherent ×3 | 0.38 | **oui** | 0.62 |
+| fait `couleur(A, rouge)` seul | coherent ×2, contradiction ×1 | 0.49 | **oui** (pile au seuil) | 0.73 |
+| phrase hors sujet ajoutée (A1-v) | contradiction ×3 | 0.70 | non | 0.54 |
+
+## Lecture
+
+**Jev lit-il les règles ? Partiellement.** Il suit une règle écrite quand elle s'oppose à ce qu'il ferait par défaut ; il ne se limite pas aux règles données.
+
+1. **Une règle d'accord écrite corrige les trois paires.**
+   - [VÉRIFIÉ] Avec la règle placée avant la phrase, la forme fautive tombe de 0.84–0.86 à 0.05–0.09 et la forme correcte monte à 0.86–0.93, sur les 3 paires (5 appels chacune, 30/30 conformes). Les deux paires où Jev préférait la forme fautive (E006) sont inversées.
+   - [HYPOTHÈSE] Cela montre que Jev *utilise* le texte de la règle. Cela ne montre pas qu'il *l'applique* : la règle nomme le cas (« se laver les mains », « se parler », « fait » + infinitif) et dit « ne s'accorde pas ». Une correspondance de mots suffirait. E007 n'a pas testé une règle **fausse** ni une règle formulée sans l'exemple.
+2. **Une règle inversée est suivie ; une règle absente est remplacée par la règle attendue.**
+   - [VÉRIFIÉ] Inverser R2 fait passer T1-A de `contradiction` (0.77) à `coherent` (P(contradiction) 0.34) ; inverser R1 fait tomber P(A > D) de 0.95 à 0.28. Jev lit ces deux règles.
+   - [VÉRIFIÉ] Retirer la règle ne change presque rien : sans R1, Jev « déduit » encore A > D (0.90, 0/3 conformes) ; sans R2, il voit encore une contradiction (0.70, 0/3). Même chose quand la règle est remplacée par une phrase hors sujet de même longueur (0.85 ; 0.63).
+   - [HYPOTHÈSE] Jev complète l'état avec le sens usuel de « > » (transitif) et de « incompatible ». La consigne « uniquement à partir des faits et règles donnés » n'est pas respectée. Ce n'est pas de la plausibilité de surface au sens « longueur ou forme de l'état » : (ii), sans phrase, et (iv), avec phrase, donnent le même résultat.
+   - [VÉRIFIÉ] Ajouter une phrase hors sujet à côté de la règle ne change pas la réponse (A1 : 0.70 contre 0.77 ; A2 : 0.96 contre 0.95).
+3. **Distracteurs : ce n'est pas « n'importe quel ajout ».**
+   - [VÉRIFIÉ] Le fait redondant A > C tue encore la contradiction (0.34, identique à L-DIS1 d'E006) et fait retomber P(E > D) à 0.19. L'autre fait redondant, B > D, ne la tue pas (0.78). La règle 3 seule, non pertinente, la tue (0.38, coherent ×3). Le fait `couleur(A, rouge)` seul est au seuil (0.49). Une phrase hors sujet ne la tue pas (0.70).
+   - [HYPOTHÈSE] L'effet dépend de l'élément ajouté, pas de sa seule présence : A > C touche la chaîne E → A → … → D, B > D non. Ce n'est établi que sur 4 distracteurs, un seul ordre, 3 appels chacun.
+4. **Sur l'hypothèse de départ.** [HYPOTHÈSE] « Jev juge la plausibilité de surface, pas les règles » est **trop forte** sous cette forme. Plus précis sur ces 27 cas : Jev part d'un a priori (sens usuel des symboles, forme d'une phrase qui « a l'air » soignée) ; une règle écrite qui contredit cet a priori le fait bouger fortement ; une règle absente ne l'empêche pas d'appliquer son a priori.
+
+**Attente que j'aurais eu envie de discuter après avoir vu Jev (non modifiée)** : A2-ii et A2-iv (attendu `false`). On peut soutenir que « > » porte conventionnellement la transitivité, donc que A > D « se déduit » même sans R1. L'attente `false` est conservée : la consigne dit « uniquement à partir des faits et règles donnés ». Mais la réponse de Jev a une lecture défendable, ce qui affaiblit ce point comme preuve d'erreur. Le même argument vaut pour A1-ii / A1-iv (`incompatible` a un sens usuel).
+
+## Limites
+
+- 27 cas, 2 à 5 appels par cas : **aucune conclusion générale**. Deux bases seulement pour l'ablation ; trois paires pour la grammaire.
+- Les réponses répétées sont très stables (souvent ±0.02) : les appels mesurent la reproductibilité, pas la robustesse à la reformulation.
+- C : la règle cite l'exemple même de la phrase ; la comparaison « sans règle » vient d'E006 (≈ 1 h plus tôt). Le rappel C0 montre une dérive ≤ 0.07 (0.61 → 0.54 ; 0.90 → 0.92 ; 0.67 → 0.74), bien plus petite que les écarts mesurés (≥ 0.21 sauf F1-05 correcte, déjà à 0.90).
+- A : une seule forme d'inversion par règle ; les phrases hors sujet ont la même longueur en caractères, pas en jetons.
+- B : un seul ordre, une seule position de distracteur.
+- Écart au mandat sur (iv) : voir « Règles de lecture ».
+- Fournisseurs non distingués (`typesafe-ai` ×80, `digitalocean` ×10).
+
+## Prochaine étape
+
+1. **Règle fausse écrite** (grammaire et logique) : une règle d'accord erronée mais plausible, et une règle logique non standard sans rapport avec l'a priori (ex. « si X > Y alors Y > X »). Si Jev la suit, il applique le texte ; sinon, il ne s'en sert que quand elle confirme la bonne réponse.
+2. **Règle sans l'exemple** : même règle d'accord formulée de façon générale, sans citer le verbe de la phrase, pour séparer application et correspondance de mots.
+3. **Consigne « règles données seulement »** : variantes (ii) avec une consigne renforcée (« n'utilise aucune propriété de > qui n'est pas écrite »), pour savoir si l'a priori se laisse désactiver.
+4. **Distracteurs** : même distracteur à plusieurs positions et faits redondants touchant ou non la chaîne de la question.

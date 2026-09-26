@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T180111+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": "rythme (min 26.0 s), 8 appels",
+    "cases_sha256": "d1680d7e0e52f951b6f1aead9406b46567e91f995f3c4a69d0d0fb1d0cd0b004",
+    "n_appels": 8,
+    "n_http_200": 8,
+    "budget_consomme": 64,
+    "budget": 100
+  },
+  "rows": [
+    {
+      "case_id": "A1-v",
+      "famille": "A-ablation",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 686.8,
+      "obtenu": "contradiction",
+      "p": 0.77,
+      "stabilite": [
+        0.77,
+        0.77
+      ],
+      "repartition": {
+        "\"contradiction\"": 1
+      },
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "A1-v",
+      "famille": "A-ablation",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 686.8,
+      "obtenu": true,
+      "p": 0.57,
+      "stabilite": [
+        0.57,
+        0.57
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "A2-v",
+      "famille": "A-ablation",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 854.4,
+      "obtenu": true,
+      "p": 0.97,
+      "stabilite": [
+        0.97,
+        0.97
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "A1-i",
+      "famille": "A-ablation",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 409.0,
+      "obtenu": "contradiction",
+      "p": 0.75,
+      "stabilite": [
+        0.75,
+        0.75
+      ],
+      "repartition": {
+        "\"contradiction\"": 1
+      },
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "A1-i",
+      "famille": "A-ablation",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 409.0,
+      "obtenu": true,
+      "p": 0.55,
+      "stabilite": [
+        0.55,
+        0.55
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "A2-i",
+      "famille": "A-ablation",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 430.7,
+      "obtenu": true,
+      "p": 0.96,
+      "stabilite": [
+        0.96,
+        0.96
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "A1-ii",
+      "famille": "A-ablation",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "coherent",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 814.4,
+      "obtenu": "contradiction",
+      "p": 0.67,
+      "stabilite": [
+        0.67,
+        0.67
+      ],
+      "repartition": {
+        "\"contradiction\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "A1-ii",
+      "famille": "A-ablation",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 814.4,
+      "obtenu": true,
+      "p": 0.61,
+      "stabilite": [
+        0.61,
+        0.61
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "A2-ii",
+      "famille": "A-ablation",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 408.3,
+      "obtenu": true,
+      "p": 0.89,
+      "stabilite": [
+        0.89,
+        0.89
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "A1-iii",
+      "famille": "A-ablation",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "coherent",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 539.1,
+      "obtenu": "coherent",
+      "p": 0.57,
+      "stabilite": [
+        0.57,
+        0.57
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "A1-iii",
+      "famille": "A-ablation",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 539.1,
+      "obtenu": true,
+      "p": 0.63,
+      "stabilite": [
+        0.63,
+        0.63
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "A2-iii",
+      "famille": "A-ablation",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 1310.9,
+      "obtenu": false,
+      "p": 0.31,
+      "stabilite": [
+        0.31,
+        0.31
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    }
+  ]
+}

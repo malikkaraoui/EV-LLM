@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T174027+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": "rythme (min 26.0 s), 8 appels",
+    "cases_sha256": "d1680d7e0e52f951b6f1aead9406b46567e91f995f3c4a69d0d0fb1d0cd0b004",
+    "n_appels": 8,
+    "n_http_200": 8,
+    "budget_consomme": 16,
+    "budget": 100
+  },
+  "rows": [
+    {
+      "case_id": "D-LOG-VRAI",
+      "famille": "D-controle",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 429.0,
+      "obtenu": true,
+      "p": 0.98,
+      "stabilite": [
+        0.98,
+        0.98
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "D-LOG-FAUX",
+      "famille": "D-controle",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 567.3,
+      "obtenu": false,
+      "p": 0.02,
+      "stabilite": [
+        0.02,
+        0.02
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "D-GRAM-FAUX",
+      "famille": "D-controle",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 631.9,
+      "obtenu": false,
+      "p": 0.08,
+      "stabilite": [
+        0.08,
+        0.08
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "D-GRAM-OK",
+      "famille": "D-controle",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 466.1,
+      "obtenu": true,
+      "p": 0.97,
+      "stabilite": [
+        0.97,
+        0.97
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "C-F1-04-fautive",
+      "famille": "C-regle-explicite",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 582.0,
+      "obtenu": false,
+      "p": 0.09,
+      "stabilite": [
+        0.09,
+        0.09
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "C-F1-04-correcte",
+      "famille": "C-regle-explicite",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 426.7,
+      "obtenu": true,
+      "p": 0.9,
+      "stabilite": [
+        0.9,
+        0.9
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "C-F1-05-fautive",
+      "famille": "C-regle-explicite",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 625.4,
+      "obtenu": false,
+      "p": 0.05,
+      "stabilite": [
+        0.05,
+        0.05
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "C-F1-05-correcte",
+      "famille": "C-regle-explicite",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 888.7,
+      "obtenu": true,
+      "p": 0.92,
+      "stabilite": [
+        0.92,
+        0.92
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    }
+  ]
+}
