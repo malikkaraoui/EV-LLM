@@ -40,3 +40,4 @@ vault/runtime/events.jsonl
 
 # E001 : sorties brutes completes (en-tetes de reponse) jamais versionnees
 research/experiments/*/results/**/raw.jsonl
+research/experiments/*/pilot/**/raw.jsonl
