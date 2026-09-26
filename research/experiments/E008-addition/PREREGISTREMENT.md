@@ -135,3 +135,22 @@ avant la première lecture des résultats de B-STD / B-REF.
 - Aucune conclusion générale au-delà de : cette tâche, cette taille, ce budget, ce format.
 - Toute envie de modifier ce document après exécution officielle est écrite dans le rapport,
   pas appliquée.
+
+## Amendement A1 — valeurs figées après pilote (2026-09-26T21:42:06+0200, avant toute exécution officielle)
+
+Pilote graine 0 (exclu des résultats), Apple M1, MLX 0.29.3, float32 : **≈ 103 ms par pas**
+compilé (lot 256, 3 179 022 paramètres B-STD / 3 162 638 B-REF), données ≈ 5 ms par lot.
+20 000 pas coûteraient ≈ 38 min par run, soit ≈ 3,8 h pour 6 runs : au-delà du budget (§7).
+
+- **Nombre de pas : 12 000 (figé après pilote)** au lieu de 20 000 — 3 072 000 exemples vus.
+  Durée pilote B-STD : 1 364 s de calcul (3 invocations), jalons compris ; 6 runs ≈ 2,3 h.
+- **Jalons de la courbe : 250, 500, 1 000, 2 000, 4 000, 8 000 et final 12 000 (figé après
+  pilote)** : 12 000 et 16 000 retirés (≥ fin).
+- Inchangés : lr max 1e-3, montée 500, cosinus jusqu'à 1e-5 **sur 12 000 pas**, AdamW
+  (0,9 / 0,98, wd 0,01), écrêtage 1,0, lot 256, taille du modèle.
+- Convergence pilote B-STD (100 premiers items, pas 12 000) : T-ID L=2..5 = 100 / 100 / 99 /
+  94 % ; perte finale ≈ 0,0017. B-REF pilote (2 174 pas seulement, arrêté volontairement) :
+  apprend (T-ID L=2 = 99 % au pas 2 000). Ces valeurs de pilote ne sont **pas** des résultats.
+- Évaluation complète d'un modèle : ≈ 36 s (hors budget d'entraînement).
+- Le pilote a aussi révélé que le GPU MLX n'est pas reproductible au bit près (écarts ~3e-8 sur
+  les poids après 20 pas, même graine) : le test de déterminisme exige l'égalité à 1e-6 près.
