@@ -1,22 +1,23 @@
 # CARNET DE BORD — instantané (1 minute)
 
-Dernière mise à jour : 2026-09-25T21:30:40+0200 (orchestrateur) — M0001 posé, sonde Jev
+Dernière mise à jour : 2026-09-26T18:03:33+02:00 (orchestrateur) — vague 6 en vol
 
 ## Où on en est
 
-- `main` = `343e839` — pose du harnais v1.0.0 (+ `0a644f1` genèse et architecture).
-- En vol : **F01 / M0001 `e001-sonde-jev`** — première sonde du modèle Jev (7 cas préregistrés, branche `exp/e001-sonde-jev`, worktree `.claude/worktrees/F01-M0001`).
-- Ensuite : doublage indépendant R001, puis merge (hook pre-push).
+- `main` contient E001, E002, E002-bis, **E005**, doc v2.2 + GENESE.
+- Jev : **5 « faux et sûr » non contestés, répliqués 5/5** (E006) + 1 réponse contestée (question ambiguë, R008) ; E007 teste « Jev lit-il les règles ? ».
+- Candidats ACQUÉRIR : A0 1/4, A0-bis 0/4 → M0020 vérifie d'abord que le critère est **atteignable** (étalon oracle).
+- E003 : backend passerelle non contrôlé (défaut de protocole) → M0019 puis rejeu M0021 ; merge E003 bloqué d'ici là.
+- En vol : M0017 (F05) · M0018 · M0019 · R009 · M0020.
+- Décisions attendues de Malik : mention de son enfant dans GENESE (dépôt public) ; budget passerelle 5 $ (à poser, navigateur non connecté).
 
 ## Références à ne pas toucher
 
-- `vault/echanges/F01.md` (M0001) — mandat en cours ; sera la pièce de référence du doublage R001.
+- `vault/echanges/archive/2026-09-2{5,6}-F01-M000{1,2}-*.md` — références du doublage R001.
 
 ## Rappels
 
-- Dépôt **PUBLIC** (choix de Malik, 25/09) : rien de secret dans `vault/`, rapports, résultats.
-- `.env` à la racine : ignoré seulement par `.git/info/exclude` (local) tant que M0001 n'a pas mergé la règle `.gitignore`. Aucun agent ne le lit ; seul `run.py` le charge.
-- Défauts du harnais signalés à Malik (25/09, non corrigés ici) : `.claude/worktrees/` non ignoré ; `scripts/verifier-rendu.mjs` cité par gabarits §4 mais absent.
-- Écart de version harnais v1.0.0 (projet) / v1.0.1 (prod) : non vérifié par l'orchestrateur ; pas de `--maj` sans demande de Malik.
-- Source de vérité : `vault/reprise/00_INDEX.md` + `vault/runtime/state.json` / `events.jsonl`
-  — et, au-dessus d'eux, la preuve git rejouée à l'instant.
+- Dépôt **PUBLIC** : rien de secret dans `vault/`, rapports, résultats.
+- Passerelle : 5 req/min/équipe (1 fenêtre API à 15 s ou 2 à 26 s) ; tout appel à un modèle témoin impose et journalise son fournisseur ; 402 = arrêt net.
+- Défauts harnais signalés : `.claude/worktrees/` non ignoré ; `scripts/verifier-rendu.mjs` absent ; pas de `type` d'événement défini pour `src: fenetre`.
+- Source de vérité : `00_INDEX.md` + `vault/runtime/` — et au-dessus, la preuve git rejouée.

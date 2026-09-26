@@ -1,0 +1,7338 @@
+{
+ "graines": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20
+ ],
+ "systemes": {
+  "aleatoire": {
+   "critere_acquerir": {
+    "familles": 4,
+    "familles_accelerees": 0,
+    "verdict": "ECHEC"
+   },
+   "familles": {
+    "0": {
+     "acceleration": false,
+     "raison": "R̂ indéfini",
+     "serie": [
+      -8.161716589143643,
+      -3.492041351363228,
+      -2.93578489765332,
+      -3.076196506065932,
+      null
+     ]
+    },
+    "1": {
+     "acceleration": false,
+     "raison": "R̂ indéfini",
+     "serie": [
+      null,
+      null,
+      -1.5239678220488102,
+      null,
+      null
+     ]
+    },
+    "2": {
+     "acceleration": false,
+     "raison": "R̂ indéfini",
+     "serie": [
+      null,
+      null,
+      -3.7288250826948444,
+      null,
+      null
+     ]
+    },
+    "3": {
+     "acceleration": false,
+     "raison": "R̂ indéfini",
+     "serie": [
+      null,
+      null,
+      -1.906503997111727,
+      -6.870372630628087,
+      null
+     ]
+    }
+   },
+   "mondes": [
+    {
+     "R": -0.055196638178573,
+     "R_chapeau": -8.161716589143643,
+     "bits_economises": -50.19180233998291,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 4,
+      "precision": 0.125,
+      "rappel": 0.5,
+      "systeme": 16
+     },
+     "deduits": 26,
+     "deduits_faux_en_verite": 15,
+     "deduits_infondes": 23,
+     "exactitude": 0.3132530120481928,
+     "exclusions_justes": 0,
+     "famille": 0,
+     "graine": 1,
+     "indetermine": {
+      "attendus": 44,
+      "precision": 0.6,
+      "rappel": 0.2727272727272727,
+      "systeme": 20
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.5,
+       "justes": 2,
+       "n": 4
+      },
+      "DÉDUIT": {
+       "exactitude": 0.08571428571428572,
+       "justes": 3,
+       "n": 35
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.4772727272727273,
+       "justes": 21,
+       "n": 44
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 18,
+      "requises_justes": 3,
+      "stables": 65,
+      "sur_revisions": 53
+     },
+     "sha256_monde": "1bebe523057b4658b52acfa545c400a87d1432ef96ba800d20a5929765916c4c",
+     "taux_deduits_infondes": 0.8846153846153846,
+     "variante": "A"
+    },
+    {
+     "R": -0.03402472932849073,
+     "R_chapeau": -3.492041351363228,
+     "bits_economises": -30.939610553853786,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 4,
+      "precision": 0.05,
+      "rappel": 0.25,
+      "systeme": 20
+     },
+     "deduits": 20,
+     "deduits_faux_en_verite": 9,
+     "deduits_infondes": 16,
+     "exactitude": 0.2289156626506024,
+     "exclusions_justes": 1,
+     "famille": 0,
+     "graine": 2,
+     "indetermine": {
+      "attendus": 35,
+      "precision": 0.3181818181818182,
+      "rappel": 0.2,
+      "systeme": 22
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.25,
+       "justes": 1,
+       "n": 4
+      },
+      "DÉDUIT": {
+       "exactitude": 0.09090909090909091,
+       "justes": 4,
+       "n": 44
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.4,
+       "justes": 14,
+       "n": 35
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 22,
+      "requises_justes": 3,
+      "stables": 61,
+      "sur_revisions": 52
+     },
+     "sha256_monde": "bbacdc12d6a320efdf845b00d0448bbcc4b5edac229f3602df2741acb47aa271",
+     "taux_deduits_infondes": 0.8,
+     "variante": "A"
+    },
+    {
+     "R": -0.053402064313830405,
+     "R_chapeau": -2.93578489765332,
+     "bits_economises": -48.55994758078082,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 8,
+      "precision": 0.16666666666666666,
+      "rappel": 0.375,
+      "systeme": 18
+     },
+     "deduits": 24,
+     "deduits_faux_en_verite": 14,
+     "deduits_infondes": 19,
+     "exactitude": 0.3855421686746988,
+     "exclusions_justes": 0,
+     "famille": 0,
+     "graine": 3,
+     "indetermine": {
+      "attendus": 42,
+      "precision": 0.5555555555555556,
+      "rappel": 0.23809523809523808,
+      "systeme": 18
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.375,
+       "justes": 3,
+       "n": 8
+      },
+      "DÉDUIT": {
+       "exactitude": 0.15151515151515152,
+       "justes": 5,
+       "n": 33
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.5714285714285714,
+       "justes": 24,
+       "n": 42
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 10,
+      "requises_justes": 1,
+      "stables": 73,
+      "sur_revisions": 57
+     },
+     "sha256_monde": "7dd26cbe19ae06218d1e6271468b3da7846d3a04b9938c1a830e56b0452e7abd",
+     "taux_deduits_infondes": 0.7916666666666666,
+     "variante": "A"
+    },
+    {
+     "R": -0.024196715088768517,
+     "R_chapeau": -3.076196506065932,
+     "bits_economises": -22.002730258376566,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 4,
+      "precision": 0.05555555555555555,
+      "rappel": 0.25,
+      "systeme": 18
+     },
+     "deduits": 21,
+     "deduits_faux_en_verite": 8,
+     "deduits_infondes": 13,
+     "exactitude": 0.42168674698795183,
+     "exclusions_justes": 0,
+     "famille": 0,
+     "graine": 4,
+     "indetermine": {
+      "attendus": 43,
+      "precision": 0.7894736842105263,
+      "rappel": 0.3488372093023256,
+      "systeme": 19
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.25,
+       "justes": 1,
+       "n": 4
+      },
+      "DÉDUIT": {
+       "exactitude": 0.2222222222222222,
+       "justes": 8,
+       "n": 36
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.6046511627906976,
+       "justes": 26,
+       "n": 43
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 11,
+      "requises_justes": 3,
+      "stables": 72,
+      "sur_revisions": 58
+     },
+     "sha256_monde": "304fcd7e69d6652f00a4ea7c9a9f342e1f3e2aa6d63a330e860f1c220afe835e",
+     "taux_deduits_infondes": 0.6190476190476191,
+     "variante": "A"
+    },
+    {
+     "R": -0.016198132026827065,
+     "R_chapeau": null,
+     "bits_economises": -14.729401423637022,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 7,
+      "precision": 0.04,
+      "rappel": 0.14285714285714285,
+      "systeme": 25
+     },
+     "deduits": 18,
+     "deduits_faux_en_verite": 7,
+     "deduits_infondes": 14,
+     "exactitude": 0.3132530120481928,
+     "exclusions_justes": 0,
+     "famille": 0,
+     "graine": 5,
+     "indetermine": {
+      "attendus": 43,
+      "precision": 0.4666666666666667,
+      "rappel": 0.16279069767441862,
+      "systeme": 15
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.14285714285714285,
+       "justes": 1,
+       "n": 7
+      },
+      "DÉDUIT": {
+       "exactitude": 0.12121212121212122,
+       "justes": 4,
+       "n": 33
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.4883720930232558,
+       "justes": 21,
+       "n": 43
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 18,
+      "requises_justes": 2,
+      "stables": 65,
+      "sur_revisions": 54
+     },
+     "sha256_monde": "efaef5310cb3580321ad3502c3bc381eac5f4dc8b46ec1a664a234d1b9595a97",
+     "taux_deduits_infondes": 0.7777777777777778,
+     "variante": "A"
+    },
+    {
+     "R": -0.03249998793950399,
+     "R_chapeau": null,
+     "bits_economises": -29.553121794012576,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 0.1111111111111111,
+      "rappel": 0.4,
+      "systeme": 18
+     },
+     "deduits": 15,
+     "deduits_faux_en_verite": 7,
+     "deduits_infondes": 12,
+     "exactitude": 0.40963855421686746,
+     "exclusions_justes": 3,
+     "famille": 1,
+     "graine": 6,
+     "indetermine": {
+      "attendus": 47,
+      "precision": 0.6521739130434783,
+      "rappel": 0.3191489361702128,
+      "systeme": 23
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.4,
+       "justes": 2,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 0.0967741935483871,
+       "justes": 3,
+       "n": 31
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.6170212765957447,
+       "justes": 29,
+       "n": 47
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 12,
+      "requises_justes": 1,
+      "stables": 71,
+      "sur_revisions": 55
+     },
+     "sha256_monde": "9eed7200b57866394d311660deed4077aa57fc91fb3c38a6f9e40d6a86b9c261",
+     "taux_deduits_infondes": 0.8,
+     "variante": "B"
+    },
+    {
+     "R": -0.05445117517013006,
+     "R_chapeau": null,
+     "bits_economises": -49.51393257823242,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 0.09523809523809523,
+      "rappel": 0.4,
+      "systeme": 21
+     },
+     "deduits": 23,
+     "deduits_faux_en_verite": 12,
+     "deduits_infondes": 18,
+     "exactitude": 0.3132530120481928,
+     "exclusions_justes": 1,
+     "famille": 1,
+     "graine": 7,
+     "indetermine": {
+      "attendus": 41,
+      "precision": 0.5,
+      "rappel": 0.21951219512195122,
+      "systeme": 18
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.4,
+       "justes": 2,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 0.13513513513513514,
+       "justes": 5,
+       "n": 37
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.4634146341463415,
+       "justes": 19,
+       "n": 41
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 4,
+      "requises_justes": 1,
+      "stables": 79,
+      "sur_revisions": 64
+     },
+     "sha256_monde": "ac6e82c5eabde1ee81444b193be7dca7622b2c1ea2c67ad4d9ab26e2cb75baa2",
+     "taux_deduits_infondes": 0.782608695652174,
+     "variante": "B"
+    },
+    {
+     "R": -0.03509475984874046,
+     "R_chapeau": -1.5239678220488102,
+     "bits_economises": -31.91261836995249,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 3,
+      "precision": 0.0,
+      "rappel": 0.0,
+      "systeme": 25
+     },
+     "deduits": 25,
+     "deduits_faux_en_verite": 10,
+     "deduits_infondes": 17,
+     "exactitude": 0.30120481927710846,
+     "exclusions_justes": 2,
+     "famille": 1,
+     "graine": 8,
+     "indetermine": {
+      "attendus": 42,
+      "precision": 0.35714285714285715,
+      "rappel": 0.11904761904761904,
+      "systeme": 14
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.0,
+       "justes": 0,
+       "n": 3
+      },
+      "DÉDUIT": {
+       "exactitude": 0.21052631578947367,
+       "justes": 8,
+       "n": 38
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.40476190476190477,
+       "justes": 17,
+       "n": 42
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 8,
+      "requises_justes": 0,
+      "stables": 75,
+      "sur_revisions": 57
+     },
+     "sha256_monde": "17216db3e20037e706d0fd086b36c83b81ca08239b0b5964f2edfe5c478fbdf5",
+     "taux_deduits_infondes": 0.68,
+     "variante": "B"
+    },
+    {
+     "R": -0.028767672264197935,
+     "R_chapeau": null,
+     "bits_economises": -26.15922577376361,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 0.08823529411764706,
+      "rappel": 0.6,
+      "systeme": 34
+     },
+     "deduits": 21,
+     "deduits_faux_en_verite": 8,
+     "deduits_infondes": 16,
+     "exactitude": 0.30120481927710846,
+     "exclusions_justes": 0,
+     "famille": 1,
+     "graine": 9,
+     "indetermine": {
+      "attendus": 46,
+      "precision": 0.6923076923076923,
+      "rappel": 0.1956521739130435,
+      "systeme": 13
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.6,
+       "justes": 3,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 0.15625,
+       "justes": 5,
+       "n": 32
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.3695652173913043,
+       "justes": 17,
+       "n": 46
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 10,
+      "requises_justes": 1,
+      "stables": 73,
+      "sur_revisions": 63
+     },
+     "sha256_monde": "fad2fac51862a62c7b0bd3d3132e33f796a27fb36965f6559af2026c77dca1d5",
+     "taux_deduits_infondes": 0.7619047619047619,
+     "variante": "B"
+    },
+    {
+     "R": -0.030421153796807425,
+     "R_chapeau": null,
+     "bits_economises": -27.662781443024716,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 0.043478260869565216,
+      "rappel": 0.2,
+      "systeme": 23
+     },
+     "deduits": 11,
+     "deduits_faux_en_verite": 5,
+     "deduits_infondes": 8,
+     "exactitude": 0.3373493975903614,
+     "exclusions_justes": 1,
+     "famille": 1,
+     "graine": 10,
+     "indetermine": {
+      "attendus": 39,
+      "precision": 0.5217391304347826,
+      "rappel": 0.3076923076923077,
+      "systeme": 23
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.2,
+       "justes": 1,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 0.07692307692307693,
+       "justes": 3,
+       "n": 39
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.6153846153846154,
+       "justes": 24,
+       "n": 39
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 19,
+      "requises_justes": 2,
+      "stables": 64,
+      "sur_revisions": 49
+     },
+     "sha256_monde": "5a4ed9f138216e021d753a6e2032d484ef8e051ec7dea94a817016bc7c6eff45",
+     "taux_deduits_infondes": 0.7272727272727273,
+     "variante": "B"
+    },
+    {
+     "R": -0.02051048592293091,
+     "R_chapeau": null,
+     "bits_economises": -18.65074195298328,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 3,
+      "precision": 0.05263157894736842,
+      "rappel": 0.3333333333333333,
+      "systeme": 19
+     },
+     "deduits": 21,
+     "deduits_faux_en_verite": 5,
+     "deduits_infondes": 14,
+     "exactitude": 0.3614457831325301,
+     "exclusions_justes": 1,
+     "famille": 2,
+     "graine": 11,
+     "indetermine": {
+      "attendus": 45,
+      "precision": 0.5416666666666666,
+      "rappel": 0.28888888888888886,
+      "systeme": 24
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.3333333333333333,
+       "justes": 1,
+       "n": 3
+      },
+      "DÉDUIT": {
+       "exactitude": 0.2,
+       "justes": 7,
+       "n": 35
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.4888888888888889,
+       "justes": 22,
+       "n": 45
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 15,
+      "requises_justes": 4,
+      "stables": 68,
+      "sur_revisions": 54
+     },
+     "sha256_monde": "0569feb19b3f51c3d38c701ae662d84168ead6e8975d433bd5ec76138c222730",
+     "taux_deduits_infondes": 0.6666666666666666,
+     "variante": "A"
+    },
+    {
+     "R": -0.04045229193250253,
+     "R_chapeau": null,
+     "bits_economises": -36.78436781433603,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 0.11764705882352941,
+      "rappel": 0.4,
+      "systeme": 17
+     },
+     "deduits": 20,
+     "deduits_faux_en_verite": 9,
+     "deduits_infondes": 17,
+     "exactitude": 0.3253012048192771,
+     "exclusions_justes": 1,
+     "famille": 2,
+     "graine": 12,
+     "indetermine": {
+      "attendus": 40,
+      "precision": 0.4230769230769231,
+      "rappel": 0.275,
+      "systeme": 26
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.4,
+       "justes": 2,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 0.07894736842105263,
+       "justes": 3,
+       "n": 38
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.55,
+       "justes": 22,
+       "n": 40
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 13,
+      "requises_justes": 3,
+      "stables": 70,
+      "sur_revisions": 58
+     },
+     "sha256_monde": "e547ef91abe1d1e168c7226b9c0e3deb65beff14c7c253541a0f7068837df8e6",
+     "taux_deduits_infondes": 0.85,
+     "variante": "A"
+    },
+    {
+     "R": -0.05413773583714632,
+     "R_chapeau": -3.7288250826948444,
+     "bits_economises": -49.2289136791502,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 8,
+      "precision": 0.15384615384615385,
+      "rappel": 0.5,
+      "systeme": 26
+     },
+     "deduits": 17,
+     "deduits_faux_en_verite": 9,
+     "deduits_infondes": 16,
+     "exactitude": 0.2891566265060241,
+     "exclusions_justes": 1,
+     "famille": 2,
+     "graine": 13,
+     "indetermine": {
+      "attendus": 42,
+      "precision": 0.4090909090909091,
+      "rappel": 0.21428571428571427,
+      "systeme": 22
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.5,
+       "justes": 4,
+       "n": 8
+      },
+      "DÉDUIT": {
+       "exactitude": 0.030303030303030304,
+       "justes": 1,
+       "n": 33
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.4523809523809524,
+       "justes": 19,
+       "n": 42
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 17,
+      "requises_justes": 4,
+      "stables": 66,
+      "sur_revisions": 55
+     },
+     "sha256_monde": "aeff4f2f1cc9757fc9d12e3b93298789248ffd633b0c792ac4646da942db4815",
+     "taux_deduits_infondes": 0.9411764705882353,
+     "variante": "A"
+    },
+    {
+     "R": -0.02269104488646871,
+     "R_chapeau": null,
+     "bits_economises": -20.633583446598983,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 0.045454545454545456,
+      "rappel": 0.2,
+      "systeme": 22
+     },
+     "deduits": 15,
+     "deduits_faux_en_verite": 5,
+     "deduits_infondes": 12,
+     "exactitude": 0.27710843373493976,
+     "exclusions_justes": 1,
+     "famille": 2,
+     "graine": 14,
+     "indetermine": {
+      "attendus": 36,
+      "precision": 0.3076923076923077,
+      "rappel": 0.2222222222222222,
+      "systeme": 26
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.2,
+       "justes": 1,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 0.07142857142857142,
+       "justes": 3,
+       "n": 42
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.5277777777777778,
+       "justes": 19,
+       "n": 36
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 20,
+      "requises_justes": 2,
+      "stables": 63,
+      "sur_revisions": 50
+     },
+     "sha256_monde": "17fa6fdf5fb17441fe90dfb284dfa41af3db7820ea3fe897b40ba18e7118572b",
+     "taux_deduits_infondes": 0.8,
+     "variante": "A"
+    },
+    {
+     "R": -0.032146802445477414,
+     "R_chapeau": null,
+     "bits_economises": -29.231960631113846,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 1,
+      "precision": 0.0,
+      "rappel": 0.0,
+      "systeme": 20
+     },
+     "deduits": 21,
+     "deduits_faux_en_verite": 8,
+     "deduits_infondes": 17,
+     "exactitude": 0.3614457831325301,
+     "exclusions_justes": 0,
+     "famille": 2,
+     "graine": 15,
+     "indetermine": {
+      "attendus": 47,
+      "precision": 0.5769230769230769,
+      "rappel": 0.3191489361702128,
+      "systeme": 26
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.0,
+       "justes": 0,
+       "n": 1
+      },
+      "DÉDUIT": {
+       "exactitude": 0.11428571428571428,
+       "justes": 4,
+       "n": 35
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.5531914893617021,
+       "justes": 26,
+       "n": 47
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 6,
+      "requises_justes": 1,
+      "stables": 77,
+      "sur_revisions": 58
+     },
+     "sha256_monde": "77d41b1a35bd2ab63e6fb52fcac4797209829a1f2e1061e2b9ed4de4904bcb8a",
+     "taux_deduits_infondes": 0.8095238095238095,
+     "variante": "A"
+    },
+    {
+     "R": -0.026541172102804694,
+     "R_chapeau": null,
+     "bits_economises": -24.13460870108886,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 6,
+      "precision": 0.041666666666666664,
+      "rappel": 0.16666666666666666,
+      "systeme": 24
+     },
+     "deduits": 16,
+     "deduits_faux_en_verite": 6,
+     "deduits_infondes": 10,
+     "exactitude": 0.3253012048192771,
+     "exclusions_justes": 1,
+     "famille": 3,
+     "graine": 16,
+     "indetermine": {
+      "attendus": 39,
+      "precision": 0.5217391304347826,
+      "rappel": 0.3076923076923077,
+      "systeme": 23
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.16666666666666666,
+       "justes": 1,
+       "n": 6
+      },
+      "DÉDUIT": {
+       "exactitude": 0.15789473684210525,
+       "justes": 6,
+       "n": 38
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.5128205128205128,
+       "justes": 20,
+       "n": 39
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 20,
+      "requises_justes": 4,
+      "stables": 63,
+      "sur_revisions": 49
+     },
+     "sha256_monde": "713cff045ef5fb555e08c74f396d7c1b56701e47b034c106a2cf6428823c4c1e",
+     "taux_deduits_infondes": 0.625,
+     "variante": "B"
+    },
+    {
+     "R": -0.04599488525645491,
+     "R_chapeau": null,
+     "bits_economises": -41.82439847103497,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 3,
+      "precision": 0.06666666666666667,
+      "rappel": 0.3333333333333333,
+      "systeme": 15
+     },
+     "deduits": 24,
+     "deduits_faux_en_verite": 11,
+     "deduits_infondes": 17,
+     "exactitude": 0.3493975903614458,
+     "exclusions_justes": 2,
+     "famille": 3,
+     "graine": 17,
+     "indetermine": {
+      "attendus": 40,
+      "precision": 0.5,
+      "rappel": 0.325,
+      "systeme": 26
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.3333333333333333,
+       "justes": 1,
+       "n": 3
+      },
+      "DÉDUIT": {
+       "exactitude": 0.175,
+       "justes": 7,
+       "n": 40
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.525,
+       "justes": 21,
+       "n": 40
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 11,
+      "requises_justes": 4,
+      "stables": 72,
+      "sur_revisions": 55
+     },
+     "sha256_monde": "859dd45c34d00cc4929753ac8e7b0a12f209cc36ead29b977064948cb53f9c0c",
+     "taux_deduits_infondes": 0.7083333333333334,
+     "variante": "B"
+    },
+    {
+     "R": -0.02977427308401892,
+     "R_chapeau": -1.906503997111727,
+     "bits_economises": -27.074555240392836,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 6,
+      "precision": 0.09523809523809523,
+      "rappel": 0.3333333333333333,
+      "systeme": 21
+     },
+     "deduits": 24,
+     "deduits_faux_en_verite": 11,
+     "deduits_infondes": 19,
+     "exactitude": 0.2891566265060241,
+     "exclusions_justes": 2,
+     "famille": 3,
+     "graine": 18,
+     "indetermine": {
+      "attendus": 38,
+      "precision": 0.4090909090909091,
+      "rappel": 0.23684210526315788,
+      "systeme": 22
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.3333333333333333,
+       "justes": 2,
+       "n": 6
+      },
+      "DÉDUIT": {
+       "exactitude": 0.1282051282051282,
+       "justes": 5,
+       "n": 39
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.4473684210526316,
+       "justes": 17,
+       "n": 38
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 13,
+      "requises_justes": 2,
+      "stables": 70,
+      "sur_revisions": 55
+     },
+     "sha256_monde": "1f50828b3185dda9c3f4b0e4431e1d1c1557446228e8d0c24e12df0af608322a",
+     "taux_deduits_infondes": 0.7916666666666666,
+     "variante": "B"
+    },
+    {
+     "R": -0.03608642992757938,
+     "R_chapeau": -6.870372630628087,
+     "bits_economises": -32.8143709082598,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 2,
+      "precision": 0.0,
+      "rappel": 0.0,
+      "systeme": 15
+     },
+     "deduits": 23,
+     "deduits_faux_en_verite": 7,
+     "deduits_infondes": 17,
+     "exactitude": 0.37349397590361444,
+     "exclusions_justes": 2,
+     "famille": 3,
+     "graine": 19,
+     "indetermine": {
+      "attendus": 44,
+      "precision": 0.48,
+      "rappel": 0.2727272727272727,
+      "systeme": 25
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.0,
+       "justes": 0,
+       "n": 2
+      },
+      "DÉDUIT": {
+       "exactitude": 0.16216216216216217,
+       "justes": 6,
+       "n": 37
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.5681818181818182,
+       "justes": 25,
+       "n": 44
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 12,
+      "requises_justes": 1,
+      "stables": 71,
+      "sur_revisions": 56
+     },
+     "sha256_monde": "56b7e6c02d9d4fa0eb419954593a2b60dd8acfc86d776efe8ed2dcc56dada812",
+     "taux_deduits_infondes": 0.7391304347826086,
+     "variante": "B"
+    },
+    {
+     "R": -0.06007699253155136,
+     "R_chapeau": null,
+     "bits_economises": -54.62964111272277,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 4,
+      "precision": 0.05555555555555555,
+      "rappel": 0.25,
+      "systeme": 18
+     },
+     "deduits": 31,
+     "deduits_faux_en_verite": 16,
+     "deduits_infondes": 24,
+     "exactitude": 0.27710843373493976,
+     "exclusions_justes": 2,
+     "famille": 3,
+     "graine": 20,
+     "indetermine": {
+      "attendus": 42,
+      "precision": 0.47058823529411764,
+      "rappel": 0.19047619047619047,
+      "systeme": 17
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.25,
+       "justes": 1,
+       "n": 4
+      },
+      "DÉDUIT": {
+       "exactitude": 0.1891891891891892,
+       "justes": 7,
+       "n": 37
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.35714285714285715,
+       "justes": 15,
+       "n": 42
+      }
+     },
+     "preuves_valides": 0.0,
+     "proprietes_crues": null,
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 16,
+      "requises_justes": 2,
+      "stables": 67,
+      "sur_revisions": 53
+     },
+     "sha256_monde": "69f26743abc3d9379f8aa0a3def7ca85ad3d5cb7cb166992de049fdf5c817009",
+     "taux_deduits_infondes": 0.7741935483870968,
+     "variante": "B"
+    }
+   ]
+  },
+  "decouvreur_naif": {
+   "critere_acquerir": {
+    "familles": 4,
+    "familles_accelerees": 0,
+    "verdict": "ECHEC"
+   },
+   "familles": {
+    "0": {
+     "acceleration": false,
+     "raison": "R̂ indéfini",
+     "serie": [
+      -0.3851769526253333,
+      -0.6544599424442183,
+      0.5225676525545822,
+      -8.827785143431203,
+      null
+     ]
+    },
+    "1": {
+     "acceleration": false,
+     "raison": "R̂ indéfini",
+     "serie": [
+      null,
+      null,
+      -0.6192898802659843,
+      null,
+      null
+     ]
+    },
+    "2": {
+     "acceleration": false,
+     "raison": "R̂ indéfini",
+     "serie": [
+      null,
+      null,
+      -2.5635413732509384,
+      null,
+      null
+     ]
+    },
+    "3": {
+     "acceleration": false,
+     "raison": "R̂ indéfini",
+     "serie": [
+      null,
+      null,
+      0.2994795303686399,
+      -7.086216848568039,
+      null
+     ]
+    }
+   },
+   "mondes": [
+    {
+     "R": -0.002604902125254585,
+     "R_chapeau": -0.3851769526253333,
+     "bits_economises": -3.6799746130363395,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 503.3841171239175
+     },
+     "bits_experience_total": 1412.711278999277,
+     "contradiction": {
+      "attendues": 1,
+      "precision": null,
+      "rappel": 0.0,
+      "systeme": 0
+     },
+     "deduits": 38,
+     "deduits_faux_en_verite": 3,
+     "deduits_infondes": 8,
+     "exactitude": 0.8192771084337349,
+     "exclusions_justes": 3,
+     "famille": 0,
+     "graine": 1,
+     "indetermine": {
+      "attendus": 44,
+      "precision": 0.8444444444444444,
+      "rappel": 0.8636363636363636,
+      "systeme": 45
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 0.0,
+       "justes": 0,
+       "n": 1
+      },
+      "DÉDUIT": {
+       "exactitude": 0.7894736842105263,
+       "justes": 30,
+       "n": 38
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.8636363636363636,
+       "justes": 38,
+       "n": 44
+      }
+     },
+     "preuves_valides": 0.7368421052631579,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R4",
+        "R3"
+       ],
+       [
+        "composition",
+        "R2",
+        "R3",
+        "R1"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R5",
+        "R1"
+       ],
+       [
+        "composition",
+        "R3",
+        "R2",
+        "R5"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R3"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R5"
+       ]
+      ],
+      "regles": [
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "composition",
+        "R3",
+        "R5",
+        "R4"
+       ],
+       [
+        "exclusion_A",
+        "R3"
+       ]
+      ],
+      "requetes": 54
+     },
+     "questions": 83,
+     "requetes": 54,
+     "requetes_refusees": 5,
+     "revision": {
+      "requises": 18,
+      "requises_justes": 10,
+      "stables": 65,
+      "sur_revisions": 5
+     },
+     "sha256_monde": "1bebe523057b4658b52acfa545c400a87d1432ef96ba800d20a5929765916c4c",
+     "taux_deduits_infondes": 0.21052631578947367,
+     "variante": "A"
+    },
+    {
+     "R": -0.006376735026150595,
+     "R_chapeau": -0.6544599424442183,
+     "bits_economises": -9.246259356208396,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 540.6718295034669
+     },
+     "bits_experience_total": 1449.9989913788263,
+     "contradiction": {
+      "attendues": 0,
+      "precision": 0.0,
+      "rappel": null,
+      "systeme": 1
+     },
+     "deduits": 33,
+     "deduits_faux_en_verite": 3,
+     "deduits_infondes": 4,
+     "exactitude": 0.7469879518072289,
+     "exclusions_justes": 3,
+     "famille": 0,
+     "graine": 2,
+     "indetermine": {
+      "attendus": 34,
+      "precision": 0.673469387755102,
+      "rappel": 0.9705882352941176,
+      "systeme": 49
+     },
+     "par_etiquette_attendue": {
+      "DÉDUIT": {
+       "exactitude": 0.5918367346938775,
+       "justes": 29,
+       "n": 49
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.9705882352941176,
+       "justes": 33,
+       "n": 34
+      }
+     },
+     "preuves_valides": 0.8529411764705882,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R3",
+        "R5",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R4",
+        "R3",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R5",
+        "R3"
+       ],
+       [
+        "composition",
+        "R5",
+        "R1",
+        "R3"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R3"
+       ],
+       [
+        "exclusion_A",
+        "R2"
+       ]
+      ],
+      "requetes": 58
+     },
+     "questions": 83,
+     "requetes": 58,
+     "requetes_refusees": 6,
+     "revision": {
+      "requises": 16,
+      "requises_justes": 8,
+      "stables": 67,
+      "sur_revisions": 2
+     },
+     "sha256_monde": "bbacdc12d6a320efdf845b00d0448bbcc4b5edac229f3602df2741acb47aa271",
+     "taux_deduits_infondes": 0.12121212121212122,
+     "variante": "A"
+    },
+    {
+     "R": 0.009505529990413675,
+     "R_chapeau": 0.5225676525545822,
+     "bits_economises": 15.73242597425851,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 745.7542475909889
+     },
+     "bits_experience_total": 1655.0814094663483,
+     "contradiction": {
+      "attendues": 0,
+      "precision": null,
+      "rappel": null,
+      "systeme": 0
+     },
+     "deduits": 37,
+     "deduits_faux_en_verite": 0,
+     "deduits_infondes": 3,
+     "exactitude": 0.8313253012048193,
+     "exclusions_justes": 3,
+     "famille": 0,
+     "graine": 3,
+     "indetermine": {
+      "attendus": 38,
+      "precision": 0.7608695652173914,
+      "rappel": 0.9210526315789473,
+      "systeme": 46
+     },
+     "par_etiquette_attendue": {
+      "DÉDUIT": {
+       "exactitude": 0.7555555555555555,
+       "justes": 34,
+       "n": 45
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.9210526315789473,
+       "justes": 35,
+       "n": 38
+      }
+     },
+     "preuves_valides": 0.8918918918918919,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R4",
+        "R2"
+       ],
+       [
+        "composition",
+        "R1",
+        "R4",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R4"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R3",
+        "R1",
+        "R4"
+       ],
+       [
+        "composition",
+        "R3",
+        "R1",
+        "R5"
+       ],
+       [
+        "composition",
+        "R3",
+        "R2",
+        "R4"
+       ],
+       [
+        "composition",
+        "R3",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R3",
+        "R4",
+        "R2"
+       ],
+       [
+        "composition",
+        "R3",
+        "R5",
+        "R2"
+       ],
+       [
+        "composition",
+        "R3",
+        "R5",
+        "R4"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R4",
+        "R3",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R5",
+        "R3"
+       ],
+       [
+        "composition",
+        "R5",
+        "R2",
+        "R4"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R4"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "composition",
+        "R4",
+        "R5",
+        "R1"
+       ],
+       [
+        "exclusion_A",
+        "R4"
+       ]
+      ],
+      "requetes": 80
+     },
+     "questions": 83,
+     "requetes": 80,
+     "requetes_refusees": 10,
+     "revision": {
+      "requises": 6,
+      "requises_justes": 3,
+      "stables": 77,
+      "sur_revisions": 9
+     },
+     "sha256_monde": "7dd26cbe19ae06218d1e6271468b3da7846d3a04b9938c1a830e56b0452e7abd",
+     "taux_deduits_infondes": 0.08108108108108109,
+     "variante": "A"
+    },
+    {
+     "R": -0.0694375023049617,
+     "R_chapeau": -8.827785143431203,
+     "bits_economises": -111.04097076326626,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 689.8226790216647
+     },
+     "bits_experience_total": 1599.1498408970242,
+     "contradiction": {
+      "attendues": 0,
+      "precision": 0.0,
+      "rappel": null,
+      "systeme": 8
+     },
+     "deduits": 61,
+     "deduits_faux_en_verite": 26,
+     "deduits_infondes": 37,
+     "exactitude": 0.43373493975903615,
+     "exclusions_justes": 3,
+     "famille": 0,
+     "graine": 4,
+     "indetermine": {
+      "attendus": 39,
+      "precision": 0.8571428571428571,
+      "rappel": 0.3076923076923077,
+      "systeme": 14
+     },
+     "par_etiquette_attendue": {
+      "DÉDUIT": {
+       "exactitude": 0.5454545454545454,
+       "justes": 24,
+       "n": 44
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.3076923076923077,
+       "justes": 12,
+       "n": 39
+      }
+     },
+     "preuves_valides": 0.2753623188405797,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R5",
+        "R2"
+       ],
+       [
+        "composition",
+        "R3",
+        "R2",
+        "R5"
+       ],
+       [
+        "composition",
+        "R3",
+        "R4",
+        "R5"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R2"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R5",
+        "R3"
+       ],
+       [
+        "composition",
+        "R5",
+        "R1",
+        "R3"
+       ],
+       [
+        "composition",
+        "R5",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R5",
+        "R4",
+        "R1"
+       ],
+       [
+        "exclusion_A",
+        "R2"
+       ]
+      ],
+      "requetes": 74
+     },
+     "questions": 83,
+     "requetes": 74,
+     "requetes_refusees": 16,
+     "revision": {
+      "requises": 8,
+      "requises_justes": 6,
+      "stables": 75,
+      "sur_revisions": 25
+     },
+     "sha256_monde": "304fcd7e69d6652f00a4ea7c9a9f342e1f3e2aa6d63a330e860f1c220afe835e",
+     "taux_deduits_infondes": 0.6065573770491803,
+     "variante": "A"
+    },
+    {
+     "R": -0.0015037381034042974,
+     "R_chapeau": null,
+     "bits_economises": -2.2224719486545723,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 568.6376137881291
+     },
+     "bits_experience_total": 1477.9647756634886,
+     "contradiction": {
+      "attendues": 0,
+      "precision": null,
+      "rappel": null,
+      "systeme": 0
+     },
+     "deduits": 35,
+     "deduits_faux_en_verite": 2,
+     "deduits_infondes": 7,
+     "exactitude": 0.8313253012048193,
+     "exclusions_justes": 3,
+     "famille": 0,
+     "graine": 5,
+     "indetermine": {
+      "attendus": 48,
+      "precision": 0.8541666666666666,
+      "rappel": 0.8541666666666666,
+      "systeme": 48
+     },
+     "par_etiquette_attendue": {
+      "DÉDUIT": {
+       "exactitude": 0.8,
+       "justes": 28,
+       "n": 35
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.8541666666666666,
+       "justes": 41,
+       "n": 48
+      }
+     },
+     "preuves_valides": 0.7714285714285715,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R4",
+        "R2"
+       ],
+       [
+        "composition",
+        "R1",
+        "R5",
+        "R2"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R3"
+       ],
+       [
+        "composition",
+        "R4",
+        "R3",
+        "R2"
+       ],
+       [
+        "composition",
+        "R5",
+        "R1",
+        "R4"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R1"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R5",
+        "R3"
+       ],
+       [
+        "exclusion_A",
+        "R5"
+       ]
+      ],
+      "requetes": 61
+     },
+     "questions": 83,
+     "requetes": 61,
+     "requetes_refusees": 5,
+     "revision": {
+      "requises": 8,
+      "requises_justes": 4,
+      "stables": 75,
+      "sur_revisions": 9
+     },
+     "sha256_monde": "efaef5310cb3580321ad3502c3bc381eac5f4dc8b46ec1a664a234d1b9595a97",
+     "taux_deduits_infondes": 0.2,
+     "variante": "A"
+    },
+    {
+     "R": -0.023871878681724166,
+     "R_chapeau": null,
+     "bits_economises": -33.94660420113503,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 512.7060452188049
+     },
+     "bits_experience_total": 1422.0332070941645,
+     "contradiction": {
+      "attendues": 0,
+      "precision": 0.0,
+      "rappel": null,
+      "systeme": 2
+     },
+     "deduits": 60,
+     "deduits_faux_en_verite": 12,
+     "deduits_infondes": 30,
+     "exactitude": 0.6144578313253012,
+     "exclusions_justes": 3,
+     "famille": 1,
+     "graine": 6,
+     "indetermine": {
+      "attendus": 50,
+      "precision": 1.0,
+      "rappel": 0.42,
+      "systeme": 21
+     },
+     "par_etiquette_attendue": {
+      "DÉDUIT": {
+       "exactitude": 0.9090909090909091,
+       "justes": 30,
+       "n": 33
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.42,
+       "justes": 21,
+       "n": 50
+      }
+     },
+     "preuves_valides": 0.45161290322580644,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R4",
+        "R2"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R4"
+       ],
+       [
+        "composition",
+        "R2",
+        "R5",
+        "R3"
+       ],
+       [
+        "composition",
+        "R3",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R2"
+       ],
+       [
+        "composition",
+        "R5",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R2"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R3",
+        "R5"
+       ],
+       [
+        "composition",
+        "R3",
+        "R1",
+        "R4"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R3"
+       ]
+      ],
+      "requetes": 55
+     },
+     "questions": 83,
+     "requetes": 55,
+     "requetes_refusees": 9,
+     "revision": {
+      "requises": 8,
+      "requises_justes": 5,
+      "stables": 75,
+      "sur_revisions": 33
+     },
+     "sha256_monde": "9eed7200b57866394d311660deed4077aa57fc91fb3c38a6f9e40d6a86b9c261",
+     "taux_deduits_infondes": 0.5,
+     "variante": "B"
+    },
+    {
+     "R": 0.009099160430254905,
+     "R_chapeau": null,
+     "bits_economises": 13.872347200301185,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 615.2472542625659
+     },
+     "bits_experience_total": 1524.5744161379253,
+     "contradiction": {
+      "attendues": 0,
+      "precision": null,
+      "rappel": null,
+      "systeme": 0
+     },
+     "deduits": 36,
+     "deduits_faux_en_verite": 0,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 1,
+     "graine": 7,
+     "indetermine": {
+      "attendus": 47,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 47
+     },
+     "par_etiquette_attendue": {
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 36,
+       "n": 36
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 47,
+       "n": 47
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R4",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R5",
+        "R2"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R4"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R3",
+        "R4"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R3",
+        "R1",
+        "R5"
+       ],
+       [
+        "composition",
+        "R3",
+        "R4",
+        "R5"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R4",
+        "R5",
+        "R2"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R1"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R2"
+       ],
+       [
+        "composition",
+        "R5",
+        "R4",
+        "R1"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R3"
+       ]
+      ],
+      "requetes": 66
+     },
+     "questions": 83,
+     "requetes": 66,
+     "requetes_refusees": 5,
+     "revision": {
+      "requises": 4,
+      "requises_justes": 4,
+      "stables": 79,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "ac6e82c5eabde1ee81444b193be7dca7622b2c1ea2c67ad4d9ab26e2cb75baa2",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    },
+    {
+     "R": -0.014261344176854842,
+     "R_chapeau": -0.6192898802659843,
+     "bits_economises": -22.806026271395123,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 689.8226790216647
+     },
+     "bits_experience_total": 1599.1498408970242,
+     "contradiction": {
+      "attendues": 0,
+      "precision": null,
+      "rappel": null,
+      "systeme": 0
+     },
+     "deduits": 51,
+     "deduits_faux_en_verite": 9,
+     "deduits_infondes": 14,
+     "exactitude": 0.8313253012048193,
+     "exclusions_justes": 3,
+     "famille": 1,
+     "graine": 8,
+     "indetermine": {
+      "attendus": 42,
+      "precision": 1.0,
+      "rappel": 0.7619047619047619,
+      "systeme": 32
+     },
+     "par_etiquette_attendue": {
+      "DÉDUIT": {
+       "exactitude": 0.9024390243902439,
+       "justes": 37,
+       "n": 41
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.7619047619047619,
+       "justes": 32,
+       "n": 42
+      }
+     },
+     "preuves_valides": 0.6078431372549019,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R2"
+       ],
+       [
+        "composition",
+        "R1",
+        "R4",
+        "R3"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R4"
+       ],
+       [
+        "composition",
+        "R2",
+        "R3",
+        "R4"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R3",
+        "R1",
+        "R2"
+       ],
+       [
+        "composition",
+        "R3",
+        "R1",
+        "R4"
+       ],
+       [
+        "composition",
+        "R3",
+        "R5",
+        "R4"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R5"
+       ],
+       [
+        "composition",
+        "R4",
+        "R5",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R5",
+        "R3"
+       ],
+       [
+        "composition",
+        "R5",
+        "R1",
+        "R2"
+       ],
+       [
+        "composition",
+        "R5",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R5",
+        "R4",
+        "R3"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R5",
+        "R3"
+       ]
+      ],
+      "requetes": 74
+     },
+     "questions": 83,
+     "requetes": 74,
+     "requetes_refusees": 16,
+     "revision": {
+      "requises": 6,
+      "requises_justes": 6,
+      "stables": 77,
+      "sur_revisions": 19
+     },
+     "sha256_monde": "17216db3e20037e706d0fd086b36c83b81ca08239b0b5964f2edfe5c478fbdf5",
+     "taux_deduits_infondes": 0.27450980392156865,
+     "variante": "B"
+    },
+    {
+     "R": -0.006323222764388723,
+     "R_chapeau": null,
+     "bits_economises": -10.465448445254188,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 745.7542475909889
+     },
+     "bits_experience_total": 1655.0814094663483,
+     "contradiction": {
+      "attendues": 1,
+      "precision": 0.5,
+      "rappel": 1.0,
+      "systeme": 2
+     },
+     "deduits": 50,
+     "deduits_faux_en_verite": 7,
+     "deduits_infondes": 15,
+     "exactitude": 0.8072289156626506,
+     "exclusions_justes": 3,
+     "famille": 1,
+     "graine": 9,
+     "indetermine": {
+      "attendus": 46,
+      "precision": 1.0,
+      "rappel": 0.6739130434782609,
+      "systeme": 31
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 1,
+       "n": 1
+      },
+      "DÉDUIT": {
+       "exactitude": 0.9722222222222222,
+       "justes": 35,
+       "n": 36
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.6739130434782609,
+       "justes": 31,
+       "n": 46
+      }
+     },
+     "preuves_valides": 0.6923076923076923,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R5",
+        "R3"
+       ],
+       [
+        "composition",
+        "R2",
+        "R3",
+        "R4"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R2",
+        "R5",
+        "R3"
+       ],
+       [
+        "composition",
+        "R2",
+        "R5",
+        "R4"
+       ],
+       [
+        "composition",
+        "R3",
+        "R1",
+        "R2"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R2"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R5"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R3",
+        "R5"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R4"
+       ],
+       [
+        "composition",
+        "R5",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R5",
+        "R4",
+        "R3"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R5"
+       ]
+      ],
+      "requetes": 80
+     },
+     "questions": 83,
+     "requetes": 80,
+     "requetes_refusees": 14,
+     "revision": {
+      "requises": 7,
+      "requises_justes": 7,
+      "stables": 76,
+      "sur_revisions": 14
+     },
+     "sha256_monde": "fad2fac51862a62c7b0bd3d3132e33f796a27fb36965f6559af2026c77dca1d5",
+     "taux_deduits_infondes": 0.3,
+     "variante": "B"
+    },
+    {
+     "R": -0.04500652214215809,
+     "R_chapeau": null,
+     "bits_economises": -66.51805440122851,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 568.6376137881291
+     },
+     "bits_experience_total": 1477.9647756634886,
+     "contradiction": {
+      "attendues": 4,
+      "precision": 0.8,
+      "rappel": 1.0,
+      "systeme": 5
+     },
+     "deduits": 57,
+     "deduits_faux_en_verite": 17,
+     "deduits_infondes": 20,
+     "exactitude": 0.7469879518072289,
+     "exclusions_justes": 3,
+     "famille": 1,
+     "graine": 10,
+     "indetermine": {
+      "attendus": 39,
+      "precision": 1.0,
+      "rappel": 0.5384615384615384,
+      "systeme": 21
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 4,
+       "n": 4
+      },
+      "DÉDUIT": {
+       "exactitude": 0.925,
+       "justes": 37,
+       "n": 40
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.5384615384615384,
+       "justes": 21,
+       "n": 39
+      }
+     },
+     "preuves_valides": 0.6290322580645161,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R3",
+        "R1",
+        "R4"
+       ],
+       [
+        "composition",
+        "R3",
+        "R2",
+        "R5"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R2"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R3"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R5"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R4",
+        "R3",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R3",
+        "R2"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R2"
+       ],
+       [
+        "composition",
+        "R5",
+        "R4",
+        "R2"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R5",
+        "R4",
+        "R3"
+       ]
+      ],
+      "requetes": 61
+     },
+     "questions": 83,
+     "requetes": 61,
+     "requetes_refusees": 10,
+     "revision": {
+      "requises": 20,
+      "requises_justes": 20,
+      "stables": 63,
+      "sur_revisions": 16
+     },
+     "sha256_monde": "5a4ed9f138216e021d753a6e2032d484ef8e051ec7dea94a817016bc7c6eff45",
+     "taux_deduits_infondes": 0.3508771929824561,
+     "variante": "B"
+    },
+    {
+     "R": -0.030974995676005534,
+     "R_chapeau": null,
+     "bits_economises": -50.11115277193261,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 708.4665352114395
+     },
+     "bits_experience_total": 1617.793697086799,
+     "contradiction": {
+      "attendues": 0,
+      "precision": 0.0,
+      "rappel": null,
+      "systeme": 2
+     },
+     "deduits": 57,
+     "deduits_faux_en_verite": 14,
+     "deduits_infondes": 24,
+     "exactitude": 0.6506024096385542,
+     "exclusions_justes": 3,
+     "famille": 2,
+     "graine": 11,
+     "indetermine": {
+      "attendus": 46,
+      "precision": 0.875,
+      "rappel": 0.45652173913043476,
+      "systeme": 24
+     },
+     "par_etiquette_attendue": {
+      "DÉDUIT": {
+       "exactitude": 0.8918918918918919,
+       "justes": 33,
+       "n": 37
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.45652173913043476,
+       "justes": 21,
+       "n": 46
+      }
+     },
+     "preuves_valides": 0.3898305084745763,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R2"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R5",
+        "R2"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R3"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R5"
+       ],
+       [
+        "composition",
+        "R4",
+        "R5",
+        "R3"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R1"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R2",
+        "R5",
+        "R1"
+       ],
+       [
+        "composition",
+        "R3",
+        "R5",
+        "R4"
+       ],
+       [
+        "composition",
+        "R5",
+        "R4",
+        "R3"
+       ],
+       [
+        "exclusion_A",
+        "R4"
+       ]
+      ],
+      "requetes": 76
+     },
+     "questions": 83,
+     "requetes": 76,
+     "requetes_refusees": 14,
+     "revision": {
+      "requises": 8,
+      "requises_justes": 6,
+      "stables": 75,
+      "sur_revisions": 26
+     },
+     "sha256_monde": "0569feb19b3f51c3d38c701ae662d84168ead6e8975d433bd5ec76138c222730",
+     "taux_deduits_infondes": 0.42105263157894735,
+     "variante": "A"
+    },
+    {
+     "R": -0.008300642147384057,
+     "R_chapeau": null,
+     "bits_economises": -12.732324644657208,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 624.5691823574532
+     },
+     "bits_experience_total": 1533.8963442328127,
+     "contradiction": {
+      "attendues": 0,
+      "precision": 0.0,
+      "rappel": null,
+      "systeme": 2
+     },
+     "deduits": 46,
+     "deduits_faux_en_verite": 6,
+     "deduits_infondes": 9,
+     "exactitude": 0.8313253012048193,
+     "exclusions_justes": 3,
+     "famille": 2,
+     "graine": 12,
+     "indetermine": {
+      "attendus": 41,
+      "precision": 0.9142857142857143,
+      "rappel": 0.7804878048780488,
+      "systeme": 35
+     },
+     "par_etiquette_attendue": {
+      "DÉDUIT": {
+       "exactitude": 0.8809523809523809,
+       "justes": 37,
+       "n": 42
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.7804878048780488,
+       "justes": 32,
+       "n": 41
+      }
+     },
+     "preuves_valides": 0.6666666666666666,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R2"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R3",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R2"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R3"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R4",
+        "R5",
+        "R3"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R1"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "composition",
+        "R2",
+        "R5",
+        "R1"
+       ],
+       [
+        "exclusion_A",
+        "R4"
+       ]
+      ],
+      "requetes": 67
+     },
+     "questions": 83,
+     "requetes": 67,
+     "requetes_refusees": 8,
+     "revision": {
+      "requises": 12,
+      "requises_justes": 11,
+      "stables": 71,
+      "sur_revisions": 13
+     },
+     "sha256_monde": "e547ef91abe1d1e168c7226b9c0e3deb65beff14c7c253541a0f7068837df8e6",
+     "taux_deduits_infondes": 0.1956521739130435,
+     "variante": "A"
+    },
+    {
+     "R": -0.03721931777297377,
+     "R_chapeau": -2.5635413732509384,
+     "bits_economises": -55.3557964467017,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 577.9595418830164
+     },
+     "bits_experience_total": 1487.286703758376,
+     "contradiction": {
+      "attendues": 0,
+      "precision": 0.0,
+      "rappel": null,
+      "systeme": 3
+     },
+     "deduits": 68,
+     "deduits_faux_en_verite": 17,
+     "deduits_infondes": 30,
+     "exactitude": 0.5903614457831325,
+     "exclusions_justes": 3,
+     "famille": 2,
+     "graine": 13,
+     "indetermine": {
+      "attendus": 42,
+      "precision": 0.9166666666666666,
+      "rappel": 0.2619047619047619,
+      "systeme": 12
+     },
+     "par_etiquette_attendue": {
+      "DÉDUIT": {
+       "exactitude": 0.926829268292683,
+       "justes": 38,
+       "n": 41
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.2619047619047619,
+       "justes": 11,
+       "n": 42
+      }
+     },
+     "preuves_valides": 0.36619718309859156,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R3",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R2"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R3",
+        "R5"
+       ],
+       [
+        "composition",
+        "R5",
+        "R1",
+        "R4"
+       ],
+       [
+        "composition",
+        "R5",
+        "R2",
+        "R1"
+       ],
+       [
+        "composition",
+        "R5",
+        "R2",
+        "R4"
+       ],
+       [
+        "composition",
+        "R5",
+        "R4",
+        "R1"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R5"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R4"
+       ],
+       [
+        "exclusion_A",
+        "R2"
+       ]
+      ],
+      "requetes": 62
+     },
+     "questions": 83,
+     "requetes": 62,
+     "requetes_refusees": 10,
+     "revision": {
+      "requises": 13,
+      "requises_justes": 13,
+      "stables": 70,
+      "sur_revisions": 30
+     },
+     "sha256_monde": "aeff4f2f1cc9757fc9d12e3b93298789248ffd633b0c792ac4646da942db4815",
+     "taux_deduits_infondes": 0.4411764705882353,
+     "variante": "A"
+    },
+    {
+     "R": 0.004044151732018146,
+     "R_chapeau": null,
+     "bits_economises": 5.675519474155808,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 494.06218902903015
+     },
+     "bits_experience_total": 1403.3893509043896,
+     "contradiction": {
+      "attendues": 1,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 1
+     },
+     "deduits": 56,
+     "deduits_faux_en_verite": 4,
+     "deduits_infondes": 15,
+     "exactitude": 0.7831325301204819,
+     "exclusions_justes": 3,
+     "famille": 2,
+     "graine": 14,
+     "indetermine": {
+      "attendus": 37,
+      "precision": 0.8846153846153846,
+      "rappel": 0.6216216216216216,
+      "systeme": 26
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 1,
+       "n": 1
+      },
+      "DÉDUIT": {
+       "exactitude": 0.9111111111111111,
+       "justes": 41,
+       "n": 45
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.6216216216216216,
+       "justes": 23,
+       "n": 37
+      }
+     },
+     "preuves_valides": 0.6491228070175439,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "composition",
+        "R1",
+        "R5",
+        "R2"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R3",
+        "R2"
+       ],
+       [
+        "composition",
+        "R4",
+        "R5",
+        "R2"
+       ],
+       [
+        "composition",
+        "R5",
+        "R2",
+        "R3"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R3",
+        "R1",
+        "R5"
+       ],
+       [
+        "exclusion_A",
+        "R5"
+       ]
+      ],
+      "requetes": 53
+     },
+     "questions": 83,
+     "requetes": 53,
+     "requetes_refusees": 7,
+     "revision": {
+      "requises": 18,
+      "requises_justes": 14,
+      "stables": 65,
+      "sur_revisions": 15
+     },
+     "sha256_monde": "17fa6fdf5fb17441fe90dfb284dfa41af3db7820ea3fe897b40ba18e7118572b",
+     "taux_deduits_infondes": 0.26785714285714285,
+     "variante": "A"
+    },
+    {
+     "R": -0.01567720350746764,
+     "R_chapeau": null,
+     "bits_economises": -22.73192927346868,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 540.6718295034669
+     },
+     "bits_experience_total": 1449.9989913788263,
+     "contradiction": {
+      "attendues": 1,
+      "precision": 0.5,
+      "rappel": 1.0,
+      "systeme": 2
+     },
+     "deduits": 48,
+     "deduits_faux_en_verite": 8,
+     "deduits_infondes": 15,
+     "exactitude": 0.7951807228915663,
+     "exclusions_justes": 3,
+     "famille": 2,
+     "graine": 15,
+     "indetermine": {
+      "attendus": 47,
+      "precision": 0.9696969696969697,
+      "rappel": 0.6808510638297872,
+      "systeme": 33
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 1,
+       "n": 1
+      },
+      "DÉDUIT": {
+       "exactitude": 0.9428571428571428,
+       "justes": 33,
+       "n": 35
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.6808510638297872,
+       "justes": 32,
+       "n": 47
+      }
+     },
+     "preuves_valides": 0.68,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R4",
+        "R3"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R4"
+       ],
+       [
+        "composition",
+        "R2",
+        "R5",
+        "R1"
+       ],
+       [
+        "composition",
+        "R3",
+        "R2",
+        "R5"
+       ],
+       [
+        "composition",
+        "R3",
+        "R4",
+        "R5"
+       ],
+       [
+        "composition",
+        "R5",
+        "R2",
+        "R1"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R4"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R5"
+       ],
+       [
+        "exclusion_A",
+        "R4"
+       ]
+      ],
+      "requetes": 58
+     },
+     "questions": 83,
+     "requetes": 58,
+     "requetes_refusees": 8,
+     "revision": {
+      "requises": 6,
+      "requises_justes": 6,
+      "stables": 77,
+      "sur_revisions": 13
+     },
+     "sha256_monde": "77d41b1a35bd2ab63e6fb52fcac4797209829a1f2e1061e2b9ed4de4904bcb8a",
+     "taux_deduits_infondes": 0.3125,
+     "variante": "A"
+    },
+    {
+     "R": -0.01612322675992899,
+     "R_chapeau": null,
+     "bits_economises": -22.62716473710103,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 494.06218902903015
+     },
+     "bits_experience_total": 1403.3893509043896,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 0.8333333333333334,
+      "rappel": 1.0,
+      "systeme": 6
+     },
+     "deduits": 46,
+     "deduits_faux_en_verite": 10,
+     "deduits_infondes": 10,
+     "exactitude": 0.8674698795180723,
+     "exclusions_justes": 3,
+     "famille": 3,
+     "graine": 16,
+     "indetermine": {
+      "attendus": 40,
+      "precision": 1.0,
+      "rappel": 0.775,
+      "systeme": 31
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 5,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 0.9473684210526315,
+       "justes": 36,
+       "n": 38
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.775,
+       "justes": 31,
+       "n": 40
+      }
+     },
+     "preuves_valides": 0.7884615384615384,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R3",
+        "R2"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R5"
+       ],
+       [
+        "composition",
+        "R3",
+        "R2",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R3",
+        "R2"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R3"
+       ]
+      ],
+      "requetes": 53
+     },
+     "questions": 83,
+     "requetes": 53,
+     "requetes_refusees": 8,
+     "revision": {
+      "requises": 19,
+      "requises_justes": 19,
+      "stables": 64,
+      "sur_revisions": 9
+     },
+     "sha256_monde": "713cff045ef5fb555e08c74f396d7c1b56701e47b034c106a2cf6428823c4c1e",
+     "taux_deduits_infondes": 0.21739130434782608,
+     "variante": "B"
+    },
+    {
+     "R": -0.0023586581772411684,
+     "R_chapeau": null,
+     "bits_economises": -3.1342178329345316,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 419.48676426993126
+     },
+     "bits_experience_total": 1328.8139261452907,
+     "contradiction": {
+      "attendues": 2,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 2
+     },
+     "deduits": 35,
+     "deduits_faux_en_verite": 4,
+     "deduits_infondes": 0,
+     "exactitude": 0.927710843373494,
+     "exclusions_justes": 3,
+     "famille": 3,
+     "graine": 17,
+     "indetermine": {
+      "attendus": 40,
+      "precision": 0.8695652173913043,
+      "rappel": 1.0,
+      "systeme": 46
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 2,
+       "n": 2
+      },
+      "DÉDUIT": {
+       "exactitude": 0.8536585365853658,
+       "justes": 35,
+       "n": 41
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 40,
+       "n": 40
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R3",
+        "R5",
+        "R2"
+       ],
+       [
+        "composition",
+        "R4",
+        "R3",
+        "R2"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R2"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R3"
+       ]
+      ],
+      "requetes": 45
+     },
+     "questions": 83,
+     "requetes": 45,
+     "requetes_refusees": 4,
+     "revision": {
+      "requises": 12,
+      "requises_justes": 10,
+      "stables": 71,
+      "sur_revisions": 8
+     },
+     "sha256_monde": "859dd45c34d00cc4929753ac8e7b0a12f209cc36ead29b977064948cb53f9c0c",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    },
+    {
+     "R": 0.004677034684311271,
+     "R_chapeau": 0.2994795303686399,
+     "bits_economises": 5.866116973381809,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 344.91133951083236
+     },
+     "bits_experience_total": 1254.2385013861917,
+     "contradiction": {
+      "attendues": 0,
+      "precision": 0.0,
+      "rappel": null,
+      "systeme": 1
+     },
+     "deduits": 43,
+     "deduits_faux_en_verite": 4,
+     "deduits_infondes": 10,
+     "exactitude": 0.8192771084337349,
+     "exclusions_justes": 3,
+     "famille": 3,
+     "graine": 18,
+     "indetermine": {
+      "attendus": 44,
+      "precision": 0.8974358974358975,
+      "rappel": 0.7954545454545454,
+      "systeme": 39
+     },
+     "par_etiquette_attendue": {
+      "DÉDUIT": {
+       "exactitude": 0.8461538461538461,
+       "justes": 33,
+       "n": 39
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.7954545454545454,
+       "justes": 35,
+       "n": 44
+      }
+     },
+     "preuves_valides": 0.6818181818181818,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R4"
+       ]
+      ],
+      "requetes": 37
+     },
+     "questions": 83,
+     "requetes": 37,
+     "requetes_refusees": 6,
+     "revision": {
+      "requises": 10,
+      "requises_justes": 6,
+      "stables": 73,
+      "sur_revisions": 6
+     },
+     "sha256_monde": "1f50828b3185dda9c3f4b0e4431e1d1c1557446228e8d0c24e12df0af608322a",
+     "taux_deduits_infondes": 0.23255813953488372,
+     "variante": "B"
+    },
+    {
+     "R": -0.03722014532625218,
+     "R_chapeau": -7.086216848568039,
+     "bits_economises": -57.7857718845774,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 643.2130385472279
+     },
+     "bits_experience_total": 1552.5402004225875,
+     "contradiction": {
+      "attendues": 1,
+      "precision": 0.1111111111111111,
+      "rappel": 1.0,
+      "systeme": 9
+     },
+     "deduits": 55,
+     "deduits_faux_en_verite": 16,
+     "deduits_infondes": 24,
+     "exactitude": 0.6144578313253012,
+     "exclusions_justes": 3,
+     "famille": 3,
+     "graine": 19,
+     "indetermine": {
+      "attendus": 44,
+      "precision": 1.0,
+      "rappel": 0.4318181818181818,
+      "systeme": 19
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 1,
+       "n": 1
+      },
+      "DÉDUIT": {
+       "exactitude": 0.8157894736842105,
+       "justes": 31,
+       "n": 38
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 0.4318181818181818,
+       "justes": 19,
+       "n": 44
+      }
+     },
+     "preuves_valides": 0.453125,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "composition",
+        "R1",
+        "R2",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R4",
+        "R2"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R1"
+       ],
+       [
+        "composition",
+        "R3",
+        "R4",
+        "R2"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R2"
+       ],
+       [
+        "composition",
+        "R4",
+        "R1",
+        "R5"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R1"
+       ],
+       [
+        "composition",
+        "R4",
+        "R3",
+        "R2"
+       ],
+       [
+        "composition",
+        "R4",
+        "R5",
+        "R2"
+       ],
+       [
+        "composition",
+        "R5",
+        "R2",
+        "R1"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R2"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R5"
+       ],
+       [
+        "composition",
+        "R5",
+        "R2",
+        "R3"
+       ]
+      ],
+      "requetes": 69
+     },
+     "questions": 83,
+     "requetes": 69,
+     "requetes_refusees": 10,
+     "revision": {
+      "requises": 11,
+      "requises_justes": 7,
+      "stables": 72,
+      "sur_revisions": 26
+     },
+     "sha256_monde": "56b7e6c02d9d4fa0eb419954593a2b60dd8acfc86d776efe8ed2dcc56dada812",
+     "taux_deduits_infondes": 0.43636363636363634,
+     "variante": "B"
+    },
+    {
+     "R": 0.006902282720335673,
+     "R_chapeau": null,
+     "bits_economises": 9.879617816279122,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 522.0279733136922
+     },
+     "bits_experience_total": 1431.3551351890517,
+     "contradiction": {
+      "attendues": 1,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 1
+     },
+     "deduits": 40,
+     "deduits_faux_en_verite": 4,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 3,
+     "graine": 20,
+     "indetermine": {
+      "attendus": 42,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 42
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 1,
+       "n": 1
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 40,
+       "n": 40
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 42,
+       "n": 42
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "refutees": [
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R5",
+        "R3"
+       ],
+       [
+        "composition",
+        "R2",
+        "R1",
+        "R4"
+       ],
+       [
+        "composition",
+        "R4",
+        "R2",
+        "R3"
+       ],
+       [
+        "composition",
+        "R4",
+        "R3",
+        "R5"
+       ],
+       [
+        "composition",
+        "R5",
+        "R3",
+        "R2"
+       ]
+      ],
+      "regles": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R2"
+       ]
+      ],
+      "requetes": 56
+     },
+     "questions": 83,
+     "requetes": 56,
+     "requetes_refusees": 7,
+     "revision": {
+      "requises": 12,
+      "requises_justes": 12,
+      "stables": 71,
+      "sur_revisions": 6
+     },
+     "sha256_monde": "69f26743abc3d9379f8aa0a3def7ca85ad3d5cb7cb166992de049fdf5c817009",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    }
+   ]
+  },
+  "oracle_proprietes": {
+   "critere_acquerir": {
+    "familles": 4,
+    "familles_accelerees": 0,
+    "verdict": "ECHEC"
+   },
+   "familles": {
+    "0": {
+     "acceleration": false,
+     "raison": "R̂ indéfini",
+     "serie": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      null
+     ]
+    },
+    "1": {
+     "acceleration": false,
+     "raison": "R̂ indéfini",
+     "serie": [
+      null,
+      null,
+      1.0,
+      null,
+      null
+     ]
+    },
+    "2": {
+     "acceleration": false,
+     "raison": "R̂ indéfini",
+     "serie": [
+      null,
+      null,
+      1.0,
+      null,
+      null
+     ]
+    },
+    "3": {
+     "acceleration": false,
+     "raison": "R̂ indéfini",
+     "serie": [
+      null,
+      null,
+      1.0,
+      1.0,
+      null
+     ]
+    }
+   },
+   "mondes": [
+    {
+     "R": 0.006762871214125856,
+     "R_chapeau": 1.0,
+     "bits_economises": 6.149662487269632,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 4,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 4
+     },
+     "deduits": 35,
+     "deduits_faux_en_verite": 1,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 0,
+     "graine": 1,
+     "indetermine": {
+      "attendus": 44,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 44
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 4,
+       "n": 4
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 35,
+       "n": 35
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 44,
+       "n": 44
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R5",
+        "R4"
+       ],
+       [
+        "exclusion_A",
+        "R3"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 18,
+      "requises_justes": 18,
+      "stables": 65,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "1bebe523057b4658b52acfa545c400a87d1432ef96ba800d20a5929765916c4c",
+     "taux_deduits_infondes": 0.0,
+     "variante": "A"
+    },
+    {
+     "R": 0.009743506993469053,
+     "R_chapeau": 1.0,
+     "bits_economises": 8.860035561083931,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 4,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 4
+     },
+     "deduits": 44,
+     "deduits_faux_en_verite": 4,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 0,
+     "graine": 2,
+     "indetermine": {
+      "attendus": 35,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 35
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 4,
+       "n": 4
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 44,
+       "n": 44
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 35,
+       "n": 35
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "composition",
+        "R3",
+        "R1",
+        "R5"
+       ],
+       [
+        "exclusion_A",
+        "R2"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 22,
+      "requises_justes": 22,
+      "stables": 61,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "bbacdc12d6a320efdf845b00d0448bbcc4b5edac229f3602df2741acb47aa271",
+     "taux_deduits_infondes": 0.0,
+     "variante": "A"
+    },
+    {
+     "R": 0.01819004667423578,
+     "R_chapeau": 1.0,
+     "bits_economises": 16.540703516663147,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 8,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 8
+     },
+     "deduits": 33,
+     "deduits_faux_en_verite": 1,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 0,
+     "graine": 3,
+     "indetermine": {
+      "attendus": 42,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 42
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 8,
+       "n": 8
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 33,
+       "n": 33
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 42,
+       "n": 42
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "composition",
+        "R3",
+        "R2",
+        "R1"
+       ],
+       [
+        "exclusion_A",
+        "R4"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 10,
+      "requises_justes": 10,
+      "stables": 73,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "7dd26cbe19ae06218d1e6271468b3da7846d3a04b9938c1a830e56b0452e7abd",
+     "taux_deduits_infondes": 0.0,
+     "variante": "A"
+    },
+    {
+     "R": 0.007865789796280949,
+     "R_chapeau": 1.0,
+     "bits_economises": 7.152576311360319,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 4,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 4
+     },
+     "deduits": 36,
+     "deduits_faux_en_verite": 5,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 0,
+     "graine": 4,
+     "indetermine": {
+      "attendus": 43,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 43
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 4,
+       "n": 4
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 36,
+       "n": 36
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 43,
+       "n": 43
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "composition",
+        "R5",
+        "R1",
+        "R3"
+       ],
+       [
+        "exclusion_A",
+        "R2"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 11,
+      "requises_justes": 11,
+      "stables": 72,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "304fcd7e69d6652f00a4ea7c9a9f342e1f3e2aa6d63a330e860f1c220afe835e",
+     "taux_deduits_infondes": 0.0,
+     "variante": "A"
+    },
+    {
+     "R": -0.017841043657563095,
+     "R_chapeau": null,
+     "bits_economises": -16.223345594026235,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 7,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 7
+     },
+     "deduits": 33,
+     "deduits_faux_en_verite": 7,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 0,
+     "graine": 5,
+     "indetermine": {
+      "attendus": 43,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 43
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 7,
+       "n": 7
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 33,
+       "n": 33
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 43,
+       "n": 43
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R3"
+       ],
+       [
+        "exclusion_A",
+        "R5"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 18,
+      "requises_justes": 18,
+      "stables": 65,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "efaef5310cb3580321ad3502c3bc381eac5f4dc8b46ec1a664a234d1b9595a97",
+     "taux_deduits_infondes": 0.0,
+     "variante": "A"
+    },
+    {
+     "R": -0.010099504650167823,
+     "R_chapeau": null,
+     "bits_economises": -9.183753899884103,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 5
+     },
+     "deduits": 31,
+     "deduits_faux_en_verite": 5,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 1,
+     "graine": 6,
+     "indetermine": {
+      "attendus": 47,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 47
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 5,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 31,
+       "n": 31
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 47,
+       "n": 47
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R5"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 12,
+      "requises_justes": 12,
+      "stables": 71,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "9eed7200b57866394d311660deed4077aa57fc91fb3c38a6f9e40d6a86b9c261",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    },
+    {
+     "R": -0.02470885566701752,
+     "R_chapeau": null,
+     "bits_economises": -22.468433596876935,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 5
+     },
+     "deduits": 37,
+     "deduits_faux_en_verite": 7,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 1,
+     "graine": 7,
+     "indetermine": {
+      "attendus": 41,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 41
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 5,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 37,
+       "n": 37
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 41,
+       "n": 41
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 4,
+      "requises_justes": 4,
+      "stables": 79,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "ac6e82c5eabde1ee81444b193be7dca7622b2c1ea2c67ad4d9ab26e2cb75baa2",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    },
+    {
+     "R": 0.023028543871457436,
+     "R_chapeau": 1.0,
+     "bits_economises": 20.940480440754595,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 3,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 3
+     },
+     "deduits": 38,
+     "deduits_faux_en_verite": 1,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 1,
+     "graine": 8,
+     "indetermine": {
+      "attendus": 42,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 42
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 3,
+       "n": 3
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 38,
+       "n": 38
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 42,
+       "n": 42
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 8,
+      "requises_justes": 8,
+      "stables": 75,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "17216db3e20037e706d0fd086b36c83b81ca08239b0b5964f2edfe5c478fbdf5",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    },
+    {
+     "R": -0.03431809605236871,
+     "R_chapeau": null,
+     "bits_economises": -31.206376884266426,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 5
+     },
+     "deduits": 32,
+     "deduits_faux_en_verite": 8,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 1,
+     "graine": 9,
+     "indetermine": {
+      "attendus": 46,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 46
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 5,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 32,
+       "n": 32
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 46,
+       "n": 46
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R4"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 10,
+      "requises_justes": 10,
+      "stables": 73,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "fad2fac51862a62c7b0bd3d3132e33f796a27fb36965f6559af2026c77dca1d5",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    },
+    {
+     "R": -0.02263476519656967,
+     "R_chapeau": null,
+     "bits_economises": -20.582406795911865,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 5
+     },
+     "deduits": 39,
+     "deduits_faux_en_verite": 7,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 1,
+     "graine": 10,
+     "indetermine": {
+      "attendus": 39,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 39
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 5,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 39,
+       "n": 39
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 39,
+       "n": 39
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R5"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 19,
+      "requises_justes": 19,
+      "stables": 64,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "5a4ed9f138216e021d753a6e2032d484ef8e051ec7dea94a817016bc7c6eff45",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    },
+    {
+     "R": -0.00013858321157169792,
+     "R_chapeau": null,
+     "bits_economises": -0.12601747846206457,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 3,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 3
+     },
+     "deduits": 35,
+     "deduits_faux_en_verite": 3,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 2,
+     "graine": 11,
+     "indetermine": {
+      "attendus": 45,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 45
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 3,
+       "n": 3
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 35,
+       "n": 35
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 45,
+       "n": 45
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R5",
+        "R1"
+       ],
+       [
+        "exclusion_A",
+        "R4"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 15,
+      "requises_justes": 15,
+      "stables": 68,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "0569feb19b3f51c3d38c701ae662d84168ead6e8975d433bd5ec76138c222730",
+     "taux_deduits_infondes": 0.0,
+     "variante": "A"
+    },
+    {
+     "R": -0.006010645737613623,
+     "R_chapeau": null,
+     "bits_economises": -5.465643429622423,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 5
+     },
+     "deduits": 38,
+     "deduits_faux_en_verite": 5,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 2,
+     "graine": 12,
+     "indetermine": {
+      "attendus": 40,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 40
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 5,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 38,
+       "n": 38
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 40,
+       "n": 40
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R5",
+        "R1"
+       ],
+       [
+        "exclusion_A",
+        "R4"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 13,
+      "requises_justes": 13,
+      "stables": 70,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "e547ef91abe1d1e168c7226b9c0e3deb65beff14c7c253541a0f7068837df8e6",
+     "taux_deduits_infondes": 0.0,
+     "variante": "A"
+    },
+    {
+     "R": 0.014518711561020891,
+     "R_chapeau": 1.0,
+     "bits_economises": 13.2022587778701,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 8,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 8
+     },
+     "deduits": 33,
+     "deduits_faux_en_verite": 2,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 2,
+     "graine": 13,
+     "indetermine": {
+      "attendus": 42,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 42
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 8,
+       "n": 8
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 33,
+       "n": 33
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 42,
+       "n": 42
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "composition",
+        "R1",
+        "R4",
+        "R3"
+       ],
+       [
+        "exclusion_A",
+        "R2"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 17,
+      "requises_justes": 17,
+      "stables": 66,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "aeff4f2f1cc9757fc9d12e3b93298789248ffd633b0c792ac4646da942db4815",
+     "taux_deduits_infondes": 0.0,
+     "variante": "A"
+    },
+    {
+     "R": -0.0013539662373435125,
+     "R_chapeau": null,
+     "bits_economises": -1.2311982758786357,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 5,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 5
+     },
+     "deduits": 42,
+     "deduits_faux_en_verite": 5,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 2,
+     "graine": 14,
+     "indetermine": {
+      "attendus": 36,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 36
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 5,
+       "n": 5
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 42,
+       "n": 42
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 36,
+       "n": 36
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R5"
+       ],
+       [
+        "composition",
+        "R2",
+        "R4",
+        "R3"
+       ],
+       [
+        "exclusion_A",
+        "R5"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 20,
+      "requises_justes": 20,
+      "stables": 63,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "17fa6fdf5fb17441fe90dfb284dfa41af3db7820ea3fe897b40ba18e7118572b",
+     "taux_deduits_infondes": 0.0,
+     "variante": "A"
+    },
+    {
+     "R": -0.0015605763107854078,
+     "R_chapeau": null,
+     "bits_economises": -1.419074427576414,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 1,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 1
+     },
+     "deduits": 35,
+     "deduits_faux_en_verite": 4,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 2,
+     "graine": 15,
+     "indetermine": {
+      "attendus": 47,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 47
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 1,
+       "n": 1
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 35,
+       "n": 35
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 47,
+       "n": 47
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "composition",
+        "R3",
+        "R1",
+        "R5"
+       ],
+       [
+        "exclusion_A",
+        "R4"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 6,
+      "requises_justes": 6,
+      "stables": 77,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "77d41b1a35bd2ab63e6fb52fcac4797209829a1f2e1061e2b9ed4de4904bcb8a",
+     "taux_deduits_infondes": 0.0,
+     "variante": "A"
+    },
+    {
+     "R": -0.007509144967283837,
+     "R_chapeau": null,
+     "bits_economises": -6.828269481210851,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 6,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 6
+     },
+     "deduits": 38,
+     "deduits_faux_en_verite": 6,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 3,
+     "graine": 16,
+     "indetermine": {
+      "attendus": 39,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 39
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 6,
+       "n": 6
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 38,
+       "n": 38
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 39,
+       "n": 39
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 20,
+      "requises_justes": 20,
+      "stables": 63,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "713cff045ef5fb555e08c74f396d7c1b56701e47b034c106a2cf6428823c4c1e",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    },
+    {
+     "R": -0.016314271074837492,
+     "R_chapeau": null,
+     "bits_economises": -14.835009814547249,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 3,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 3
+     },
+     "deduits": 40,
+     "deduits_faux_en_verite": 8,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 3,
+     "graine": 17,
+     "indetermine": {
+      "attendus": 40,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 40
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 3,
+       "n": 3
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 40,
+       "n": 40
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 40,
+       "n": 40
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "reflexive",
+        "R3"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "transitive",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 11,
+      "requises_justes": 11,
+      "stables": 72,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "859dd45c34d00cc4929753ac8e7b0a12f209cc36ead29b977064948cb53f9c0c",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    },
+    {
+     "R": 0.015617209892623192,
+     "R_chapeau": 1.0,
+     "bits_economises": 14.201153148070837,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 6,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 6
+     },
+     "deduits": 39,
+     "deduits_faux_en_verite": 3,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 3,
+     "graine": 18,
+     "indetermine": {
+      "attendus": 38,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 38
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 6,
+       "n": 6
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 39,
+       "n": 39
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 38,
+       "n": 38
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "antisymetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R5"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 13,
+      "requises_justes": 13,
+      "stables": 70,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "1f50828b3185dda9c3f4b0e4431e1d1c1557446228e8d0c24e12df0af608322a",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    },
+    {
+     "R": 0.00525247055257327,
+     "R_chapeau": 1.0,
+     "bits_economises": 4.776214140405353,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 2,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 2
+     },
+     "deduits": 37,
+     "deduits_faux_en_verite": 3,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 3,
+     "graine": 19,
+     "indetermine": {
+      "attendus": 44,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 44
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 2,
+       "n": 2
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 37,
+       "n": 37
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 44,
+       "n": 44
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "symetrique",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "reflexive",
+        "R4"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "transitive",
+        "R4"
+       ],
+       [
+        "reflexive",
+        "R5"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ],
+       [
+        "transitive",
+        "R5"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 12,
+      "requises_justes": 12,
+      "stables": 71,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "56b7e6c02d9d4fa0eb419954593a2b60dd8acfc86d776efe8ed2dcc56dada812",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    },
+    {
+     "R": -0.019718119774126536,
+     "R_chapeau": null,
+     "bits_economises": -17.93022189172489,
+     "bits_experience": {
+      "exclusions": 14.422064766172811,
+      "observations": 894.9050971091867,
+      "requetes": 0.0
+     },
+     "bits_experience_total": 909.3271618753596,
+     "contradiction": {
+      "attendues": 4,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 4
+     },
+     "deduits": 37,
+     "deduits_faux_en_verite": 9,
+     "deduits_infondes": 0,
+     "exactitude": 1.0,
+     "exclusions_justes": 3,
+     "famille": 3,
+     "graine": 20,
+     "indetermine": {
+      "attendus": 42,
+      "precision": 1.0,
+      "rappel": 1.0,
+      "systeme": 42
+     },
+     "par_etiquette_attendue": {
+      "CONTRADICTION": {
+       "exactitude": 1.0,
+       "justes": 4,
+       "n": 4
+      },
+      "DÉDUIT": {
+       "exactitude": 1.0,
+       "justes": 37,
+       "n": 37
+      },
+      "INDÉTERMINÉ": {
+       "exactitude": 1.0,
+       "justes": 42,
+       "n": 42
+      }
+     },
+     "preuves_valides": 1.0,
+     "proprietes_crues": {
+      "regles": [
+       [
+        "reflexive",
+        "R1"
+       ],
+       [
+        "antisymetrique",
+        "R1"
+       ],
+       [
+        "transitive",
+        "R1"
+       ],
+       [
+        "reflexive",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R2"
+       ],
+       [
+        "transitive",
+        "R2"
+       ],
+       [
+        "symetrique",
+        "R3"
+       ],
+       [
+        "symetrique",
+        "R4"
+       ],
+       [
+        "antisymetrique",
+        "R5"
+       ]
+      ]
+     },
+     "questions": 83,
+     "requetes": 0,
+     "requetes_refusees": 0,
+     "revision": {
+      "requises": 16,
+      "requises_justes": 16,
+      "stables": 67,
+      "sur_revisions": 0
+     },
+     "sha256_monde": "69f26743abc3d9379f8aa0a3def7ca85ad3d5cb7cb166992de049fdf5c817009",
+     "taux_deduits_infondes": 0.0,
+     "variante": "B"
+    }
+   ]
+  }
+ }
+}

@@ -51,7 +51,9 @@ python3 analyse.py
 | 5 | `results/2026-09-26T162058+0200/` | 16:20:58 | 62 s | 15 | 4×200, 2×503, 9×429 |
 | 6 | `results/2026-09-26T162237+0200/` | 16:22:37 | 99 s | 29 | 7×200, 1×503, 21×429 |
 
-Total : **151 appels** (budget 200), **34 × 200**, 8 × 503, 109 × 429. Aucun 401/403/404, aucun code 3. Les lancements 2 à 6 portent sur des sous-corpus dérivés (`derive.py`), dans un ordre de priorité fixé avant chaque lancement : cas sans réponse d'abord, puis réplication des non-conformités, puis le reste.
+Total : **151 appels** (budget 200), **34 × 200**, 7 × 503, 110 × 429. Aucun 401/403/404, aucun code 3. Les lancements 2 à 6 portent sur des sous-corpus dérivés (`derive.py`), dans un ordre de priorité fixé avant chaque lancement : cas sans réponse d'abord, puis réplication des non-conformités, puis le reste.
+
+> Correctif M0013 (26/09) : totaux recomptés après R004 — 7 × 503 et 110 × 429 (et non 8 et 109) ; 107 des 110 réponses 429 ont `totalProviderAttemptCount` = 0. Le tableau par lancement était déjà juste.
 
 Chaque dossier contient `raw.public.jsonl` (= `raw.jsonl` sans la clé `response_headers`, égalité vérifiée ligne à ligne), `summary.json`, `summary.md`. Agrégat `aggregate.py` (médianes, règle d'E001) : [`results/agregat-2026-09-26T162249+0200/summary.md`](results/agregat-2026-09-26T162249+0200/summary.md). Analyse appel par appel : [`results/analyse.md`](results/analyse.md) (+ `analyse.json`).
 
@@ -117,13 +119,13 @@ Toutes questions, probabilité de la réponse renvoyée ≥ 0.8 : 19 conformes s
    - [VÉRIFIÉ] Au-dessus de 0.8 de probabilité sur sa réponse, Jev est conforme 19 fois sur 28 (68 %). Dans la tranche 0.4–0.6, il l'est 4 fois sur 6. La confiance ne sépare pas ici le juste du faux.
    - [HYPOTHÈSE] Avec 42 évaluations tirées d'un corpus construit pour piéger, ce n'est pas une courbe de calibration du modèle, seulement un indice : sur ce type de cas, une P haute ne suffirait pas à décider de ne pas vérifier (§1 bis v2.1, point 5).
 6. **Statuts HTTP.**
-   - [VÉRIFIÉ] Le fournisseur sert 0 à 9 réponses 200 par lancement, puis renvoie des 429 en rafale (`rate_limit_exceeded`, « upstream provider … high demand », aucun fournisseur tenté). Les 8 × 503 viennent tous de `digitalocean`.
+   - [VÉRIFIÉ] Le fournisseur sert 0 à 9 réponses 200 par lancement, puis renvoie des 429 en rafale (`rate_limit_exceeded`, « upstream provider … high demand », aucun fournisseur tenté pour 107 des 110 ; les 3 autres — F2-06, F2-07, F3-06 — ont 1 tentative `digitalocean`). Les 7 × 503 viennent tous de `digitalocean`.
    - [HYPOTHÈSE] Une autre fenêtre (F04, E003) appelait la même passerelle jusque vers 16:20 ; une limite partagée a pu contribuer aux 429.
 
 ## Limites
 
 - 32 cas, 1 à quelques réponses 200 par question : **aucune conclusion générale**. Une paire minimale ne représente pas sa règle.
-- Le fournisseur sature après ~6 à 9 appels enchaînés (429 `rate_limit_exceeded`, « upstream provider … high demand », `providerAttemptCount: 0`) ; les 503 viennent tous de `digitalocean`. L'objectif « ≥ 2 réponses 200 par question » n'est pas atteint partout (tableau de couverture ci-dessus).
+- Le fournisseur sature après ~6 à 9 appels enchaînés (429 `rate_limit_exceeded`, « upstream provider … high demand », `totalProviderAttemptCount: 0` pour 107 des 110) ; les 503 viennent tous de `digitalocean`. L'objectif « ≥ 2 réponses 200 par question » n'est pas atteint partout (tableau de couverture ci-dessus).
 - L'ordre des cas dans les lancements 3 à 6 a été choisi **après** avoir vu les premières réponses (priorité : cas sans réponse, puis réplication des non-conformités). Cela change **quels** cas ont 2 réponses, jamais les attentes ni la règle de lecture ; mais les cas répliqués sont surreprésentés parmi les non-conformités.
 - Lancement 3 parti **34 s** après le lancement 2 (< 60 s exigé) : écart de protocole de la fenêtre, 32 appels perdus en 429. Garde bloquante ajoutée ensuite (refus prouvé à 31 s et 51 s).
 - La consigne demande si la phrase est « orthographiquement correcte ». [HYPOTHÈSE] Jev peut juger une autre notion (plausibilité, fluidité) ; c'est précisément ce que la sonde cherche à exposer, mais la frontière n'est pas mesurée.
