@@ -1,15 +1,15 @@
 # CARNET DE BORD — instantané (1 minute)
 
-Dernière mise à jour : 2026-09-26T18:03:33+02:00 (orchestrateur) — vague 6 en vol
+Dernière mise à jour : 2026-09-26T21:03:45+02:00 (orchestrateur) — cap E008 addition
 
 ## Où on en est
 
-- `main` contient E001, E002, E002-bis, **E005**, doc v2.2 + GENESE.
-- Jev : **5 « faux et sûr » non contestés, répliqués 5/5** (E006) + 1 réponse contestée (question ambiguë, R008) ; E007 teste « Jev lit-il les règles ? ».
-- Candidats ACQUÉRIR : A0 1/4, A0-bis 0/4 → M0020 vérifie d'abord que le critère est **atteignable** (étalon oracle).
-- E003 : backend passerelle non contrôlé (défaut de protocole) → M0019 puis rejeu M0021 ; merge E003 bloqué d'ici là.
-- En vol : M0017 (F05) · M0018 · M0019 · R009 · M0020.
-- Décisions attendues de Malik : mention de son enfant dans GENESE (dépôt public) ; budget passerelle 5 $ (à poser, navigateur non connecté).
+- **Cap (Malik, 26/09 soir)** : fin des tests Jev. Cible = un modèle local qui **apprend une procédure** (addition : entraîné court, testé long), puis transfert, puis apprentissage continu. M1 16 Go, MLX.
+- Acquis Jev (clos) : 5 « faux et sûr » non contestés répliqués + 1 contesté (E006) ; Jev lit les règles partiellement (E007).
+- Leçon M0020 : notre critère ACQUÉRIR était inatteignable même par un oracle → **tout nouveau test prouve d'abord sa validité** (oracle réussit, par-cœur échoue).
+- En vol : M0021 E008 palier 0 (F01).
+- Non mergés en attente : E006 (re-doublage après M0018), E003 (rejeu annulé), A0/A0-bis (R009 réserve), A0-ter oracle, E007.
+- Décision attendue de Malik : mention de son enfant dans GENESE (dépôt public). Budget passerelle : 5 $ sur la clé unique, sans recharge.
 
 ## Références à ne pas toucher
 

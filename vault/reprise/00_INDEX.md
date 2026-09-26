@@ -2,7 +2,7 @@
 date: 2026-09-25
 tags: [reprise, sessions, tableau-de-bord]
 maintenu_par: orchestrateur
-derniere_maj: 2026-09-26T18:03:33+02:00
+derniere_maj: 2026-09-26T21:03:45+02:00
 ---
 
 # Tableau de bord — sessions du projet ev-llm
@@ -39,6 +39,13 @@ Exemple (à supprimer à la première entrée réelle) :
 - Symptôme d'origine rejoué avant/après ; tests re-mesurés par le doubleur, pas repris du rapport d'auteur.
 - Réserve non bloquante : <réserve nommée, ou « aucune »>.
 -->
+
+## 2026-09-26T21:03:45+02:00 — Vague 6 + **changement de cap** : critère ACQUÉRIR inatteignable même par un oracle (M0020) ; Jev arrêté ; E008 « addition » lancé
+
+- M0020 `395550e` : oracle-acquéreur 2/4 → **le critère ACQUÉRIR ne mesurait pas l'apprentissage** ; échecs A0/A0-bis non informatifs sur les candidats. R009 ⚠️ confirme les échecs (lecture A0-bis dépend d'une seule graine).
+- M0017 E007 : Jev lit les règles **partiellement**. M0018 : lecture E006 amendée (`ad54bd4`, re-doublage à faire). M0019 : fournisseur imposé E003 (`4e2b02b`, #19) ; rejeu E003 **annulé** (arrêt Jev).
+- Décision Malik 26/09 : fin des tests Jev ; cible = apprendre une **procédure** (généralisation), puis transfert, puis apprentissage continu, sur modèle local (M1 16 Go, MLX).
+- M0021 E008 palier 0 : validité du test (oracle / par-cœur) + références B-STD et B-REF (NoPE + inversé).
 
 ## 2026-09-26T18:03:33+02:00 — Vague 5 : **E005 mergé (R007 GO)** ; E006 en RÉSERVE (2 « faux et sûr » reclassés contestés) ; A0-bis échoue 0/4 ; défaut fournisseur E003 ; vague 6 posée
 
