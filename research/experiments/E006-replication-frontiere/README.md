@@ -4,7 +4,7 @@ Mandat M0011, 2026-09-26, branche `exp/e006-replication-frontiere` (partie de `o
 
 ## Hypothèses
 
-1. **Réplication** [HYPOTHÈSE] : les 6 « faux et sûr » d'E005 (1 à 2 réponses chacun) se reproduisent sur ≥ 5 réponses : F1-04 « se sont lavées les mains », F1-05 « se sont parlés », F1-08 « qu'elle a faites faire », F3-02 « Ci-jointe la facture » (attente à confirmer par R004), F4-01 (T1-A + distracteurs → `coherent`), F4-04 (A > F en 4 pas → nié).
+1. **Réplication** [HYPOTHÈSE] : les 6 « faux et sûr » d'E005 (1 à 2 réponses chacun) se reproduisent sur ≥ 5 réponses : F1-04 « se sont lavées les mains », F1-05 « se sont parlés », F1-08 « qu'elle a faites faire », F3-02 « Ci-jointe la facture » (attente non contestée, R004 l.54), F4-01 (T1-A + distracteurs → `coherent`), F4-04 (A > F en 4 pas → nié).
 2. **Frontière** [HYPOTHÈSE] : la déduction transitive se dégrade avec le nombre de pas, et la détection de contradiction de T1-A disparaît quand on ajoute des distracteurs.
 3. **Contamination** (issue #5, E004) [HYPOTHÈSE] : une contradiction présente **ailleurs** dans l'état fait baisser P(true) sur une déduction transitive indépendante (signal d'E001 : T1-A vs T1-B, `e_sup_d` 0.49–0.58 vs 0.73–0.78).
 
@@ -47,9 +47,9 @@ Agrégat `aggregate.py` (médianes, règle d'E001) : [`results/agregat-2026-09-2
 | F1-04 « se sont lavées les mains » | correcte | false | 0.84 / 0.85 | 0.83–0.85, méd. 0.84 | 5/5 | **oui** |
 | F1-05 « se sont parlés » | correcte | false | 0.80 | 0.83–0.87, méd. 0.84 | 5/5 | **oui** |
 | F1-08 « qu'elle a faites faire » | correcte | false | 0.86 | 0.86–0.87, méd. 0.86 | 5/5 | **oui** |
-| F3-02 « Ci-jointe la facture » | correcte | false (à confirmer, R004) | 0.86 | 0.83–0.86, méd. 0.85 | 5/5 | **oui** |
+| F3-02 « Ci-jointe la facture » | correcte | false (non contestée, R004 l.54) | 0.86 | 0.83–0.86, méd. 0.85 | 5/5 | **oui** |
 | F4-01 (T1-A + 3 distracteurs) | statut | contradiction | coherent 0.88 / 0.89 | coherent 0.85–0.92, méd. 0.91 | 5/5 | **oui** |
-| F4-04 (A > F, 4 pas) | a_sup_f | true | 0.15 / 0.19 | 0.13–0.37, méd. 0.20 | 5/5 | **oui** (médiane pile au seuil) |
+| F4-04 (A > F, 4 pas) | a_sup_f | true | 0.15 / 0.19 | 0.13–0.37, méd. 0.20 | 5/5 | **oui** (médiane pile au seuil) — **contesté** (ambiguïté de la question dans un ensemble contradictoire, R008 §4a) |
 
 ### P — paires minimales (forme correcte, 3 réponses)
 
@@ -87,10 +87,11 @@ Agrégat `aggregate.py` (médianes, règle d'E001) : [`results/agregat-2026-09-2
 
 ## Lecture
 
-1. **Les 6 « faux et sûr » d'E005 se répliquent.**
+1. **5 faux et sûr non contestés répliqués + 1 réponse contestée répliquée.**
    - [VÉRIFIÉ] 6/6 répliqués selon la règle préenregistrée : 30 appels, 30 non conformes. La dispersion par cas est faible : ≤ 0.04 sur les phrases, 0.07 sur F4-01. Sur F4-04, P va de 0.13 à 0.37 et la médiane (0.20) est exactement au seuil : 3 appels sur 5 seulement sont « faux et sûr ».
+   - R-F4-04 (`a_sup_f`) est **contesté (ambiguïté de la question dans un ensemble contradictoire, R008 §4a)** : la règle 2 dit « ni A > F », et « peut-on déduire A > F » admet la lecture « peut-on conclure valablement A > F », sous laquelle `false` est défendable. L'attente `true` et la règle mécanique d'`analyse.py` restent inchangées. [VÉRIFIÉ] La réponse est reproductible (5/5 non conformes). Elle ne compte plus comme erreur de déduction avérée. Compte après reclassement : **5 « faux et sûr » non contestés répliqués sur 5** (F1-04, F1-05, F1-08, F3-02, F4-01), **+ 1 réponse contestée répliquée** (F4-04).
    - [VÉRIFIÉ] F1-05, qui était pile au seuil dans E005 (0.80), est ici entre 0.83 et 0.87.
-   - [VÉRIFIÉ] F3-02 se réplique, mais son attente reste à confirmer par R004. Si R004 la déclare contestable, ce cas sort de la liste.
+   - [VÉRIFIÉ] F3-02 se réplique ; son attente est non contestée (R004 l.54).
 2. **Phrases : Jev préfère la forme fautive à la forme correcte, sur 2 paires sur 3.**
    - [VÉRIFIÉ] Sur « se sont lavé(es) les mains » et « a fait(es) faire », la forme correcte obtient une P(correcte) plus basse que la forme fautive (0.61 contre 0.84, et 0.67 contre 0.86). Sur « se sont parlé(s) », Jev juge les deux formes correctes (0.90 et 0.84) : il ne les distingue pas.
    - [HYPOTHÈSE] La forme accordée « a l'air » plus soignée. Jev noterait la plausibilité de surface, pas la règle d'accord. Ce n'est établi que sur 3 paires.
@@ -100,12 +101,12 @@ Agrégat `aggregate.py` (médianes, règle d'E001) : [`results/agregat-2026-09-2
    - [HYPOTHÈSE] Dans F4-04, Jev ne « perd » pas la chaîne. Il lit la règle 2 (« ni A > F ») comme une réponse à la question « peut-on déduire A > F ? ». La contradiction portant sur les **variables de la question** l'emporte sur la déduction.
 4. **Distracteurs : la détection de contradiction tombe dès le premier distracteur.**
    - [VÉRIFIÉ] Un seul fait redondant (A > C) fait passer le statut de `contradiction` (P 0.67–0.80) à `coherent` (3/3). P(contradiction) descend ensuite de façon monotone : 0.73, 0.34, 0.14, 0.08 pour 0, 1, 2 et 3 distracteurs.
-   - [VÉRIFIÉ] Avec 1 distracteur, Jev nie aussi E > D (0.16–0.21, médiane 0.18). C'est un nouveau « faux et sûr » à la médiane (L-DIS1 `e_sup_d`, 3 appels), non préenregistré comme cible. P(E > D) ne varie pas de façon monotone avec le nombre de distracteurs (0.60, 0.18, 0.40, 0.60).
+   - [VÉRIFIÉ] Avec 1 distracteur, Jev nie aussi E > D (0.16–0.21, médiane 0.18). Selon la règle mécanique, c'est un « faux et sûr » à la médiane (L-DIS1 `e_sup_d`, 3 appels), non préenregistré comme cible. Il est **contesté (ambiguïté de la question dans un ensemble contradictoire, R008 §4a)**, pour la même raison que R-F4-04 : ce n'est pas un nouveau « faux et sûr » avéré. P(E > D) ne varie pas de façon monotone avec le nombre de distracteurs (0.60, 0.18, 0.40, 0.60).
 5. **Contamination (E004) : non observée sur un sous-graphe indépendant.**
-   - [VÉRIFIÉ] Une contradiction dans un bloc de variables disjoint ne change pas P(true) sur la déduction : écart moyen −0.005, |écart| ≤ 0.012 sur 4 paires, 40/40 conformes. Cet écart est du même ordre que la dispersion entre appels d'un même cas (≤ 0.01 ici).
+   - [VÉRIFIÉ] Une contradiction dans un bloc de variables disjoint ne produit sur P(true) aucun effet de l'ordre de celui d'E001. Un décalage ≤ 0.012, négatif ou nul sur 4/4 paires, n'est pas exclu (4 paires, non testé statistiquement ; R008 §4b). Écart moyen −0.005, 40/40 conformes. Les 4 paires (moyenne P avec / sans) sont : C1 0.970 / 0.976, C2 0.970 / 0.972, C3 0.970 / 0.970, C4 0.948 / 0.960. Par appel, C1-avec donne [0.97 ×5] contre C1-sans [0.98, 0.97, 0.97, 0.98, 0.98]. C4-avec donne [0.94, 0.95 ×4] contre C4-sans [0.96 ×5] : aucun recouvrement sur C4.
    - [HYPOTHÈSE] Le signal d'E001 (T1-A contre T1-B) et l'effondrement de F4-04 portent tous deux sur des **variables partagées** entre la contradiction et la question. La contamination, si elle existe, serait **locale** (variables communes) et non **globale** (« l'état est contradictoire »). E006 n'a pas testé ce cas par paire contrôlée.
 
-**Attente que j'aurais eu envie de discuter après avoir vu Jev (non modifiée)** : pour R-F4-04 `a_sup_f` et L-DIS1 `e_sup_d`, on peut soutenir que « peut-on déduire A > F » est ambigu dans un ensemble contradictoire. La règle 2 interdit A > F, et la règle 1 l'impose. L'attente `true` est conservée : A > F découle de la règle 1 appliquée aux faits donnés. Mais la réponse de Jev a une lecture défendable, et cela affaiblit ces deux cas comme preuves d'une erreur de déduction.
+**Attente que j'aurais eu envie de discuter après avoir vu Jev (non modifiée)** : pour R-F4-04 `a_sup_f` et L-DIS1 `e_sup_d`, on peut soutenir que « peut-on déduire A > F » est ambigu dans un ensemble contradictoire. La règle 2 interdit A > F, et la règle 1 l'impose. L'attente `true` est conservée : A > F découle de la règle 1 appliquée aux faits donnés. Mais la réponse de Jev a une lecture défendable, et cela affaiblit ces deux cas comme preuves d'une erreur de déduction. **Tranché par R008 §4a** : ces deux cas sont reclassés « contestés » dans la Lecture (1 et 4) et dans le tableau R ; `analyse.md` reste la sortie de la règle mécanique préenregistrée.
 
 ## Limites
 
@@ -113,12 +114,13 @@ Agrégat `aggregate.py` (médianes, règle d'E001) : [`results/agregat-2026-09-2
 - Les réponses répétées sont très stables (souvent ±0.01) : 5 appels mesurent la **reproductibilité** de Jev sur une entrée, pas sa robustesse à la reformulation. Aucune paraphrase n'a été testée.
 - L-PAS : un seul ordre de faits par longueur (graine = k ; ordre de F4-04 pour k = 4). L-DIS : une seule suite de distracteurs, emboîtés, qui mêle deux natures (fait redondant, règle non pertinente, fait de couleur).
 - Les paires C testent seulement une contradiction **disjointe** de la question ; la contamination locale (variables partagées) n'est pas contrôlée par paire.
-- F3-02 : attente en cours de doublage (R004).
+- F3-02 : attente non contestée (R004 l.54).
 - États en français ; les deux fournisseurs (`typesafe-ai` ×100, `digitalocean` ×3) ne sont pas distingués.
 - Le rythme de 26 s a supprimé les 429 pendant cette fenêtre. [HYPOTHÈSE] Cela confirme la cause identifiée par M0008 (5 req/min par équipe), sans exclure une baisse de charge de la passerelle.
+- Leçon (R008) : une attente « peut-on déduire X » posée dans un ensemble contenant une règle qui interdit X est ambiguë par construction ; les corpus futurs préciseront le sens de « déduire ».
 
 ## Prochaine étape
 
 1. **E004 bis (contamination locale)** : paires contrôlées où la contradiction porte sur les variables de la question et d'autres où elle ne les touche pas, en variant la **forme** de la règle 2, pour séparer « règle lue comme réponse » et « contamination ».
-2. **Paraphrases** des 6 « faux et sûr » (autres verbes pour la même règle d'accord, autre formulation de consigne), pour savoir si l'erreur suit la règle ou la phrase.
+2. **Paraphrases** des 5 « faux et sûr » non contestés et du cas contesté (F4-04, avec un sens de « déduire » précisé) (autres verbes pour la même règle d'accord, autre formulation de consigne), pour savoir si l'erreur suit la règle ou la phrase.
 3. **Distracteurs** : ne faire varier qu'une nature de distracteur à la fois (faits redondants seuls, règles non pertinentes seules), avec plusieurs ordres.
