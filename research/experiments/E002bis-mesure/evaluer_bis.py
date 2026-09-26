@@ -2,6 +2,11 @@
 
 Usage : python3 evaluer_bis.py [--graines 1-20] [--sortie results]
 Réutilise evaluer.evaluer_monde d'E002 ; écrit results/<horodatage>/.
+
+Le chaînage d'E002 choisit la preuve d'un atome selon l'ordre d'itération
+d'ensembles de chaînes, donc selon PYTHONHASHSEED ; les prémisses que le
+plafond-vérificateur demande en dépendent. Le script se relance donc avec
+PYTHONHASHSEED=0 pour que deux exécutions soient identiques.
 """
 
 import argparse
@@ -112,6 +117,9 @@ def resume_md(res, mesure, graines, horodatage):
 
 
 def main(argv=None):
+    if os.environ.get("PYTHONHASHSEED") != "0":
+        os.execve(sys.executable, [sys.executable, os.path.abspath(__file__)] + sys.argv[1:],
+                  dict(os.environ, PYTHONHASHSEED="0"))
     ap = argparse.ArgumentParser()
     ap.add_argument("--graines", default="1-20")
     ap.add_argument("--sortie", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "results"))

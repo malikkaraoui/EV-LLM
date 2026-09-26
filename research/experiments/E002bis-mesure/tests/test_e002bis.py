@@ -1,6 +1,9 @@
+import glob
 import json
 import os
+import subprocess
 import sys
+import tempfile
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -90,6 +93,19 @@ class Determinisme(unittest.TestCase):
         b = json.dumps(evaluer_suite(ETALONS_BIS, [generer_monde(x) for x in (1, 6, 11, 16)]),
                        sort_keys=True, ensure_ascii=False)
         self.assertEqual(a, b)
+
+    def test_deux_processus_identiques(self):
+        """Garantie entre processus, quel que soit PYTHONHASHSEED ambiant."""
+        script = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "evaluer_bis.py")
+        sorties = []
+        with tempfile.TemporaryDirectory() as d:
+            for h in ("1", "2"):
+                sub = os.path.join(d, h)
+                subprocess.run([sys.executable, script, "--graines", "6-10", "--sortie", sub], check=True,
+                               stdout=subprocess.DEVNULL, env=dict(os.environ, PYTHONHASHSEED=h))
+                with open(glob.glob(os.path.join(sub, "*", "resultats.json"))[0], encoding="utf-8") as fh:
+                    sorties.append(fh.read())
+        self.assertEqual(sorties[0], sorties[1])
 
 
 if __name__ == "__main__":
