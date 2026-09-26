@@ -2,7 +2,7 @@
 date: 2026-09-25
 tags: [reprise, sessions, tableau-de-bord]
 maintenu_par: orchestrateur
-derniere_maj: 2026-09-26T17:08:23+02:00
+derniere_maj: 2026-09-26T17:32:59+02:00
 ---
 
 # Tableau de bord — sessions du projet ev-llm
@@ -39,6 +39,13 @@ Exemple (à supprimer à la première entrée réelle) :
 - Symptôme d'origine rejoué avant/après ; tests re-mesurés par le doubleur, pas repris du rapport d'auteur.
 - Réserve non bloquante : <réserve nommée, ou « aucune »>.
 -->
+
+## 2026-09-26T17:32:59+02:00 — Vague 4 : **E006 réplique les 6 « faux et sûr » de Jev** ; A0 échoue ACQUÉRIR (cause trouvée) ; doc v2.2 mergée ; vague 5 posée
+
+- M0011 E006 `57e0e41` : 6/6 répliqués (5/5 appels) ; forme **correcte** notée plus bas que la forme fautive sur 2/3 paires ; T1-A perd la contradiction dès 1 distracteur ; pas de pente 2–6 pas ; contamination disjointe nulle (|écart| ≤ 0.012). 103×200 à 26 s.
+- M0014 A0 `8a60250` : ÉCHEC ACQUÉRIR (1/4) ; meilleur système sans propriétés données (R̂_diff −0.011) ; déclencheur inerte (coût absolu vs R rapport) → A0-bis.
+- R006 GO → doc v2.2 + GENESE mergées (réserve : GENESE cite l'enfant de Malik — décision de Malik). R005 ⚠️ (raw.jsonl suivis) → M0015. M0013 → E005 corrigé `15487b0`.
+- Vague 5 : R007 (E005) · M0015 (E003) · R008 (E006, merge après E005) · M0016 A0-bis · M0017 E007 « Jev lit-il les règles ? ».
 
 ## 2026-09-26T17:08:23+02:00 — Vague 3 : E002-bis mergé (R003 GO), E005 CASSÉ sur un total (R004), E003 complet, doc v2.2 prête ; vague 4 posée
 

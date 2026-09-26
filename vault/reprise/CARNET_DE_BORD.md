@@ -1,13 +1,14 @@
 # CARNET DE BORD — instantané (1 minute)
 
-Dernière mise à jour : 2026-09-26T17:08:23+0200 (orchestrateur) — vague 4 en vol
+Dernière mise à jour : 2026-09-26T17:32:59+0200 (orchestrateur) — vague 5 en vol
 
 ## Où on en est
 
-- `main` = `8a5b865` — E001, E002, E002-bis mergés.
-- À doubler/merger : E003 `73cdc79` (R005) · doc v2.2 `bcfb722` (R006) · E005 après correctif (M0013 → re-doublage).
-- En vol : M0011 E006 (réplication + contamination, API) · M0013 · R005 · R006 · **M0014 A0 premier candidat**.
-- Point pour Malik : GENESE (public) mentionne son enfant — décision à prendre.
+- `main` = `a1231e5` — E001, E002, E002-bis, doc v2.2 + GENESE mergés.
+- Résultat solide : Jev **faux et sûr** sur 6 questions, répliqué 5/5 (E006) ; hypothèse « plausibilité de surface » testée par E007.
+- Candidat A0 : échec ACQUÉRIR, cause identifiée → A0-bis.
+- En vol : R007 · M0015 · R008 · M0016 · M0017.
+- Décision attendue de Malik : mention de son enfant dans GENESE (dépôt public).
 
 ## Références à ne pas toucher
 
