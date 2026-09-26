@@ -205,5 +205,90 @@ class RunItemsTest(unittest.TestCase):
         self.assertEqual((len(recs), arret), (3, "budget"))
 
 
+class Amendement2Test(unittest.TestCase):
+    """Rythmeur (horodatages mockes), selection des manquants, max_tokens de LLM-2."""
+
+    case = {"id": "C", "famille": "f", "state": "s", "questions": {"q": BOOL_Q},
+            "attendu": {"q": True}}
+
+    def run_rhythm(self, n, min_interval, last_call=None, call_s=2.0):
+        now = [1000.0]
+        sleeps = []
+
+        def clock():
+            return now[0]
+
+        def sleeper(s):
+            sleeps.append(s)
+            now[0] += s
+
+        def fake_call(key, body):
+            now[0] += call_s  # duree de l'appel
+            return 200, call_s * 1000, '{"choices":[{"message":{"content":"{}"}}]}', None
+        with mock.patch.object(run_llm, "call", fake_call), \
+                mock.patch("sys.stdout", io.StringIO()):
+            items = run_llm.build_items([self.case], n, run_llm.MODELS[:1])
+            recs, arret = run_llm.run_items("k", items, 70, io.StringIO(), min_interval,
+                                            last_call, clock=clock, sleeper=sleeper)
+        return recs, sleeps
+
+    def test_rhythm_spaces_call_starts(self):
+        recs, sleeps = self.run_rhythm(4, 26.0)
+        self.assertEqual(sleeps, [24.0, 24.0, 24.0])
+        self.assertEqual([r["interval_s"] for r in recs], [None, 26.0, 26.0, 26.0])
+
+    def test_rhythm_uses_previous_launch(self):
+        recs, sleeps = self.run_rhythm(1, 26.0, last_call=990.0)
+        self.assertEqual(sleeps, [16.0])
+        self.assertEqual(recs[0]["interval_s"], 26.0)
+        recs, sleeps = self.run_rhythm(1, 26.0, last_call=900.0)  # deja loin : pas d'attente
+        self.assertEqual((sleeps, recs[0]["interval_s"]), ([], 100.0))
+
+    def test_no_rhythm_by_default(self):
+        recs, sleeps = self.run_rhythm(3, 0.0)
+        self.assertEqual(sleeps, [])
+
+    def test_only_missing_selection(self):
+        cases = [self.case]
+        m1, m2 = run_llm.MODELS[0]["model"], run_llm.MODELS[1]["model"]
+
+        def rec(model_id, rep, status, content):
+            return {"model_id": model_id, "case_id": "C", "question": "q", "rep": rep,
+                    "http_status": status, "ts": "2026-09-26T16:00:0{}+02:00".format(rep),
+                    "response": {"content": content} if content is not None else None}
+        records = [rec(m1, 1, 200, '{"reponse": true, "confiance": 0.9}'),   # repondu
+                   rec(m1, 2, 429, None),                                   # manquant
+                   rec(m1, 3, 200, '{'),                                    # tronque
+                   rec(m2, 1, 200, '{"reponse": false, "confiance": 1}'),   # repondu
+                   rec(m2, 2, 200, '{"reponse": true, "confiance": 1}'),    # repondu
+                   rec("autre/modele", 3, 200, '{"reponse": true, "confiance": 1}')]
+        done = run_llm.answered_keys(cases, records)
+        self.assertEqual(done, {(m1, "C", "q", 1), (m2, "C", "q", 1), (m2, "C", "q", 2),
+                                ("autre/modele", "C", "q", 3)})
+        items = run_llm.build_items(cases, 3, run_llm.MODELS, frozenset(done))
+        self.assertEqual([(i["model"]["model"], i["rep"]) for i in items],
+                         [(m1, 2), (m1, 3), (m2, 3)])
+        self.assertEqual(run_llm.last_call_epoch(records),
+                         run_llm.datetime.fromisoformat("2026-09-26T16:00:03+02:00").timestamp())
+
+    def test_load_records_from_dirs(self):
+        with tempfile.TemporaryDirectory() as d:
+            for i, sub in enumerate(("a", "b")):
+                (Path(d) / sub).mkdir()
+                (Path(d) / sub / "raw.jsonl").write_text(
+                    json.dumps({"i": i}) + "\n\n", encoding="utf-8")
+            recs = run_llm.load_records([Path(d) / "a", Path(d) / "b"])
+        self.assertEqual(recs, [{"i": 0}, {"i": 1}])
+
+    def test_max_tokens_llm2_only(self):
+        models = run_llm.with_llm2_max_tokens(run_llm.MODELS, 1200)
+        b1 = run_llm.build_body(models[0], "s", BOOL_Q)
+        b2 = run_llm.build_body(models[1], "s", BOOL_Q)
+        self.assertEqual((b1["max_tokens"], b2["max_tokens"]), (400, 1200))
+        self.assertEqual(b2["reasoning"], {"effort": "low"})
+        self.assertIsNone(run_llm.MODELS[1]["extra"].get("max_tokens"))  # MODELS intact
+        self.assertIs(run_llm.with_llm2_max_tokens(run_llm.MODELS, None), run_llm.MODELS)
+
+
 if __name__ == "__main__":
     unittest.main()

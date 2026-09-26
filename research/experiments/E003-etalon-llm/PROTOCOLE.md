@@ -148,3 +148,46 @@ que LLM-1.
 **Budget.** 2 appels M0006 + 3 pilotes = 5 consommés. Évaluation : 60 appels, plafond
 `--max-calls 65` (total ≤ 70, budget initial ; ≤ 66 pour l'évaluation, consigne M0008).
 Plafond atteint → STOP partiel.
+
+## Amendement 2 (26/09) — LLM-2 non tronqué, appels rythmés, T2 inclus
+
+Mandat M0010. Committé **avant** le premier appel d'évaluation de ce mandat. `cases.json`, le prompt,
+le parse strict, la règle conforme / faux et sûr, les modèles et les autres réglages
+(`temperature: 0`, `response_format: json_object`, `reasoning: {"effort": "low"}` pour LLM-2)
+sont **inchangés**.
+
+**Raisons** (constats M0008, `results/2026-09-26T161619+0200/`) :
+- [VÉRIFIÉ] 12 des 13 réponses 200 de LLM-2 ont `finish_reason: length` : le raisonnement prend
+  380 à 384 des 400 tokens de sortie et le contenu s'arrête sur `{`.
+- [VÉRIFIÉ] 37 des 65 appels ont reçu HTTP 429 « this team's limit of 5 requests per minute
+  (per region) ». La relance sans attente refait un 429 dans la même minute.
+
+**Changements.**
+1. **`max_tokens` de LLM-2 : 1200** (option `--max-tokens-llm2 1200`). LLM-1 reste à 400.
+   Pilote hors évaluation (même énoncé pilote, `pilot/2026-09-26T164042+0200/`) : [VÉRIFIÉ]
+   HTTP 200, `finish_reason: stop`, `{"reponse": true, "confiance": 1}` passe le parse strict,
+   204 tokens de raisonnement sur 223 de sortie. L'effort de raisonnement reste `low` (réglage
+   déjà préenregistré). [HYPOTHÈSE] 1200 laisse une marge d'environ 3 fois le raisonnement
+   observé en M0008 (≈ 384) ; une réponse encore tronquée compte `NON_PARSE`, sans correction.
+2. **Rythmeur interne** (option `--min-interval 26`) : au moins **26 s** entre les débuts de
+   deux appels, y compris d'un lancement au suivant (dernier `ts` des dossiers lus). Une autre
+   fenêtre appelle la même passerelle : 2 × 60/26 ≈ 4,6 requêtes par minute, sous la limite de 5.
+   L'intervalle réel est journalisé (`interval_s` dans `raw.jsonl`).
+3. **Seuls les manquants sont rejoués** (option `--only-missing <dossiers>`) : un élément
+   (modèle, cas, question, répétition) déjà en HTTP 200 **parsable** dans les dossiers donnés
+   n'est pas rejoué. Les dossiers donnés sont `results/2026-09-26T161619+0200/` (M0008) et les
+   lancements M0010 précédents. Les 15 réponses parsées de LLM-1 et la réponse parsée de LLM-2
+   (T1-C `a_sup_c`, répétition 1, obtenue à `max_tokens` 400, `finish_reason: stop`) sont
+   conservées : elles ne dépendent pas du changement de `max_tokens` (LLM-1 inchangé ; pour LLM-2,
+   seule la troncature change, et cette réponse n'était pas tronquée). Les réponses tronquées de
+   M0008 restent au journal comme `NON_PARSE` historiques ; leur élément est rejoué.
+4. **Lancements de 8 appels au plus** (`--max-calls 8`), enchaînés jusqu'à ce que la file soit vide.
+5. **T2 inclus** : la file couvre les 10 questions × 3 répétitions × 2 modèles (60 éléments).
+6. **Résumé consolidé** sans appel : `--summarize-dirs <dossiers>` → `results/consolide/`.
+   Par (modèle, cas, question), il agrège toutes les réponses finales des dossiers ; la règle
+   de lecture est celle ci-dessus, inchangée.
+
+**Budget.** Manquants au départ (calcul hors ligne sur le dossier M0008) : 44 éléments
+(LLM-1 15, LLM-2 29). **Budget dur M0010 : ≤ 50 appels nouveaux**, pilote compris
+(1 pilote + 44 + au plus 5 relances). Un 429 malgré le rythme est noté ; au-delà du budget :
+STOP partiel. 401/403/404 : STOP.

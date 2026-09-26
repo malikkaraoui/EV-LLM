@@ -10,6 +10,10 @@ Securite (depot PUBLIC) :
 - apres ecriture, tous les fichiers produits sont relus : si la cle y figure, ils sont
   ecrases par "FUITE DETECTEE" et le script sort en code 3.
 
+Amendement 2 (M0010) : --min-interval (rythmeur interne, limite fournisseur de 5 req/min),
+--only-missing (ne rejoue que les elements sans reponse 200 parsable dans des dossiers donnes),
+--max-tokens-llm2 (max_tokens de LLM-2 seul), --summarize-dirs (resume consolide, zero appel).
+
 Codes de sortie : 0 = tous les elements en HTTP 200 ; 1 = au moins un element sans 200 ;
 2 = cle absente ; 3 = fuite detectee ; 4 = arret sur 401/403/404 ; 5 = plafond d'appels atteint.
 """
@@ -64,6 +68,46 @@ PROMPT = (
 def pilot_models(model_id):
     """Candidat LLM-2 pour un pilote (Amendement 1) : memes reglages que LLM-2."""
     return {"label": "LLM-2", "model": model_id, "extra": dict(MODELS[1]["extra"])}
+
+
+def with_llm2_max_tokens(models, max_tokens):
+    """Amendement 2 : max_tokens propre a LLM-2 (None = inchange). Les autres modeles intacts."""
+    if max_tokens is None:
+        return models
+    out = []
+    for m in models:
+        if m["label"] == "LLM-2":
+            m = dict(m, extra=dict(m["extra"], max_tokens=max_tokens))
+        out.append(m)
+    return out
+
+
+def load_records(dirs):
+    """Enregistrements raw.jsonl des dossiers donnes (ordre des dossiers, puis des lignes)."""
+    records = []
+    for d in dirs:
+        with (Path(d) / "raw.jsonl").open(encoding="utf-8") as f:
+            records += [json.loads(line) for line in f if line.strip()]
+    return records
+
+
+def answered_keys(cases, records):
+    """(model_id, cas, question, repetition) ayant deja une reponse HTTP 200 parsable."""
+    questions = {(c["id"], qid): q for c in cases for qid, q in c["questions"].items()}
+    done = set()
+    for r in records:
+        q = questions.get((r.get("case_id"), r.get("question")))
+        if q is None or r.get("http_status") != 200 or not r.get("response"):
+            continue
+        if parse_answer(r["response"].get("content"), q)[2] is None:
+            done.add((r["model_id"], r["case_id"], r["question"], r["rep"]))
+    return done
+
+
+def last_call_epoch(records):
+    """Horodatage (epoch s) du dernier appel journalise, ou None."""
+    stamps = [datetime.fromisoformat(r["ts"]).timestamp() for r in records if r.get("ts")]
+    return max(stamps) if stamps else None
 
 
 def load_key(env_file):
@@ -269,14 +313,21 @@ def leak_guard(out_dir, key):
     return leaked
 
 
-def build_items(cases, reps, models=MODELS):
+def build_items(cases, reps, models=MODELS, skip=frozenset()):
+    """File des elements ; skip = cles (model_id, cas, question, rep) deja repondues."""
     return deque({"model": m, "case": c, "qid": qid, "rep": rep, "attempt": 0}
                  for m in models for c in cases for qid in c["questions"]
-                 for rep in range(1, reps + 1))
+                 for rep in range(1, reps + 1)
+                 if (m["model"], c["id"], qid, rep) not in skip)
 
 
-def run_items(key, items, max_calls, raw):
-    """Execute la file. Retourne (records, arret) ; arret in (None, 'stop_http', 'budget')."""
+def run_items(key, items, max_calls, raw, min_interval=0.0, last_call=None,
+              clock=time.time, sleeper=time.sleep):
+    """Execute la file. Retourne (records, arret) ; arret in (None, 'stop_http', 'budget').
+
+    min_interval (Amendement 2) : ecart minimal en secondes entre les debuts de deux appels,
+    y compris avec last_call (epoch du dernier appel d'un lancement precedent). 0 = pas d'attente.
+    """
     records, n_calls = [], 0
     while items:
         if n_calls >= max_calls:
@@ -284,6 +335,13 @@ def run_items(key, items, max_calls, raw):
         it = items.popleft()
         q = it["case"]["questions"][it["qid"]]
         body = build_body(it["model"], it["case"]["state"], q)
+        if min_interval > 0 and last_call is not None:
+            wait = min_interval - (clock() - last_call)
+            if wait > 0:
+                sleeper(wait)
+        start = clock()
+        interval = None if last_call is None else round(start - last_call, 1)
+        last_call = start
         ts = datetime.now().astimezone().isoformat(timespec="seconds")
         status, lat, text, error = call(key, body)
         n_calls += 1
@@ -292,7 +350,7 @@ def run_items(key, items, max_calls, raw):
         rec = {"label": it["model"]["label"], "model_id": it["model"]["model"],
                "case_id": it["case"]["id"], "question": it["qid"], "rep": it["rep"],
                "attempt": it["attempt"], "final": not retry, "ts": ts, "http_status": status,
-               "latency_ms": lat, "request_body": body,
+               "latency_ms": lat, "interval_s": interval, "request_body": body,
                "response": filter_response(status, text) if text is not None else None}
         if error is not None:
             rec["error"] = error
@@ -318,7 +376,18 @@ def main():
     ap.add_argument("--pilot", action="store_true", help="un appel par modele, hors cases.json")
     ap.add_argument("--pilot-model", default=None,
                     help="avec --pilot : un seul appel, LLM-2 remplace par ce modele (Amendement 1)")
+    ap.add_argument("--min-interval", type=float, default=0.0,
+                    help="secondes minimales entre deux appels (Amendement 2 ; 0 = aucune attente)")
+    ap.add_argument("--only-missing", nargs="+", default=None, metavar="DOSSIER",
+                    help="ne rejoue que les elements sans reponse 200 parsable dans ces dossiers")
+    ap.add_argument("--max-tokens-llm2", type=int, default=None,
+                    help="max_tokens de LLM-2 seul (Amendement 2 ; defaut : {})".format(MAX_TOKENS))
+    ap.add_argument("--summarize-dirs", nargs="+", default=None, metavar="DOSSIER",
+                    help="aucun appel : resume consolide des raw.jsonl de ces dossiers")
     args = ap.parse_args()
+
+    if args.summarize_dirs:
+        return summarize_dirs(args)
 
     key = load_key(args.env_file)
     if not key:
@@ -331,17 +400,27 @@ def main():
             print("--pilot-model exige --pilot", file=sys.stderr)
             return 2
         models = [pilot_models(args.pilot_model)]
+    models = with_llm2_max_tokens(models, args.max_tokens_llm2)
     cases_bytes = Path(args.cases).read_bytes()
     if args.pilot:
         cases, reps, sub = [PILOT_CASE], 1, "pilot"
     else:
         cases, reps, sub = json.loads(cases_bytes.decode("utf-8"))["cases"], args.reps, "results"
 
+    skip, last_call = frozenset(), None
+    if args.only_missing:
+        previous = load_records(args.only_missing)
+        skip, last_call = frozenset(answered_keys(cases, previous)), last_call_epoch(previous)
+    items = build_items(cases, reps, models, skip)
+    n_items = len(items)
+    print("elements a jouer : {} (deja repondus : {})".format(n_items, len(skip)))
+
     run_id = datetime.now().astimezone().strftime("%Y-%m-%dT%H%M%S%z")
     out_dir = HERE / sub / run_id
     out_dir.mkdir(parents=True, exist_ok=False)
     with (out_dir / "raw.jsonl").open("w", encoding="utf-8") as raw:
-        records, arret = run_items(key, build_items(cases, reps, models), args.max_calls, raw)
+        records, arret = run_items(key, items, args.max_calls, raw,
+                                   args.min_interval, last_call)
 
     statuts = {}
     for r in records:
@@ -349,6 +428,8 @@ def main():
     rows = summarize(cases, records, models)
     meta = {"run_id": run_id, "endpoint": ENDPOINT, "reps": reps, "pilot": args.pilot,
             "models": models, "max_tokens": MAX_TOKENS, "max_calls": args.max_calls,
+            "min_interval_s": args.min_interval, "only_missing": args.only_missing,
+            "n_elements_a_jouer": n_items, "n_deja_repondus": len(skip),
             "cases_sha256": hashlib.sha256(cases_bytes).hexdigest(),
             "n_appels": len(records), "statuts_http": statuts, "arret": arret}
     (out_dir / "summary.json").write_text(
@@ -368,6 +449,34 @@ def main():
         return 5
     finals = [r for r in records if r["final"]]
     return 0 if all(r["http_status"] == 200 for r in finals) else 1
+
+
+def summarize_dirs(args):
+    """Resume consolide (zero appel) : toutes les reponses finales des dossiers donnes.
+
+    Seuls les modeles d'evaluation (MODELS) sont gardes ; le max_tokens reellement envoye
+    reste lisible dans chaque request_body. Ecrit results/consolide/summary.{json,md}.
+    """
+    cases_bytes = Path(args.cases).read_bytes()
+    cases = json.loads(cases_bytes.decode("utf-8"))["cases"]
+    records = load_records(args.summarize_dirs)
+    ids = {m["model"] for m in MODELS}
+    records = [r for r in records if r["model_id"] in ids]
+    statuts = {}
+    for r in records:
+        statuts[str(r["http_status"])] = statuts.get(str(r["http_status"]), 0) + 1
+    rows = summarize(cases, records)
+    meta = {"run_id": "consolide", "dossiers": args.summarize_dirs, "reps": args.reps,
+            "cases_sha256": hashlib.sha256(cases_bytes).hexdigest(),
+            "n_appels": len(records), "statuts_http": statuts}
+    out = HERE / "results" / "consolide"
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "summary.json").write_text(
+        json.dumps({"meta": meta, "rows": rows}, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8")
+    (out / "summary.md").write_text(summary_md(rows, meta), encoding="utf-8")
+    print("resume consolide : {} · appels : {} · statuts : {}".format(out, len(records), statuts))
+    return 0
 
 
 if __name__ == "__main__":
