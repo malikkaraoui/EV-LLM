@@ -2,7 +2,7 @@
 date: 2026-09-25
 tags: [reprise, sessions, tableau-de-bord]
 maintenu_par: orchestrateur
-derniere_maj: 2026-09-26T16:14:20+02:00
+derniere_maj: 2026-09-26T16:38:48+02:00
 ---
 
 # Tableau de bord — sessions du projet ev-llm
@@ -39,6 +39,13 @@ Exemple (à supprimer à la première entrée réelle) :
 - Symptôme d'origine rejoué avant/après ; tests re-mesurés par le doubleur, pas repris du rapport d'auteur.
 - Réserve non bloquante : <réserve nommée, ou « aucune »>.
 -->
+
+## 2026-09-26T16:38:48+02:00 — Vague 2 rendue : E001+E002 mergés (GO), mesure E002 réparée, **premiers « faux et sûr » de Jev** ; vague 3 posée
+
+- R001 GO → E001 mergé ; R002 GO → E002 mergé (`main` contient 7e953a9 et 1cb586b ; `main` = df79ad6).
+- M0007 E002-bis `d35af60` : plafond-vérificateur R > 0 sur 20/20 — mesure réparée. M0008 E003 `01f3c8f` partiel : 429 = **limite passerelle 5 req/min/équipe** ; LLM-2 tronqué ; LLM-1 faux et sûr sur T1-A `e_sup_d`.
+- **M0009 E005 `08d80f7` : Jev faux et sûr sur 6 questions** (accords pronominaux, « fait faire », « ci-jointe » à confirmer, contradiction masquée par distracteurs, chaîne de 4 pas) — 1 à 2 réponses chacune, à répliquer.
+- Vague 3 : R003 (E002-bis), R004 (E005 + vérif grammaticale), M0010 (E003 rythmé), M0011 (E006 réplication + contamination E004), M0012 (doc v2.2 + GENESE).
 
 ## 2026-09-26T16:14:20+02:00 — Vague 1 rendue (M0003–M0006) ; vague 2 posée (R001, R002, M0007–M0009)
 

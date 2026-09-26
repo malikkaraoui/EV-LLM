@@ -1,12 +1,14 @@
 # CARNET DE BORD — instantané (1 minute)
 
-Dernière mise à jour : 2026-09-26T16:14:20+0200 (orchestrateur) — vague 2 en vol (5 fenêtres)
+Dernière mise à jour : 2026-09-26T16:38:48+0200 (orchestrateur) — vague 3 en vol (5 fenêtres)
 
 ## Où on en est
 
-- `main` = `436c8fa`. Branches : `exp/e001-sonde-jev` 7e953a9 (E001 complet) · `exp/e002-relations-opaques` 1cb586b · `exp/e003-etalon-llm` af117ab.
-- En vol : F01/R001 doublage+merge E001 · F02/R002 doublage+merge E002 · F03/M0007 E002-bis · F04/M0008 E003 relance · F05/M0009 E005.
-- Suivi : issues GitHub #1–#17 (`vault/notes/2026-09-26-issues-github.md`).
+- `main` = `df79ad6` — E001 et E002 mergés (R001, R002 GO).
+- Branches à doubler : `exp/e002bis-mesure` d35af60 · `exp/e005-jev-hors-distribution` 08d80f7 · `exp/e003-etalon-llm` 01f3c8f (partiel).
+- Résultat marquant : Jev **faux et sûr** sur 6 questions hors distribution (E005, à répliquer — E006).
+- En vol : R003 · R004 · M0010 E003 rythmé · M0011 E006 · M0012 doc v2.2.
+- Contrainte : passerelle AI Gateway = 5 req/min/équipe → rythmeur ≥ 26 s par fenêtre (2 fenêtres API max).
 
 ## Références à ne pas toucher
 
