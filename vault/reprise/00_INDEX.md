@@ -2,7 +2,7 @@
 date: 2026-09-25
 tags: [reprise, sessions, tableau-de-bord]
 maintenu_par: orchestrateur
-derniere_maj: 2026-09-25T21:30:40+02:00
+derniere_maj: 2026-09-26T10:28:42+02:00
 ---
 
 # Tableau de bord — sessions du projet ev-llm
@@ -39,6 +39,19 @@ Exemple (à supprimer à la première entrée réelle) :
 - Symptôme d'origine rejoué avant/après ; tests re-mesurés par le doubleur, pas repris du rapport d'auteur.
 - Réserve non bloquante : <réserve nommée, ou « aucune »>.
 -->
+
+## 2026-09-26T10:28:42+02:00 — M0002 (F01) posé : rejeu E001 après carte Vercel, en attente de rendu
+
+- Mandat : `vault/echanges/F01.md` ; branche `exp/e001-sonde-jev` (tip `2719279`), même worktree ; `cases.json` figé (sha256 `8325775b…`).
+- Publication : `raw.public.jsonl` sans en-têtes de réponse ; `raw.jsonl` gitignoré.
+- Archive M0001 : `vault/echanges/archive/2026-09-25-F01-M0001-e001-sonde-jev.md`.
+
+## 2026-09-25T21:46:59+02:00 — M0001 (F01) : BLOCKED propre, sonde Jev construite mais 403 facturation Vercel sur 21/21 appels
+
+- Rapport : `vault/echanges/F01.md` § Rapport M0001 ; branche `exp/e001-sonde-jev` tip `2719279` (non doublée, non mergée).
+- Livré : `.env` ignoré par `.gitignore`, `run.py` stdlib + garde anti-fuite testée hors ligne, `cases.json` sha256 `8325775b…` figé.
+- Bloquant : `customer_verification_required` — carte à enregistrer sur Vercel (geste Malik), puis rejeu à l'identique (nouveau dossier results/).
+- Réserve orchestrateur : l'accès réel n'a pas été testé à la pose (contradiction « Free » / « $0.042 » vue et non creusée).
 
 ## 2026-09-25T21:30:40+02:00 — M0001 (F01) posé : sonde Jev e001, en attente de rendu
 
