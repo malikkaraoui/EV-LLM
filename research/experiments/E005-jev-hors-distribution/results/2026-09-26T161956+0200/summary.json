@@ -1,0 +1,457 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T161956+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": 1,
+    "cases_sha256": "4037b738438118b3d8dd786362c5c07db876d7529583c02f7f9fb9add9135c16",
+    "n_appels": 20,
+    "n_http_200": 8
+  },
+  "rows": [
+    {
+      "case_id": "F4-01",
+      "famille": "F4-logique-distracteurs",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 744.3,
+      "obtenu": "coherent",
+      "p": 0.88,
+      "stabilite": [
+        0.88,
+        0.88
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "F4-01",
+      "famille": "F4-logique-distracteurs",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 744.3,
+      "obtenu": true,
+      "p": 0.64,
+      "stabilite": [
+        0.64,
+        0.64
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "F4-02",
+      "famille": "F4-logique-distracteurs",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "coherent",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 394.4,
+      "obtenu": "coherent",
+      "p": 0.98,
+      "stabilite": [
+        0.98,
+        0.98
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "F4-02",
+      "famille": "F4-logique-distracteurs",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 394.4,
+      "obtenu": true,
+      "p": 0.95,
+      "stabilite": [
+        0.95,
+        0.95
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "F4-03",
+      "famille": "F4-logique-distracteurs",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "indetermine",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 595.0,
+      "obtenu": "coherent",
+      "p": 0.76,
+      "stabilite": [
+        0.76,
+        0.76
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "F4-03",
+      "famille": "F4-logique-distracteurs",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 595.0,
+      "obtenu": true,
+      "p": 0.81,
+      "stabilite": [
+        0.81,
+        0.81
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "F4-04",
+      "famille": "F4-logique-4-pas",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 424.9,
+      "obtenu": "coherent",
+      "p": 0.57,
+      "stabilite": [
+        0.57,
+        0.57
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "F4-04",
+      "famille": "F4-logique-4-pas",
+      "question": "a_sup_f",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 424.9,
+      "obtenu": false,
+      "p": 0.15,
+      "stabilite": [
+        0.15,
+        0.15
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "F4-05",
+      "famille": "F4-logique-4-pas",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "coherent",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 340.9,
+      "obtenu": "coherent",
+      "p": 0.92,
+      "stabilite": [
+        0.92,
+        0.92
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "F4-05",
+      "famille": "F4-logique-4-pas",
+      "question": "a_sup_f",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 340.9,
+      "obtenu": false,
+      "p": 0.04,
+      "stabilite": [
+        0.04,
+        0.04
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "F3-01",
+      "famille": "F3-juste-atypique",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 623.4,
+      "obtenu": true,
+      "p": 0.92,
+      "stabilite": [
+        0.92,
+        0.92
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "F3-02",
+      "famille": "F3-juste-atypique",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 401.0,
+      "obtenu": true,
+      "p": 0.86,
+      "stabilite": [
+        0.86,
+        0.86
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "F3-03",
+      "famille": "F3-juste-atypique",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 361.8,
+      "obtenu": true,
+      "p": 0.89,
+      "stabilite": [
+        0.89,
+        0.89
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "F3-04",
+      "famille": "F3-juste-atypique",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "F3-05",
+      "famille": "F3-juste-atypique",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "F3-06",
+      "famille": "F3-juste-atypique",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "F2-06",
+      "famille": "F2-homophones-rares",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "F2-07",
+      "famille": "F2-homophones-rares",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "F2-08",
+      "famille": "F2-homophones-rares",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "F5-01",
+      "famille": "F5-controle-trivial",
+      "question": "x_sup_z",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "F5-01",
+      "famille": "F5-controle-trivial",
+      "question": "z_sup_x",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "F5-02",
+      "famille": "F5-controle-trivial",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "F5-03",
+      "famille": "F5-controle-trivial",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "F1-04",
+      "famille": "F1-accords-rares",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "F1-05",
+      "famille": "F1-accords-rares",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "F1-08",
+      "famille": "F1-accords-rares",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    }
+  ]
+}

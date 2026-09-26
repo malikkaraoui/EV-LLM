@@ -1,0 +1,541 @@
+{
+  "preregistre_le": "2026-09-26",
+  "note": "E005 (M0009). Attentes fixees par la fenetre F05 AVANT tout appel, relues deux fois. Ne jamais modifier apres lancement : un ecart est un resultat. Consigne boolean identique a E001 ; format logique identique a T1.",
+  "cases": [
+    {
+      "id": "F1-01",
+      "famille": "F1-accords-rares",
+      "state": "Phrase ecrite par un eleve : « Les pommes qu'il a mangées étaient délicieuses. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "PP avec avoir, COD « qu' » (= les pommes) antéposé : accord fém. plur."
+    },
+    {
+      "id": "F1-02",
+      "famille": "F1-accords-rares",
+      "state": "Phrase ecrite par un eleve : « Les pommes qu'il a mangé étaient délicieuses. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "Même phrase sans l'accord exigé par le COD antéposé."
+    },
+    {
+      "id": "F1-03",
+      "famille": "F1-accords-rares",
+      "state": "Phrase ecrite par un eleve : « Elles se sont lavé les mains avant le repas. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "Pronominal : COD « les mains » postposé, « se » est COI : PP invariable."
+    },
+    {
+      "id": "F1-04",
+      "famille": "F1-accords-rares",
+      "state": "Phrase ecrite par un eleve : « Elles se sont lavées les mains avant le repas. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "Même phrase : l'accord avec « se » (COI) est fautif."
+    },
+    {
+      "id": "F1-05",
+      "famille": "F1-accords-rares",
+      "state": "Phrase ecrite par un eleve : « Ils se sont parlés pendant des heures. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "Parler à quelqu'un : « se » est COI, PP invariable (« se sont parlé »)."
+    },
+    {
+      "id": "F1-06",
+      "famille": "F1-accords-rares",
+      "state": "Phrase ecrite par un eleve : « Elles se sont succédé à la tribune. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "Succéder à quelqu'un : « se » est COI, PP invariable."
+    },
+    {
+      "id": "F1-07",
+      "famille": "F1-accords-rares",
+      "state": "Phrase ecrite par un eleve : « Les robes qu'elle a fait faire sont superbes. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "« fait » suivi d'un infinitif est toujours invariable."
+    },
+    {
+      "id": "F1-08",
+      "famille": "F1-accords-rares",
+      "state": "Phrase ecrite par un eleve : « Les robes qu'elle a faites faire sont superbes. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "« fait » + infinitif ne s'accorde jamais."
+    },
+    {
+      "id": "F1-09",
+      "famille": "F1-accords-rares",
+      "state": "Phrase ecrite par un eleve : « Les enfants que j'ai laissé partir sont rentrés. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "« laissé » + infinitif invariable (rectifications 1990) ; forme admise."
+    },
+    {
+      "id": "F1-10",
+      "famille": "F1-accords-rares",
+      "state": "Phrase ecrite par un eleve : « Les fortes chaleurs qu'il a faites cet été ont épuisé tout le monde. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "« il a fait » impersonnel : PP invariable (« qu'il a fait »)."
+    },
+    {
+      "id": "F2-01",
+      "famille": "F2-homophones-rares",
+      "state": "Phrase ecrite par un eleve : « Quelle que soit ta décision, je te soutiendrai. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "« quel que » + être, « quel » accordé au sujet « décision »."
+    },
+    {
+      "id": "F2-02",
+      "famille": "F2-homophones-rares",
+      "state": "Phrase ecrite par un eleve : « Quelque soit ta décision, je te soutiendrai. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "Devant le verbe être : « quel(le) que », jamais « quelque »."
+    },
+    {
+      "id": "F2-03",
+      "famille": "F2-homophones-rares",
+      "state": "Phrase ecrite par un eleve : « Je ne sais pas qu'elle heure il est. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "Déterminant interrogatif « quelle » (heure), pas « qu'elle »."
+    },
+    {
+      "id": "F2-04",
+      "famille": "F2-homophones-rares",
+      "state": "Phrase ecrite par un eleve : « Il est censé arriver à midi. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "« censé » = supposé, suivi d'un infinitif."
+    },
+    {
+      "id": "F2-05",
+      "famille": "F2-homophones-rares",
+      "state": "Phrase ecrite par un eleve : « Il est sensé arriver à midi. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "« sensé » = raisonnable, ne prend pas d'infinitif ; ici « censé »."
+    },
+    {
+      "id": "F2-06",
+      "famille": "F2-homophones-rares",
+      "state": "Phrase ecrite par un eleve : « Le train est près de partir. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "« être près de » + infinitif = être sur le point de."
+    },
+    {
+      "id": "F2-07",
+      "famille": "F2-homophones-rares",
+      "state": "Phrase ecrite par un eleve : « Nous sommes près à partir. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "« prêt à » = disposé à ; ici « prêts à partir »."
+    },
+    {
+      "id": "F2-08",
+      "famille": "F2-homophones-rares",
+      "state": "Phrase ecrite par un eleve : « Elle a appris à lire à son fils. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "Auxiliaire « a » puis deux prépositions « à »."
+    },
+    {
+      "id": "F3-01",
+      "famille": "F3-juste-atypique",
+      "state": "Phrase ecrite par un eleve : « Ci-joint la facture demandée. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "« ci-joint » en tête de phrase devant le nom : invariable (juste mais sonne faux)."
+    },
+    {
+      "id": "F3-02",
+      "famille": "F3-juste-atypique",
+      "state": "Phrase ecrite par un eleve : « Ci-jointe la facture demandée. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "Même position : l'accord de « ci-joint » est fautif (faute fluide)."
+    },
+    {
+      "id": "F3-03",
+      "famille": "F3-juste-atypique",
+      "state": "Phrase ecrite par un eleve : « Elle porte des chaussures marron. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "Nom employé comme adjectif de couleur : invariable (juste mais sonne faux)."
+    },
+    {
+      "id": "F3-04",
+      "famille": "F3-juste-atypique",
+      "state": "Phrase ecrite par un eleve : « Elle porte des chaussures marrons. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "« marron » adjectif de couleur est invariable (faute fluide)."
+    },
+    {
+      "id": "F3-05",
+      "famille": "F3-juste-atypique",
+      "state": "Phrase ecrite par un eleve : « Elles se sont plu à Paris. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "« plu » (plaire) est invariable, même à la forme pronominale (juste mais sonne faux)."
+    },
+    {
+      "id": "F3-06",
+      "famille": "F3-juste-atypique",
+      "state": "Phrase ecrite par un eleve : « Elles se sont plues à Paris. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "« se plaire » : PP invariable ; l'accord est fautif (faute fluide)."
+    },
+    {
+      "id": "F4-01",
+      "famille": "F4-logique-distracteurs",
+      "state": "Faits : A > B. B > C. C > D. E > A. A > C. couleur(A, rouge). incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X. Regle 3 : si couleur(X, bleu) alors X > D.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "e_sup_d": true
+      },
+      "justification": "T1-A + fait redondant (A > C) + regle 3 non pertinente (aucun bleu) : E > D deduit, R2 violee."
+    },
+    {
+      "id": "F4-02",
+      "famille": "F4-logique-distracteurs",
+      "state": "Faits : A > B. B > C. C > D. E > A. A > C. couleur(A, rouge). incompatible(B, F). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X. Regle 3 : si couleur(X, bleu) alors X > D.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "coherent",
+        "e_sup_d": true
+      },
+      "justification": "Aucun fait ne relie B et F : R2 non violee, toutes regles definies ; E > A > C > D."
+    },
+    {
+      "id": "F4-03",
+      "famille": "F4-logique-distracteurs",
+      "state": "Faits : A > B. B > C. C > D. E > A. A > C. couleur(A, rouge). incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 3 : si couleur(X, bleu) alors X > D. Aucune regle ne definit ce que signifie incompatible.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "indetermine",
+        "e_sup_d": true
+      },
+      "justification": "T1-B + distracteurs : incompatible non defini ; E > D deduit par R1."
+    },
+    {
+      "id": "F4-04",
+      "famille": "F4-logique-4-pas",
+      "state": "Faits : D > E. A > B. E > F. C > D. B > C. incompatible(A, F). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "a_sup_f": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > F uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "a_sup_f": true
+      },
+      "justification": "Faits melanges ; A > C, A > D, A > E, A > F (4 pas R1) puis R2 violee."
+    },
+    {
+      "id": "F4-05",
+      "famille": "F4-logique-4-pas",
+      "state": "Faits : D > E. A > B. E > F. D > C. B > C. incompatible(A, F). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "a_sup_f": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > F uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "coherent",
+        "a_sup_f": false
+      },
+      "justification": "Variante de F4-04 avec D > C au lieu de C > D : aucun chemin de A a F, R2 non violee."
+    },
+    {
+      "id": "F5-01",
+      "famille": "F5-controle-trivial",
+      "state": "Faits : X > Y. Y > Z. Regle 1 : si X > Y et Y > Z alors X > Z.",
+      "questions": {
+        "x_sup_z": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire X > Z uniquement a partir des faits et regles donnes ?"
+        },
+        "z_sup_x": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire Z > X uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "x_sup_z": true,
+        "z_sup_x": false
+      },
+      "justification": "Transitivite en 1 pas (borne haute) ; l'inverse n'est pas deductible (borne basse)."
+    },
+    {
+      "id": "F5-02",
+      "famille": "F5-controle-trivial",
+      "state": "Phrase ecrite par un eleve : « Le chat dort sur le canapé. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "Phrase simple sans difficulte."
+    },
+    {
+      "id": "F5-03",
+      "famille": "F5-controle-trivial",
+      "state": "Phrase ecrite par un eleve : « Les chat dort sur le canapé. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "Determinant pluriel sur nom et verbe au singulier."
+    }
+  ]
+}
