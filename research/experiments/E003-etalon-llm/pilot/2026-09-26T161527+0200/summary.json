@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T161527+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/chat/completions",
+    "reps": 1,
+    "pilot": true,
+    "models": [
+      {
+        "label": "LLM-2",
+        "model": "alibaba/qwen3.8-flash",
+        "extra": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      }
+    ],
+    "max_tokens": 400,
+    "max_calls": 1,
+    "cases_sha256": "8325775b4957bf44664b631ce48096933c6f56d4f245143161405ae6b1e99d0b",
+    "n_appels": 1,
+    "statuts_http": {
+      "403": 1
+    },
+    "arret": "stop_http"
+  },
+  "rows": [
+    {
+      "modele": "LLM-2",
+      "model_id": "alibaba/qwen3.8-flash",
+      "case_id": "PILOTE",
+      "famille": "pilote-hors-evaluation",
+      "question": "x_rectangle",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 0,
+      "non_parse_raisons": [
+        "HTTP 403"
+      ],
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "repartition": null,
+      "conforme": null,
+      "faux_et_sur": null,
+      "n_faux_et_sur_reps": 0
+    }
+  ]
+}

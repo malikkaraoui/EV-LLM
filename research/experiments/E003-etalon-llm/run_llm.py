@@ -37,7 +37,8 @@ HERE = Path(__file__).resolve().parent
 
 MODELS = [
     {"label": "LLM-1", "model": "openai/gpt-4.1-mini", "extra": {}},
-    {"label": "LLM-2", "model": "google/gemini-3.8-flash",
+    # Amendement 1 (26/09, PROTOCOLE.md) : google/gemini-3.8-flash refuse en 403 (free tier).
+    {"label": "LLM-2", "model": "google/gemini-2.5-flash",
      "extra": {"reasoning": {"effort": "low"}}},
 ]
 
@@ -58,6 +59,11 @@ PROMPT = (
     "{bloc_options}\n"
     "\"confiance\" est ta probabilité (entre 0 et 1) que ta réponse soit correcte."
 )
+
+
+def pilot_models(model_id):
+    """Candidat LLM-2 pour un pilote (Amendement 1) : memes reglages que LLM-2."""
+    return {"label": "LLM-2", "model": model_id, "extra": dict(MODELS[1]["extra"])}
 
 
 def load_key(env_file):
@@ -186,9 +192,9 @@ def aggregate(expected, parsed):
     return base
 
 
-def summarize(cases, records):
+def summarize(cases, records, models=MODELS):
     rows = []
-    for m in MODELS:
+    for m in models:
         for case in cases:
             for qid, q in case["questions"].items():
                 recs = [r for r in records if r["label"] == m["label"]
@@ -225,12 +231,12 @@ def fmt(x):
     return str(x)
 
 
-def summary_md(rows, meta):
+def summary_md(rows, meta, models=MODELS):
     out = ["# E003 — résumé ({})".format(meta["run_id"]), "",
            "cases.json sha256 : `{}` · répétitions : {} · appels : {} · statuts : {}".format(
                meta["cases_sha256"], meta["reps"], meta["n_appels"],
                json.dumps(meta["statuts_http"])), ""]
-    for m in MODELS:
+    for m in models:
         out += ["## {} — `{}`".format(m["label"], m["model"]), "",
                 "| cas | question | attendu (préenregistré) | obtenu (majorité des répétitions) "
                 "| P ou confiance | stabilité (min–max) | latence médiane (ms) | conforme "
@@ -263,9 +269,9 @@ def leak_guard(out_dir, key):
     return leaked
 
 
-def build_items(cases, reps):
+def build_items(cases, reps, models=MODELS):
     return deque({"model": m, "case": c, "qid": qid, "rep": rep, "attempt": 0}
-                 for m in MODELS for c in cases for qid in c["questions"]
+                 for m in models for c in cases for qid in c["questions"]
                  for rep in range(1, reps + 1))
 
 
@@ -308,8 +314,10 @@ def main():
     ap.add_argument("--env-file", default="/Users/malik/Documents/EV-LLM/.env")
     ap.add_argument("--cases", default=str(HERE / "cases.json"))
     ap.add_argument("--reps", type=int, default=3)
-    ap.add_argument("--max-calls", type=int, default=68)
+    ap.add_argument("--max-calls", type=int, default=65)
     ap.add_argument("--pilot", action="store_true", help="un appel par modele, hors cases.json")
+    ap.add_argument("--pilot-model", default=None,
+                    help="avec --pilot : un seul appel, LLM-2 remplace par ce modele (Amendement 1)")
     args = ap.parse_args()
 
     key = load_key(args.env_file)
@@ -317,6 +325,12 @@ def main():
         print("{} absente de {}".format(KEY_NAME, args.env_file), file=sys.stderr)
         return 2
 
+    models = MODELS
+    if args.pilot_model:
+        if not args.pilot:
+            print("--pilot-model exige --pilot", file=sys.stderr)
+            return 2
+        models = [pilot_models(args.pilot_model)]
     cases_bytes = Path(args.cases).read_bytes()
     if args.pilot:
         cases, reps, sub = [PILOT_CASE], 1, "pilot"
@@ -327,20 +341,20 @@ def main():
     out_dir = HERE / sub / run_id
     out_dir.mkdir(parents=True, exist_ok=False)
     with (out_dir / "raw.jsonl").open("w", encoding="utf-8") as raw:
-        records, arret = run_items(key, build_items(cases, reps), args.max_calls, raw)
+        records, arret = run_items(key, build_items(cases, reps, models), args.max_calls, raw)
 
     statuts = {}
     for r in records:
         statuts[str(r["http_status"])] = statuts.get(str(r["http_status"]), 0) + 1
-    rows = summarize(cases, records)
+    rows = summarize(cases, records, models)
     meta = {"run_id": run_id, "endpoint": ENDPOINT, "reps": reps, "pilot": args.pilot,
-            "models": MODELS, "max_tokens": MAX_TOKENS, "max_calls": args.max_calls,
+            "models": models, "max_tokens": MAX_TOKENS, "max_calls": args.max_calls,
             "cases_sha256": hashlib.sha256(cases_bytes).hexdigest(),
             "n_appels": len(records), "statuts_http": statuts, "arret": arret}
     (out_dir / "summary.json").write_text(
         json.dumps({"meta": meta, "rows": rows}, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8")
-    (out_dir / "summary.md").write_text(summary_md(rows, meta), encoding="utf-8")
+    (out_dir / "summary.md").write_text(summary_md(rows, meta, models), encoding="utf-8")
 
     if leak_guard(out_dir, key):
         print("FUITE : ne rien committer", file=sys.stderr)

@@ -117,6 +117,13 @@ class PromptTest(unittest.TestCase):
         self.assertIn('- "indetermine" : c', p)
         self.assertIn('{"reponse": <valeur>, "confiance": <nombre entre 0 et 1>}', p)
 
+    def test_pilot_model_same_settings_as_llm2(self):
+        m = run_llm.pilot_models("x/y")
+        self.assertEqual((m["label"], m["model"]), ("LLM-2", "x/y"))
+        self.assertEqual(m["extra"], run_llm.MODELS[1]["extra"])
+        items = run_llm.build_items([run_llm.PILOT_CASE], 1, [m])
+        self.assertEqual([i["model"]["model"] for i in items], ["x/y"])
+
     def test_body_limits(self):
         for m in run_llm.MODELS:
             b = run_llm.build_body(m, "s", BOOL_Q)

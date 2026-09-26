@@ -108,3 +108,43 @@ modèle, et ce retrait est noté ici **avant** le lancement d'évaluation.
   (ou le corps d'erreur). Aucun en-tête n'est enregistré.
 - Garde anti-fuite (comme E001) : relecture de tous les fichiers produits ; si la clé y figure,
   ils sont écrasés et le script sort en code 3.
+
+## Amendement 1 (26/09) — remplacement de LLM-2
+
+Mandat M0008. Committé **avant** tout appel d'évaluation. Seul LLM-2 change : `cases.json`, le
+prompt, les réglages (`temperature: 0`, `max_tokens: 400`, `response_format: json_object`,
+`reasoning: {"effort": "low"}`), le parse et la règle conforme / faux et sûr sont **inchangés**.
+
+**Raison.** [VÉRIFIÉ] Au pilote M0006 (2026-09-26 15:57:30 +0200), `google/gemini-3.8-flash` a
+répondu HTTP 403 `no_providers_available` : « Free tier users do not have access to this model ».
+Décision de l'orchestrateur : option (b), un modèle de raisonnement accessible au compte.
+
+**Méthode de choix.** Jusqu'à 4 pilotes (1 appel chacun, même énoncé pilote que ci-dessus, hors
+`cases.json`, mêmes réglages que LLM-2), sur des modèles « de raisonnement » (tag `reasoning` de
+`GET /v1/models`, `temperature` et `response_format` supportés, effort `low` proposé), d'éditeurs
+différents. Premier en HTTP 200 avec une réponse qui passe le parse strict = retenu.
+Option `--pilot-model <id>` ajoutée à `run_llm.py` pour cela (LLM-2 seul, mêmes réglages).
+
+| # | modèle candidat | éditeur | HTTP | parse | dossier |
+|---|---|---|---|---|---|
+| 1 | `alibaba/qwen3.8-flash` (2026-08) | Alibaba | 403 `no_providers_available` (free tier) | — | `pilot/2026-09-26T161527+0200/` |
+| 2 | `zai/glm-5.3-flash` (2026-08) | Z.ai | 403 `no_providers_available` (free tier) | — | `pilot/2026-09-26T161530+0200/` |
+| 3 | `google/gemini-2.5-flash` (2025-03) | Google | **200** | OK : `{"reponse": true, "confiance": 1}`, `finish_reason: stop`, 204 tokens de raisonnement sur 223 de sortie | `pilot/2026-09-26T161543+0200/` |
+
+Le 4ᵉ pilote n'a pas été utilisé.
+
+**LLM-2 retenu : `google/gemini-2.5-flash`**, `temperature: 0`, `reasoning: {"effort": "low"}`.
+Modèle de raisonnement (tag `reasoning`, effort réglable), accessible au compte, autre éditeur
+que LLM-1.
+
+- [HYPOTHÈSE] Le free tier semble ouvrir les modèles anciens (2025) et fermer les récents (2026).
+  Trois points ne suffisent pas à l'établir.
+- [HYPOTHÈSE] Au pilote, le raisonnement a pris 204 des 400 tokens de sortie. Sur les cas plus
+  longs de `cases.json`, une réponse peut être tronquée (`finish_reason: length`) : elle compte
+  alors `NON_PARSE`, sans correction.
+- LLM-2 n'est plus « récent » (2025-03) : l'étalon compare Jev à un modèle de raisonnement
+  accessible, pas à l'état de l'art. Limite écrite au README.
+
+**Budget.** 2 appels M0006 + 3 pilotes = 5 consommés. Évaluation : 60 appels, plafond
+`--max-calls 65` (total ≤ 70, budget initial ; ≤ 66 pour l'évaluation, consigne M0008).
+Plafond atteint → STOP partiel.
