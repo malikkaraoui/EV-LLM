@@ -1,0 +1,187 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T102956+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": 3,
+    "cases_sha256": "8325775b4957bf44664b631ce48096933c6f56d4f245143161405ae6b1e99d0b",
+    "n_appels": 21,
+    "n_http_200": 7
+  },
+  "rows": [
+    {
+      "case_id": "T1-A",
+      "famille": "savoir-regle-donnee",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 726.7,
+      "obtenu": "contradiction",
+      "p": 0.71,
+      "stabilite": [
+        0.68,
+        0.76
+      ],
+      "repartition": {
+        "\"contradiction\"": 3
+      },
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "T1-A",
+      "famille": "savoir-regle-donnee",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 726.7,
+      "obtenu": true,
+      "p": 0.51,
+      "stabilite": [
+        0.49,
+        0.58
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "T1-B",
+      "famille": "savoir-regle-donnee",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "indetermine",
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 674.6,
+      "obtenu": "indetermine",
+      "p": 0.72,
+      "stabilite": [
+        0.7,
+        0.73
+      ],
+      "repartition": {
+        "\"indetermine\"": 3
+      },
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "T1-B",
+      "famille": "savoir-regle-donnee",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 674.6,
+      "obtenu": true,
+      "p": 0.73,
+      "stabilite": [
+        0.73,
+        0.78
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "T1-C",
+      "famille": "controle-trivial",
+      "question": "a_sup_c",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 1,
+      "latence_mediane_ms": 414.8,
+      "obtenu": true,
+      "p": 0.97,
+      "stabilite": [
+        0.97,
+        0.97
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "T1-C",
+      "famille": "controle-trivial",
+      "question": "c_sup_a",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 3,
+      "n_parses": 1,
+      "latence_mediane_ms": 414.8,
+      "obtenu": false,
+      "p": 0.02,
+      "stabilite": [
+        0.02,
+        0.02
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "T2-1",
+      "famille": "erreur-invisible-e-er",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 3,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "T2-2",
+      "famille": "erreur-invisible-e-er",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "T2-3",
+      "famille": "erreur-invisible-accord-etre",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "T2-4",
+      "famille": "erreur-invisible-accord-etre",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 3,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    }
+  ]
+}

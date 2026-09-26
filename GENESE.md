@@ -172,17 +172,109 @@ Lecture de Claude : le déclencheur est exactement une décision typée et calib
 - au §29, les deux tests (savoir A/B, acquérir) et les quatre étiquettes ;
 - au §63, les défis D14 à D16.
 
+## 2026-09-25 ~20:40 — Le harnais est posé, le dépôt reste public
+
+- 20:37 : le commit de pose du harnais (`343e839`, « pose du harnais v1.0.0 ») est refusé par le hook `pre-push` que la pose vient elle-même d'activer. Malik le pousse une fois avec `--no-verify` ; la cause est nommée comme une erreur de l'orchestrateur (le mandat de pose n'avait pas prévu que le hook s'active avant son propre push). Ensuite, la règle s'applique sans exception. [VÉRIFIÉ — `vault/decisions/2026-09-25-exception-push-pose-harnais.md`]
+- 20:37–20:39 : le dépôt passe en privé par erreur sur alerte de l'orchestrateur, puis Malik le remet en public : « c'est de la recherche, je laisse ouvert ». [VÉRIFIÉ — même fichier]
+- 20:38 et 20:42 : le superviseur démarre (`SUPERVISEUR_DEMARRE`, plafond 6 fenêtres). [VÉRIFIÉ — `vault/runtime/events.jsonl`, lignes 1–2]
+- Conséquence : tout ce qui est committé est public, rapports et `vault/` compris. La phase de construction s'ouvre (question ouverte n° 6 du 25/09).
+
+## 2026-09-25 21:30 — M0001 : première sonde de Jev… bloquée à la caisse
+
+- 21:30 : Malik donne le départ : « Lance !! ». [VÉRIFIÉ — `events.jsonl`, DECISION M0001]
+- La fenêtre F01 construit la sonde E001 : `.env` ignoré par git (dépôt public), `run.py` en Python standard avec une garde anti-fuite testée hors ligne, 7 cas préenregistrés (`cases.json`, sha256 `8325775b…`). [VÉRIFIÉ — rapport M0001, branche `exp/e001-sonde-jev` @ `2719279`]
+- Résultat : **21 appels sur 21 en HTTP 403** `customer_verification_required`. La passerelle Vercel exige une carte bancaire enregistrée. Aucune mesure de Jev. [VÉRIFIÉ — rapport M0001]
+- **Faute d'orchestration, nommée à 21:46** : l'accès réel n'avait pas été testé à la pose du mandat ; la contradiction « Free » / « $0.042 » entre deux pages Vercel avait été vue et non creusée. [VÉRIFIÉ — `vault/reprise/00_INDEX.md`, entrée du 25/09 21:46:59]
+- Leçon remontée par la fenêtre : un service annoncé « Free » peut exiger une vérification de paiement ; vérifier les conditions d'accès par un appel à blanc au moment de la pose, pas seulement la documentation. [VÉRIFIÉ — rapport M0001, § Leçons]
+
+## 2026-09-26 10:29 — M0002 : T1 mesuré, T2 non servi
+
+- 10:27 : Malik a ajouté la carte ; rejeu d'E001 à l'identique (même `cases.json`). [VÉRIFIÉ — `events.jsonl`, DECISION M0002]
+- 21 appels : **7 × 200, 3 × 503, 11 × 429**. Les cas T1 (logique) sont servis ; les 4 cas T2 (fautes invisibles é/er et d'accord) ne le sont pas du tout. [VÉRIFIÉ — rapport M0002, `exp/e001-sonde-jev` @ `08672e4`]
+- T1 : 6 questions conformes sur 6 mesurées, 0 « faux et sûr ». Jev distingue T1-A (`contradiction`) de T1-B (`indetermine`) 3 fois sur 3 : l'indice « génère au lieu de déduire » n'apparaît pas. [VÉRIFIÉ — README E001]
+- Point notable : la même déduction E > D vaut 0.49–0.58 dans T1-A contre 0.73–0.78 dans T1-B. [HYPOTHÈSE] La contradiction présente dans l'état « contamine » une déduction qui n'en dépend pas. Elle devient l'issue #5 (E004).
+- La question centrale, le « faux et sûr » sur les erreurs invisibles, reste sans réponse.
+
+## 2026-09-26 15:50 — Malik : « enchaîner en parallèle »
+
+- La consigne, telle que consignée par l'orchestrateur : [VÉRIFIÉ — `vault/runtime/events.jsonl`, type DECISION, ts 2026-09-26T15:53:49+02:00]
+
+  > « Malik 26/09 15:50: GO rejeu T2 avant R001; enchainer les pistes en parallele, pousser sur GitHub, creer des issues »
+
+- Bascule de méthode : on passe d'une fenêtre à la fois à quatre fenêtres en parallèle (F01 à F04), sur des branches et des fichiers disjoints. [VÉRIFIÉ — `00_INDEX.md`, entrée du 26/09 15:53:49]
+
+## 2026-09-26 ~15:55 — M0003 : sur les fautes fréquentes, Jev est juste et sûr
+
+- T2 rejoué seul, en 5 lancements courts : 13 réponses 200. [VÉRIFIÉ — rapport M0003, `exp/e001-sonde-jev` @ `7e953a9`]
+- **4 questions conformes sur 4, et 13 appels conformes sur 13. 0 « faux et sûr ».** P(correcte) va de 0.06 à 0.10 sur les deux phrases fautives, de 0.84 à 0.97 sur les deux phrases justes. [VÉRIFIÉ — README E001, recalculé par R001]
+- T2-3 et T2-4 ne reposent que sur 2 réponses chacun (plafond de lancements atteint). [VÉRIFIÉ — rapport M0003]
+- [HYPOTHÈSE] Ces fautes (« il a manger », « ils sont tombé ») sont fréquentes et probablement vues à l'entraînement : le « faux et sûr » n'a toujours pas été exercé.
+
+## 2026-09-26 ~15:55 — M0004 : 17 issues pour ne rien perdre
+
+- 6 labels et 17 issues (#1 à #17) créés sur GitHub, indexés dans `vault/notes/2026-09-26-issues-github.md`. [VÉRIFIÉ — rapport M0004, commit `f49aff6`]
+- Parmi elles : E004 contamination (#5), E005 Jev hors distribution (#6), micro-test humain é/er (#7), seuils N, X, Y, Z (#9), phase 1 (#10), cette mise à jour de la documentation (#11).
+
+## 2026-09-26 16:00–16:18 — E002 puis E002-bis : la mesure cassée, puis réparée
+
+- **E002 (M0005)** : premier banc « ACQUÉRIR », la chambre aux relations opaques, sans réseau. Préenregistrement committé avant le code (`d8ef3a1`), 22 tests, 20 mondes × 3 étalons. [VÉRIFIÉ — rapport M0005, `exp/e002-relations-opaques` @ `1cb586b`]
+- Le constat : avec le bruit préenregistré (5 à 10 %), même le plafond « savoir » a un R moyen de −0.003, positif dans 8 mondes sur 20 seulement. R̂ = R / R_plafond est donc **indéfini dans 12 mondes sur 20** : la courbe de transfert n'est pas mesurable. [VÉRIFIÉ — README E002, recalculé par R002]
+- Cause : toutes les erreurs du plafond viennent de prémisses bruitées. Sans bruit, son R vaut +0.016 et il est positif dans les 20 mondes. Déduire juste à partir d'une observation fausse propage la faute. [VÉRIFIÉ — README E002 ; R002 : 0 `DÉDUIT` faux sans bruit sur 20/20]
+- La fenêtre ne touche pas au préenregistrement : l'écart est rapporté comme un résultat, et la réparation est proposée dans un E002-bis préenregistré à part. R002 : GO, E002 mergé (`e17c751`). [VÉRIFIÉ — `vault/revues/2026-09-26-R002-e002-relations-opaques.md`]
+- **E002-bis (M0007)** : R̂ en différence (R − R_plafond) et nouvel étalon, un **plafond-vérificateur** qui interroge le monde sur les prémisses de ses déductions avant de dire `DÉDUIT`. Il a R > 0 dans **20 mondes sur 20** (moyenne +0.0122, minimum +0.0067), 0 `DÉDUIT` faux, au prix de 28 à 45 requêtes par monde. Mesure déclarée **réparée**. [VÉRIFIÉ — rapport M0007, `exp/e002bis-mesure` @ `d35af60` ; doublage R003 GO, mergé `c7ef4bd`]
+- Au passage, un non-déterminisme latent du moteur partagé (ordre d'itération dépendant de `PYTHONHASHSEED`) est découvert et neutralisé. [VÉRIFIÉ — rapport M0007]
+- [HYPOTHÈSE] Pour l'architecture : vérifier ses prémisses avant de déduire est une hiérarchie de confiance qui coûte des bits, et c'est un levier de R distinct de l'acquisition.
+
+## 2026-09-26 15:57–16:24 — E003 : l'étalon LLM, à moitié mesuré
+
+- M0006 : `openai/gpt-4.1-mini` répond ; `google/gemini-3.8-flash` est refusé en 403 (« Free tier users do not have access to this model »). STOP propre après 2 appels. [VÉRIFIÉ — rapport M0006]
+- M0008 : LLM-2 remplacé par `google/gemini-2.5-flash` (amendement committé 2 s avant le premier appel). 65 appels : **28 × 200, 37 × 429** ; la limite est de **5 requêtes par minute pour l'équipe**. 12 réponses sur 13 de LLM-2 sont tronquées (`finish_reason: length`). T2 n'est mesuré pour aucun LLM. [VÉRIFIÉ — rapport M0008, `exp/e003-etalon-llm` @ `01f3c8f`]
+- Seul « faux et sûr » observé : **gpt-4.1-mini sur T1-A `e_sup_d`**, qui nie E > D avec une confiance verbalisée médiane de 1.00, 3 fois sur 3. Jev, sur la même question, est juste mais peu sûr (0.51). [VÉRIFIÉ — README E003]
+- [HYPOTHÈSE] Une confiance verbalisée n'est pas une probabilité : gpt-4.1-mini écrit 1.00 aussi bien quand il a tort que quand il a raison.
+
+## 2026-09-26 16:16–16:24 — E005 : les premiers « faux et sûr » de Jev
+
+- M0009 : 32 cas, 38 questions préenregistrés et poussés **avant** le premier appel (`719d4c0`), en paires minimales : accords rares, homophones, formes justes atypiques, logique avec distracteurs ou à 4 pas, contrôles. [VÉRIFIÉ — rapport M0009, `exp/e005-jev-hors-distribution` @ `08d80f7`]
+- 151 appels, 34 réponses 200 ; 42 évaluations sur 37 questions. [VÉRIFIÉ — README E005]
+- **9 évaluations « faux et sûr » sur 42, portant sur 6 questions.** E001 n'en avait aucune. [VÉRIFIÉ — README E005, `results/analyse.md`]
+  - accords pronominaux à COI : « Elles se sont lavées les mains » (P(correcte) 0.84 / 0.85), « Ils se sont parlés » (0.80, pile au seuil) ;
+  - « fait » + infinitif : « Les robes qu'elle a faites faire » (0.86) ;
+  - « Ci-jointe la facture demandée » (0.86) — attente à confirmer par R004 ;
+  - contradiction de T1-A masquée par un fait redondant et une règle non pertinente : `coherent` à 0.88 / 0.89 ;
+  - chaîne de 4 pas : A > F nié (P 0.15 / 0.19).
+- Les 13 phrases justes sont toutes jugées justes ; sur les phrases fausses, 7 évaluations sur 13 jugent correcte une phrase fautive. Les fautes fréquentes sont détectées, les accords savants ne le sont pas. [VÉRIFIÉ — README E005]
+- Sur la logique, les 7 réponses `statut` valent toutes `coherent`, quel que soit l'attendu. [VÉRIFIÉ — README E005]
+- Au-dessus de 0.8 de probabilité, Jev est conforme 19 fois sur 28. [VÉRIFIÉ — README E005]
+- [HYPOTHÈSE] Jev jugerait la plausibilité de surface plutôt que la règle ; sur ces règles rares, sa probabilité ne signale pas qu'il ne sait pas.
+- **Réserves** : 3 des 6 « faux et sûr » reposent sur un seul appel ; la vérification grammaticale des attentes (R004) et la réplication (E006) sont en cours. Pas de conclusion générale sur 42 évaluations. [VÉRIFIÉ — README E005 § Limites ; `00_INDEX.md` 16:38:48]
+- **Ce que ça change dans la pensée :** le « point à éprouver » du 25/09 (la calibration tient-elle sur les erreurs invisibles hors distribution ?) a reçu une première réponse négative sur ce corpus. Le défi D15 n'est plus une hypothèse d'école.
+
+## 2026-09-26 — Incidents de la journée
+
+- **state.json écrasé (16:11)** : une fenêtre a réécrit `vault/runtime/state.json` en entier ; le schéma et les compteurs de mandats sont perdus (fenêtre probable : F02/M0004). L'orchestrateur le reconstruit depuis `events.jsonl`. Garde ajoutée aux rituels de toutes les fenêtres : modifier la seule clé de sa fenêtre, puis vérifier que `next_mandat_id` est toujours présent. [VÉRIFIÉ — `events.jsonl`, INCIDENT 16:11:59 ; `00_INDEX.md` 16:14:20]
+- **L'interdit du `sleep` contre la limite de 5 requêtes par minute (16:38)** : les fenêtres n'ont pas le droit d'attendre (`sleep` interdit). Résultat : les relances repartent aussitôt et refont des 429 (37 sur 65 appels en E003). En E005, un lancement parti 34 s après le précédent au lieu de 60 s perd 32 appels, tous en 429 ; la fenêtre ajoute ensuite une garde bloquante. Décision de l'orchestrateur : un rythmeur **interne aux scripts de mesure** (`time.sleep` ≥ 26 s entre deux appels) est autorisé ; le `sleep` shell reste interdit. [VÉRIFIÉ — `events.jsonl`, DECISION 16:38:48 ; rapports M0008 et M0009]
+- Leçon de M0009, transverse : une commande qui **affiche** une contrainte sans la **bloquer** ne la garantit pas. [VÉRIFIÉ — rapport M0009, § Leçon]
+
+## 2026-09-26 16:14–16:38 — Doublages, merges, vague 3
+
+- R001 (doublage d'E001) : GO, 7 axes sur 7, mergé (`1bd5bf1`). R002 (doublage d'E002) : GO, 7 axes sur 7, mergé (`e17c751`). R003 (doublage d'E002-bis), rendu après la pose de la vague 3 : GO, 7 axes sur 7, mergé (`c7ef4bd`). [VÉRIFIÉ — `vault/revues/`, `git log origin/main`]
+- 16:38 : vague 3 posée : R003 (doublage E002-bis), R004 (E005 + vérification grammaticale), M0010 (E003 rythmé), M0011 (E006 réplication + contamination E004), M0012 (cette mise à jour de la documentation). [VÉRIFIÉ — `00_INDEX.md` 16:38:48]
+
 ---
 
-## Questions ouvertes (au 2026-09-25 15:00)
+## Questions ouvertes (au 2026-09-26 16:40)
 
 1. ~~Graver dans le document les deux tests, INDÉTERMINÉ, visible/invisible~~ → **fait (v2.1)**.
 2. Adopter la boucle savoir ↔ acquis (règle, déclencheur, réflexe, **autodiagnostic**) comme fil directeur de la phase 1 ?
-3. Seuils N, X, Y, Z de l'affirmation à défendre (§56 v2).
-4. Phase 1 : relations opaques, ou directement des grilles perceptives ?
-5. Micro-test é/er avec le fils de Malik : le faire ou non.
-6. Harnais d'orchestration : en cours d'arrivée, puis ouverture de la phase de développement.
-7. **Nouvelle :** Jev est-il accessible (API, prix, conditions) pour un premier test de calibration sur des cas piégés ?
+3. Seuils N, X, Y, Z de l'affirmation à défendre (§56 v2). → issue #9, toujours ouverte.
+4. Phase 1 : relations opaques, ou directement des grilles perceptives ? → issue #10 ; E002/E002-bis ont construit le banc « relations opaques ».
+5. Micro-test é/er avec le fils de Malik : le faire ou non. → issue #7.
+6. ~~Harnais d'orchestration : en cours d'arrivée, puis ouverture de la phase de développement.~~ → **posé le 25/09 vers 20:40** ; phase de développement ouverte (E001 à E005).
+7. ~~Jev est-il accessible (API, prix, conditions) pour un premier test de calibration sur des cas piégés ?~~ → **oui**, via la passerelle Vercel AI Gateway, carte enregistrée ; limite de 5 requêtes par minute pour l'équipe.
+8. **Nouvelle :** les 6 « faux et sûr » d'E005 se répliquent-ils (E006), et les attentes tiennent-elles à la vérification grammaticale (R004) ?
+9. **Nouvelle :** une contradiction dans l'état baisse-t-elle la confiance sur une déduction indépendante (E004, issue #5) ?
+10. **Nouvelle :** l'étalon LLM sur T2 et avec un LLM de raisonnement non tronqué (E003 rythmé, M0010).
+11. **Nouvelle :** identifiants de requête publiés dans `raw.public.jsonl` : garder ou retirer (issue #12) ?
 
 ## Références découvertes en chemin
 

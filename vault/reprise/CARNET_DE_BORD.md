@@ -1,16 +1,18 @@
 # CARNET DE BORD — instantané (1 minute)
 
-Dernière mise à jour : 2026-09-26T10:28:42+0200 (orchestrateur) — M0002 posé, rejeu sonde Jev
+Dernière mise à jour : 2026-09-26T17:32:59+0200 (orchestrateur) — vague 5 en vol
 
 ## Où on en est
 
-- `main` = `525be53` — reprise F01 (vault seul) ; `2791564` = décision exception + carnet/index.
-- `exp/e001-sonde-jev` = `2719279` — sonde Jev prête (script + 7 cas figés), **non mesurée** : AI Gateway renvoie 403 `customer_verification_required`.
-- En vol : **F01 / M0002 `e001-rejeu-mesure`** — rejeu E001 après ajout de la carte Vercel (26/09 10:27). Ensuite : doublage R001 → merge.
+- `main` = `a1231e5` — E001, E002, E002-bis, doc v2.2 + GENESE mergés.
+- Résultat solide : Jev **faux et sûr** sur 6 questions, répliqué 5/5 (E006) ; hypothèse « plausibilité de surface » testée par E007.
+- Candidat A0 : échec ACQUÉRIR, cause identifiée → A0-bis.
+- En vol : R007 · M0015 · R008 · M0016 · M0017.
+- Décision attendue de Malik : mention de son enfant dans GENESE (dépôt public).
 
 ## Références à ne pas toucher
 
-- `vault/echanges/archive/2026-09-25-F01-M0001-e001-sonde-jev.md` (M0001) et `vault/echanges/F01.md` (M0002) — références du doublage R001.
+- `vault/echanges/archive/2026-09-2{5,6}-F01-M000{1,2}-*.md` et `vault/echanges/F01.md` (M0003) — références du doublage R001.
 
 ## Rappels
 

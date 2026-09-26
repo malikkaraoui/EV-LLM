@@ -32,3 +32,11 @@ vault/runtime/events.jsonl
 # Après un arrêt brutal, un verrou périmé committé bloquerait tout le monde.
 # vault/runtime/*.verrou
 # vault/runtime/*.tmp-*
+
+# Secrets -- depot PUBLIC : aucun fichier d'environnement n'est jamais versionne
+.env
+.env.*
+!.env.example
+
+# E001 : sorties brutes completes (en-tetes de reponse) jamais versionnees
+research/experiments/*/results/**/raw.jsonl

@@ -21,6 +21,28 @@
 >
 > Le registre complet des défis est au **§63**. La définition de travail de l'intelligence est au **§1 bis**.
 
+> **Version 2.2 — 2026-09-26 — premiers résultats d'expérience (mandat M0012, issue #11)**
+>
+> La v2.2 ne retire rien de la v2 ni de la v2.1. Elle ajoute des blocs **« v2.2 — Résultats »** aux §1 bis, §28, §29, §56, §61 et §63, qui confrontent les pistes aux cinq premières expériences (E001, E002, E002-bis, E003, E005).
+>
+> Règle de ces blocs : chaque affirmation porte **[VÉRIFIÉ]** avec un pointeur vers sa source, ou **[HYPOTHÈSE]**. Aucun chiffre n'est repris sans avoir été relu dans sa source. Aucune conclusion générale : les échantillons vont de 7 cas à 42 évaluations.
+>
+> Sources, désignées par leur code dans les blocs :
+> - **[E001]** : `research/experiments/E001-jev-sonde/README.md`, branche `exp/e001-sonde-jev` @ `7e953a9`, mergée dans `main` (`1bd5bf1`, doublage R001 GO) ; rapports M0001, M0002, M0003 dans `vault/echanges/archive/`.
+> - **[E002]** : `research/experiments/E002-relations-opaques/README.md`, branche `exp/e002-relations-opaques` @ `1cb586b`, mergée dans `main` (`e17c751`, doublage R002 GO) ; rapport M0005.
+> - **[E002-bis]** : `research/experiments/E002bis-mesure/README.md` et `results/2026-09-26T161842+0200/summary.md`, branche `exp/e002bis-mesure` @ `d35af60`, mergée dans `main` (`c7ef4bd`, doublage R003 GO) ; rapport M0007.
+> - **[E003]** : `research/experiments/E003-etalon-llm/README.md`, branche `exp/e003-etalon-llm` @ `01f3c8f` ; rapports M0006 et M0008. **Mesure partielle, non doublée.**
+> - **[E005]** : `research/experiments/E005-jev-hors-distribution/README.md` et `results/analyse.md`, branche `exp/e005-jev-hors-distribution` @ `08d80f7` ; rapport M0009. **Non encore doublé** (R004 en cours, avec vérification grammaticale des attentes ; réplication E006 en cours).
+> - **[R001]**, **[R002]**, **[R003]** : `vault/revues/2026-09-26-R00x-*.md` sur `main`.
+>
+> Ce que la v2.2 ajoute, en une ligne par section :
+> - §1 bis : le déclencheur. Jev est juste et sûr sur les fautes fréquentes, faux et sûr sur des accords rares et des distracteurs logiques. D15 est un défi réel.
+> - §28 : R mesuré. Un ratio à un plafond s'effondre sous bruit ; la différence à un plafond-vérificateur tient.
+> - §29 : le banc ACQUÉRIR existe. Parmi les étalons testés, vérifier ses prémisses est la seule stratégie qui garde R > 0 sous bruit.
+> - §56 : les étalons Jev, gpt-4.1-mini et gemini-2.5-flash, et leurs limites.
+> - §61 : inchangé.
+> - §63 : statut de D14, D15, D16, et cinq nouveaux défis (D17 à D21).
+
 ---
 
 # 1. Point de départ
@@ -160,6 +182,40 @@ Aucun de ces travaux n'a démontré la boucle **complète et mesurée** sur des 
 > **Le point à éprouver :** une probabilité calibrée **en moyenne** peut rester faussement sûre sur les erreurs **invisibles**, puisque par définition elles ne ressemblent pas à des erreurs. Test décisif : la calibration de Jev tient-elle sur des cas piégés hors de sa distribution d'entraînement ? C'est un test à faire, pas une raison d'écarter Jev.
 >
 > **6. « Vigilance » (phase 4) = le même mécanisme vu dans la durée.** Au début, le déclencheur fait tester chaque verbe. Quand la confiance calibrée devient haute et qu'elle est confirmée, le test n'est plus appelé. Si une situation inhabituelle fait chuter la confiance, le test revient. C'est comme en conduite : le débutant vérifie consciemment chaque rétroviseur, le conducteur expérimenté ne pense plus, mais redevient attentif dès que quelque chose sort de l'ordinaire.
+
+> **v2.2 — Résultats (2026-09-26) : le déclencheur à l'épreuve de Jev**
+>
+> **1. Sur les fautes fréquentes, Jev est juste et sûr.**
+> - Sur les 4 phrases de E001 (« il a manger », « il va manger », « elle est tombée », « ils sont tombé »), Jev est conforme 4 fois sur 4, et 13 appels sur 13. [VÉRIFIÉ — E001, recalculé par R001]
+> - P(correcte) vaut 0.06 à 0.10 sur les deux phrases fautives, 0.84 à 0.97 sur les deux phrases justes : aucun chevauchement. [VÉRIFIÉ — E001]
+> - Aucun « faux et sûr » (non conforme avec P ≥ 0.8 du mauvais côté) sur les 10 questions d'E001. [VÉRIFIÉ — E001, E003]
+> - Lecture : sur ces cas, la confiance de Jev est honnête. Ces fautes sont probablement fréquentes dans ses données d'entraînement, donc ce ne sont pas des erreurs « invisibles » pour lui. [HYPOTHÈSE]
+>
+> **2. Sur des accords rares et des distracteurs logiques, Jev est faux et sûr.**
+> - E005 : 32 cas en paires minimales, préenregistrés avant tout appel ; 42 évaluations sur 37 questions. [VÉRIFIÉ — E005]
+> - **9 évaluations « faux et sûr » sur 42, portant sur 6 questions.** [VÉRIFIÉ — E005, `results/analyse.md`]
+>   - accords pronominaux à COI : « Elles se sont lavées les mains » (P(correcte) 0.84 / 0.85), « Ils se sont parlés » (0.80, exactement au seuil) ;
+>   - « fait » + infinitif : « Les robes qu'elle a faites faire » (0.86) ;
+>   - « Ci-jointe la facture demandée » (0.86) ;
+>   - la contradiction de T1-A, noyée sous un fait redondant et une règle non pertinente : `coherent` à 0.88 / 0.89 (champ `confidence` 0.82 / 0.84) ;
+>   - une chaîne de transitivité à 4 pas : A > F nié (P 0.15 / 0.19).
+> - Les 13 phrases justes sont toutes jugées justes. Sur les phrases fausses, 7 évaluations sur 13 jugent correcte une phrase fautive : l'erreur va toujours dans le même sens, « ça a l'air juste ». [VÉRIFIÉ — E005]
+> - Les fautes détectées sont les fautes fréquentes ou visibles ; les fautes manquées sont des accords savants. [VÉRIFIÉ — E005]
+> - En logique, les 7 réponses `statut` d'E005 valent toutes `coherent`, quel que soit l'attendu. [VÉRIFIÉ — E005]
+> - Au-dessus de 0.8 de probabilité sur sa réponse, Jev est conforme 19 fois sur 28. [VÉRIFIÉ — E005]
+> - Le champ `providerMetadata.typesafe.confidence` ne signale pas l'erreur de F4-01 (0.82–0.84). [VÉRIFIÉ — E005]
+> - Lecture : Jev jugerait la plausibilité de surface plutôt que la règle, et sa probabilité ne dit pas qu'il ne sait pas. [HYPOTHÈSE]
+>
+> **3. Conséquence pour le déclencheur : la calibration ne tient pas hors distribution, sur ce corpus.**
+> - Le « point à éprouver » du point 5 ci-dessus a reçu une première réponse négative : une P haute n'y suffit pas pour décider de ne pas vérifier. [VÉRIFIÉ — E005, 42 évaluations]
+> - **D15 est confirmé comme défi réel**, pas comme objection de principe (voir §63 v2.2). [VÉRIFIÉ sur ce corpus]
+> - Portée : 3 des 6 « faux et sûr » reposent sur un seul appel. La vérification grammaticale des attentes (R004) et la réplication (E006) sont en cours. [VÉRIFIÉ — E005 § Limites ; `vault/reprise/00_INDEX.md`, 2026-09-26 16:38]
+> - Ce qui en découle pour l'architecture [HYPOTHÈSE] :
+>   - le Système 1 ne peut pas être son propre juge sur les zones qu'il n'a pas vues ; le déclencheur a besoin d'un signal **indépendant** de la confiance du réflexe (par exemple, la nature de la construction : pronominal, participe suivi d'un infinitif, chaîne longue) ;
+>   - c'est exactement le cas de l'enfant du point 2 : ce qui sonne juste ne déclenche rien, et seuls des **indices de contexte appris** peuvent réveiller le test (point 3) ;
+>   - Jev reste un organe utile sur ce qu'il connaît. La piste n'est pas écartée : elle est bornée.
+>
+> **4. Un effet de bord à tester.** Dans E001, la même déduction E > D vaut 0.49–0.58 quand l'état contient une contradiction (T1-A), contre 0.73–0.78 sans elle (T1-B). [VÉRIFIÉ — E001] Une contradiction « contaminerait » la confiance sur une déduction qui n'en dépend pas. [HYPOTHÈSE — expérience E004, issue #5]
 
 ## Les mammifères qui ne parlent pas
 
@@ -1180,6 +1236,27 @@ Le but est de déterminer **ce que signifie progresser** pour cette nouvelle arc
 >
 > Cadre théorique existant : longueur de description minimale (Rissanen), induction de Solomonoff [MÉMOIRE]. Un travail récent sur la refactorisation de bibliothèques trouve aussi que le MDL est le meilleur critère [VÉRIFIÉ par agent : arXiv 2506.11058].
 
+> **v2.2 — Résultats (2026-09-26) : R mesuré en bits, ce que E002 et E002-bis ont appris**
+>
+> **1. R en bits est implémentable et reproductible.** Dans la chambre aux relations opaques (§29), R = bits économisés sur les atomes tenus à l'écart, par rapport à un prédicteur de fréquence, divisés par les bits d'expérience (requêtes comprises), calculé pour chaque monde. Le rejeu indépendant redonne un `resultats.json` identique octet à octet. [VÉRIFIÉ — E002, R002 ; E002-bis, R003]
+>
+> **2. Un ratio à un plafond s'effondre sous bruit.**
+> - Avec 5 à 10 % d'observations fausses (bruit préenregistré), même le plafond « savoir », qui connaît les vraies propriétés, a un R moyen de −0.003, positif dans 8 mondes sur 20 seulement. [VÉRIFIÉ — E002, recalculé par R002]
+> - R̂ = R / R_plafond est donc **indéfini dans 12 mondes sur 20**, et la courbe de transfert n'est pas mesurable. [VÉRIFIÉ — E002]
+> - Cause : déduire correctement à partir d'une observation fausse propage la faute ; un `DÉDUIT` faux coûte 6 bits, un `DÉDUIT` juste en rapporte moins de 1. Sans bruit, le même plafond a R = +0.016, positif dans les 20 mondes. [VÉRIFIÉ — E002 ; R002 : 0 `DÉDUIT` faux sans bruit sur 20/20]
+> - L'écart n'a pas été corrigé en touchant au préenregistrement : il a été rapporté comme un résultat, et la réparation a été préenregistrée à part. [VÉRIFIÉ — E002, R002]
+>
+> **3. La réparation : R̂ en différence, contre un plafond qui vérifie ses prémisses.**
+> - R̂_diff = R − R_plafond-vérificateur, toujours défini. [VÉRIFIÉ — E002-bis, `PREREGISTREMENT.md`]
+> - Le plafond-vérificateur a R > 0 dans **20 mondes sur 20** (moyenne +0.0122, minimum +0.0067), avec 0 `DÉDUIT` faux. Mesure déclarée réparée. [VÉRIFIÉ — E002-bis, recalculé par R003]
+> - Ce plafond n'est pas une borne stricte : l'oracle-propriétés, qui ne paie aucune requête, le dépasse dans 3 mondes (graines 3, 8, 13). R̂_diff se lit comme un écart à un étalon fort, pas comme une fraction d'un maximum. [VÉRIFIÉ — E002-bis]
+>
+> **4. Leçons pour la métrique.**
+> - Vérifier coûte des bits (28 à 45 requêtes par monde), et c'est pourtant ce qui rend R positif sous bruit : **la vérification est un levier de R distinct de l'acquisition**. [VÉRIFIÉ pour le coût et le signe — E002-bis ; HYPOTHÈSE pour la généralisation]
+> - Les valeurs de R sont petites (de l'ordre de 0.01 bit économisé par bit reçu) et l'écart-type de R̂_diff d'un monde à l'autre (0.013 à 0.020) vaut 3 à 4 fois le seuil de gain de 0.005. Un futur « succès » devra passer un contrôle de chance plus serré. [VÉRIFIÉ — E002-bis, R003]
+> - Le déterminisme doit être testé **entre processus** : un étalon dont le processus dépend du choix de preuve a révélé un ordre d'itération dépendant de `PYTHONHASHSEED`, invisible dans les sorties d'E002. [VÉRIFIÉ — rapport M0007]
+> - La **courbe accélérée**, cœur de la thèse, n'est pas encore mesurée sur un système candidat : seuls des étalons sans mémoire ont tourné, et ils échouent tous le critère ACQUÉRIR, comme prévu. [VÉRIFIÉ — E002-bis]
+
 ---
 
 # 29. Une expérience fondatrice à explorer
@@ -1260,6 +1337,29 @@ Le système doit construire la réponse.
 > **Test 2 — ACQUÉRIR (la règle n'est pas donnée).** C'est la chambre aux relations opaques ci-dessus. Le système découvre la propriété, puis résout le monde suivant plus vite.
 >
 > **Étiquettes obligatoires pour toute sortie :** `DÉDUIT` (avec la preuve) · `HYPOTHÈSE` · `CONTRADICTION` (en citant la règle violée) · `INDÉTERMINÉ` (en disant ce qui manque).
+
+> **v2.2 — Résultats (2026-09-26) : les deux tests ont tourné**
+>
+> **Attention au nom.** Les cas « T1 » d'E001 reprennent le Test 1 ci-dessus (variantes A/B). Les cas « T2 » d'E001 sont des phrases à fautes d'orthographe : ils n'ont **rien à voir** avec le Test 2 — ACQUÉRIR. [VÉRIFIÉ — observation O3 de R001]
+>
+> **1. Test 1 — SAVOIR : les variantes A/B sont distinguées.**
+> - Jev répond `contradiction` en variante A (P 0.68–0.76) et `indetermine` en variante B (P 0.70–0.73), 3 fois sur 3. [VÉRIFIÉ — E001, cas T1-A / T1-B]
+> - gpt-4.1-mini distingue aussi A et B, 3 fois sur 3. [VÉRIFIÉ — E003]
+> - Dans la chambre (E002), le plafond et le découvreur naïf répondent juste aux 3 questions d'exclusion dans les 20 mondes ; le hasard en réussit 1.05 sur 3. [VÉRIFIÉ — E002]
+> - Mais la distinction est fragile : ajouter à la variante A un fait redondant et une règle non pertinente fait répondre `coherent` à Jev (P 0.88 / 0.89), et une chaîne de 4 pas lui fait nier une déduction qu'il accepte à 1 pas. [VÉRIFIÉ — E005, cas F4-01 et F4-04]
+> - Et un système peut distinguer A et B tout en se trompant sur la déduction elle-même : gpt-4.1-mini nie E > D en variante A avec une confiance verbalisée de 1.00, 3 fois sur 3. [VÉRIFIÉ — E003]
+> - Lecture : « même réponse aux deux variantes = génération » est un détecteur utile mais insuffisant ; il faut aussi des distracteurs et de la profondeur. [HYPOTHÈSE]
+>
+> **2. Test 2 — ACQUÉRIR : le banc existe.**
+> - E002 implémente la chambre aux relations opaques : propriétés tirées au hasard par monde, pièges (60 à 80 % de relations non transitives réalisées, pour un minimum préenregistré de 30 %), bruit de 5 à 10 %, les quatre étiquettes, requêtes payées en bits, transfert mesuré sur des familles de 5 mondes. Préenregistrement committé avant le code. [VÉRIFIÉ — E002, R002]
+> - Le transfert, cœur du point 8, n'est **pas encore mesuré sur un système qui apprend** : les quatre étalons n'ont pas de mémoire d'un monde à l'autre, et ils échouent tous le critère ACQUÉRIR, comme ils le doivent. [VÉRIFIÉ — E002-bis]
+> - Le découvreur naïf, qui accepte une propriété après 3 confirmations, en accepte 45 fausses sur 161, dont 29 compositions ; son R reste négatif même sans bruit. Ce n'est pas le bruit qui le trompe, c'est sa manière d'accepter une règle. [VÉRIFIÉ — E002, recalculé par R002]
+>
+> **3. La hiérarchie de confiance « vérifier les prémisses » : le plafond-vérificateur.**
+> - Sous bruit, parmi les quatre étalons testés, la seule stratégie qui garde R > 0 dans tous les mondes est de **demander au monde de confirmer les prémisses observées avant de dire `DÉDUIT`**. [VÉRIFIÉ — E002-bis : 20/20 mondes, 0 `DÉDUIT` faux]
+> - Écart moyen entre ce plafond-vérificateur et le découvreur naïf : 0.026 bit par bit, en faveur du vérificateur dans les 20 mondes. [VÉRIFIÉ — E002-bis]
+> - C'est la piste « le monde est le vérificateur » (§11 v2) observée dans un cas simple. [HYPOTHÈSE]
+> - Conséquence pour l'architecture candidate : elle part du niveau du découvreur (R̂_diff ≈ −0.026) et doit gagner au moins 0.005 dans 3 familles sur 4, donc **acquérir et vérifier**. [VÉRIFIÉ pour le critère — E002-bis ; HYPOTHÈSE pour l'architecture]
 
 ---
 
@@ -2116,6 +2216,33 @@ Si la réponse devient oui, le projet commence à démontrer quelque chose de r�
 >
 > **Les valeurs de N, X, Y et Z sont à fixer ensemble avant de lancer quoi que ce soit.** C'est la première décision du projet.
 
+> **v2.2 — Résultats (2026-09-26) : les premiers étalons et leurs limites**
+>
+> **1. Trois systèmes mesurés sur les mêmes 10 questions d'E001.** [VÉRIFIÉ — E003, tableau comparatif]
+>
+> | Système | Accès | Ce qui est mesuré | « Faux et sûr » |
+> |---|---|---|---|
+> | **Jev** (TypeSafe AI, `typesafe-ai/jev`) | Vercel AI Gateway, `POST /v1/evaluate` ; probabilité par réponse | 10 questions sur 10 (T1 en M0002, T2 en M0003) | 0 sur 10 |
+> | **gpt-4.1-mini** (LLM-1, sans raisonnement) | même passerelle ; confiance **verbalisée** en JSON | 5 questions T1 sur 6 ; T2 non mesuré | 1 : T1-A `e_sup_d` nié, confiance 1.00, 3 fois sur 3 |
+> | **gemini-2.5-flash** (LLM-2, raisonnement) | même passerelle | 1 seule réponse lisible : 12 réponses 200 sur 13 tronquées (`finish_reason: length`) | non mesurable |
+>
+> - Hors distribution (E005), Jev a 9 évaluations « faux et sûr » sur 42 (voir §1 bis v2.2). Aucun LLM n'a encore été passé sur ce corpus. [VÉRIFIÉ — E005, E003]
+> - Latence médiane (réponses 200) : gpt-4.1-mini 974 ms, gemini-2.5-flash 4 500 ms, Jev 415 à 727 ms (médianes par cas, T1 d'E001). [VÉRIFIÉ — E003]
+> - Coût total relevé par la passerelle (`usage.cost`) : 0.00167 pour les 15 réponses de gpt-4.1-mini, 0.01314 pour les 13 réponses de gemini-2.5-flash ; celui de Jev n'est pas relevé. [VÉRIFIÉ — E003] L'unité serait l'USD. [HYPOTHÈSE]
+>
+> **2. Limites de ces étalons.**
+> - **Une confiance verbalisée n'est pas une probabilité** : gpt-4.1-mini écrit 1.00 aussi bien quand il a tort que quand il a raison. Comparer sa « confiance » à la probabilité de Jev n'est pas légitime tel quel. [VÉRIFIÉ pour l'observation — E003 ; HYPOTHÈSE pour la portée]
+> - **L'accès conditionne la mesure.** Le compte est en « free tier » : `google/gemini-3.8-flash`, `alibaba/qwen3.8-flash` et `zai/glm-5.3-flash` sont refusés en 403. [VÉRIFIÉ — rapports M0006, M0008] Le free tier semble ouvrir les modèles de 2025 et fermer ceux de 2026. [HYPOTHÈSE — rapport M0008] L'étalon « LLM de raisonnement actuel » du gabarit n'est donc pas encore atteint.
+> - **La passerelle limite à 5 requêtes par minute pour l'équipe** ; sans attente entre les relances, 37 appels sur 65 sont partis en 429 dans E003. [VÉRIFIÉ — E003] Un rythmeur interne aux scripts (≥ 26 s entre appels) est désormais autorisé. [VÉRIFIÉ — `vault/runtime/events.jsonl`, DECISION 2026-09-26 16:38:48]
+> - Budget de raisonnement : 400 tokens de sortie ne suffisent pas à gemini-2.5-flash ; sur ses réponses tronquées, le raisonnement en consomme 380 à 384. [VÉRIFIÉ — rapport M0008]
+> - Les états sont en français ; Jev est peut-être optimisé pour l'anglais. [HYPOTHÈSE — E001, E005 § Limites]
+>
+> **3. État des étalons obligatoires du gabarit.**
+> - Étalon 1, le solveur plafond écrit à la main : **fait** sur la chambre (oracle-propriétés dans E002, plafond-vérificateur dans E002-bis). [VÉRIFIÉ — E002, E002-bis]
+> - Étalon 2, un LLM de raisonnement avec les faits en contexte, **sur la chambre** : pas encore. E003 porte sur les cas d'E001, pas sur la chambre. [VÉRIFIÉ — E003]
+> - Étalon 3, un petit réseau (TRM ou GNN) : pas encore. [VÉRIFIÉ — aucune expérience de M0001 à M0009 ne le construit]
+> - N, X, Y et Z ne sont toujours pas fixés (issue #9). [VÉRIFIÉ — `vault/notes/2026-09-26-issues-github.md`]
+
 ---
 
 # 57. Hypothèse centrale à tester
@@ -2284,6 +2411,11 @@ Les agents devront retrouver :
 >
 > **Lien avec ce projet :** Engram va dans le sens du §25 v2. **Séparer ce qui est su (la mémoire) de ce qui raisonne (le calcul) améliore le raisonnement**, même à l'intérieur d'un Transformer. C'est un indice empirique en faveur de l'architecture à deux étages.
 
+> **v2.2 — Résultats (2026-09-26) : inchangé**
+>
+> - Aucune expérience ni revue de M0001 à M0009 et de R001 à R003 ne porte sur cette référence ; Engram (arXiv 2601.07372) reste le meilleur candidat, non confirmé. [VÉRIFIÉ — aucun mandat de `vault/echanges/archive/` ne la traite ; `git grep -i engram` sur `research/` des branches `main`, `exp/e002bis-mesure`, `exp/e003-etalon-llm`, `exp/e005-jev-hors-distribution` : 0 fichier]
+> - Lien indirect, à ne pas surinterpréter : le plafond-vérificateur d'E002-bis sépare ce qui est observé (vérifiable par requête) de ce qui est déduit, et c'est cette séparation qui garde R > 0 sous bruit (§29 v2.2). [HYPOTHÈSE]
+
 ---
 
 # 62. Consigne finale pour le chantier
@@ -2355,6 +2487,26 @@ NOUVELLE DÉDUCTION
 1. **Valeurs de N, X, Y, Z** dans l'affirmation gabarit du §56 v2.
 2. **Hypothèse centrale** : adopter le §1 bis (boucle savoir ↔ acquis) comme fil directeur de la phase 1, ou le garder comme une branche parmi A–F (§52).
 3. **Périmètre de la phase 1** : se limiter à la chambre aux relations opaques, ou viser directement un micro-monde perceptif (grilles).
+
+> **v2.2 — Résultats (2026-09-26) : statut des défis D14 à D16, et nouveaux défis**
+>
+> **Statut des défis existants.**
+>
+> | # | Statut au 2026-09-26 | Ce qui a été mesuré | Source |
+> |---|---|---|---|
+> | D14 | **Ouvert, précisé** | Les fautes fréquentes (é/er, accord avec « être ») sont détectées par Jev, P 0.06–0.10 [VÉRIFIÉ]. Les accords savants ne le sont pas : 7 évaluations sur 13 jugent correcte une phrase fautive [VÉRIFIÉ]. L'expérience listée (Test 1 A/B) a tourné : Jev et gpt-4.1-mini distinguent A et B, 3 fois sur 3 [VÉRIFIÉ]. Aucun déclencheur appris n'a encore été construit [VÉRIFIÉ]. | E001, E003, E005 |
+> | D15 | **Confirmé comme défi réel** | Sur le corpus E005, Jev est faux et sûr 9 fois sur 42 (6 questions), et conforme 19 fois sur 28 au-dessus de 0.8 : la calibration ne tient pas hors distribution sur ce corpus [VÉRIFIÉ]. Sous réserve de R004 (vérification grammaticale) et d'E006 (réplication) [VÉRIFIÉ — `00_INDEX.md` 16:38:48]. | E005 |
+> | D16 | **Non testé** | Aucune expérience de M0001 à M0009 ne soumet une correction à un système pour voir s'il réussit ensuite des cas nouveaux de la même famille [VÉRIFIÉ]. | `vault/echanges/archive/` |
+>
+> **Nouveaux défis issus des résultats.** Chaque ligne se ferme par une expérience qui tranche.
+>
+> | # | Défi | Piste v2.2 | Section | Expérience qui tranche |
+> |---|---|---|---|---|
+> | D17 | Sous bruit, un ratio à un plafond devient indéfini : la mesure elle-même peut casser (R_plafond ≤ 0 dans 12 mondes sur 20 [VÉRIFIÉ — E002]) | R̂ en différence contre un plafond-vérificateur ; contrôle de chance plus serré, car la variabilité entre mondes vaut 3 à 4 fois le seuil [VÉRIFIÉ — E002-bis] | §28 v2.2 | Un système **sans mémoire** passe-t-il le critère ACQUÉRIR par chance, sur plus de graines ? |
+> | D18 | Déduire juste à partir d'une prémisse fausse propage l'erreur ; vérifier coûte des bits [VÉRIFIÉ — E002, E002-bis] | Hiérarchie de confiance : vérifier les prémisses observées avant `DÉDUIT`, avec un budget [HYPOTHÈSE] | §29 v2.2 | Un système qui **apprend quand** vérifier ses prémisses bat-il le plafond-vérificateur en R, à bruit égal ? |
+> | D19 | Distracteurs et profondeur : un fait redondant fait passer Jev de `contradiction` à `coherent`, et une chaîne de 4 pas lui fait nier une déduction [VÉRIFIÉ — E005] | Tests A/B avec distracteurs, et chaînes de 2 à 5 pas, préenregistrés [HYPOTHÈSE — E005 § Prochaine étape] | §29 v2.2 | L'erreur suit-elle le nombre de pas ou la présence de distracteurs ? Le biais `coherent` tient-il si l'ordre des choix est permuté ? |
+> | D20 | Une contradiction dans l'état baisserait la confiance sur une déduction qui n'en dépend pas (0.49–0.58 contre 0.73–0.78 [VÉRIFIÉ — E001]) | Isoler les déductions de leurs voisines [HYPOTHÈSE] | §1 bis v2.2 | E004 (issue #5) : la baisse se reproduit-elle sur des paires contrôlées ? |
+> | D21 | Les étalons LLM sont difficiles à comparer : confiance verbalisée ≠ probabilité, accès limité (free tier, 5 requêtes par minute), sorties tronquées [VÉRIFIÉ — E003] | Protocole de rejeu préenregistré (issue #13), rythmeur interne, budget de tokens adapté ; comparer des décisions, pas des confiances [HYPOTHÈSE] | §56 v2.2 | Un LLM de raisonnement non tronqué, sur la chambre et sur E005, est-il faux et sûr aux mêmes endroits que Jev ? |
 
 ---
 
