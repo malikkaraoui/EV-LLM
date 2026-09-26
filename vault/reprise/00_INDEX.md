@@ -2,7 +2,7 @@
 date: 2026-09-25
 tags: [reprise, sessions, tableau-de-bord]
 maintenu_par: orchestrateur
-derniere_maj: 2026-09-26T16:38:48+02:00
+derniere_maj: 2026-09-26T17:08:23+02:00
 ---
 
 # Tableau de bord — sessions du projet ev-llm
@@ -39,6 +39,13 @@ Exemple (à supprimer à la première entrée réelle) :
 - Symptôme d'origine rejoué avant/après ; tests re-mesurés par le doubleur, pas repris du rapport d'auteur.
 - Réserve non bloquante : <réserve nommée, ou « aucune »>.
 -->
+
+## 2026-09-26T17:08:23+02:00 — Vague 3 : E002-bis mergé (R003 GO), E005 CASSÉ sur un total (R004), E003 complet, doc v2.2 prête ; vague 4 posée
+
+- R003 GO → E002-bis mergé (`main` contient d35af60). R004 ⛔ : totaux HTTP du README E005 faux (7×503/110×429) — **les 6 « faux et sûr » de Jev sont confirmés par sources (0 contesté)** ; correctif M0013.
+- M0010 E003 `73cdc79` : 60/60 mesuré, 0×429 grâce au rythme 26 s ; seul « faux et sûr » : gpt-4.1-mini sur T1-A `e_sup_d` (contamination ?).
+- M0012 doc `bcfb722` : GENESE +11 entrées, architecture v2.2 (D17–D21).
+- Vague 4 : M0013 correctif E005 · R005 doublage E003 · R006 doublage doc v2.2 · **M0014 A0, premier candidat ACQUÉRIR** · (M0011 E006 toujours en vol).
 
 ## 2026-09-26T16:38:48+02:00 — Vague 2 rendue : E001+E002 mergés (GO), mesure E002 réparée, **premiers « faux et sûr » de Jev** ; vague 3 posée
 

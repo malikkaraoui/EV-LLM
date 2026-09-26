@@ -1,14 +1,13 @@
 # CARNET DE BORD — instantané (1 minute)
 
-Dernière mise à jour : 2026-09-26T16:38:48+0200 (orchestrateur) — vague 3 en vol (5 fenêtres)
+Dernière mise à jour : 2026-09-26T17:08:23+0200 (orchestrateur) — vague 4 en vol
 
 ## Où on en est
 
-- `main` = `df79ad6` — E001 et E002 mergés (R001, R002 GO).
-- Branches à doubler : `exp/e002bis-mesure` d35af60 · `exp/e005-jev-hors-distribution` 08d80f7 · `exp/e003-etalon-llm` 01f3c8f (partiel).
-- Résultat marquant : Jev **faux et sûr** sur 6 questions hors distribution (E005, à répliquer — E006).
-- En vol : R003 · R004 · M0010 E003 rythmé · M0011 E006 · M0012 doc v2.2.
-- Contrainte : passerelle AI Gateway = 5 req/min/équipe → rythmeur ≥ 26 s par fenêtre (2 fenêtres API max).
+- `main` = `8a5b865` — E001, E002, E002-bis mergés.
+- À doubler/merger : E003 `73cdc79` (R005) · doc v2.2 `bcfb722` (R006) · E005 après correctif (M0013 → re-doublage).
+- En vol : M0011 E006 (réplication + contamination, API) · M0013 · R005 · R006 · **M0014 A0 premier candidat**.
+- Point pour Malik : GENESE (public) mentionne son enfant — décision à prendre.
 
 ## Références à ne pas toucher
 
