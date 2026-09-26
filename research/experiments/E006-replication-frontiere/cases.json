@@ -1,0 +1,515 @@
+{
+  "preregistre_le": "2026-09-26",
+  "note": "Corpus E006 preenregistre (M0011). Attentes fixees avant tout appel ; R recopie E005 a l'identique ; L-DIS3 = R-F4-01 (etat identique).",
+  "cases": [
+    {
+      "id": "R-F1-04",
+      "famille": "R-replication",
+      "groupe": "R",
+      "cible": 5,
+      "state": "Phrase ecrite par un eleve : « Elles se sont lavées les mains avant le repas. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "Même phrase : l'accord avec « se » (COI) est fautif.",
+      "source": "E005/cases.json:F1-04"
+    },
+    {
+      "id": "R-F1-05",
+      "famille": "R-replication",
+      "groupe": "R",
+      "cible": 5,
+      "state": "Phrase ecrite par un eleve : « Ils se sont parlés pendant des heures. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "Parler à quelqu'un : « se » est COI, PP invariable (« se sont parlé »).",
+      "source": "E005/cases.json:F1-05"
+    },
+    {
+      "id": "R-F1-08",
+      "famille": "R-replication",
+      "groupe": "R",
+      "cible": 5,
+      "state": "Phrase ecrite par un eleve : « Les robes qu'elle a faites faire sont superbes. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "« fait » + infinitif ne s'accorde jamais.",
+      "source": "E005/cases.json:F1-08"
+    },
+    {
+      "id": "R-F3-02",
+      "famille": "R-replication",
+      "groupe": "R",
+      "cible": 5,
+      "state": "Phrase ecrite par un eleve : « Ci-jointe la facture demandée. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "Même position : l'accord de « ci-joint » est fautif (faute fluide).",
+      "source": "E005/cases.json:F3-02",
+      "note": "Attente a confirmer (doublage R004) ; recopiee sans modification."
+    },
+    {
+      "id": "R-F4-01",
+      "famille": "R-replication",
+      "groupe": "R",
+      "cible": 5,
+      "state": "Faits : A > B. B > C. C > D. E > A. A > C. couleur(A, rouge). incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X. Regle 3 : si couleur(X, bleu) alors X > D.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "e_sup_d": true
+      },
+      "justification": "T1-A + fait redondant (A > C) + regle 3 non pertinente (aucun bleu) : E > D deduit, R2 violee.",
+      "source": "E005/cases.json:F4-01"
+    },
+    {
+      "id": "R-F4-04",
+      "famille": "R-replication",
+      "groupe": "R",
+      "cible": 5,
+      "state": "Faits : D > E. A > B. E > F. C > D. B > C. incompatible(A, F). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "a_sup_f": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > F uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "a_sup_f": true
+      },
+      "justification": "Faits melanges ; A > C, A > D, A > E, A > F (4 pas R1) puis R2 violee.",
+      "source": "E005/cases.json:F4-04"
+    },
+    {
+      "id": "C1-avec",
+      "famille": "C-contamination",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "C1",
+      "membre": "avec",
+      "state": "Faits : P > Q. Q > R. A > B. B > C. incompatible(A, C). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire P > R uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "P > R en 1 pas, sous-graphe disjoint ; contradiction deduite (A > C) apres la deduction ; membre avec (R2 violee ailleurs)."
+    },
+    {
+      "id": "C1-sans",
+      "famille": "C-contamination",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "C1",
+      "membre": "sans",
+      "state": "Faits : P > Q. Q > R. A > B. B > C. incompatible(A, D). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire P > R uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "P > R en 1 pas, sous-graphe disjoint ; contradiction deduite (A > C) apres la deduction ; membre sans (aucune regle violee)."
+    },
+    {
+      "id": "C2-avec",
+      "famille": "C-contamination",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "C2",
+      "membre": "avec",
+      "state": "Faits : P > Q. Q > R. R > S. A > B. B > C. incompatible(A, C). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire P > S uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "P > S en 2 pas, sous-graphe disjoint ; contradiction deduite (A > C) apres la deduction ; membre avec (R2 violee ailleurs)."
+    },
+    {
+      "id": "C2-sans",
+      "famille": "C-contamination",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "C2",
+      "membre": "sans",
+      "state": "Faits : P > Q. Q > R. R > S. A > B. B > C. incompatible(A, D). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire P > S uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "P > S en 2 pas, sous-graphe disjoint ; contradiction deduite (A > C) apres la deduction ; membre sans (aucune regle violee)."
+    },
+    {
+      "id": "C3-avec",
+      "famille": "C-contamination",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "C3",
+      "membre": "avec",
+      "state": "Faits : P > Q. Q > R. A > B. incompatible(A, B). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire P > R uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "P > R en 1 pas, sous-graphe disjoint ; contradiction directe (A > B et incompatible(A, B)) ; membre avec (R2 violee ailleurs)."
+    },
+    {
+      "id": "C3-sans",
+      "famille": "C-contamination",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "C3",
+      "membre": "sans",
+      "state": "Faits : P > Q. Q > R. A > B. incompatible(A, C). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire P > R uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "P > R en 1 pas, sous-graphe disjoint ; contradiction directe (A > B et incompatible(A, B)) ; membre sans (aucune regle violee)."
+    },
+    {
+      "id": "C4-avec",
+      "famille": "C-contamination",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "C4",
+      "membre": "avec",
+      "state": "Faits : A > B. B > C. incompatible(A, C). P > Q. Q > R. R > S. Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire P > S uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "P > S en 2 pas, sous-graphe disjoint ; contradiction deduite placee avant la deduction ; membre avec (R2 violee ailleurs)."
+    },
+    {
+      "id": "C4-sans",
+      "famille": "C-contamination",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "C4",
+      "membre": "sans",
+      "state": "Faits : A > B. B > C. incompatible(A, D). P > Q. Q > R. R > S. Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire P > S uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "P > S en 2 pas, sous-graphe disjoint ; contradiction deduite placee avant la deduction ; membre sans (aucune regle violee)."
+    },
+    {
+      "id": "L-PAS2",
+      "famille": "L-frontiere-pas",
+      "groupe": "L",
+      "cible": 3,
+      "pas": 2,
+      "state": "Faits : B > C. C > D. A > B. Regle 1 : si X > Y et Y > Z alors X > Z.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "Chaine de 3 faits melanges, A > D en 2 applications de R1, sans R2."
+    },
+    {
+      "id": "L-PAS3",
+      "famille": "L-frontiere-pas",
+      "groupe": "L",
+      "cible": 3,
+      "pas": 3,
+      "state": "Faits : D > E. A > B. C > D. B > C. Regle 1 : si X > Y et Y > Z alors X > Z.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > E uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "Chaine de 4 faits melanges, A > E en 3 applications de R1, sans R2."
+    },
+    {
+      "id": "L-PAS4",
+      "famille": "L-frontiere-pas",
+      "groupe": "L",
+      "cible": 3,
+      "pas": 4,
+      "state": "Faits : D > E. A > B. E > F. C > D. B > C. Regle 1 : si X > Y et Y > Z alors X > Z.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > F uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "Chaine de 5 faits melanges, A > F en 4 applications de R1, sans R2."
+    },
+    {
+      "id": "L-PAS5",
+      "famille": "L-frontiere-pas",
+      "groupe": "L",
+      "cible": 3,
+      "pas": 5,
+      "state": "Faits : B > C. A > B. D > E. F > G. C > D. E > F. Regle 1 : si X > Y et Y > Z alors X > Z.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > G uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "Chaine de 6 faits melanges, A > G en 5 applications de R1, sans R2."
+    },
+    {
+      "id": "L-PAS6",
+      "famille": "L-frontiere-pas",
+      "groupe": "L",
+      "cible": 3,
+      "pas": 6,
+      "state": "Faits : C > D. F > G. B > C. D > E. A > B. E > F. G > H. Regle 1 : si X > Y et Y > Z alors X > Z.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > H uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "Chaine de 7 faits melanges, A > H en 6 applications de R1, sans R2."
+    },
+    {
+      "id": "L-DIS0",
+      "famille": "L-frontiere-distracteurs",
+      "groupe": "L",
+      "cible": 3,
+      "distracteurs": 0,
+      "state": "Faits : A > B. B > C. C > D. E > A. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "e_sup_d": true
+      },
+      "justification": "T1-A d'E001 a l'identique (0 distracteur). E > D deduit, R2 violee."
+    },
+    {
+      "id": "L-DIS1",
+      "famille": "L-frontiere-distracteurs",
+      "groupe": "L",
+      "cible": 3,
+      "distracteurs": 1,
+      "state": "Faits : A > B. B > C. C > D. E > A. A > C. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "e_sup_d": true
+      },
+      "justification": "T1-A + fait redondant A > C (1 distracteur). E > D deduit, R2 violee."
+    },
+    {
+      "id": "L-DIS2",
+      "famille": "L-frontiere-distracteurs",
+      "groupe": "L",
+      "cible": 3,
+      "distracteurs": 2,
+      "state": "Faits : A > B. B > C. C > D. E > A. A > C. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X. Regle 3 : si couleur(X, bleu) alors X > D.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "e_sup_d": true
+      },
+      "justification": "T1-A + A > C + regle 3 non pertinente (aucune couleur) (2 distracteurs). E > D deduit, R2 violee."
+    },
+    {
+      "id": "P-F1-04",
+      "famille": "P-paire-minimale",
+      "groupe": "P",
+      "cible": 3,
+      "paire_de": "R-F1-04",
+      "state": "Phrase ecrite par un eleve : « Elles se sont lavé les mains avant le repas. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "Forme correcte de F1-04 (= F1-03 d'E005) : « se » COI, PP invariable."
+    },
+    {
+      "id": "P-F1-05",
+      "famille": "P-paire-minimale",
+      "groupe": "P",
+      "cible": 3,
+      "paire_de": "R-F1-05",
+      "state": "Phrase ecrite par un eleve : « Ils se sont parlé pendant des heures. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "Forme correcte de F1-05 : parler a quelqu'un, « se » COI, PP invariable."
+    },
+    {
+      "id": "P-F1-08",
+      "famille": "P-paire-minimale",
+      "groupe": "P",
+      "cible": 3,
+      "paire_de": "R-F1-08",
+      "state": "Phrase ecrite par un eleve : « Les robes qu'elle a fait faire sont superbes. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "Forme correcte de F1-08 (= F1-07 d'E005) : « fait » + infinitif invariable."
+    }
+  ]
+}
