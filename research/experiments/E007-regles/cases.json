@@ -1,0 +1,621 @@
+{
+  "preregistre_le": "2026-09-26",
+  "note": "Corpus E007 preenregistre (M0017). Attentes fixees avant tout appel ; A1-i = T1-A d'E001 ; B-FAIT = L-DIS1 d'E006 ; C reprend les etats d'E006 + regle.",
+  "cases": [
+    {
+      "id": "D-LOG-VRAI",
+      "famille": "D-controle",
+      "groupe": "D",
+      "cible": 3,
+      "state": "Faits : A > B. B > C. Regle 1 : si X > Y et Y > Z alors X > Z.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > C uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "A > C en 1 application de R1."
+    },
+    {
+      "id": "D-LOG-FAUX",
+      "famille": "D-controle",
+      "groupe": "D",
+      "cible": 3,
+      "state": "Faits : A > B. B > C. Regle 1 : si X > Y et Y > Z alors X > Z.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire C > A uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": false
+      },
+      "justification": "C > A ne se deduit pas (R1 ne produit que A > C)."
+    },
+    {
+      "id": "D-GRAM-FAUX",
+      "famille": "D-controle",
+      "groupe": "D",
+      "cible": 3,
+      "state": "Phrase ecrite par un eleve : « Les enfants mange du pain. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "Accord sujet-verbe : « Les enfants mangent »."
+    },
+    {
+      "id": "D-GRAM-OK",
+      "famille": "D-controle",
+      "groupe": "D",
+      "cible": 3,
+      "state": "Phrase ecrite par un eleve : « Le chat dort sur le canapé. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "Phrase simple sans difficulte d'accord."
+    },
+    {
+      "id": "C-F1-04-fautive",
+      "famille": "C-regle-explicite",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "F1-04",
+      "forme": "fautive",
+      "regle": true,
+      "sans_regle_e006": "R-F1-04",
+      "state": "Règle d'accord : quand un verbe pronominal a un complément d'objet direct placé après lui (ex. « se laver les mains »), « se » est complément indirect et le participe passé ne s'accorde pas. Phrase ecrite par un eleve : « Elles se sont lavées les mains avant le repas. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "R-F1-04 + regle d'accord ecrite avant la phrase. Même phrase : l'accord avec « se » (COI) est fautif. Source : Regle standard d'accord du participe passe (Grevisse & Goosse, Le Bon Usage ; Bescherelle, La grammaire pour tous)."
+    },
+    {
+      "id": "C-F1-04-correcte",
+      "famille": "C-regle-explicite",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "F1-04",
+      "forme": "correcte",
+      "regle": true,
+      "sans_regle_e006": "P-F1-04",
+      "state": "Règle d'accord : quand un verbe pronominal a un complément d'objet direct placé après lui (ex. « se laver les mains »), « se » est complément indirect et le participe passé ne s'accorde pas. Phrase ecrite par un eleve : « Elles se sont lavé les mains avant le repas. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "P-F1-04 + regle d'accord ecrite avant la phrase. Forme correcte de F1-04 (= F1-03 d'E005) : « se » COI, PP invariable. Source : Regle standard d'accord du participe passe (Grevisse & Goosse, Le Bon Usage ; Bescherelle, La grammaire pour tous)."
+    },
+    {
+      "id": "C-F1-05-fautive",
+      "famille": "C-regle-explicite",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "F1-05",
+      "forme": "fautive",
+      "regle": true,
+      "sans_regle_e006": "R-F1-05",
+      "state": "Règle d'accord : dans « se parler » (parler à quelqu'un), « se » est complément indirect et le participe passé reste invariable. Phrase ecrite par un eleve : « Ils se sont parlés pendant des heures. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "R-F1-05 + regle d'accord ecrite avant la phrase. Parler à quelqu'un : « se » est COI, PP invariable (« se sont parlé »). Source : Regle standard d'accord du participe passe (Grevisse & Goosse, Le Bon Usage ; Bescherelle, La grammaire pour tous)."
+    },
+    {
+      "id": "C-F1-05-correcte",
+      "famille": "C-regle-explicite",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "F1-05",
+      "forme": "correcte",
+      "regle": true,
+      "sans_regle_e006": "P-F1-05",
+      "state": "Règle d'accord : dans « se parler » (parler à quelqu'un), « se » est complément indirect et le participe passé reste invariable. Phrase ecrite par un eleve : « Ils se sont parlé pendant des heures. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "P-F1-05 + regle d'accord ecrite avant la phrase. Forme correcte de F1-05 : parler a quelqu'un, « se » COI, PP invariable. Source : Regle standard d'accord du participe passe (Grevisse & Goosse, Le Bon Usage ; Bescherelle, La grammaire pour tous)."
+    },
+    {
+      "id": "C-F1-08-fautive",
+      "famille": "C-regle-explicite",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "F1-08",
+      "forme": "fautive",
+      "regle": true,
+      "sans_regle_e006": "R-F1-08",
+      "state": "Règle d'accord : le participe passé « fait » suivi d'un infinitif est toujours invariable. Phrase ecrite par un eleve : « Les robes qu'elle a faites faire sont superbes. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      },
+      "justification": "R-F1-08 + regle d'accord ecrite avant la phrase. « fait » + infinitif ne s'accorde jamais. Source : Regle standard d'accord du participe passe (Grevisse & Goosse, Le Bon Usage ; Bescherelle, La grammaire pour tous)."
+    },
+    {
+      "id": "C-F1-08-correcte",
+      "famille": "C-regle-explicite",
+      "groupe": "C",
+      "cible": 5,
+      "paire": "F1-08",
+      "forme": "correcte",
+      "regle": true,
+      "sans_regle_e006": "P-F1-08",
+      "state": "Règle d'accord : le participe passé « fait » suivi d'un infinitif est toujours invariable. Phrase ecrite par un eleve : « Les robes qu'elle a fait faire sont superbes. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "P-F1-08 + regle d'accord ecrite avant la phrase. Forme correcte de F1-08 (= F1-07 d'E005) : « fait » + infinitif invariable. Source : Regle standard d'accord du participe passe (Grevisse & Goosse, Le Bon Usage ; Bescherelle, La grammaire pour tous)."
+    },
+    {
+      "id": "C0-F1-04-correcte",
+      "famille": "C-rappel-sans-regle",
+      "groupe": "C",
+      "cible": 2,
+      "paire": "F1-04",
+      "forme": "correcte",
+      "regle": false,
+      "sans_regle_e006": "P-F1-04",
+      "state": "Phrase ecrite par un eleve : « Elles se sont lavé les mains avant le repas. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "Rappel de P-F1-04 d'E006 (etat identique, sans regle) : derive dans le temps."
+    },
+    {
+      "id": "C0-F1-05-correcte",
+      "famille": "C-rappel-sans-regle",
+      "groupe": "C",
+      "cible": 2,
+      "paire": "F1-05",
+      "forme": "correcte",
+      "regle": false,
+      "sans_regle_e006": "P-F1-05",
+      "state": "Phrase ecrite par un eleve : « Ils se sont parlé pendant des heures. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "Rappel de P-F1-05 d'E006 (etat identique, sans regle) : derive dans le temps."
+    },
+    {
+      "id": "C0-F1-08-correcte",
+      "famille": "C-rappel-sans-regle",
+      "groupe": "C",
+      "cible": 2,
+      "paire": "F1-08",
+      "forme": "correcte",
+      "regle": false,
+      "sans_regle_e006": "P-F1-08",
+      "state": "Phrase ecrite par un eleve : « Les robes qu'elle a fait faire sont superbes. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      },
+      "justification": "Rappel de P-F1-08 d'E006 (etat identique, sans regle) : derive dans le temps."
+    },
+    {
+      "id": "A1-i",
+      "famille": "A-ablation",
+      "groupe": "A",
+      "cible": 3,
+      "base": "A1",
+      "variante": "i",
+      "regle_manipulee": "R2",
+      "state": "Faits : A > B. B > C. C > D. E > A. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "e_sup_d": true
+      },
+      "justification": "T1-A, R2 : regle presente. E > D se deduit par R1 dans toutes les variantes. Statut attendu contradiction."
+    },
+    {
+      "id": "A2-i",
+      "famille": "A-ablation",
+      "groupe": "A",
+      "cible": 3,
+      "base": "A2",
+      "variante": "i",
+      "regle_manipulee": "R1",
+      "state": "Faits : A > B. B > C. C > D. Regle 1 : si X > Y et Y > Z alors X > Z.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "Chaine A > B > C > D, R1 : regle presente. A > D se deduit (2 pas)."
+    },
+    {
+      "id": "A1-ii",
+      "famille": "A-ablation",
+      "groupe": "A",
+      "cible": 3,
+      "base": "A1",
+      "variante": "ii",
+      "regle_manipulee": "R2",
+      "state": "Faits : A > B. B > C. C > D. E > A. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "coherent",
+        "e_sup_d": true
+      },
+      "justification": "T1-A, R2 : regle retiree. E > D se deduit par R1 dans toutes les variantes. Statut attendu coherent."
+    },
+    {
+      "id": "A2-ii",
+      "famille": "A-ablation",
+      "groupe": "A",
+      "cible": 3,
+      "base": "A2",
+      "variante": "ii",
+      "regle_manipulee": "R1",
+      "state": "Faits : A > B. B > C. C > D.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": false
+      },
+      "justification": "Chaine A > B > C > D, R1 : regle retiree. A > D ne se deduit pas des regles donnees."
+    },
+    {
+      "id": "A1-iii",
+      "famille": "A-ablation",
+      "groupe": "A",
+      "cible": 3,
+      "base": "A1",
+      "variante": "iii",
+      "regle_manipulee": "R2",
+      "state": "Faits : A > B. B > C. C > D. E > A. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors X > Y ou Y > X.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "coherent",
+        "e_sup_d": true
+      },
+      "justification": "T1-A, R2 : regle inversee. E > D se deduit par R1 dans toutes les variantes. Statut attendu coherent."
+    },
+    {
+      "id": "A2-iii",
+      "famille": "A-ablation",
+      "groupe": "A",
+      "cible": 3,
+      "base": "A2",
+      "variante": "iii",
+      "regle_manipulee": "R1",
+      "state": "Faits : A > B. B > C. C > D. Regle 1 : si X > Y et Y > Z alors Z > X.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": false
+      },
+      "justification": "Chaine A > B > C > D, R1 : regle inversee. A > D ne se deduit pas des regles donnees."
+    },
+    {
+      "id": "A1-iv",
+      "famille": "A-ablation",
+      "groupe": "A",
+      "cible": 3,
+      "base": "A1",
+      "variante": "iv",
+      "regle_manipulee": "R2",
+      "state": "Faits : A > B. B > C. C > D. E > A. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : le marche du hameau ouvre chaque samedi matin.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "coherent",
+        "e_sup_d": true
+      },
+      "justification": "T1-A, R2 : regle remplacee par une phrase hors sujet de meme longueur. E > D se deduit par R1 dans toutes les variantes. Statut attendu coherent."
+    },
+    {
+      "id": "A2-iv",
+      "famille": "A-ablation",
+      "groupe": "A",
+      "cible": 3,
+      "base": "A2",
+      "variante": "iv",
+      "regle_manipulee": "R1",
+      "state": "Faits : A > B. B > C. C > D. Regle 1 : la gare ferme chaque dimanche.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": false
+      },
+      "justification": "Chaine A > B > C > D, R1 : regle remplacee par une phrase hors sujet de meme longueur. A > D ne se deduit pas des regles donnees."
+    },
+    {
+      "id": "A1-v",
+      "famille": "A-ablation",
+      "groupe": "A",
+      "cible": 3,
+      "base": "A1",
+      "variante": "v",
+      "regle_manipulee": "R2",
+      "state": "Faits : A > B. B > C. C > D. E > A. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X. Regle 3 : le marche du hameau ouvre chaque samedi matin.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "e_sup_d": true
+      },
+      "justification": "T1-A, R2 : regle presente + phrase hors sujet ajoutee. E > D se deduit par R1 dans toutes les variantes. Statut attendu contradiction."
+    },
+    {
+      "id": "A2-v",
+      "famille": "A-ablation",
+      "groupe": "A",
+      "cible": 3,
+      "base": "A2",
+      "variante": "v",
+      "regle_manipulee": "R1",
+      "state": "Faits : A > B. B > C. C > D. Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : le marche du hameau ouvre chaque samedi matin.",
+      "questions": {
+        "deduction": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire A > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "deduction": true
+      },
+      "justification": "Chaine A > B > C > D, R1 : regle presente + phrase hors sujet ajoutee. A > D se deduit (2 pas)."
+    },
+    {
+      "id": "B-FAIT",
+      "famille": "B-distracteur",
+      "groupe": "B",
+      "cible": 3,
+      "state": "Faits : A > B. B > C. C > D. E > A. A > C. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "e_sup_d": true
+      },
+      "justification": "T1-A + fait redondant A > C (deductible), sans regle (= L-DIS1 d'E006). E > D deduit, R2 violee."
+    },
+    {
+      "id": "B-FAIT2",
+      "famille": "B-distracteur",
+      "groupe": "B",
+      "cible": 3,
+      "state": "Faits : A > B. B > C. C > D. E > A. B > D. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "e_sup_d": true
+      },
+      "justification": "T1-A + autre fait redondant B > D (deductible), sans regle. E > D deduit, R2 violee."
+    },
+    {
+      "id": "B-REGLE",
+      "famille": "B-distracteur",
+      "groupe": "B",
+      "cible": 3,
+      "state": "Faits : A > B. B > C. C > D. E > A. incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X. Regle 3 : si couleur(X, bleu) alors X > D.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "e_sup_d": true
+      },
+      "justification": "T1-A + regle 3 non pertinente (aucune couleur), sans fait. E > D deduit, R2 violee."
+    },
+    {
+      "id": "B-NEUTRE",
+      "famille": "B-distracteur",
+      "groupe": "B",
+      "cible": 3,
+      "state": "Faits : A > B. B > C. C > D. E > A. couleur(A, rouge). incompatible(D, E). Regle 1 : si X > Y et Y > Z alors X > Z. Regle 2 : si incompatible(X, Y) alors ni X > Y ni Y > X.",
+      "questions": {
+        "statut": {
+          "type": "choice",
+          "instructions": "En appliquant uniquement les faits et regles donnes, l'ensemble est-il contradictoire, coherent, ou indetermine faute de regle ?",
+          "criteria": {
+            "contradiction": "Une regle explicitement donnee est violee par des faits donnes ou deduits",
+            "coherent": "Aucune regle donnee n'est violee",
+            "indetermine": "Il manque une definition ou une regle pour trancher"
+          }
+        },
+        "e_sup_d": {
+          "type": "boolean",
+          "instructions": "Peut-on deduire E > D uniquement a partir des faits et regles donnes ?"
+        }
+      },
+      "attendu": {
+        "statut": "contradiction",
+        "e_sup_d": true
+      },
+      "justification": "T1-A + fait non pertinent couleur(A, rouge), sans regle. E > D deduit, R2 violee."
+    }
+  ]
+}
