@@ -2,7 +2,7 @@
 date: 2026-09-25
 tags: [reprise, sessions, tableau-de-bord]
 maintenu_par: orchestrateur
-derniere_maj: 2026-09-26T10:28:42+02:00
+derniere_maj: 2026-09-26T15:53:49+02:00
 ---
 
 # Tableau de bord — sessions du projet ev-llm
@@ -39,6 +39,19 @@ Exemple (à supprimer à la première entrée réelle) :
 - Symptôme d'origine rejoué avant/après ; tests re-mesurés par le doubleur, pas repris du rapport d'auteur.
 - Réserve non bloquante : <réserve nommée, ou « aucune »>.
 -->
+
+## 2026-09-26T15:53:49+02:00 — M0003–M0006 (F01–F04) posés en parallèle : rejeu T2, issues GitHub, E002, E003
+
+- Décision Malik 26/09 15:50 : rejeu T2 avant doublage ; enchaîner les pistes en parallèle ; issues GitHub pour ne rien oublier.
+- F01/M0003 `exp/e001-sonde-jev` (T2 seul, réparti) · F02/M0004 `main` (labels + 17 issues + `vault/notes/2026-09-26-issues-github.md`) · F03/M0005 `exp/e002-relations-opaques` (banc « acquérir » + 3 étalons, sans réseau) · F04/M0006 `exp/e003-etalon-llm` (2 LLM via AI Gateway, ≤ 70 appels).
+- Branches et fichiers disjoints ; F01 et F04 appellent la même passerelle (risque 429 partagé, assumé).
+
+## 2026-09-26T10:46:10+02:00 — M0002 (F01) : première mesure Jev partielle — T1 6/6 conforme, T2 non servi (429/503)
+
+- Rapport : `vault/echanges/F01.md` § Rapport M0002 ; branche `exp/e001-sonde-jev` tip `08672e4` (non doublée, non mergée) ; `main` = `7c453b1`.
+- 21 appels : 7×200, 3×503 (digitalocean), 11×429 (passerelle) — vérifié par l'orchestrateur dans `raw.public.jsonl`.
+- T1-A « contradiction » / T1-B « indéterminé » distingués, stables 3/3 ; `e_sup_d` affaibli en présence de contradiction (0.49–0.58 vs 0.73–0.78) [hypothèse].
+- Bloquant scientifique : T2 (erreurs invisibles) entièrement non mesuré. Décision Malik attendue : rejeu T2 seul avant doublage R001.
 
 ## 2026-09-26T10:28:42+02:00 — M0002 (F01) posé : rejeu E001 après carte Vercel, en attente de rendu
 

@@ -1,16 +1,16 @@
 # CARNET DE BORD — instantané (1 minute)
 
-Dernière mise à jour : 2026-09-26T10:28:42+0200 (orchestrateur) — M0002 posé, rejeu sonde Jev
+Dernière mise à jour : 2026-09-26T15:53:49+0200 (orchestrateur) — 4 mandats en vol (F01–F04)
 
 ## Où on en est
 
-- `main` = `525be53` — reprise F01 (vault seul) ; `2791564` = décision exception + carnet/index.
-- `exp/e001-sonde-jev` = `2719279` — sonde Jev prête (script + 7 cas figés), **non mesurée** : AI Gateway renvoie 403 `customer_verification_required`.
-- En vol : **F01 / M0002 `e001-rejeu-mesure`** — rejeu E001 après ajout de la carte Vercel (26/09 10:27). Ensuite : doublage R001 → merge.
+- `main` = `7c453b1`. `exp/e001-sonde-jev` = `08672e4` (E001 : T1 mesuré 6/6, T2 non servi).
+- En vol : F01/M0003 rejeu T2 · F02/M0004 issues GitHub · F03/M0005 E002 relations opaques · F04/M0006 E003 étalon LLM.
+- Ensuite : doublages R001 (E001), puis E002/E003 ; nouvelles pistes selon résultats (E004 contamination, E005 calibration hors distribution).
 
 ## Références à ne pas toucher
 
-- `vault/echanges/archive/2026-09-25-F01-M0001-e001-sonde-jev.md` (M0001) et `vault/echanges/F01.md` (M0002) — références du doublage R001.
+- `vault/echanges/archive/2026-09-2{5,6}-F01-M000{1,2}-*.md` et `vault/echanges/F01.md` (M0003) — références du doublage R001.
 
 ## Rappels
 
