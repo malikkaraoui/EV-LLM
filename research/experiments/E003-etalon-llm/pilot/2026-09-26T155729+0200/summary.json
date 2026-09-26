@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T155729+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/chat/completions",
+    "reps": 1,
+    "pilot": true,
+    "models": [
+      {
+        "label": "LLM-1",
+        "model": "openai/gpt-4.1-mini",
+        "extra": {}
+      },
+      {
+        "label": "LLM-2",
+        "model": "google/gemini-3.8-flash",
+        "extra": {
+          "reasoning": {
+            "effort": "low"
+          }
+        }
+      }
+    ],
+    "max_tokens": 400,
+    "max_calls": 2,
+    "cases_sha256": "8325775b4957bf44664b631ce48096933c6f56d4f245143161405ae6b1e99d0b",
+    "n_appels": 2,
+    "statuts_http": {
+      "200": 1,
+      "403": 1
+    },
+    "arret": "stop_http"
+  },
+  "rows": [
+    {
+      "modele": "LLM-1",
+      "model_id": "openai/gpt-4.1-mini",
+      "case_id": "PILOTE",
+      "famille": "pilote-hors-evaluation",
+      "question": "x_rectangle",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 1578.7,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "true": 1
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": true,
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-2",
+      "model_id": "google/gemini-3.8-flash",
+      "case_id": "PILOTE",
+      "famille": "pilote-hors-evaluation",
+      "question": "x_rectangle",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 0,
+      "non_parse_raisons": [
+        "HTTP 403"
+      ],
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "repartition": null,
+      "conforme": null,
+      "faux_et_sur": null,
+      "n_faux_et_sur_reps": 0
+    }
+  ]
+}
