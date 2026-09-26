@@ -2,7 +2,7 @@
 date: 2026-09-25
 tags: [reprise, sessions, tableau-de-bord]
 maintenu_par: orchestrateur
-derniere_maj: 2026-09-26T17:32:59+02:00
+derniere_maj: 2026-09-26T18:03:33+02:00
 ---
 
 # Tableau de bord — sessions du projet ev-llm
@@ -39,6 +39,13 @@ Exemple (à supprimer à la première entrée réelle) :
 - Symptôme d'origine rejoué avant/après ; tests re-mesurés par le doubleur, pas repris du rapport d'auteur.
 - Réserve non bloquante : <réserve nommée, ou « aucune »>.
 -->
+
+## 2026-09-26T18:03:33+02:00 — Vague 5 : **E005 mergé (R007 GO)** ; E006 en RÉSERVE (2 « faux et sûr » reclassés contestés) ; A0-bis échoue 0/4 ; défaut fournisseur E003 ; vague 6 posée
+
+- R007 GO 7/7 → E005 mergé (`e1448c4`). R008 ⚠️ E006 : R-F4-04 et L-DIS1 **contestés** (question ambiguë dans un ensemble contradictoire) → compte honnête : **5 faux et sûr non contestés + 1 contesté** (et non 6) ; correctif README M0018.
+- M0015 E003 `bbc50ae` : raw.public.jsonl + `.gitignore` pilot/. **Défaut orchestrateur** : aucun fournisseur imposé ni journalisé (gemini servi via Vertex) → backend non contrôlé ; M0019 (fournisseur imposé, 402 = arrêt), rejeu M0021.
+- M0016 A0-bis `1be4654` : ÉCHEC ACQUÉRIR 0/4 ; coût marginal active 22.6 requêtes, exactitude 0.83, R̂_diff −0.0105 ; MLE de bruit biaisé (échantillon sélectionné).
+- Vague 6 : M0018 E006 Lecture · M0019 E003 fournisseur · R009 doublage A0+A0-bis · **M0020 ACQUÉRIR atteignable ? (oracle) puis A0-ter** · M0017 E007 toujours en vol.
 
 ## 2026-09-26T17:32:59+02:00 — Vague 4 : **E006 réplique les 6 « faux et sûr » de Jev** ; A0 échoue ACQUÉRIR (cause trouvée) ; doc v2.2 mergée ; vague 5 posée
 

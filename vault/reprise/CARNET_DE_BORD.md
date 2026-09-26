@@ -1,22 +1,23 @@
 # CARNET DE BORD — instantané (1 minute)
 
-Dernière mise à jour : 2026-09-26T17:32:59+0200 (orchestrateur) — vague 5 en vol
+Dernière mise à jour : 2026-09-26T18:03:33+02:00 (orchestrateur) — vague 6 en vol
 
 ## Où on en est
 
-- `main` = `a1231e5` — E001, E002, E002-bis, doc v2.2 + GENESE mergés.
-- Résultat solide : Jev **faux et sûr** sur 6 questions, répliqué 5/5 (E006) ; hypothèse « plausibilité de surface » testée par E007.
-- Candidat A0 : échec ACQUÉRIR, cause identifiée → A0-bis.
-- En vol : R007 · M0015 · R008 · M0016 · M0017.
-- Décision attendue de Malik : mention de son enfant dans GENESE (dépôt public).
+- `main` contient E001, E002, E002-bis, **E005**, doc v2.2 + GENESE.
+- Jev : **5 « faux et sûr » non contestés, répliqués 5/5** (E006) + 1 réponse contestée (question ambiguë, R008) ; E007 teste « Jev lit-il les règles ? ».
+- Candidats ACQUÉRIR : A0 1/4, A0-bis 0/4 → M0020 vérifie d'abord que le critère est **atteignable** (étalon oracle).
+- E003 : backend passerelle non contrôlé (défaut de protocole) → M0019 puis rejeu M0021 ; merge E003 bloqué d'ici là.
+- En vol : M0017 (F05) · M0018 · M0019 · R009 · M0020.
+- Décisions attendues de Malik : mention de son enfant dans GENESE (dépôt public) ; budget passerelle 5 $ (à poser, navigateur non connecté).
 
 ## Références à ne pas toucher
 
-- `vault/echanges/archive/2026-09-2{5,6}-F01-M000{1,2}-*.md` et `vault/echanges/F01.md` (M0003) — références du doublage R001.
+- `vault/echanges/archive/2026-09-2{5,6}-F01-M000{1,2}-*.md` — références du doublage R001.
 
 ## Rappels
 
 - Dépôt **PUBLIC** : rien de secret dans `vault/`, rapports, résultats.
-- Incident fetch orchestrateur du 25/09 : constaté soldé le 26/09 (lock et refs `pub/*` absents).
+- Passerelle : 5 req/min/équipe (1 fenêtre API à 15 s ou 2 à 26 s) ; tout appel à un modèle témoin impose et journalise son fournisseur ; 402 = arrêt net.
 - Défauts harnais signalés : `.claude/worktrees/` non ignoré ; `scripts/verifier-rendu.mjs` absent ; pas de `type` d'événement défini pour `src: fenetre`.
 - Source de vérité : `00_INDEX.md` + `vault/runtime/` — et au-dessus, la preuve git rejouée.
