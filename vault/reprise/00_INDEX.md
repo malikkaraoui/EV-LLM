@@ -2,7 +2,7 @@
 date: 2026-09-25
 tags: [reprise, sessions, tableau-de-bord]
 maintenu_par: orchestrateur
-derniere_maj: 2026-09-26T15:53:49+02:00
+derniere_maj: 2026-09-26T16:14:20+02:00
 ---
 
 # Tableau de bord — sessions du projet ev-llm
@@ -39,6 +39,13 @@ Exemple (à supprimer à la première entrée réelle) :
 - Symptôme d'origine rejoué avant/après ; tests re-mesurés par le doubleur, pas repris du rapport d'auteur.
 - Réserve non bloquante : <réserve nommée, ou « aucune »>.
 -->
+
+## 2026-09-26T16:14:20+02:00 — Vague 1 rendue (M0003–M0006) ; vague 2 posée (R001, R002, M0007–M0009)
+
+- M0003 ✅ T2 : 4/4 conforme, 0 « faux et sûr » (fautes fréquentes) — `exp/e001-sonde-jev` 7e953a9. M0004 ✅ 17 issues (#1–#17) + index `vault/notes/2026-09-26-issues-github.md`.
+- M0005 ✅ E002 banc (22 tests) — plafond R ≤ 0 sur 12/20 sous bruit : mesure à réparer (E002-bis). M0006 ⛔ STOP 403 free tier LLM-2 — 2/70 appels.
+- Incident : `state.json` écrasé par une fenêtre (compteurs perdus) — reconstruit depuis `events.jsonl` ; garde ajoutée aux rituels.
+- Vague 2 : R001 (doublage+merge E001), R002 (doublage+merge E002), M0007 E002-bis, M0008 E003 relance, M0009 E005 Jev hors distribution.
 
 ## 2026-09-26T15:53:49+02:00 — M0003–M0006 (F01–F04) posés en parallèle : rejeu T2, issues GitHub, E002, E003
 
