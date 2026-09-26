@@ -1,0 +1,63 @@
+{
+  "preregistre_le": "2026-09-25",
+  "note": "Attentes fixees par l'orchestrateur AVANT tout appel. Ne jamais modifier apres lancement.",
+  "derive_de": "cases.json sha256 8325775b4957bf44664b631ce48096933c6f56d4f245143161405ae6b1e99d0b",
+  "cases": [
+    {
+      "id": "T2-1",
+      "famille": "erreur-invisible-e-er",
+      "state": "Phrase ecrite par un eleve : « Hier, il a manger une pomme. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      }
+    },
+    {
+      "id": "T2-2",
+      "famille": "erreur-invisible-e-er",
+      "state": "Phrase ecrite par un eleve : « Il va manger une pomme. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      }
+    },
+    {
+      "id": "T2-3",
+      "famille": "erreur-invisible-accord-etre",
+      "state": "Phrase ecrite par un eleve : « Elle est tombée dans l'escalier. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": true
+      }
+    },
+    {
+      "id": "T2-4",
+      "famille": "erreur-invisible-accord-etre",
+      "state": "Phrase ecrite par un eleve : « Ils sont tombé dans l'escalier. »",
+      "questions": {
+        "correcte": {
+          "type": "boolean",
+          "instructions": "Cette phrase est-elle orthographiquement correcte en francais ?"
+        }
+      },
+      "attendu": {
+        "correcte": false
+      }
+    }
+  ]
+}
