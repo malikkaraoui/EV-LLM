@@ -1,0 +1,12 @@
+{
+ "_statut": "provisoire (PREREGISTREMENT section 3), avant pilote",
+ "lot": 256,
+ "pas": 20000,
+ "lr_max": 0.001,
+ "lr_min": 1e-05,
+ "montee": 500,
+ "wd": 0.01,
+ "betas": [0.9, 0.98],
+ "clip": 1.0,
+ "jalons": [250, 500, 1000, 2000, 4000, 8000, 12000, 16000]
+}
