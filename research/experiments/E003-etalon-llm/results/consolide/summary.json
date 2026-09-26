@@ -1,0 +1,539 @@
+{
+  "meta": {
+    "run_id": "consolide",
+    "dossiers": [
+      "results/2026-09-26T161619+0200",
+      "results/2026-09-26T164116+0200",
+      "results/2026-09-26T164422+0200",
+      "results/2026-09-26T164757+0200",
+      "results/2026-09-26T165127+0200",
+      "results/2026-09-26T165449+0200",
+      "results/2026-09-26T165817+0200"
+    ],
+    "reps": 3,
+    "cases_sha256": "8325775b4957bf44664b631ce48096933c6f56d4f245143161405ae6b1e99d0b",
+    "n_appels": 109,
+    "statuts_http": {
+      "200": 72,
+      "429": 37
+    }
+  },
+  "rows": [
+    {
+      "modele": "LLM-1",
+      "model_id": "openai/gpt-4.1-mini",
+      "case_id": "T1-A",
+      "famille": "savoir-regle-donnee",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 3,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 973.6,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "\"contradiction\"": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": "contradiction",
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-1",
+      "model_id": "openai/gpt-4.1-mini",
+      "case_id": "T1-A",
+      "famille": "savoir-regle-donnee",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 1019.0,
+      "stabilite": [
+        0.9,
+        1.0
+      ],
+      "repartition": {
+        "false": 3
+      },
+      "n_faux_et_sur_reps": 3,
+      "obtenu": false,
+      "p": 1.0,
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "modele": "LLM-1",
+      "model_id": "openai/gpt-4.1-mini",
+      "case_id": "T1-B",
+      "famille": "savoir-regle-donnee",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "indetermine",
+      "n_appels": 3,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 1158.6,
+      "stabilite": [
+        0.9,
+        0.9
+      ],
+      "repartition": {
+        "\"indetermine\"": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": "indetermine",
+      "p": 0.9,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-1",
+      "model_id": "openai/gpt-4.1-mini",
+      "case_id": "T1-B",
+      "famille": "savoir-regle-donnee",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 5,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 958.0,
+      "stabilite": [
+        0.9,
+        0.95
+      ],
+      "repartition": {
+        "true": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": true,
+      "p": 0.9,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-1",
+      "model_id": "openai/gpt-4.1-mini",
+      "case_id": "T1-C",
+      "famille": "controle-trivial",
+      "question": "a_sup_c",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 834.7,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "true": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": true,
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-1",
+      "model_id": "openai/gpt-4.1-mini",
+      "case_id": "T1-C",
+      "famille": "controle-trivial",
+      "question": "c_sup_a",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 974.8,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "false": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": false,
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-1",
+      "model_id": "openai/gpt-4.1-mini",
+      "case_id": "T2-1",
+      "famille": "erreur-invisible-e-er",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 1172.2,
+      "stabilite": [
+        0.99,
+        0.99
+      ],
+      "repartition": {
+        "false": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": false,
+      "p": 0.99,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-1",
+      "model_id": "openai/gpt-4.1-mini",
+      "case_id": "T2-2",
+      "famille": "erreur-invisible-e-er",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 1003.6,
+      "stabilite": [
+        0.99,
+        0.99
+      ],
+      "repartition": {
+        "true": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": true,
+      "p": 0.99,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-1",
+      "model_id": "openai/gpt-4.1-mini",
+      "case_id": "T2-3",
+      "famille": "erreur-invisible-accord-etre",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 896.2,
+      "stabilite": [
+        0.95,
+        0.95
+      ],
+      "repartition": {
+        "true": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": true,
+      "p": 0.95,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-1",
+      "model_id": "openai/gpt-4.1-mini",
+      "case_id": "T2-4",
+      "famille": "erreur-invisible-accord-etre",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 2217.5,
+      "stabilite": [
+        0.95,
+        0.95
+      ],
+      "repartition": {
+        "false": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": false,
+      "p": 0.95,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-2",
+      "model_id": "google/gemini-2.5-flash",
+      "case_id": "T1-A",
+      "famille": "savoir-regle-donnee",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [
+        "pas du JSON strict",
+        "pas du JSON strict",
+        "pas du JSON strict"
+      ],
+      "latence_mediane_ms": 7709.049999999999,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "\"contradiction\"": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": "contradiction",
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-2",
+      "model_id": "google/gemini-2.5-flash",
+      "case_id": "T1-A",
+      "famille": "savoir-regle-donnee",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [
+        "pas du JSON strict",
+        "pas du JSON strict",
+        "pas du JSON strict"
+      ],
+      "latence_mediane_ms": 7041.5,
+      "stabilite": [
+        0.9,
+        0.9
+      ],
+      "repartition": {
+        "true": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": true,
+      "p": 0.9,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-2",
+      "model_id": "google/gemini-2.5-flash",
+      "case_id": "T1-B",
+      "famille": "savoir-regle-donnee",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "indetermine",
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [
+        "pas du JSON strict",
+        "pas du JSON strict",
+        "pas du JSON strict"
+      ],
+      "latence_mediane_ms": 6734.9,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "\"indetermine\"": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": "indetermine",
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-2",
+      "model_id": "google/gemini-2.5-flash",
+      "case_id": "T1-B",
+      "famille": "savoir-regle-donnee",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [
+        "pas du JSON strict",
+        "pas du JSON strict",
+        "pas du JSON strict"
+      ],
+      "latence_mediane_ms": 4876.200000000001,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "true": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": true,
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-2",
+      "model_id": "google/gemini-2.5-flash",
+      "case_id": "T1-C",
+      "famille": "controle-trivial",
+      "question": "a_sup_c",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 5,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 4057.1,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "true": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": true,
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-2",
+      "model_id": "google/gemini-2.5-flash",
+      "case_id": "T1-C",
+      "famille": "controle-trivial",
+      "question": "c_sup_a",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 5223.5,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "false": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": false,
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-2",
+      "model_id": "google/gemini-2.5-flash",
+      "case_id": "T2-1",
+      "famille": "erreur-invisible-e-er",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 4760.0,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "false": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": false,
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-2",
+      "model_id": "google/gemini-2.5-flash",
+      "case_id": "T2-2",
+      "famille": "erreur-invisible-e-er",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 4416.0,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "true": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": true,
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-2",
+      "model_id": "google/gemini-2.5-flash",
+      "case_id": "T2-3",
+      "famille": "erreur-invisible-accord-etre",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 4593.7,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "true": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": true,
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "modele": "LLM-2",
+      "model_id": "google/gemini-2.5-flash",
+      "case_id": "T2-4",
+      "famille": "erreur-invisible-accord-etre",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 6,
+      "n_parses": 3,
+      "non_parse_raisons": [],
+      "latence_mediane_ms": 4208.1,
+      "stabilite": [
+        1.0,
+        1.0
+      ],
+      "repartition": {
+        "false": 3
+      },
+      "n_faux_et_sur_reps": 0,
+      "obtenu": false,
+      "p": 1.0,
+      "conforme": true,
+      "faux_et_sur": false
+    }
+  ]
+}
