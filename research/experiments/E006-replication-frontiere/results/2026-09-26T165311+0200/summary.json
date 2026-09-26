@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T165311+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": "rythme (min 26.0 s), 8 appels",
+    "cases_sha256": "0245036b80c36d451371a1fa3f7555ba17fb2806d375699b341fb61a3888e042",
+    "n_appels": 8,
+    "n_http_200": 8,
+    "budget_consomme": 32,
+    "budget": 130
+  },
+  "rows": [
+    {
+      "case_id": "R-F1-04",
+      "famille": "R-replication",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 810.6,
+      "obtenu": true,
+      "p": 0.83,
+      "stabilite": [
+        0.83,
+        0.83
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F1-05",
+      "famille": "R-replication",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 545.6,
+      "obtenu": true,
+      "p": 0.84,
+      "stabilite": [
+        0.84,
+        0.84
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F1-08",
+      "famille": "R-replication",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 475.7,
+      "obtenu": true,
+      "p": 0.86,
+      "stabilite": [
+        0.86,
+        0.86
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F3-02",
+      "famille": "R-replication",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 401.3,
+      "obtenu": true,
+      "p": 0.86,
+      "stabilite": [
+        0.86,
+        0.86
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F4-01",
+      "famille": "R-replication",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 496.5,
+      "obtenu": "coherent",
+      "p": 0.85,
+      "stabilite": [
+        0.85,
+        0.85
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F4-01",
+      "famille": "R-replication",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 496.5,
+      "obtenu": true,
+      "p": 0.6,
+      "stabilite": [
+        0.6,
+        0.6
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "R-F4-04",
+      "famille": "R-replication",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 414.9,
+      "obtenu": "coherent",
+      "p": 0.57,
+      "stabilite": [
+        0.57,
+        0.57
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "R-F4-04",
+      "famille": "R-replication",
+      "question": "a_sup_f",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 414.9,
+      "obtenu": false,
+      "p": 0.13,
+      "stabilite": [
+        0.13,
+        0.13
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "C1-avec",
+      "famille": "C-contamination",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 895.3,
+      "obtenu": true,
+      "p": 0.97,
+      "stabilite": [
+        0.97,
+        0.97
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "C1-sans",
+      "famille": "C-contamination",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 369.0,
+      "obtenu": true,
+      "p": 0.97,
+      "stabilite": [
+        0.97,
+        0.97
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    }
+  ]
+}

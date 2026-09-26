@@ -1,0 +1,675 @@
+{
+  "meta": {
+    "run_id": "agregat-2026-09-26T172726+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": "agregat de 13 lancements (HTTP 200 seulement)",
+    "cases_sha256": "0245036b80c36d451371a1fa3f7555ba17fb2806d375699b341fb61a3888e042",
+    "n_appels": 103,
+    "n_http_200": 103,
+    "sources": [
+      {
+        "dossier": "2026-09-26T164309+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 8,
+        "statuts_http": {
+          "200": 8
+        }
+      },
+      {
+        "dossier": "2026-09-26T164616+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 8,
+        "statuts_http": {
+          "200": 8
+        }
+      },
+      {
+        "dossier": "2026-09-26T164940+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 8,
+        "statuts_http": {
+          "200": 8
+        }
+      },
+      {
+        "dossier": "2026-09-26T165311+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 8,
+        "statuts_http": {
+          "200": 8
+        }
+      },
+      {
+        "dossier": "2026-09-26T165636+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 8,
+        "statuts_http": {
+          "200": 8
+        }
+      },
+      {
+        "dossier": "2026-09-26T170010+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 8,
+        "statuts_http": {
+          "200": 8
+        }
+      },
+      {
+        "dossier": "2026-09-26T170332+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 8,
+        "statuts_http": {
+          "200": 8
+        }
+      },
+      {
+        "dossier": "2026-09-26T170701+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 8,
+        "statuts_http": {
+          "200": 8
+        }
+      },
+      {
+        "dossier": "2026-09-26T171028+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 8,
+        "statuts_http": {
+          "200": 8
+        }
+      },
+      {
+        "dossier": "2026-09-26T171356+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 8,
+        "statuts_http": {
+          "200": 8
+        }
+      },
+      {
+        "dossier": "2026-09-26T171725+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 8,
+        "statuts_http": {
+          "200": 8
+        }
+      },
+      {
+        "dossier": "2026-09-26T172052+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 8,
+        "statuts_http": {
+          "200": 8
+        }
+      },
+      {
+        "dossier": "2026-09-26T172420+0200",
+        "fichier": "raw.public.jsonl",
+        "n_appels": 7,
+        "statuts_http": {
+          "200": 7
+        }
+      }
+    ]
+  },
+  "rows": [
+    {
+      "case_id": "R-F1-04",
+      "famille": "R-replication",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 516.7,
+      "obtenu": true,
+      "p": 0.84,
+      "stabilite": [
+        0.83,
+        0.85
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F1-05",
+      "famille": "R-replication",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 545.6,
+      "obtenu": true,
+      "p": 0.84,
+      "stabilite": [
+        0.83,
+        0.87
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F1-08",
+      "famille": "R-replication",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 475.7,
+      "obtenu": true,
+      "p": 0.86,
+      "stabilite": [
+        0.86,
+        0.87
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F3-02",
+      "famille": "R-replication",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 410.8,
+      "obtenu": true,
+      "p": 0.85,
+      "stabilite": [
+        0.83,
+        0.86
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F4-01",
+      "famille": "R-replication",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 496.5,
+      "obtenu": "coherent",
+      "p": 0.91,
+      "stabilite": [
+        0.85,
+        0.92
+      ],
+      "repartition": {
+        "\"coherent\"": 5
+      },
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F4-01",
+      "famille": "R-replication",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 496.5,
+      "obtenu": true,
+      "p": 0.6,
+      "stabilite": [
+        0.53,
+        0.68
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "R-F4-04",
+      "famille": "R-replication",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 431.3,
+      "obtenu": "coherent",
+      "p": 0.54,
+      "stabilite": [
+        0.5,
+        0.58
+      ],
+      "repartition": {
+        "\"coherent\"": 4,
+        "\"contradiction\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "R-F4-04",
+      "famille": "R-replication",
+      "question": "a_sup_f",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 431.3,
+      "obtenu": false,
+      "p": 0.2,
+      "stabilite": [
+        0.13,
+        0.37
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "C1-avec",
+      "famille": "C-contamination",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 453.5,
+      "obtenu": true,
+      "p": 0.97,
+      "stabilite": [
+        0.97,
+        0.97
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "C1-sans",
+      "famille": "C-contamination",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 498.1,
+      "obtenu": true,
+      "p": 0.98,
+      "stabilite": [
+        0.97,
+        0.98
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "C2-avec",
+      "famille": "C-contamination",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 536.2,
+      "obtenu": true,
+      "p": 0.97,
+      "stabilite": [
+        0.97,
+        0.97
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "C2-sans",
+      "famille": "C-contamination",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 421.4,
+      "obtenu": true,
+      "p": 0.97,
+      "stabilite": [
+        0.97,
+        0.98
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "C3-avec",
+      "famille": "C-contamination",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 436.6,
+      "obtenu": true,
+      "p": 0.97,
+      "stabilite": [
+        0.97,
+        0.97
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "C3-sans",
+      "famille": "C-contamination",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 583.0,
+      "obtenu": true,
+      "p": 0.97,
+      "stabilite": [
+        0.97,
+        0.97
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "C4-avec",
+      "famille": "C-contamination",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 430.5,
+      "obtenu": true,
+      "p": 0.95,
+      "stabilite": [
+        0.94,
+        0.95
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "C4-sans",
+      "famille": "C-contamination",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 5,
+      "n_parses": 5,
+      "latence_mediane_ms": 567.2,
+      "obtenu": true,
+      "p": 0.96,
+      "stabilite": [
+        0.96,
+        0.96
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-PAS2",
+      "famille": "L-frontiere-pas",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 429.7,
+      "obtenu": true,
+      "p": 0.97,
+      "stabilite": [
+        0.97,
+        0.97
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-PAS3",
+      "famille": "L-frontiere-pas",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 450.1,
+      "obtenu": true,
+      "p": 0.85,
+      "stabilite": [
+        0.85,
+        0.9
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-PAS4",
+      "famille": "L-frontiere-pas",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 497.8,
+      "obtenu": true,
+      "p": 0.95,
+      "stabilite": [
+        0.94,
+        0.95
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-PAS5",
+      "famille": "L-frontiere-pas",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 429.5,
+      "obtenu": true,
+      "p": 0.94,
+      "stabilite": [
+        0.93,
+        0.95
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-PAS6",
+      "famille": "L-frontiere-pas",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 719.4,
+      "obtenu": true,
+      "p": 0.9,
+      "stabilite": [
+        0.87,
+        0.92
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-DIS0",
+      "famille": "L-frontiere-distracteurs",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 425.4,
+      "obtenu": "contradiction",
+      "p": 0.73,
+      "stabilite": [
+        0.67,
+        0.8
+      ],
+      "repartition": {
+        "\"contradiction\"": 3
+      },
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-DIS0",
+      "famille": "L-frontiere-distracteurs",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 425.4,
+      "obtenu": true,
+      "p": 0.6,
+      "stabilite": [
+        0.59,
+        0.61
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-DIS1",
+      "famille": "L-frontiere-distracteurs",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 477.2,
+      "obtenu": "coherent",
+      "p": 0.65,
+      "stabilite": [
+        0.6,
+        0.69
+      ],
+      "repartition": {
+        "\"coherent\"": 3
+      },
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-DIS1",
+      "famille": "L-frontiere-distracteurs",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 477.2,
+      "obtenu": false,
+      "p": 0.18,
+      "stabilite": [
+        0.16,
+        0.21
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "L-DIS2",
+      "famille": "L-frontiere-distracteurs",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 735.2,
+      "obtenu": "coherent",
+      "p": 0.83,
+      "stabilite": [
+        0.83,
+        0.87
+      ],
+      "repartition": {
+        "\"coherent\"": 3
+      },
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "L-DIS2",
+      "famille": "L-frontiere-distracteurs",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 735.2,
+      "obtenu": false,
+      "p": 0.4,
+      "stabilite": [
+        0.39,
+        0.45
+      ],
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "P-F1-04",
+      "famille": "P-paire-minimale",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 646.2,
+      "obtenu": true,
+      "p": 0.61,
+      "stabilite": [
+        0.58,
+        0.64
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "P-F1-05",
+      "famille": "P-paire-minimale",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 616.4,
+      "obtenu": true,
+      "p": 0.9,
+      "stabilite": [
+        0.9,
+        0.91
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "P-F1-08",
+      "famille": "P-paire-minimale",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 401.6,
+      "obtenu": true,
+      "p": 0.67,
+      "stabilite": [
+        0.64,
+        0.75
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T172420+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": "rythme (min 26.0 s), 7 appels",
+    "cases_sha256": "0245036b80c36d451371a1fa3f7555ba17fb2806d375699b341fb61a3888e042",
+    "n_appels": 7,
+    "n_http_200": 7,
+    "budget_consomme": 103,
+    "budget": 130
+  },
+  "rows": [
+    {
+      "case_id": "P-F1-08",
+      "famille": "P-paire-minimale",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 3,
+      "n_parses": 3,
+      "latence_mediane_ms": 401.6,
+      "obtenu": true,
+      "p": 0.67,
+      "stabilite": [
+        0.64,
+        0.75
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "P-F1-04",
+      "famille": "P-paire-minimale",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 766.5,
+      "obtenu": true,
+      "p": 0.625,
+      "stabilite": [
+        0.61,
+        0.64
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "P-F1-05",
+      "famille": "P-paire-minimale",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 610.65,
+      "obtenu": true,
+      "p": 0.905,
+      "stabilite": [
+        0.9,
+        0.91
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    }
+  ]
+}

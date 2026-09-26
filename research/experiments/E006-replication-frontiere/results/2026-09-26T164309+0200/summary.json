@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T164309+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": "rythme (min 26.0 s), 8 appels",
+    "cases_sha256": "0245036b80c36d451371a1fa3f7555ba17fb2806d375699b341fb61a3888e042",
+    "n_appels": 8,
+    "n_http_200": 8,
+    "budget_consomme": 8,
+    "budget": 130
+  },
+  "rows": [
+    {
+      "case_id": "R-F1-04",
+      "famille": "R-replication",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 634.9000000000001,
+      "obtenu": true,
+      "p": 0.835,
+      "stabilite": [
+        0.83,
+        0.84
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F1-05",
+      "famille": "R-replication",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 2,
+      "n_parses": 2,
+      "latence_mediane_ms": 601.85,
+      "obtenu": true,
+      "p": 0.85,
+      "stabilite": [
+        0.83,
+        0.87
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F1-08",
+      "famille": "R-replication",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 877.2,
+      "obtenu": true,
+      "p": 0.86,
+      "stabilite": [
+        0.86,
+        0.86
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F3-02",
+      "famille": "R-replication",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 374.4,
+      "obtenu": true,
+      "p": 0.86,
+      "stabilite": [
+        0.86,
+        0.86
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F4-01",
+      "famille": "R-replication",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 665.2,
+      "obtenu": "coherent",
+      "p": 0.9,
+      "stabilite": [
+        0.9,
+        0.9
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "R-F4-01",
+      "famille": "R-replication",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 665.2,
+      "obtenu": true,
+      "p": 0.53,
+      "stabilite": [
+        0.53,
+        0.53
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "R-F4-04",
+      "famille": "R-replication",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 560.6,
+      "obtenu": "coherent",
+      "p": 0.52,
+      "stabilite": [
+        0.52,
+        0.52
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "R-F4-04",
+      "famille": "R-replication",
+      "question": "a_sup_f",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 560.6,
+      "obtenu": false,
+      "p": 0.37,
+      "stabilite": [
+        0.37,
+        0.37
+      ],
+      "conforme": false,
+      "faux_et_sur": false
+    }
+  ]
+}

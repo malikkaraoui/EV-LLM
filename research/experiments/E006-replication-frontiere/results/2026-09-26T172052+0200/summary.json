@@ -1,0 +1,222 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T172052+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": "rythme (min 26.0 s), 8 appels",
+    "cases_sha256": "0245036b80c36d451371a1fa3f7555ba17fb2806d375699b341fb61a3888e042",
+    "n_appels": 8,
+    "n_http_200": 8,
+    "budget_consomme": 96,
+    "budget": 130
+  },
+  "rows": [
+    {
+      "case_id": "L-PAS4",
+      "famille": "L-frontiere-pas",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 571.7,
+      "obtenu": true,
+      "p": 0.95,
+      "stabilite": [
+        0.95,
+        0.95
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-PAS5",
+      "famille": "L-frontiere-pas",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 394.3,
+      "obtenu": true,
+      "p": 0.95,
+      "stabilite": [
+        0.95,
+        0.95
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-PAS6",
+      "famille": "L-frontiere-pas",
+      "question": "deduction",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 437.9,
+      "obtenu": true,
+      "p": 0.9,
+      "stabilite": [
+        0.9,
+        0.9
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-DIS0",
+      "famille": "L-frontiere-distracteurs",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 599.6,
+      "obtenu": "contradiction",
+      "p": 0.8,
+      "stabilite": [
+        0.8,
+        0.8
+      ],
+      "repartition": {
+        "\"contradiction\"": 1
+      },
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-DIS0",
+      "famille": "L-frontiere-distracteurs",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 599.6,
+      "obtenu": true,
+      "p": 0.61,
+      "stabilite": [
+        0.61,
+        0.61
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-DIS1",
+      "famille": "L-frontiere-distracteurs",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 433.1,
+      "obtenu": "coherent",
+      "p": 0.69,
+      "stabilite": [
+        0.69,
+        0.69
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "L-DIS1",
+      "famille": "L-frontiere-distracteurs",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 433.1,
+      "obtenu": false,
+      "p": 0.16,
+      "stabilite": [
+        0.16,
+        0.16
+      ],
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "L-DIS2",
+      "famille": "L-frontiere-distracteurs",
+      "question": "statut",
+      "type": "choice",
+      "attendu": "contradiction",
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 405.5,
+      "obtenu": "coherent",
+      "p": 0.83,
+      "stabilite": [
+        0.83,
+        0.83
+      ],
+      "repartition": {
+        "\"coherent\"": 1
+      },
+      "conforme": false,
+      "faux_et_sur": true
+    },
+    {
+      "case_id": "L-DIS2",
+      "famille": "L-frontiere-distracteurs",
+      "question": "e_sup_d",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 405.5,
+      "obtenu": false,
+      "p": 0.45,
+      "stabilite": [
+        0.45,
+        0.45
+      ],
+      "conforme": false,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "P-F1-04",
+      "famille": "P-paire-minimale",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 535.6,
+      "obtenu": true,
+      "p": 0.58,
+      "stabilite": [
+        0.58,
+        0.58
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "P-F1-05",
+      "famille": "P-paire-minimale",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 616.4,
+      "obtenu": true,
+      "p": 0.9,
+      "stabilite": [
+        0.9,
+        0.9
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    }
+  ]
+}
