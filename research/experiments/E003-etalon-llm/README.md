@@ -64,11 +64,19 @@ committée en `9526b7b` à 16:16:17 +0200, **avant** le premier appel d'évaluat
 
 LLM-2 retenu : `google/gemini-2.5-flash`, `reasoning: {"effort": "low"}`, mêmes autres réglages.
 
+## Publication des journaux (M0015, correctif R005)
+
+- Convention du dépôt (comme E001) : `raw.jsonl` reste local et ignoré par git (`.gitignore`) ; seul `raw.public.jsonl` est publié.
+- [VÉRIFIÉ] Les 12 journaux E003 (5 `pilot/`, 7 `results/`) ont été renommés `raw.jsonl` → `raw.public.jsonl` sans changer leur contenu. Ce contenu était déjà sur liste blanche, sans en-tête ni identifiant.
+- `run_llm.py` écrit toujours `raw.jsonl` en local, puis `raw.public.jsonl` (clés `PUBLIC_KEYS`), avant la garde anti-fuite. `--only-missing` et `--summarize-dirs` lisent `raw.public.jsonl`, sinon `raw.jsonl`.
+- `PROTOCOLE.md` (préenregistré) garde la mention d'origine `raw.jsonl`.
+- [VÉRIFIÉ] `results/consolide/` a été régénéré hors ligne après le renommage : il est identique au précédent (0 diff).
+
 ## Évaluation M0008 — 2026-09-26 16:16:19 → 16:17:50 +0200 : STOP partiel (plafond)
 
 `python3 run_llm.py --env-file …/.env --max-calls 65`, `cases.json` sha256 inchangé
 (`8325775b…`). Fichiers : [`results/2026-09-26T161619+0200/`](results/2026-09-26T161619+0200/)
-(`raw.jsonl` sans en-têtes, `summary.json`, `summary.md`). Sortie : `arret: budget` (code 5).
+(`raw.public.jsonl` sans en-têtes, `summary.json`, `summary.md`). Sortie : `arret: budget` (code 5).
 
 - [VÉRIFIÉ] **65 appels : 28 × HTTP 200, 37 × HTTP 429.** Par modèle : LLM-1 15 × 200 et 20 × 429 ; LLM-2 13 × 200 et 17 × 429.
 - [VÉRIFIÉ] Les 429 disent « this team's limit of 5 requests per minute (per region) was reached ». La limite du compte est de 5 requêtes par minute.
@@ -85,7 +93,7 @@ LLM-2 retenu : `google/gemini-2.5-flash`, `reasoning: {"effort": "low"}`, mêmes
 Détail : [`PROTOCOLE.md`](PROTOCOLE.md), section « Amendement 2 (26/09) ».
 
 - **Pilote** hors évaluation, LLM-2 à `max_tokens` 1200 (`pilot/2026-09-26T164042+0200/`) : [VÉRIFIÉ] HTTP 200, `finish_reason: stop`, `{"reponse": true, "confiance": 1}` passe le parse strict, 204 tokens de raisonnement sur 223.
-- **Ordre** : [VÉRIFIÉ] amendement committé en `0da60ac` à 16:41:12 +0200 ; premier appel d'évaluation à 16:41:16 (`results/2026-09-26T164116+0200/raw.jsonl`).
+- **Ordre** : [VÉRIFIÉ] amendement committé en `0da60ac` à 16:41:12 +0200 ; premier appel d'évaluation à 16:41:16 (`results/2026-09-26T164116+0200/raw.public.jsonl`).
 - **Lancements** : 6 lancements rythmés (5 × 8 appels + 1 × 4), dossiers `results/2026-09-26T164116+0200/` à `results/2026-09-26T165817+0200/`. Seuls les 44 éléments manquants ont été joués (LLM-1 15, LLM-2 29), puis la file s'est vidée (code 0).
 - [VÉRIFIÉ] **44 appels d'évaluation : 44 × HTTP 200, 0 × 429.** Avec le pilote, 45 appels nouveaux sur un budget de 50.
 - [VÉRIFIÉ] **Intervalles entre débuts d'appels** (`interval_s`) : min 26,0 s, médiane 26,0 s. Le seul intervalle hors série (1 406 s) sépare le premier appel M0010 du dernier appel M0008.

@@ -280,6 +280,26 @@ class Amendement2Test(unittest.TestCase):
             recs = run_llm.load_records([Path(d) / "a", Path(d) / "b"])
         self.assertEqual(recs, [{"i": 0}, {"i": 1}])
 
+    def test_load_records_prefers_public(self):
+        with tempfile.TemporaryDirectory() as d:
+            (Path(d) / "raw.jsonl").write_text('{"src": "raw"}\n', encoding="utf-8")
+            (Path(d) / "raw.public.jsonl").write_text('{"src": "public"}\n', encoding="utf-8")
+            self.assertEqual(run_llm.load_records([d]), [{"src": "public"}])
+            with self.assertRaises(FileNotFoundError):
+                run_llm.load_records([Path(d) / "absent"])
+
+    def test_write_public_whitelist(self):
+        rec = {"label": "LLM-1", "http_status": 200, "response": {"content": "c"},
+               "response_headers": {"set-cookie": "x"}, "autre": 1}
+        with tempfile.TemporaryDirectory() as d:
+            run_llm.write_public(d, [rec])
+            text = (Path(d) / "raw.public.jsonl").read_text(encoding="utf-8")
+            self.assertEqual(run_llm.load_records([d]),
+                             [{"label": "LLM-1", "http_status": 200,
+                               "response": {"content": "c"}}])
+        self.assertNotIn("response_headers", text)
+        self.assertNotIn("set-cookie", text)
+
     def test_max_tokens_llm2_only(self):
         models = run_llm.with_llm2_max_tokens(run_llm.MODELS, 1200)
         b1 = run_llm.build_body(models[0], "s", BOOL_Q)

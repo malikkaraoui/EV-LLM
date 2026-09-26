@@ -82,13 +82,33 @@ def with_llm2_max_tokens(models, max_tokens):
     return out
 
 
+PUBLIC_KEYS = ("label", "model_id", "case_id", "question", "rep", "attempt", "final", "ts",
+               "http_status", "latency_ms", "interval_s", "request_body", "response", "error")
+
+
+def journal_path(d):
+    """raw.public.jsonl (publie) s'il existe, sinon raw.jsonl (local, ignore par git)."""
+    for name in ("raw.public.jsonl", "raw.jsonl"):
+        if (Path(d) / name).is_file():
+            return Path(d) / name
+    raise FileNotFoundError("ni raw.public.jsonl ni raw.jsonl dans {}".format(d))
+
+
 def load_records(dirs):
-    """Enregistrements raw.jsonl des dossiers donnes (ordre des dossiers, puis des lignes)."""
+    """Enregistrements des journaux des dossiers donnes (ordre des dossiers, puis des lignes)."""
     records = []
     for d in dirs:
-        with (Path(d) / "raw.jsonl").open(encoding="utf-8") as f:
+        with journal_path(d).open(encoding="utf-8") as f:
             records += [json.loads(line) for line in f if line.strip()]
     return records
+
+
+def write_public(out_dir, records):
+    """Ecrit raw.public.jsonl : chaque enregistrement reduit a PUBLIC_KEYS."""
+    with (Path(out_dir) / "raw.public.jsonl").open("w", encoding="utf-8") as f:
+        for r in records:
+            f.write(json.dumps({k: r[k] for k in PUBLIC_KEYS if k in r},
+                               ensure_ascii=False) + "\n")
 
 
 def answered_keys(cases, records):
@@ -383,7 +403,7 @@ def main():
     ap.add_argument("--max-tokens-llm2", type=int, default=None,
                     help="max_tokens de LLM-2 seul (Amendement 2 ; defaut : {})".format(MAX_TOKENS))
     ap.add_argument("--summarize-dirs", nargs="+", default=None, metavar="DOSSIER",
-                    help="aucun appel : resume consolide des raw.jsonl de ces dossiers")
+                    help="aucun appel : resume consolide des journaux de ces dossiers")
     args = ap.parse_args()
 
     if args.summarize_dirs:
@@ -421,6 +441,7 @@ def main():
     with (out_dir / "raw.jsonl").open("w", encoding="utf-8") as raw:
         records, arret = run_items(key, items, args.max_calls, raw,
                                    args.min_interval, last_call)
+    write_public(out_dir, records)
 
     statuts = {}
     for r in records:
