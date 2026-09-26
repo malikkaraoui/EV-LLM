@@ -45,6 +45,14 @@ cd research/experiments/E001-jev-sonde
 python3 run.py --env-file /Users/malik/Documents/EV-LLM/.env
 ```
 
+Rejeu de T2 seul (lancement 3), puis agrégation des sous-lancements (réponses 200 seulement) :
+
+```
+python3 run.py --env-file /Users/malik/Documents/EV-LLM/.env --cases cases-T2.json --reps 1   # répété, espacé
+python3 aggregate.py --cases cases-T2.json results/<h1> results/<h2> ...
+python3 -m unittest test_aggregate   # tests d'aggregate.py, sans réseau
+```
+
 Le fichier `.env` contient la ligne `AI_GATEWAY_API_KEY=…` (modèle : `.env.example` à la racine). Il n'est jamais versionné.
 
 ## Résultats
@@ -79,7 +87,57 @@ Même `run.py`, même `cases.json` (même sha256), un seul lancement, code de so
 
 Pour un `choice`, la colonne « P ou confiance » donne la probabilité de l'option choisie. La réponse contient aussi un champ `confidence` distinct : T1-A `statut` 0.52–0.63, T1-B `statut` 0.56–0.60.
 
-## Lecture (lancement 2)
+### Lancement 3 — 2026-09-26 15:54–15:56 +0200 (M0003) : T2 seul, réparti
+
+Même `run.py` (non modifié). Les cas viennent de `cases-T2.json`, **dérivé mécaniquement** de `cases.json` : les 4 cas `T2-*` recopiés tels quels (`state`, `questions`, `attendu` identiques, vérifié cas par cas), plus un champ `derive_de`. Sha256 de `cases-T2.json` : `49b2dd4aab440b9af4e4e7c7dd4b1cd0dc0ef1af937c88e596b1a5401b82b40e` (c'est lui qu'affiche l'en-tête « cases.json sha256 » des résumés ci-dessous, libellé hérité de `run.py`).
+
+Pour éviter la rafale qui avait saturé le fournisseur au lancement 2, T2 a été joué en **5 sous-lancements** d'une répétition chacun (`--reps 1`), séparés par du travail (pas de pause programmée) :
+
+| sous-lancement | dossier | code de sortie | statuts HTTP |
+|---|---|---|---|
+| A | `results/2026-09-26T155436+0200/` | 0 | 4×200 |
+| B | `results/2026-09-26T155507+0200/` | 1 | 3×200, 1×503 (T2-3) |
+| C | `results/2026-09-26T155541+0200/` | 1 | 3×200, 1×503 (T2-4) |
+| D | `results/2026-09-26T155556+0200/` | 1 | 1×200, 3×429 (T2-2, T2-3, T2-4) |
+| E | `results/2026-09-26T155621+0200/` | 1 | 2×200, 1×503 (T2-3), 1×429 (T2-4) |
+
+Total : **13×200, 3×503, 4×429** sur 20 appels. Réponses 200 par cas : T2-1 ×5, T2-2 ×4, T2-3 ×2, T2-4 ×2. L'objectif de 3 réponses par question n'est **pas atteint** pour T2-3 et T2-4 (plafond de 5 sous-lancements atteint).
+
+Agrégat (`aggregate.py`, réponses 200 seulement, même règle et même format que `run.py`) : [`results/agregat-2026-09-26T155633+0200/summary.md`](results/agregat-2026-09-26T155633+0200/summary.md). Chaque dossier de sous-lancement contient `raw.public.jsonl` (= `raw.jsonl` sans `response_headers`), `summary.json` et `summary.md`.
+
+| cas | question | attendu (préenregistré) | obtenu (médiane des répétitions) | P ou confiance | stabilité (min–max) | latence médiane (ms) | conforme | faux et sûr |
+|---|---|---|---|---|---|---|---|---|
+| T2-1 | correcte | false | false | 0.08 | 0.06–0.10 | 519.10 | true | false |
+| T2-2 | correcte | true | true | 0.96 | 0.96–0.97 | 502.90 | true | false |
+| T2-3 | correcte | true | true | 0.84 | 0.84–0.85 | 556.50 | true | false |
+| T2-4 | correcte | false | false | 0.08 | 0.07–0.08 | 482.25 | true | false |
+
+Détail des probabilités, appel par appel (sous-lancements A→E, « — » = pas de 200) : T2-1 0.06 / 0.10 / 0.08 / 0.08 / 0.07 ; T2-2 0.97 / 0.96 / 0.96 / — / 0.97 ; T2-3 0.84 / — / 0.85 / — / — ; T2-4 0.08 / 0.07 / — / — / —. La colonne P affiche la médiane au format `{:.2f}` de `run.py` : T2-2 vaut 0.965 exactement.
+
+## Lecture (lancement 3 — T2 seul)
+
+1. **Conformité T2.**
+   - [VÉRIFIÉ] 4 questions sur 4 sont conformes (médiane des réponses 200).
+   - [VÉRIFIÉ] Appel par appel, les 13 réponses 200 sont toutes conformes : aucune ne franchit 0.5 du mauvais côté.
+2. **« Faux et sûr » sur T2.**
+   - [VÉRIFIÉ] 0 sur 4. Aucune réponse n'est non conforme, donc aucune n'est « faux et sûr » (0 sur 13 appels).
+   - [VÉRIFIÉ] Sur ces 4 cas, la probabilité observée d'un « faux et sûr » est donc 0/13 appels. [HYPOTHÈSE] Avec 13 appels corrélés sur 4 phrases, cela ne borne pas la probabilité réelle hors de ces phrases.
+3. **Fautes invisibles (T2-1, T2-4) contre phrases justes (T2-2, T2-3).**
+   - [VÉRIFIÉ] Jev distingue les deux groupes sans chevauchement : P(correcte) 0.06–0.10 sur les fautes « il a manger » et « ils sont tombé », 0.84–0.97 sur les phrases justes.
+   - [VÉRIFIÉ] Sur les fautes, Jev est **juste et sûr** (P ≤ 0.10), pas « faux et sûr ».
+   - [VÉRIFIÉ] La phrase juste la moins bien notée est T2-3 « Elle est tombée dans l'escalier. » (0.84–0.85, contre 0.96–0.97 pour T2-2). [HYPOTHÈSE] L'accord avec « être » laisse à Jev un doute résiduel même quand il est correct.
+   - [HYPOTHÈSE] Ces fautes sont « invisibles » pour un lecteur pressé, mais peut-être pas pour un modèle entraîné sur de la correction : la sonde ne dit pas si Jev resterait sûr sur des fautes plus rares ou plus ambiguës.
+4. **Stabilité entre sous-lancements.**
+   - [VÉRIFIÉ] Écart maximal entre appels d'un même cas : 0.04 (T2-1, 0.06–0.10) ; 0.01 pour T2-2, T2-3 et T2-4.
+   - [VÉRIFIÉ] Deux fournisseurs ont servi les 200 (`gateway.routing.finalProvider`) : `typesafe-ai` pour 11 appels, `digitalocean` pour 2 (B/T2-4 à 0.07, C/T2-2 à 0.96). Aucun écart visible entre les deux sur ces 2 appels. [HYPOTHÈSE] 2 appels ne suffisent pas à établir l'équivalence des fournisseurs.
+   - [VÉRIFIÉ] T2-3 et T2-4 ne reposent que sur 2 réponses chacun.
+5. **Statuts HTTP par sous-lancement.**
+   - [VÉRIFIÉ] A 4×200 ; B 3×200 + 1×503 ; C 3×200 + 1×503 ; D 1×200 + 3×429 ; E 2×200 + 1×503 + 1×429 (tableau ci-dessus).
+   - [VÉRIFIÉ] Les 503 sont `service_unavailable_error` (« Service temporarily unavailable ») ; les 429 sont `rate_limit_exceeded` (« The upstream provider is currently experiencing high demand »).
+   - [HYPOTHÈSE] Le sous-lancement D, parti environ 12 s après le dernier appel de C, a reçu 3 × 429 : l’espacement obtenu (12 à 30 s environ entre sous-lancements) reste trop court pour ce fournisseur.
+   - [VÉRIFIÉ] Aucun 401/403/404, aucun code 3.
+
+## Lecture (lancement 2 — T1)
 
 1. **Conformité.**
    - [VÉRIFIÉ] 6 questions mesurées sur 10 : les 6 sont conformes (médiane des répétitions).
@@ -113,11 +171,14 @@ Pour un `choice`, la colonne « P ou confiance » donne la probabilité de l'opt
 - Les états sont en français, alors que Jev est peut-être optimisé pour l'anglais.
 - Les répétitions mesurent la stabilité, pas la calibration.
 - Les chiffres de l'éditeur (vitesse, prix) ne sont pas vérifiés. La page modèle dit « Free », le guide dit 0,042 $ par million de tokens d'entrée, et l'accès exige en pratique une carte enregistrée. Coût observé : environ 0,00002 $ par appel (`gateway.cost`).
-- Lancement 2 partiel : 7 appels sur 21 en 200, aucun sur T2. La question centrale (erreurs invisibles) reste sans réponse.
+- Lancement 2 partiel : 7 appels sur 21 en 200, aucun sur T2.
+- Lancement 3 (T2 seul) : **4 cas** seulement, états en français ; T2-3 et T2-4 ne reposent que sur 2 réponses 200 chacun (objectif 3 non atteint). Aucune conclusion générale sur les erreurs invisibles.
+- Les fautes testées (é/er, accord avec « être ») sont des fautes fréquentes du français ; une faute rare ou ambiguë n'a pas été testée.
 - Deux fournisseurs servent le même modèle. Leur équivalence n'est pas vérifiée.
 - `providerMetadata.typesafe.confidence` : **présent** dans la réponse HTTP. Il est renseigné pour les questions `choice` (`{"statut": 0.52–0.63}`) et vide (`{}`) quand il n'y a que des `boolean` (T1-C).
 
 ## Prochaine sonde proposée
 
-Rejouer T2 seul, à l'identique (mêmes états, mêmes attentes), quand le fournisseur ne sature plus, en espaçant les appels : c'est la mesure « faux et sûr » qui manque.
-Ensuite, doubler chaque état en anglais pour séparer l'effet de la langue de l'effet de l'erreur invisible.
+Élargir T2 (préenregistré) à des fautes invisibles plus rares ou ambiguës (accord du participe avec « avoir » et COD antéposé, homophones), là où un « faux et sûr » a une chance d'apparaître.
+Doubler chaque état en anglais pour séparer l'effet de la langue de l'effet de l'erreur invisible.
+Espacer les appels d'au moins une minute (ou prévoir un plan de rejeu ciblé) : 7 appels sur 20 non servis au lancement 3.

@@ -1,0 +1,82 @@
+{
+  "meta": {
+    "run_id": "2026-09-26T155507+0200",
+    "endpoint": "https://ai-gateway.vercel.sh/v1/evaluate",
+    "model": "typesafe-ai/jev",
+    "reps": 1,
+    "cases_sha256": "49b2dd4aab440b9af4e4e7c7dd4b1cd0dc0ef1af937c88e596b1a5401b82b40e",
+    "n_appels": 4,
+    "n_http_200": 3
+  },
+  "rows": [
+    {
+      "case_id": "T2-1",
+      "famille": "erreur-invisible-e-er",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 519.1,
+      "obtenu": false,
+      "p": 0.1,
+      "stabilite": [
+        0.1,
+        0.1
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "T2-2",
+      "famille": "erreur-invisible-e-er",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 370.3,
+      "obtenu": true,
+      "p": 0.96,
+      "stabilite": [
+        0.96,
+        0.96
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    },
+    {
+      "case_id": "T2-3",
+      "famille": "erreur-invisible-accord-etre",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": true,
+      "n_appels": 1,
+      "n_parses": 0,
+      "latence_mediane_ms": null,
+      "obtenu": "NON_PARSE",
+      "p": null,
+      "stabilite": null,
+      "conforme": null,
+      "faux_et_sur": null
+    },
+    {
+      "case_id": "T2-4",
+      "famille": "erreur-invisible-accord-etre",
+      "question": "correcte",
+      "type": "boolean",
+      "attendu": false,
+      "n_appels": 1,
+      "n_parses": 1,
+      "latence_mediane_ms": 592.1,
+      "obtenu": false,
+      "p": 0.07,
+      "stabilite": [
+        0.07,
+        0.07
+      ],
+      "conforme": true,
+      "faux_et_sur": false
+    }
+  ]
+}
