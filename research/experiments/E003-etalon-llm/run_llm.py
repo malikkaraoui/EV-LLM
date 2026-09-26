@@ -14,8 +14,12 @@ Amendement 2 (M0010) : --min-interval (rythmeur interne, limite fournisseur de 5
 --only-missing (ne rejoue que les elements sans reponse 200 parsable dans des dossiers donnes),
 --max-tokens-llm2 (max_tokens de LLM-2 seul), --summarize-dirs (resume consolide, zero appel).
 
+Amendement 3 (M0019, PROTOCOLE-amendement-3.md) : fournisseur impose par modele (PROVIDERS,
+providerOptions.gateway.only), fournisseur reel garde dans la reponse, arret net sur HTTP 402.
+
 Codes de sortie : 0 = tous les elements en HTTP 200 ; 1 = au moins un element sans 200 ;
-2 = cle absente ; 3 = fuite detectee ; 4 = arret sur 401/403/404 ; 5 = plafond d'appels atteint.
+2 = cle absente ; 3 = fuite detectee ; 4 = arret sur 401/403/404 ; 5 = plafond d'appels atteint ;
+6 = arret sur 402 (budget passerelle epuise) ; 7 = modele sans fournisseur impose (aucun appel).
 """
 
 import argparse
@@ -37,6 +41,7 @@ MAX_TOKENS = 400
 MAX_RETRIES = 2
 RETRY_STATUSES = (429, 503)
 STOP_STATUSES = (401, 403, 404)
+QUOTA_STATUS = 402  # Amendement 3 : budget passerelle depasse, jamais relance
 HERE = Path(__file__).resolve().parent
 
 MODELS = [
@@ -45,6 +50,9 @@ MODELS = [
     {"label": "LLM-2", "model": "google/gemini-2.5-flash",
      "extra": {"reasoning": {"effort": "low"}}},
 ]
+
+# Amendement 3 : fournisseurs autorises par modele (slugs de la passerelle). Pas de repli.
+PROVIDERS = {"openai/gpt-4.1-mini": ["openai"], "google/gemini-2.5-flash": ["vertex"]}
 
 PILOT_CASE = {
     "id": "PILOTE", "famille": "pilote-hors-evaluation",
@@ -163,12 +171,21 @@ def build_prompt(state, question):
     return PROMPT.format(state=state, instructions=question["instructions"], bloc_options=bloc)
 
 
+def gateway_only(model_id):
+    """Fournisseurs imposes (Amendement 3) ; ValueError si le modele n'en a pas."""
+    if model_id not in PROVIDERS:
+        raise ValueError("modele sans fournisseur impose (PROVIDERS) : {}".format(model_id))
+    return list(PROVIDERS[model_id])
+
+
 def build_body(model_cfg, state, question):
+    only = gateway_only(model_cfg["model"])
     body = {"model": model_cfg["model"],
             "messages": [{"role": "user", "content": build_prompt(state, question)}],
             "temperature": 0, "max_tokens": MAX_TOKENS,
             "response_format": {"type": "json_object"}}
     body.update(model_cfg["extra"])
+    body["providerOptions"] = {"gateway": {"only": only}}
     return body
 
 
@@ -193,7 +210,7 @@ def call(key, body):
 
 
 def filter_response(status, text):
-    """Garde model / content / finish_reason / usage (200) ou le seul objet error (sinon)."""
+    """Garde model / provider / content / finish_reason / usage (200) ou le seul objet error."""
     try:
         body = json.loads(text)
     except (TypeError, ValueError):
@@ -203,7 +220,10 @@ def filter_response(status, text):
     if status == 200:
         choice = (body.get("choices") or [{}])[0] or {}
         msg = choice.get("message") or {}
-        return {"model": body.get("model"), "content": msg.get("content"),
+        # Amendement 3 : fournisseur reel, None si absent.
+        # À VÉRIFIER au premier appel réel (M0021) : nom et emplacement du champ non garantis.
+        return {"model": body.get("model"), "provider": body.get("provider"),
+                "content": msg.get("content"),
                 "finish_reason": choice.get("finish_reason"), "usage": body.get("usage")}
     err = body.get("error")
     if isinstance(err, dict):
@@ -343,7 +363,10 @@ def build_items(cases, reps, models=MODELS, skip=frozenset()):
 
 def run_items(key, items, max_calls, raw, min_interval=0.0, last_call=None,
               clock=time.time, sleeper=time.sleep):
-    """Execute la file. Retourne (records, arret) ; arret in (None, 'stop_http', 'budget').
+    """Execute la file. Retourne (records, arret) ;
+    arret in (None, 'stop_http', 'quota', 'budget').
+
+    'quota' (Amendement 3) : HTTP 402, arret immediat, aucune relance ni appel suivant.
 
     min_interval (Amendement 2) : ecart minimal en secondes entre les debuts de deux appels,
     y compris avec last_call (epoch du dernier appel d'un lancement precedent). 0 = pas d'attente.
@@ -380,6 +403,8 @@ def run_items(key, items, max_calls, raw, min_interval=0.0, last_call=None,
         print("{} {} {} rep {} essai {} -> HTTP {} ({} ms)".format(
             rec["label"], rec["case_id"], rec["question"], rec["rep"], rec["attempt"],
             status, lat))
+        if status == QUOTA_STATUS:
+            return records, "quota"
         if status in STOP_STATUSES:
             return records, "stop_http"
         if retry:
@@ -421,6 +446,11 @@ def main():
             return 2
         models = [pilot_models(args.pilot_model)]
     models = with_llm2_max_tokens(models, args.max_tokens_llm2)
+    missing = [m["model"] for m in models if m["model"] not in PROVIDERS]
+    if missing:
+        print("Amendement 3 : aucun fournisseur impose pour {} ; aucun appel".format(
+            ", ".join(missing)), file=sys.stderr)
+        return 7
     cases_bytes = Path(args.cases).read_bytes()
     if args.pilot:
         cases, reps, sub = [PILOT_CASE], 1, "pilot"
@@ -448,7 +478,8 @@ def main():
         statuts[str(r["http_status"])] = statuts.get(str(r["http_status"]), 0) + 1
     rows = summarize(cases, records, models)
     meta = {"run_id": run_id, "endpoint": ENDPOINT, "reps": reps, "pilot": args.pilot,
-            "models": models, "max_tokens": MAX_TOKENS, "max_calls": args.max_calls,
+            "models": models, "providers": {m["model"]: PROVIDERS[m["model"]] for m in models},
+            "max_tokens": MAX_TOKENS, "max_calls": args.max_calls,
             "min_interval_s": args.min_interval, "only_missing": args.only_missing,
             "n_elements_a_jouer": n_items, "n_deja_repondus": len(skip),
             "cases_sha256": hashlib.sha256(cases_bytes).hexdigest(),
@@ -464,6 +495,16 @@ def main():
 
     print("resultats : {} · appels : {} · statuts : {} · arret : {}".format(
         out_dir, len(records), statuts, arret))
+    if arret == "quota":
+        print("ARRET : HTTP 402 (budget passerelle epuise) ; ne pas relancer avant decision",
+              file=sys.stderr)
+    return exit_code(arret, records)
+
+
+def exit_code(arret, records):
+    """Code de sortie d'un lancement (voir en-tete du module)."""
+    if arret == "quota":
+        return 6
     if arret == "stop_http":
         return 4
     if arret == "budget":

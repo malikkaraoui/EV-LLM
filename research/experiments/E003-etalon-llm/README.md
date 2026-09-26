@@ -3,7 +3,8 @@
 Mandats M0006, M0008 puis M0010, 2026-09-26. **État : mesure complète** (M0010). LLM-2 remplacé par
 l'Amendement 1 ; `max_tokens` de LLM-2, rythme des appels et rejeu des manquants fixés par
 l'Amendement 2 (`PROTOCOLE.md`). 10 questions sur 10 mesurées pour chaque LLM, 3 réponses parsées
-par question, T2 compris.
+par question, T2 compris. **Amendement 3 (M0019)** : le fournisseur de la passerelle n'était pas
+imposé pendant ces mesures ; backend non contrôlé, rejeu prévu (M0021). Voir la section dédiée.
 
 ## Question
 
@@ -17,9 +18,9 @@ copié sans modification depuis `origin/exp/e001-sonde-jev`), des LLM générati
 
 Préenregistré dans [`PROTOCOLE.md`](PROTOCOLE.md), committé avant le premier appel
 (commit `c3e8dd5`). Code : `run_llm.py` (Python standard, zéro dépendance). Tests hors ligne :
-`python3 -m unittest -v test_run_llm` (27 tests : parse strict, conforme / faux et sûr,
+`python3 -m unittest -v test_run_llm` (35 tests : parse strict, conforme / faux et sûr,
 garde anti-fuite, file de relances, plafond d'appels, rythmeur, sélection des manquants,
-`max_tokens` de LLM-2).
+`max_tokens` de LLM-2, fournisseur imposé et journalisé, arrêt sur 402).
 
 Rejouer selon l'Amendement 2 (lancements de 8 appels au plus, 26 s entre deux appels, seuls les
 éléments sans réponse 200 parsable dans les dossiers donnés) :
@@ -33,6 +34,19 @@ python3 run_llm.py --summarize-dirs results/<d1> results/<d2> ...   # zéro appe
 
 `--env-file` vaut `/Users/malik/Documents/EV-LLM/.env` par défaut ; chaque lancement répète
 `--only-missing` avec tous les dossiers `results/` déjà produits.
+
+Codes de sortie de `run_llm.py` :
+
+| code | sens |
+|---|---|
+| 0 | tous les éléments en HTTP 200 |
+| 1 | au moins un élément sans 200 (après relances) |
+| 2 | clé absente, ou `--pilot-model` sans `--pilot` |
+| 3 | fuite de la clé détectée dans les fichiers produits (ne rien committer) |
+| 4 | arrêt sur 401 / 403 / 404 |
+| 5 | plafond `--max-calls` atteint |
+| 6 | **arrêt sur 402** (budget passerelle épuisé) : aucun appel après le 402, acquis écrit ; ne pas relancer avant décision (Amendement 3) |
+| 7 | modèle sans fournisseur imposé dans `PROVIDERS` : aucun appel, aucun dossier créé (Amendement 3) |
 
 ## Pilote M0006 — 2026-09-26 15:57:29 +0200 : STOP
 
@@ -101,6 +115,25 @@ Détail : [`PROTOCOLE.md`](PROTOCOLE.md), section « Amendement 2 (26/09) ».
 - `cases.json` inchangé (sha256 `8325775b…`), règle inchangée, code non modifié après le premier appel.
 - **Résumé consolidé** : [`results/consolide/summary.md`](results/consolide/summary.md) (M0008 + M0010 ; 109 appels : 72 × 200, 37 × 429 tous en M0008). Les 12 réponses tronquées de LLM-2 en M0008 y figurent comme raisons `NON_PARSE` historiques ; chaque question a 3 réponses parsées.
 
+## Amendement 3 (M0019) — fournisseur imposé et journalisé, arrêt sur 402
+
+Détail : [`PROTOCOLE-amendement-3.md`](PROTOCOLE-amendement-3.md), committé avant le code.
+
+- **Défaut** [VÉRIFIÉ] : jusqu'au tip `bbc50ae`, `run_llm.py` n'envoyait aucun `providerOptions`.
+  La passerelle choisissait le backend appel par appel ; `google/gemini-2.5-flash` a été servi au
+  moins en partie par Google Vertex AI (journal de la passerelle). `filter_response` ne gardait pas
+  le fournisseur : aucun des 12 `raw.public.jsonl` ne dit quel backend a répondu.
+- **Correctif** : chaque requête porte `providerOptions.gateway.only` (`openai/gpt-4.1-mini` →
+  `["openai"]`, `google/gemini-2.5-flash` → `["vertex"]`, table `PROVIDERS`) ; un modèle absent de
+  la table est refusé avant tout appel (code 7). Le champ `provider` de la réponse 200 est gardé
+  (`null` s'il est absent) ; le fournisseur imposé figure dans `request_body` et dans
+  `summary.json` (`meta.providers`). Un HTTP 402 arrête le lancement sans relance (code 6).
+  [HYPOTHÈSE] Le nom du champ `provider` n'est pas garanti : à vérifier au premier appel réel (M0021).
+- **Conséquence sur les résultats ci-dessous** : les réponses M0006–M0010 restent valides **comme
+  réponses observées** ; aucun chiffre n'est modifié. Leur comparabilité entre vagues (M0008 /
+  M0010) et avec une vague future n'est **pas garantie** : le backend de chaque réponse est inconnu.
+  Toute lecture LLM ci-dessous porte donc sur un backend non contrôlé.
+
 ## Tableau comparatif
 
 Jev : E001 (README sur `origin/main`), lancement 2 (M0002) pour T1, lancement 3 (M0003) pour T2.
@@ -109,7 +142,7 @@ LLM : résumé consolidé M0008 + M0010. Cellule = « obtenu (P ou confiance) ·
 | cas | question | attendu | Jev (P) | LLM-1 `gpt-4.1-mini` (confiance) | LLM-2 `gemini-2.5-flash` (confiance) |
 |---|---|---|---|---|---|
 | T1-A | statut | contradiction | contradiction (0.71) · 3/3 | contradiction (1.00) · 3/3 | contradiction (1.00) · 3/3 |
-| T1-A | e_sup_d | true | true (0.51) · 3/3 | **false (1.00) · 3/3 — faux et sûr** | true (0.90) · 3/3 |
+| T1-A | e_sup_d | true | true (0.51) · 3/3 | **false (1.00) · 3/3 — faux et sûr** (backend non contrôlé, à rejouer — M0021) | true (0.90) · 3/3 |
 | T1-B | statut | indetermine | indetermine (0.72) · 3/3 | indetermine (0.90) · 3/3 | indetermine (1.00) · 3/3 |
 | T1-B | e_sup_d | true | true (0.73) · 3/3 | true (0.90) · 3/3 | true (1.00) · 3/3 |
 | T1-C | a_sup_c | true | true (0.97) · 1/3 | true (1.00) · 3/3 | true (1.00) · 3/3 |
@@ -133,7 +166,7 @@ Conformité : Jev 10/10, LLM-1 9/10, LLM-2 10/10 (médiane ou majorité des rép
    - [VÉRIFIÉ] Confiances : Jev 0.71 / 0.72, LLM-1 1.00 / 0.90, LLM-2 1.00 / 1.00.
    - Sur ces deux cas, aucun des trois ne montre l'indice « génère au lieu de déduire » (même réponse aux deux variantes).
 2. **« Faux et sûr » : où ?**
-   - [VÉRIFIÉ] Une seule question sur 30 (3 systèmes × 10) : **LLM-1, T1-A `e_sup_d`**, `false` 3 fois sur 3, confiance 1, 1 et 0.9 (3 répétitions « faux et sûr »). L'attendu préenregistré est `true` (E > A > B > C > D donne E > D par la règle 1).
+   - [VÉRIFIÉ] Une seule question sur 30 (3 systèmes × 10) : **LLM-1, T1-A `e_sup_d`**, `false` 3 fois sur 3, confiance 1, 1 et 0.9 (3 répétitions « faux et sûr »). L'attendu préenregistré est `true` (E > A > B > C > D donne E > D par la règle 1). **Backend non contrôlé, à rejouer (M0021)** : fournisseur non imposé ni journalisé (Amendement 3).
    - [VÉRIFIÉ] Jev : 0 sur 10. LLM-2 : 0 sur 10.
    - [VÉRIFIÉ] Sur la même question, Jev est juste mais à P = 0.51 (0.49–0.58), contre 0.73 sur T1-B où la déduction est identique. LLM-2 est juste à 0.90 sur T1-A, contre 1.00 sur T1-B.
    - [HYPOTHÈSE] Même contamination que chez Jev (issue #5, E004) : la contradiction présente dans l'état pèse sur une déduction qui n'en dépend pas. Chez Jev, elle baisse P sans la faire basculer ; chez LLM-1, elle fait basculer la réponse ; chez LLM-2, elle baisse la confiance verbalisée de 1.00 à 0.90. Trois systèmes, une question, 3 répétitions : cela ne l'établit pas. Seules des paires contrôlées (E004) le peuvent.
@@ -163,6 +196,7 @@ Aucune conclusion générale : 7 cas, 10 questions, 3 répétitions à `temperat
 - La réponse LLM-2 de T1-C `a_sup_c` répétition 1 date de M0008 (`max_tokens` 400, non tronquée) ; les 29 autres réponses LLM-2 sont à `max_tokens` 1200 (Amendement 2).
 - Les réponses LLM viennent de deux mandats (M0008, M0010) ; LLM-1 a les mêmes réglages dans les deux.
 - `temperature: 0` et 3 répétitions mesurent la stabilité, pas la calibration.
+- Backend non contrôlé pour toutes les réponses LLM M0006–M0010 (Amendement 3) : la stabilité sur 3 répétitions ne dit pas si elles ont été servies par le même fournisseur.
 - Le budget n'est pas égal au sens strict : Jev reçoit un appel par cas, les LLM un appel par question. Jev T1-C et T2-3/T2-4 reposent sur 1 ou 2 réponses (E001).
 
 ## Prochaine étape proposée

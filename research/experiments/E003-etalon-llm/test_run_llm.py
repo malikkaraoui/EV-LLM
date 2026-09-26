@@ -149,14 +149,16 @@ class LeakGuardTest(unittest.TestCase):
             self.assertFalse(run_llm.leak_guard(d, "abc-SECRET-123"))
             self.assertEqual((d / "raw.jsonl").read_text(encoding="utf-8"), '{"x": 1}\n')
 
-    def test_filter_response_drops_everything_else(self):
+    def test_filter_response_drops_everything_else_but_provider(self):
+        # Revocation (26/09, Amendement 3, M0019) : ce test figeait l'abandon de "provider" ;
+        # le fournisseur reel doit desormais etre journalise. Tout le reste reste abandonne.
         body = json.dumps({"id": "gen-1", "model": "m", "provider": "p",
                            "choices": [{"message": {"content": "c", "reasoning": "r"},
                                         "finish_reason": "stop"}],
                            "usage": {"completion_tokens": 3},
                            "providerMetadata": {"gateway": {"generationId": "g"}}})
         self.assertEqual(run_llm.filter_response(200, body),
-                         {"model": "m", "content": "c", "finish_reason": "stop",
+                         {"model": "m", "provider": "p", "content": "c", "finish_reason": "stop",
                           "usage": {"completion_tokens": 3}})
         err = json.dumps({"error": {"message": "m", "type": "t", "param": {"x": 1}}})
         self.assertEqual(run_llm.filter_response(429, err),
@@ -203,6 +205,71 @@ class RunItemsTest(unittest.TestCase):
     def test_budget(self):
         recs, arret = self.run_with([200] * 10, max_calls=3, reps=3)
         self.assertEqual((len(recs), arret), (3, "budget"))
+
+
+class Amendement3Test(unittest.TestCase):
+    """Fournisseur impose et journalise, arret net sur 402 (M0019)."""
+
+    case = RunItemsTest.case
+
+    def test_body_only_per_model(self):  # (a)
+        expected = {"openai/gpt-4.1-mini": ["openai"], "google/gemini-2.5-flash": ["vertex"]}
+        for m in run_llm.with_llm2_max_tokens(run_llm.MODELS, 1200):
+            b = run_llm.build_body(m, "s", BOOL_Q)
+            self.assertEqual(b.get("providerOptions"),
+                             {"gateway": {"only": expected[m["model"]]}})
+        self.assertEqual({m["model"] for m in run_llm.MODELS}, set(expected))
+
+    def test_unknown_model_fails_before_call(self):  # (b)
+        calls = []
+        with mock.patch.object(run_llm, "call", lambda k, b: calls.append(b)), \
+                mock.patch("sys.stdout", io.StringIO()):
+            items = run_llm.build_items([self.case], 1, [run_llm.pilot_models("x/y")])
+            with self.assertRaises(ValueError):
+                run_llm.run_items("k", items, 70, io.StringIO())
+        self.assertEqual(calls, [])
+
+    def test_unknown_pilot_model_main_exits_7_without_call(self):  # (b), via main
+        with tempfile.TemporaryDirectory() as d:
+            env = Path(d) / ".env"
+            env.write_text("AI_GATEWAY_API_KEY=k-test\n", encoding="utf-8")
+            argv = ["run_llm.py", "--env-file", str(env), "--pilot", "--pilot-model", "x/y"]
+            with mock.patch.object(run_llm, "call", side_effect=AssertionError("appel")) as c, \
+                    mock.patch.object(run_llm, "HERE", Path(d)), mock.patch("sys.argv", argv), \
+                    mock.patch("sys.stderr", io.StringIO()), \
+                    mock.patch("sys.stdout", io.StringIO()):
+                self.assertEqual(run_llm.main(), 7)
+            c.assert_not_called()
+            self.assertFalse((Path(d) / "pilot").exists())
+
+    def test_provider_kept_in_public_record(self):  # (c)
+        body = json.dumps({"model": "m", "provider": "vertex",
+                           "choices": [{"message": {"content": "c"}, "finish_reason": "stop"}]})
+        rec = {"label": "LLM-2", "http_status": 200,
+               "response": run_llm.filter_response(200, body)}
+        with tempfile.TemporaryDirectory() as d:
+            run_llm.write_public(d, [rec])
+            self.assertEqual(run_llm.load_records([d])[0]["response"].get("provider"), "vertex")
+        absent = json.dumps({"choices": [{"message": {"content": "c"}}]})
+        self.assertIn("provider", run_llm.filter_response(200, absent))
+        self.assertIsNone(run_llm.filter_response(200, absent)["provider"])
+
+    def test_402_stops_without_next_call_exit_6(self):  # (d)
+        for prefix in ([402], [429, 402]):  # 402 d'emblee, puis 402 sur une relance
+            with self.subTest(prefix=prefix):
+                recs, arret = RunItemsTest.run_with(self, prefix + [200] * 10, reps=2)
+                self.assertEqual((len(recs), arret), (len(prefix), "quota"))
+                self.assertEqual(recs[-1]["http_status"], 402)
+                self.assertEqual(run_llm.exit_code(arret, recs), 6)
+        self.assertNotIn(402, run_llm.RETRY_STATUSES)
+
+    def test_429_still_retried(self):  # (e)
+        recs, arret = RunItemsTest.run_with(self, [429, 200, 200])
+        self.assertIsNone(arret)
+        l1 = [r for r in recs if r["label"] == "LLM-1"]
+        self.assertEqual([(r["http_status"], r["attempt"], r["final"]) for r in l1],
+                         [(429, 1, False), (200, 2, True)])
+        self.assertEqual(run_llm.exit_code(arret, recs), 0)
 
 
 class Amendement2Test(unittest.TestCase):
