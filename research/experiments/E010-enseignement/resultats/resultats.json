@@ -1,0 +1,4463 @@
+{
+ "final": {
+  "F0-abs": {
+   "graines": [
+    1,
+    2
+   ],
+   "par_jeu": {
+    "ADV-ASYM|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 35,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 9,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 18,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 8,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 13,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 21,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 3,
+     "abstentions": 12,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 1,
+     "abstentions": 11,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 7,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 9,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 4,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 40,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 20,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 20,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 20,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "T-FIN|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 163,
+     "abstentions": 62,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 179,
+     "abstentions": 17,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 179,
+     "abstentions": 1,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 169,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 184,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|2": {
+     "moy": 0.059,
+     "ecart": 0.007071067811865477,
+     "par_graine": [
+      0.054,
+      0.064
+     ],
+     "faux": 941,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|3": {
+     "moy": 0.004,
+     "ecart": 0.00282842712474619,
+     "par_graine": [
+      0.002,
+      0.006
+     ],
+     "faux": 996,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|4": {
+     "moy": 0.002,
+     "ecart": 0.0,
+     "par_graine": [
+      0.002,
+      0.002
+     ],
+     "faux": 998,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|5": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID1|1": {
+     "moy": 0.165,
+     "ecart": 0.07778174593052023,
+     "par_graine": [
+      0.22,
+      0.11
+     ],
+     "faux": 167,
+     "faux_surs": 8,
+     "abstentions": 7,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 200
+    },
+    "V-OOD|6": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 558,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 897,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 487,
+     "abstentions": 9,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F0-nope": {
+   "graines": [
+    1,
+    2
+   ],
+   "par_jeu": {
+    "ADV-ASYM|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 6,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 5,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 9,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 2,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 10,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 18,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 1,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 20,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 20,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 20,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "T-FIN|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 32,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 22,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 106,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 194,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 198,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|2": {
+     "moy": 0.613,
+     "ecart": 0.04101219330881979,
+     "par_graine": [
+      0.642,
+      0.584
+     ],
+     "faux": 387,
+     "faux_surs": 13,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|3": {
+     "moy": 0.42200000000000004,
+     "ecart": 0.0622253967444162,
+     "par_graine": [
+      0.466,
+      0.378
+     ],
+     "faux": 578,
+     "faux_surs": 2,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|4": {
+     "moy": 0.226,
+     "ecart": 0.005656854249492385,
+     "par_graine": [
+      0.222,
+      0.23
+     ],
+     "faux": 774,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|5": {
+     "moy": 0.063,
+     "ecart": 0.029698484809835,
+     "par_graine": [
+      0.042,
+      0.084
+     ],
+     "faux": 937,
+     "faux_surs": 0,
+     "abstentions": 1,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID1|1": {
+     "moy": 0.35,
+     "ecart": 0.014142135623730925,
+     "par_graine": [
+      0.34,
+      0.36
+     ],
+     "faux": 130,
+     "faux_surs": 10,
+     "abstentions": 7,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 200
+    },
+    "V-OOD|6": {
+     "moy": 0.003,
+     "ecart": 0.001414213562373095,
+     "par_graine": [
+      0.002,
+      0.004
+     ],
+     "faux": 997,
+     "faux_surs": 0,
+     "abstentions": 8,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|7": {
+     "moy": 0.001,
+     "ecart": 0.001414213562373095,
+     "par_graine": [
+      0.0,
+      0.002
+     ],
+     "faux": 999,
+     "faux_surs": 0,
+     "abstentions": 16,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 0,
+     "abstentions": 26,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F1-abs": {
+   "graines": [
+    1,
+    2
+   ],
+   "par_jeu": {
+    "ADV-ASYM|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 27,
+     "abstentions": 3,
+     "traces_justes": 0,
+     "coherents": 4,
+     "n": 40
+    },
+    "ADV-ASYM|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 21,
+     "abstentions": 1,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 18,
+     "abstentions": 3,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 20,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 19,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 12,
+     "abstentions": 2,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 12,
+     "abstentions": 9,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 16,
+     "abstentions": 18,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 7,
+     "abstentions": 18,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 17,
+     "abstentions": 10,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 23,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 24,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 13,
+     "abstentions": 20,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 3,
+     "abstentions": 20,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 24,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "T-FIN|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 267,
+     "abstentions": 63,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 241,
+     "abstentions": 6,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 235,
+     "abstentions": 2,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 248,
+     "abstentions": 9,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 222,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|2": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 1000,
+     "n": 1000
+    },
+    "T-ID|3": {
+     "moy": 0.994,
+     "ecart": 0.008485281374238578,
+     "par_graine": [
+      1.0,
+      0.988
+     ],
+     "faux": 6,
+     "faux_surs": 2,
+     "abstentions": 0,
+     "traces_justes": 999,
+     "coherents": 995,
+     "n": 1000
+    },
+    "T-ID|4": {
+     "moy": 0.9530000000000001,
+     "ecart": 0.06646803743153545,
+     "par_graine": [
+      0.906,
+      1.0
+     ],
+     "faux": 47,
+     "faux_surs": 11,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 953,
+     "n": 1000
+    },
+    "T-ID|5": {
+     "moy": 0.976,
+     "ecart": 0.01131370849898477,
+     "par_graine": [
+      0.968,
+      0.984
+     ],
+     "faux": 24,
+     "faux_surs": 6,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 976,
+     "n": 1000
+    },
+    "T-ID1|1": {
+     "moy": 0.74,
+     "ecart": 0.05656854249492385,
+     "par_graine": [
+      0.7,
+      0.78
+     ],
+     "faux": 52,
+     "faux_surs": 12,
+     "abstentions": 2,
+     "traces_justes": 195,
+     "coherents": 148,
+     "n": 200
+    },
+    "V-OOD|6": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 551,
+     "abstentions": 20,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 705,
+     "abstentions": 70,
+     "traces_justes": 0,
+     "coherents": 3,
+     "n": 1000
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 547,
+     "abstentions": 140,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F1-nope": {
+   "graines": [
+    1,
+    2
+   ],
+   "par_jeu": {
+    "ADV-ASYM|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 29,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 24,
+     "n": 40
+    },
+    "ADV-ASYM|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 2,
+     "abstentions": 26,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 35,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 7,
+     "abstentions": 4,
+     "traces_justes": 0,
+     "coherents": 10,
+     "n": 40
+    },
+    "ADV-CASCADE|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 23,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "T-FIN|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 397,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 400,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 400,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 400,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 400,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|2": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 1000,
+     "n": 1000
+    },
+    "T-ID|3": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 1000,
+     "n": 1000
+    },
+    "T-ID|4": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 1000,
+     "n": 1000
+    },
+    "T-ID|5": {
+     "moy": 0.996,
+     "ecart": 0.0,
+     "par_graine": [
+      0.996,
+      0.996
+     ],
+     "faux": 4,
+     "faux_surs": 4,
+     "abstentions": 0,
+     "traces_justes": 997,
+     "coherents": 999,
+     "n": 1000
+    },
+    "T-ID1|1": {
+     "moy": 0.985,
+     "ecart": 0.007071067811865481,
+     "par_graine": [
+      0.98,
+      0.99
+     ],
+     "faux": 3,
+     "faux_surs": 3,
+     "abstentions": 0,
+     "traces_justes": 198,
+     "coherents": 198,
+     "n": 200
+    },
+    "V-OOD|6": {
+     "moy": 0.33099999999999996,
+     "ecart": 0.05515432893255071,
+     "par_graine": [
+      0.292,
+      0.37
+     ],
+     "faux": 669,
+     "faux_surs": 606,
+     "abstentions": 0,
+     "traces_justes": 345,
+     "coherents": 957,
+     "n": 1000
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 757,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 735,
+     "n": 1000
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 173,
+     "abstentions": 307,
+     "traces_justes": 0,
+     "coherents": 86,
+     "n": 1000
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F2-abs": {
+   "graines": [
+    1,
+    2
+   ],
+   "par_jeu": {
+    "ADV-ASYM|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 25,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 16,
+     "abstentions": 3,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 9,
+     "abstentions": 2,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 8,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 6,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 11,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 14,
+     "abstentions": 1,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 3,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 1,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 20,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "T-FIN|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 122,
+     "abstentions": 8,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 157,
+     "abstentions": 9,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 24,
+     "abstentions": 70,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 72,
+     "abstentions": 5,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 17,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|2": {
+     "moy": 0.040999999999999995,
+     "ecart": 0.004242640687119284,
+     "par_graine": [
+      0.038,
+      0.044
+     ],
+     "faux": 959,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|3": {
+     "moy": 0.005,
+     "ecart": 0.001414213562373095,
+     "par_graine": [
+      0.006,
+      0.004
+     ],
+     "faux": 995,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|4": {
+     "moy": 0.001,
+     "ecart": 0.001414213562373095,
+     "par_graine": [
+      0.002,
+      0.0
+     ],
+     "faux": 999,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|5": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID1|1": {
+     "moy": 0.08499999999999999,
+     "ecart": 0.007071067811865472,
+     "par_graine": [
+      0.09,
+      0.08
+     ],
+     "faux": 183,
+     "faux_surs": 79,
+     "abstentions": 42,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 200
+    },
+    "V-OOD|6": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 245,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 660,
+     "abstentions": 1,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 594,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F2-nope": {
+   "graines": [
+    1,
+    2
+   ],
+   "par_jeu": {
+    "ADV-ASYM|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 2,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 7,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 10,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 7,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 3,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 10,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 10,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 10,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "T-FIN|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|2": {
+     "moy": 0.445,
+     "ecart": 0.5812417741353421,
+     "par_graine": [
+      0.034,
+      0.856
+     ],
+     "faux": 555,
+     "faux_surs": 5,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|3": {
+     "moy": 0.386,
+     "ecart": 0.5402295808265223,
+     "par_graine": [
+      0.004,
+      0.768
+     ],
+     "faux": 614,
+     "faux_surs": 16,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|4": {
+     "moy": 0.335,
+     "ecart": 0.4737615433949869,
+     "par_graine": [
+      0.0,
+      0.67
+     ],
+     "faux": 665,
+     "faux_surs": 6,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|5": {
+     "moy": 0.233,
+     "ecart": 0.32951176003293114,
+     "par_graine": [
+      0.0,
+      0.466
+     ],
+     "faux": 767,
+     "faux_surs": 1,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID1|1": {
+     "moy": 0.295,
+     "ecart": 0.19091883092036782,
+     "par_graine": [
+      0.16,
+      0.43
+     ],
+     "faux": 141,
+     "faux_surs": 2,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 200
+    },
+    "V-OOD|6": {
+     "moy": 0.02,
+     "ecart": 0.0282842712474619,
+     "par_graine": [
+      0.0,
+      0.04
+     ],
+     "faux": 980,
+     "faux_surs": 0,
+     "abstentions": 1,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F3-abs": {
+   "graines": [
+    1,
+    2
+   ],
+   "par_jeu": {
+    "ADV-ASYM|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 27,
+     "abstentions": 6,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 25,
+     "abstentions": 3,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 20,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 29,
+     "abstentions": 1,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 28,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 28,
+     "abstentions": 5,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 26,
+     "abstentions": 7,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 21,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 28,
+     "abstentions": 8,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 15,
+     "abstentions": 9,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 16,
+     "abstentions": 1,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 29,
+     "abstentions": 6,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 20,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 20,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "T-FIN|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 259,
+     "abstentions": 22,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 221,
+     "abstentions": 28,
+     "traces_justes": 0,
+     "coherents": 1,
+     "n": 400
+    },
+    "T-FIN|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 300,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 1,
+     "n": 400
+    },
+    "T-FIN|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 338,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 312,
+     "abstentions": 1,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|2": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 1000,
+     "n": 1000
+    },
+    "T-ID|3": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 1000,
+     "n": 1000
+    },
+    "T-ID|4": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 1000,
+     "n": 1000
+    },
+    "T-ID|5": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 1000,
+     "n": 1000
+    },
+    "T-ID1|1": {
+     "moy": 0.18,
+     "ecart": 0.15556349186104043,
+     "par_graine": [
+      0.07,
+      0.29
+     ],
+     "faux": 164,
+     "faux_surs": 49,
+     "abstentions": 1,
+     "traces_justes": 100,
+     "coherents": 109,
+     "n": 200
+    },
+    "V-OOD|6": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 735,
+     "abstentions": 55,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 716,
+     "abstentions": 27,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 557,
+     "abstentions": 101,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F3-nope": {
+   "graines": [
+    1,
+    2
+   ],
+   "par_jeu": {
+    "ADV-ASYM|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 23,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 9,
+     "n": 40
+    },
+    "ADV-ASYM|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 3,
+     "abstentions": 17,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 24,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 37,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ASYM|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 16,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 7,
+     "n": 40
+    },
+    "ADV-CASCADE|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 1,
+     "abstentions": 16,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-CASCADE|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 6,
+     "abstentions": 21,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 26,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "ADV-ZEROS|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 40,
+     "faux_surs": 0,
+     "abstentions": 40,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 40
+    },
+    "T-FIN|10": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 18,
+     "abstentions": 207,
+     "traces_justes": 0,
+     "coherents": 2,
+     "n": 400
+    },
+    "T-FIN|16": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 3,
+     "abstentions": 273,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|32": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 391,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|64": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 400,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-FIN|100": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 400,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|2": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 1000,
+     "n": 1000
+    },
+    "T-ID|3": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 1000,
+     "n": 1000
+    },
+    "T-ID|4": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 1000,
+     "coherents": 1000,
+     "n": 1000
+    },
+    "T-ID|5": {
+     "moy": 0.989,
+     "ecart": 0.004242640687119289,
+     "par_graine": [
+      0.992,
+      0.986
+     ],
+     "faux": 11,
+     "faux_surs": 11,
+     "abstentions": 0,
+     "traces_justes": 989,
+     "coherents": 1000,
+     "n": 1000
+    },
+    "T-ID1|1": {
+     "moy": 0.99,
+     "ecart": 0.014142135623730963,
+     "par_graine": [
+      1.0,
+      0.98
+     ],
+     "faux": 2,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 200,
+     "coherents": 198,
+     "n": 200
+    },
+    "V-OOD|6": {
+     "moy": 0.106,
+     "ecart": 0.13859292911256332,
+     "par_graine": [
+      0.204,
+      0.008
+     ],
+     "faux": 894,
+     "faux_surs": 826,
+     "abstentions": 0,
+     "traces_justes": 108,
+     "coherents": 918,
+     "n": 1000
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 650,
+     "abstentions": 5,
+     "traces_justes": 0,
+     "coherents": 442,
+     "n": 1000
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 174,
+     "abstentions": 189,
+     "traces_justes": 0,
+     "coherents": 17,
+     "n": 1000
+    }
+   },
+   "graines_reussies_16": 0
+  }
+ },
+ "crible": {
+  "F0-abs": {
+   "graines": [
+    1,
+    1,
+    1,
+    1,
+    2
+   ],
+   "par_jeu": {
+    "T-ID|2": {
+     "moy": 0.06100000000000001,
+     "ecart": 0.023558437978779493,
+     "par_graine": [
+      0.02,
+      0.08,
+      0.07,
+      0.065,
+      0.07
+     ],
+     "faux": 939,
+     "faux_surs": 114,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|3": {
+     "moy": 0.005,
+     "ecart": 0.006123724356957945,
+     "par_graine": [
+      0.0,
+      0.005,
+      0.015,
+      0.0,
+      0.005
+     ],
+     "faux": 995,
+     "faux_surs": 69,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|4": {
+     "moy": 0.001,
+     "ecart": 0.00223606797749979,
+     "par_graine": [
+      0.0,
+      0.0,
+      0.005,
+      0.0,
+      0.0
+     ],
+     "faux": 999,
+     "faux_surs": 37,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|5": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 26,
+     "abstentions": 1,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID1|1": {
+     "moy": 0.366,
+     "ecart": 0.3220714206507619,
+     "par_graine": [
+      0.4,
+      0.91,
+      0.19,
+      0.22,
+      0.11
+     ],
+     "faux": 317,
+     "faux_surs": 55,
+     "abstentions": 9,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 500
+    },
+    "V-OOD|6": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 674,
+     "abstentions": 3,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 749,
+     "abstentions": 69,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 266,
+     "abstentions": 296,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F0-nope": {
+   "graines": [
+    1,
+    1,
+    1,
+    1,
+    2
+   ],
+   "par_jeu": {
+    "T-ID|2": {
+     "moy": 0.5820000000000001,
+     "ecart": 0.33368398223468865,
+     "par_graine": [
+      0.005,
+      0.75,
+      0.855,
+      0.665,
+      0.635
+     ],
+     "faux": 418,
+     "faux_surs": 77,
+     "abstentions": 17,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|3": {
+     "moy": 0.392,
+     "ecart": 0.2581811379632525,
+     "par_graine": [
+      0.0,
+      0.385,
+      0.72,
+      0.465,
+      0.39
+     ],
+     "faux": 608,
+     "faux_surs": 50,
+     "abstentions": 16,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|4": {
+     "moy": 0.261,
+     "ecart": 0.22856618297552245,
+     "par_graine": [
+      0.0,
+      0.17,
+      0.625,
+      0.255,
+      0.255
+     ],
+     "faux": 739,
+     "faux_surs": 26,
+     "abstentions": 13,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID|5": {
+     "moy": 0.11199999999999999,
+     "ecart": 0.18019433953373784,
+     "par_graine": [
+      0.0,
+      0.03,
+      0.43,
+      0.02,
+      0.08
+     ],
+     "faux": 888,
+     "faux_surs": 17,
+     "abstentions": 12,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "T-ID1|1": {
+     "moy": 0.6039999999999999,
+     "ecart": 0.32238176127070217,
+     "par_graine": [
+      0.41,
+      0.99,
+      0.92,
+      0.34,
+      0.36
+     ],
+     "faux": 198,
+     "faux_surs": 41,
+     "abstentions": 8,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 500
+    },
+    "V-OOD|6": {
+     "moy": 0.023,
+     "ecart": 0.045907515724552116,
+     "par_graine": [
+      0.0,
+      0.005,
+      0.105,
+      0.0,
+      0.005
+     ],
+     "faux": 977,
+     "faux_surs": 13,
+     "abstentions": 8,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|7": {
+     "moy": 0.001,
+     "ecart": 0.0022360679774997894,
+     "par_graine": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.005
+     ],
+     "faux": 999,
+     "faux_surs": 1,
+     "abstentions": 9,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 6,
+     "abstentions": 24,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F1-abs": {
+   "graines": [
+    1,
+    1,
+    1,
+    1,
+    2
+   ],
+   "par_jeu": {
+    "T-ID|2": {
+     "moy": 0.974,
+     "ecart": 0.05813776741499453,
+     "par_graine": [
+      0.87,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "faux": 26,
+     "faux_surs": 15,
+     "abstentions": 0,
+     "traces_justes": 995,
+     "coherents": 978,
+     "n": 1000
+    },
+    "T-ID|3": {
+     "moy": 0.8230000000000001,
+     "ecart": 0.390217887852415,
+     "par_graine": [
+      0.125,
+      1.0,
+      1.0,
+      1.0,
+      0.99
+     ],
+     "faux": 177,
+     "faux_surs": 117,
+     "abstentions": 0,
+     "traces_justes": 983,
+     "coherents": 826,
+     "n": 1000
+    },
+    "T-ID|4": {
+     "moy": 0.758,
+     "ecart": 0.3836437149231041,
+     "par_graine": [
+      0.09,
+      0.785,
+      1.0,
+      0.915,
+      1.0
+     ],
+     "faux": 242,
+     "faux_surs": 111,
+     "abstentions": 1,
+     "traces_justes": 979,
+     "coherents": 761,
+     "n": 1000
+    },
+    "T-ID|5": {
+     "moy": 0.7899999999999999,
+     "ecart": 0.36737242683685445,
+     "par_graine": [
+      0.14,
+      0.86,
+      0.995,
+      0.97,
+      0.985
+     ],
+     "faux": 210,
+     "faux_surs": 116,
+     "abstentions": 0,
+     "traces_justes": 926,
+     "coherents": 807,
+     "n": 1000
+    },
+    "T-ID1|1": {
+     "moy": 0.8860000000000001,
+     "ecart": 0.1377679207943562,
+     "par_graine": [
+      1.0,
+      1.0,
+      0.95,
+      0.7,
+      0.78
+     ],
+     "faux": 57,
+     "faux_surs": 13,
+     "abstentions": 2,
+     "traces_justes": 491,
+     "coherents": 443,
+     "n": 500
+    },
+    "V-OOD|6": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 655,
+     "abstentions": 34,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 561,
+     "abstentions": 99,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 1000
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 622,
+     "abstentions": 71,
+     "traces_justes": 0,
+     "coherents": 1,
+     "n": 1000
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F1-nope": {
+   "graines": [
+    1,
+    1,
+    1,
+    1,
+    2
+   ],
+   "par_jeu": {
+    "T-ID|2": {
+     "moy": 0.9730000000000001,
+     "ecart": 0.06037383539249433,
+     "par_graine": [
+      0.865,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "faux": 27,
+     "faux_surs": 27,
+     "abstentions": 0,
+     "traces_justes": 975,
+     "coherents": 998,
+     "n": 1000
+    },
+    "T-ID|3": {
+     "moy": 0.9280000000000002,
+     "ecart": 0.16099689437998488,
+     "par_graine": [
+      0.64,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "faux": 72,
+     "faux_surs": 66,
+     "abstentions": 0,
+     "traces_justes": 929,
+     "coherents": 985,
+     "n": 1000
+    },
+    "T-ID|4": {
+     "moy": 0.857,
+     "ecart": 0.31975772078246995,
+     "par_graine": [
+      0.285,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "faux": 143,
+     "faux_surs": 128,
+     "abstentions": 0,
+     "traces_justes": 865,
+     "coherents": 972,
+     "n": 1000
+    },
+    "T-ID|5": {
+     "moy": 0.8089999999999999,
+     "ecart": 0.42429942257797143,
+     "par_graine": [
+      0.05,
+      0.995,
+      1.0,
+      1.0,
+      1.0
+     ],
+     "faux": 191,
+     "faux_surs": 153,
+     "abstentions": 0,
+     "traces_justes": 812,
+     "coherents": 932,
+     "n": 1000
+    },
+    "T-ID1|1": {
+     "moy": 0.99,
+     "ecart": 0.007071067811865481,
+     "par_graine": [
+      0.99,
+      1.0,
+      0.99,
+      0.98,
+      0.99
+     ],
+     "faux": 5,
+     "faux_surs": 5,
+     "abstentions": 0,
+     "traces_justes": 497,
+     "coherents": 497,
+     "n": 500
+    },
+    "V-OOD|6": {
+     "moy": 0.263,
+     "ecart": 0.17799578646698355,
+     "par_graine": [
+      0.0,
+      0.43,
+      0.185,
+      0.285,
+      0.415
+     ],
+     "faux": 737,
+     "faux_surs": 608,
+     "abstentions": 0,
+     "traces_justes": 272,
+     "coherents": 847,
+     "n": 1000
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 607,
+     "abstentions": 4,
+     "traces_justes": 0,
+     "coherents": 559,
+     "n": 1000
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "faux": 1000,
+     "faux_surs": 205,
+     "abstentions": 209,
+     "traces_justes": 0,
+     "coherents": 58,
+     "n": 1000
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F2-abs": {
+   "graines": [
+    1,
+    2
+   ],
+   "par_jeu": {
+    "T-ID|2": {
+     "moy": 0.035,
+     "ecart": 0.007071067811865477,
+     "par_graine": [
+      0.03,
+      0.04
+     ],
+     "faux": 386,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|3": {
+     "moy": 0.005,
+     "ecart": 0.0,
+     "par_graine": [
+      0.005,
+      0.005
+     ],
+     "faux": 398,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|4": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|5": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID1|1": {
+     "moy": 0.08499999999999999,
+     "ecart": 0.007071067811865472,
+     "par_graine": [
+      0.09,
+      0.08
+     ],
+     "faux": 183,
+     "faux_surs": 79,
+     "abstentions": 42,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 200
+    },
+    "V-OOD|6": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 92,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 272,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 246,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F2-nope": {
+   "graines": [
+    1,
+    2
+   ],
+   "par_jeu": {
+    "T-ID|2": {
+     "moy": 0.4575,
+     "ecart": 0.5692209588551708,
+     "par_graine": [
+      0.055,
+      0.86
+     ],
+     "faux": 217,
+     "faux_surs": 1,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|3": {
+     "moy": 0.3725,
+     "ecart": 0.526794551983978,
+     "par_graine": [
+      0.0,
+      0.745
+     ],
+     "faux": 251,
+     "faux_surs": 5,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|4": {
+     "moy": 0.33,
+     "ecart": 0.4666904755831214,
+     "par_graine": [
+      0.0,
+      0.66
+     ],
+     "faux": 268,
+     "faux_surs": 2,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID|5": {
+     "moy": 0.215,
+     "ecart": 0.3040559159102154,
+     "par_graine": [
+      0.0,
+      0.43
+     ],
+     "faux": 314,
+     "faux_surs": 1,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "T-ID1|1": {
+     "moy": 0.295,
+     "ecart": 0.19091883092036782,
+     "par_graine": [
+      0.16,
+      0.43
+     ],
+     "faux": 141,
+     "faux_surs": 2,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 200
+    },
+    "V-OOD|6": {
+     "moy": 0.0175,
+     "ecart": 0.024748737341529166,
+     "par_graine": [
+      0.0,
+      0.035
+     ],
+     "faux": 393,
+     "faux_surs": 0,
+     "abstentions": 1,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F3-abs": {
+   "graines": [
+    1,
+    2
+   ],
+   "par_jeu": {
+    "T-ID|2": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 400,
+     "coherents": 400,
+     "n": 400
+    },
+    "T-ID|3": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 400,
+     "coherents": 400,
+     "n": 400
+    },
+    "T-ID|4": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 400,
+     "coherents": 400,
+     "n": 400
+    },
+    "T-ID|5": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 400,
+     "coherents": 400,
+     "n": 400
+    },
+    "T-ID1|1": {
+     "moy": 0.18,
+     "ecart": 0.15556349186104043,
+     "par_graine": [
+      0.07,
+      0.29
+     ],
+     "faux": 164,
+     "faux_surs": 49,
+     "abstentions": 1,
+     "traces_justes": 100,
+     "coherents": 109,
+     "n": 200
+    },
+    "V-OOD|6": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 298,
+     "abstentions": 21,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 287,
+     "abstentions": 12,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 229,
+     "abstentions": 36,
+     "traces_justes": 0,
+     "coherents": 0,
+     "n": 400
+    }
+   },
+   "graines_reussies_16": 0
+  },
+  "F3-nope": {
+   "graines": [
+    1,
+    2
+   ],
+   "par_jeu": {
+    "T-ID|2": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 400,
+     "coherents": 400,
+     "n": 400
+    },
+    "T-ID|3": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 400,
+     "coherents": 400,
+     "n": 400
+    },
+    "T-ID|4": {
+     "moy": 1.0,
+     "ecart": 0.0,
+     "par_graine": [
+      1.0,
+      1.0
+     ],
+     "faux": 0,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 400,
+     "coherents": 400,
+     "n": 400
+    },
+    "T-ID|5": {
+     "moy": 0.99,
+     "ecart": 0.014142135623730963,
+     "par_graine": [
+      1.0,
+      0.98
+     ],
+     "faux": 4,
+     "faux_surs": 4,
+     "abstentions": 0,
+     "traces_justes": 396,
+     "coherents": 400,
+     "n": 400
+    },
+    "T-ID1|1": {
+     "moy": 0.99,
+     "ecart": 0.014142135623730963,
+     "par_graine": [
+      1.0,
+      0.98
+     ],
+     "faux": 2,
+     "faux_surs": 0,
+     "abstentions": 0,
+     "traces_justes": 200,
+     "coherents": 198,
+     "n": 200
+    },
+    "V-OOD|6": {
+     "moy": 0.10250000000000001,
+     "ecart": 0.1308147545195113,
+     "par_graine": [
+      0.195,
+      0.01
+     ],
+     "faux": 359,
+     "faux_surs": 330,
+     "abstentions": 0,
+     "traces_justes": 42,
+     "coherents": 365,
+     "n": 400
+    },
+    "V-OOD|7": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 266,
+     "abstentions": 3,
+     "traces_justes": 0,
+     "coherents": 178,
+     "n": 400
+    },
+    "V-OOD|8": {
+     "moy": 0.0,
+     "ecart": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 69,
+     "abstentions": 77,
+     "traces_justes": 0,
+     "coherents": 9,
+     "n": 400
+    }
+   },
+   "graines_reussies_16": 0
+  }
+ },
+ "courbe": [
+  {
+   "condition": "F0-abs",
+   "N": 1000,
+   "uniques_vus": 1000,
+   "pas": 1000,
+   "T-ID_moy": 0.005,
+   "V-OOD6": 0.0,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F0-abs",
+   "N": 10000,
+   "uniques_vus": 10000,
+   "pas": 1000,
+   "T-ID_moy": 0.02125,
+   "V-OOD6": 0.0,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F0-abs",
+   "N": 100000,
+   "uniques_vus": 100000,
+   "pas": 1000,
+   "T-ID_moy": 0.022500000000000003,
+   "V-OOD6": 0.0,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F0-abs",
+   "N": 256000,
+   "uniques_vus": 256000,
+   "pas": 1000,
+   "T-ID_moy": 0.01625,
+   "V-OOD6": 0.0,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F0-nope",
+   "N": 1000,
+   "uniques_vus": 1000,
+   "pas": 1000,
+   "T-ID_moy": 0.00125,
+   "V-OOD6": 0.0,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F0-nope",
+   "N": 10000,
+   "uniques_vus": 10000,
+   "pas": 1000,
+   "T-ID_moy": 0.33375,
+   "V-OOD6": 0.005,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F0-nope",
+   "N": 100000,
+   "uniques_vus": 100000,
+   "pas": 1000,
+   "T-ID_moy": 0.6575000000000001,
+   "V-OOD6": 0.105,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F0-nope",
+   "N": 256000,
+   "uniques_vus": 256000,
+   "pas": 1000,
+   "T-ID_moy": 0.35125000000000006,
+   "V-OOD6": 0.0,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F1-abs",
+   "N": 1000,
+   "uniques_vus": 1000,
+   "pas": 1000,
+   "T-ID_moy": 0.30625,
+   "V-OOD6": 0.0,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F1-abs",
+   "N": 10000,
+   "uniques_vus": 10000,
+   "pas": 1000,
+   "T-ID_moy": 0.91125,
+   "V-OOD6": 0.0,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F1-abs",
+   "N": 100000,
+   "uniques_vus": 100000,
+   "pas": 1000,
+   "T-ID_moy": 0.99875,
+   "V-OOD6": 0.0,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F1-abs",
+   "N": 256000,
+   "uniques_vus": 256000,
+   "pas": 1000,
+   "T-ID_moy": 0.97125,
+   "V-OOD6": 0.0,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F1-nope",
+   "N": 1000,
+   "uniques_vus": 1000,
+   "pas": 1000,
+   "T-ID_moy": 0.45999999999999996,
+   "V-OOD6": 0.0,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F1-nope",
+   "N": 10000,
+   "uniques_vus": 10000,
+   "pas": 1000,
+   "T-ID_moy": 0.99875,
+   "V-OOD6": 0.43,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F1-nope",
+   "N": 100000,
+   "uniques_vus": 100000,
+   "pas": 1000,
+   "T-ID_moy": 1.0,
+   "V-OOD6": 0.185,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  },
+  {
+   "condition": "F1-nope",
+   "N": 256000,
+   "uniques_vus": 256000,
+   "pas": 1000,
+   "T-ID_moy": 1.0,
+   "V-OOD6": 0.285,
+   "V-OOD7": 0.0,
+   "V-OOD8": 0.0
+  }
+ ],
+ "exemples_pour_95": {
+  "F0-abs": "> 256000",
+  "F0-nope": "> 256000",
+  "F1-abs": 100000,
+  "F1-nope": 10000
+ },
+ "calcul_s": {
+  "entrainement_officiel": 9225.7,
+  "pilote": 1578.2,
+  "eval_final": 674.8
+ }
+}
