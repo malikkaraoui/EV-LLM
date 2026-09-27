@@ -143,3 +143,21 @@ COUPÉ prennent les valeurs de COLL (même budget de pas).
 | P7 | Confiance médiane des faux < des justes (COLL, IND) |
 
 Budget calcul ≤ 4 h (plusieurs fenêtres en parallèle) ; invocations ≤ 9 min avec reprise.
+
+## Amendement A1 (après pilote graine 0, avant toute graine officielle)
+
+Grille COLL, 4 000 pas, graine 0 (exclue), `resultats/pilote.json` :
+
+| lr | β | meilleur VAL-OOD (9 paires) | tours réussis fin phase 1 | tours réussis phase 2 |
+|---|---|---|---|---|
+| **0,05** | **0** | **0,222** | 0,228 | 0,000 |
+| 0,05 | 0,01 | 0,000 | 0,000 | 0,000 |
+| 0,2 | 0 | 0,000 | 0,008 | 0,000 |
+| 0,2 | 0,01 | 0,000 | 0,001 | 0,000 |
+
+**Figé** : lr = 0,05, β = 0, 4 000 pas (seule case ≥ 10 % : le repli à 12 000 pas ne s'applique
+pas). Borne basse de la grille : un lr plus faible n'a pas été essayé (écrit ici, pas corrigé).
+Observation du pilote, non utilisée pour choisir : la case retenue apprend **2 paires sur 9**
+(A1→B2 et A2→B3 à 100 % en VAL-OOD), lexiques de A1 et A2 sans aucun symbole commun (C = 0/11) ;
+en phase 2 (3 paires, tout-ou-rien) plus aucun tour n'est réussi et les tables ne bougent plus.
+Aucune autre modification du protocole.

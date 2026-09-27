@@ -1,0 +1,9 @@
+{
+ "lr": 0.05,
+ "beta": 0.0,
+ "pas": 4000,
+ "lot_tours": 128,
+ "essais_max": 4,
+ "V": 48,
+ "source": "pilote graine 0 (exclue), COLL, grille preenregistree lr {0,05 ; 0,2} x beta {0 ; 0,01}, selection VAL-OOD seule, amendement A1"
+}
