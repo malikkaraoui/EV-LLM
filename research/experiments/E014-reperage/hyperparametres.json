@@ -1,0 +1,10 @@
+{
+ "R0a": {"lr": 0.003, "pas": 12000},
+ "R0b": {"lr": 0.003, "pas": 12000},
+ "R1L": {"lr": 0.003, "pas": 6000},
+ "R1J": {"lr": 0.001, "pas": 1000},
+ "R2": {"lr": 0.003, "pas": 12000},
+ "lot": 128,
+ "eval_val_tous": 250,
+ "source": "R0a : A1 d'E013 ; R1J : fixe au preenregistrement ; R0b, R1L, R2 : pilote graine 0 (exclue), selection VAL-OOD seule, amendement A1"
+}

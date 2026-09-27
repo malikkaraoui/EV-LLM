@@ -1,0 +1,50 @@
+{
+ "R0b-s0-pilote-lr1e-2": {
+  "lr": 0.01,
+  "pas": 12000,
+  "val_ood": 0.7566666666666665,
+  "meilleur_pas": 12000,
+  "val_id": 0.87125,
+  "duree_s": 237.1
+ },
+ "R0b-s0-pilote-lr3e-3": {
+  "lr": 0.003,
+  "pas": 12000,
+  "val_ood": 1.0,
+  "meilleur_pas": 12000,
+  "val_id": 1.0,
+  "duree_s": 151.6
+ },
+ "R1L-s0-pilote-lr1e-2": {
+  "lr": 0.01,
+  "pas": 6000,
+  "val_ood": 1.0,
+  "meilleur_pas": 6000,
+  "val_id": 1.0,
+  "duree_s": 130.1
+ },
+ "R1L-s0-pilote-lr3e-3": {
+  "lr": 0.003,
+  "pas": 6000,
+  "val_ood": 1.0,
+  "meilleur_pas": 6000,
+  "val_id": 1.0,
+  "duree_s": 155.8
+ },
+ "R2-s0-pilote-lr1e-2": {
+  "lr": 0.01,
+  "pas": 12000,
+  "val_ood": 0.8906666666666667,
+  "meilleur_pas": 8000,
+  "val_id": 0.94,
+  "duree_s": 286.0
+ },
+ "R2-s0-pilote-lr3e-3": {
+  "lr": 0.003,
+  "pas": 12000,
+  "val_ood": 1.0,
+  "meilleur_pas": 12000,
+  "val_id": 1.0,
+  "duree_s": 291.5
+ }
+}

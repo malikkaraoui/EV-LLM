@@ -133,3 +133,24 @@ README — (1) pilote réduit à lr 3e-3 seul, (2) pas divisés par 2 ; jamais m
 officielles (sinon aucune réussite déclarée). Ordre des
 commits : préenregistrement (poussé seul) < code < valeurs figées après pilote < contrôles <
 résultats.
+
+## Amendement A1 — 2026-09-27, valeurs figées après pilote (avant tout run officiel)
+
+Pilote graine 0, VAL-OOD seul pour le choix (TEST non lu) ; VAL-ID en contrôle
+(`resultats/pilote.json`, `pilote14.py`) :
+
+| système | lr 3e-3 : VAL-OOD / VAL-ID | lr 1e-2 : VAL-OOD / VAL-ID | retenu |
+|---|---|---|---|
+| R0b (12 000 pas) | **1,000** / 1,000 | 0,757 / 0,871 | 3e-3 |
+| R1L lecture (6 000 pas) | **1,000** / 1,000 | 1,000 / 1,000 | 3e-3 (égalité → règle §4) |
+| R2 (12 000 pas) | **1,000** / 1,000 | 0,891 / 0,940 | 3e-3 |
+
+Tous apprennent en distribution (VAL-ID = 1,000 au réglage retenu). Valeurs figées dans
+`hyperparametres.json` : R0a, R0b, R2 : lr 3e-3, 12 000 pas ; R1L : lr 3e-3, 6 000 pas ; R1J :
+lr 1e-3, 1 000 pas (fixé au §3). Durée pilote ≈ 21 min (M1 partagé). Aucune réduction.
+
+Limite constatée, **écrite avant les runs officiels** : VAL-OOD (6–8 chiffres) est saturé
+(1,000) pour les trois systèmes au réglage retenu, comme pour I2 d'E013 au pilote (0,997), qui a
+ensuite échoué à 16 chiffres. VAL-OOD ne discrimine donc plus : le checkpoint retenu sera
+souvent le plus tardif (règle d'égalité du §4). On ne change pas la règle (préenregistrée) ; le
+TEST reste le seul juge de la généralisation.
