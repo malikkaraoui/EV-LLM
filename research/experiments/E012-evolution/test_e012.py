@@ -72,6 +72,20 @@ class T(unittest.TestCase):
             g = g2 if rng.random() < 0.7 else g
         self.assertEqual(cle(copie(g)), cle(g))
 
+    def test_somme_flottante_exacte(self):
+        # c = floor((a + b + c(t-1)) / 10) ecrit avec trois poids 1/10 : 3/10 + 7/10 doit valoir 1
+        g = vide(2)
+        g["cach"] = [3]
+        g["act"][3] = "floor"
+        g["conns"] = [(0, 3, False, 1, 10), (1, 3, False, 1, 10), (3, 3, True, 1, 10),
+                      (0, 2, False, 1, 1), (1, 2, False, 1, 1), (3, 2, True, 1, 1),
+                      (3, 2, False, -10, 1)]
+        g["suiv"] = 4
+        lots = encodeur("X2-100")(jeu_entrainement("X2-100", 0))
+        dg, faux, ex, n = evalue(g, lots, 10)
+        self.assertEqual((faux, ex), (0, n))
+        self.assertEqual(preuve_aligne(g, 10)[0], "PROUVE")
+
     def test_mdl_circuit_plus_court_que_par_coeur(self):
         # sanity : le circuit main a |D:G| = 0 et |G| raisonnable
         self.assertLess(longueur_G(circuit_main(10)), 200)

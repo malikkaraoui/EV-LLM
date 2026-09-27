@@ -1,9 +1,12 @@
 {
- "_statut": "PROVISOIRE (avant pilote) -- valeurs du preregistrement ; generations a fixer par le pilote graine 0",
+ "_statut": "figee apres pilote (graine 0, exclue), 2026-09-27T13:26:58+0200 -- algorithme du preregistrement inchange (iles 8, pop 200, troncature, 1 + Poisson(0,5) mutations) ; G fixe par la vitesse mesuree (X1 ~250, X2-100 ~97, X2-1000 ~49, X3 ~8 generations/min par processus) pour tenir les budgets murs 60/45/45/45 min ; plafond mur applique en plus (arret au budget, note au rapport). Variantes pilotes essayees puis ABANDONNEES (graine 0 seulement, aucune amelioration) : remplacement generationnel, Poisson(2), les deux. Correctif de code avant les runs officiels : somme flottante sur denominateur commun (bogue 0,3 + 0,7 < 1).",
  "iles": 8,
  "pop": 200,
  "migration": 50,
  "suivi": 25,
  "patience": 300,
- "generations": 100000
+ "lambda_mut": 0.5,
+ "remplacement": "troncature",
+ "generations": {"X1": 12000, "X2-100": 4000, "X2-1000": 2000, "X3": 300},
+ "budget_mur_min": {"X1": 60, "X2-100": 45, "X2-1000": 45, "X3": 45}
 }

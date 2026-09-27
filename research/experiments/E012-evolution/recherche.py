@@ -77,12 +77,18 @@ class Recherche:
                 i, j = rng.integers(0, P, 2)
                 parent = pop[min(i, j)][1]  # pop triee : le plus petit indice a le plus petit MDL
                 g = parent
-                for _ in range(1 + int(rng.poisson(0.5))):
+                for _ in range(1 + int(rng.poisson(self.hp.get("lambda_mut", 0.5)))):
                     g = mute(g, rng)
                 enfants.append((self.note(g)[0], g))
-            regroupe = enfants + pop[:2]
-            regroupe.sort(key=lambda t: t[0])
-            nouv.append(regroupe[:P])
+            if self.hp.get("remplacement", "troncature") == "troncature":
+                regroupe = enfants + pop[:2]
+                regroupe.sort(key=lambda t: t[0])
+                nouv.append(regroupe[:P])
+            else:  # generationnel : les 2 meilleurs parents remplacent les 2 pires enfants
+                enfants.sort(key=lambda t: t[0])
+                regroupe = pop[:2] + enfants[:P - 2]
+                regroupe.sort(key=lambda t: t[0])
+                nouv.append(regroupe)
         etat["iles"] = nouv
         etat["gen"] += 1
         etat["enfants"] += P * len(nouv)
@@ -127,9 +133,12 @@ def mute_ajout_avant(g, rng):
 
 
 def travaille(args):
-    exp, graine, minutes = args
+    exp, graine, minutes, tag, surcharge = args
     hp = charge_hp()
-    dossier = os.path.join(ICI, "runs", f"{exp}-s{graine}")
+    hp.update(surcharge)
+    if isinstance(hp["generations"], dict):
+        hp["generations"] = hp["generations"][exp]
+    dossier = os.path.join(ICI, "runs", f"{tag}{exp}-s{graine}")
     os.makedirs(dossier, exist_ok=True)
     chemin = os.path.join(dossier, "etat.pkl")
     R = Recherche(exp, graine, hp)
@@ -196,9 +205,13 @@ def main():
     ap.add_argument("--exp", required=True, choices=list(EXPERIENCES))
     ap.add_argument("--graines", type=int, nargs="+", required=True)
     ap.add_argument("--minutes", type=float, default=8.5)
+    ap.add_argument("--tag", default="", help="prefixe du dossier (pilotes)")
+    ap.add_argument("--hp", default="{}", help="surcharge JSON des hyperparametres (pilotes)")
     a = ap.parse_args()
+    import json
     with Pool(len(a.graines)) as pool:
-        for ligne in pool.imap(travaille, [(a.exp, g, a.minutes) for g in a.graines]):
+        for ligne in pool.imap(travaille, [(a.exp, g, a.minutes, a.tag, json.loads(a.hp))
+                                           for g in a.graines]):
             print(ligne, flush=True)
 
 

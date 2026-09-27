@@ -70,6 +70,10 @@ def _act(nom, z):
 
 
 def compile_(g):
+    """Par unite : somme sur denominateur commun L (coefficients entiers), une seule division.
+
+    Exact en flottant quand les valeurs sont entieres (ex. 0,3 + 0,7 != 1 evite).
+    """
     nin = g["nin"]
     od = ordre(g)
     slot = {i: i for i in range(nin)}
@@ -78,9 +82,15 @@ def compile_(g):
     unites = []
     for u in od:
         b = g["biais"].get(u)
-        fw = [(slot[s], n, q) for s, d, r, n, q in g["conns"] if d == u and not r]
-        rc = [(slot[s] - nin, n, q) for s, d, r, n, q in g["conns"] if d == u and r]
-        unites.append((g["act"][u], (b[0] / b[1]) if b else 0.0, fw, rc))
+        ent = [(slot[s], r, n, q) for s, d, r, n, q in g["conns"] if d == u]
+        L = 1
+        for _, _, _, q in ent:
+            L = L * q // math.gcd(L, q)
+        if b:
+            L = L * b[1] // math.gcd(L, b[1])
+        fw = [(s, n * (L // q)) for s, r, n, q in ent if not r]
+        rc = [(s - nin, n * (L // q)) for s, r, n, q in ent if r]
+        unites.append((g["act"][u], (b[0] * (L // b[1])) if b else 0, fw, rc, L))
     return nin, unites
 
 
@@ -95,12 +105,14 @@ def execute(comp, X):
     with np.errstate(all="ignore"):
         for t in range(T):
             cour[:nin] = X[:, t, :].T
-            for k, (act, b, fw, rc) in enumerate(unites):
-                z = np.full(B, b)
-                for s, n, q in fw:
-                    z = z + cour[s] * n / q
-                for s, n, q in rc:
-                    z = z + prec[s] * n / q
+            for k, (act, b, fw, rc, L) in enumerate(unites):
+                z = np.full(B, float(b))
+                for s, c in fw:
+                    z = z + cour[s] * c
+                for s, c in rc:
+                    z = z + prec[s] * c
+                if L != 1:
+                    z = z / L
                 y = _act(act, z)
                 y = np.nan_to_num(y, nan=0.0, posinf=BORNE, neginf=-BORNE)
                 cour[nin + k] = np.clip(y, -BORNE, BORNE)
@@ -321,9 +333,15 @@ def preuve_aligne(g, base, max_etats=20000):
     """
     if any(g["act"][u] not in ACTS_EXACTES for u in ordre(g)):
         return "NON_PROUVABLE", "activation non exacte (sig/tanh)"
-    nin, unites = compile_(g)
-    unites = [(a, Fraction(0) if b == 0 else _frac_biais(g, u), fw, rc)
-              for u, (a, b, fw, rc) in zip(ordre(g), unites)]
+    nin = g["nin"]
+    od = ordre(g)
+    slot = {i: i for i in range(nin)}
+    for k, u in enumerate(od):
+        slot[u] = nin + k
+    unites = [(g["act"][u], _frac_biais(g, u) if u in g["biais"] else Fraction(0),
+               [(slot[s], n, q) for s, d, r, n, q in g["conns"] if d == u and not r],
+               [(slot[s] - nin, n, q) for s, d, r, n, q in g["conns"] if d == u and r])
+              for u in od]
     depart = (tuple(Fraction(0) for _ in unites), 0)
     vus, pile = {depart}, [depart]
     while pile:
