@@ -1,0 +1,9 @@
+{
+ "_statut": "PROVISOIRE (avant pilote) -- valeurs du preregistrement ; generations a fixer par le pilote graine 0",
+ "iles": 8,
+ "pop": 200,
+ "migration": 50,
+ "suivi": 25,
+ "patience": 300,
+ "generations": 100000
+}
