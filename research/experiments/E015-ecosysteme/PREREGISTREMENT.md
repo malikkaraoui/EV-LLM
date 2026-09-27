@@ -183,3 +183,42 @@ CPU seul (numpy ; MLX sur CPU pour la vie des circuits de la phase A), ≤ 4 h ;
 vérifie que la phase A apprend (VAL mini-tâche) et mesure la vitesse ; seuls les budgets
 (essais, vies) peuvent être ajustés par l'amendement A1, avant les runs officiels. Ordre des
 commits : ce préenregistrement (poussé seul) < code < valeurs figées après pilote < résultats.
+
+## Amendement A1 — 2026-09-27, après pilote (graine 0, exclue), AVANT tout run officiel
+
+Pilote (journaux `runs/pilote1`, `runs/pilote2`, hors git ; chiffres recopiés ici) :
+- Phase A : les 10 niches atteignent VAL mini-tâche 0,993–1,000 en 64 s. L'écosystème apprend.
+- Phase B, réglage préenregistré (vie = 30 propositions aléatoires, 60 000 essais) : **0 candidat**
+  dans les 5 conditions ; toutes convergent vers `r1,r2 = DECOUPE(r0,'+') ; sortie = r1`
+  (répondre a ; score ≈ 0,05). Même résultat avec 400 000 essais et la vie ci-dessous
+  (EVO, SANS-VIE, FROID-N3 : 0 candidat).
+- Diagnostic : un champion mal adapté vaut moins que la recopie de a ; 30 propositions
+  aléatoires ne réparent jamais ~20 entrées d'adaptateur ; la bonne structure N1 exige 6
+  instructions coordonnées, qu'un tirage aléatoire produit avec une probabilité de l'ordre de
+  10⁻¹², et aucune structure partielle n'est mieux notée que la recopie.
+
+Changements (écart assumé : le préenregistrement ne permettait d'ajuster que les budgets ; le
+juge, lui, **n'est pas touché** — le modifier pour récompenser les structures partielles
+reviendrait à donner la solution) :
+1. **Vie** = balayage par coordonnées des adaptateurs : ordre aléatoire des couples (port,
+   symbole vu) ; pour chacun, les 10 autres valeurs sont essayées, la meilleure est gardée si
+   elle améliore strictement le score ; **≤ 200 essais par vie**.
+2. **Budget** : 150 000 essais par run (temps de calcul).
+3. SANS-VIE : μ = λ = 20 inchangés, plus de générations pour le même budget d'essais (et non
+   « λ ajusté »).
+4. **Échelle d'échafaudage** (conditions ajoutées, tâche N1, population initiale = 20 copies de
+   l'échafaudage avec adaptateurs aléatoires, puis EVO normal) :
+   - **ECH0** : câblage N1 donné (DECOUPE `+`, DECOUPE `=`, INV, INV, CHAMP à 2 ports, INV) ;
+     **à trouver** : quel champion (tiré au hasard parmi ceux à 2 ports, évolué ensuite parmi les 10)
+     et l'interface (les adaptateurs) ;
+   - **ECH1** : ECH0 sans l'INV final (il manque une instruction) ;
+   - **ECH2** : seulement les deux DECOUPE (il manque INV, INV, CHAMP, INV).
+   Budget de structure : ECH0 reçoit tout le câblage ; c'est la mesure « interface seule ».
+5. **CHAUD-N2 / CHAUD-N3** partent du gagnant **ECH0-N1** de la même graine (et non EVO-N1, qui
+   a échoué au pilote). Q3 devient : une interface trouvée (ECH0) se réutilise-t-elle ?
+6. Pilote graine 0 avec ces réglages (chiffres informatifs, exclus) : ECH0 3 candidats, premier
+   à 71 260 essais, VAL 1,000 ; ECH1 et ECH2 0 candidat ; CHAUD-N2 et CHAUD-N3 0 candidat.
+
+Prédictions ajoutées (informées par le pilote, dit ici) : **P8** ECH0 ≥ 4/5 graines réussies ;
+**P9** ECH1 ≤ 1/5 et ECH2 ≤ 1/5 ; **P10** EVO, ALEA, SANS-VIE, FROID-N2, FROID-N3 = 0/5.
+P5 et P6 sont maintenues avec la nouvelle source de CHAUD.

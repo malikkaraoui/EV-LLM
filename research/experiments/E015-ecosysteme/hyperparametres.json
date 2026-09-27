@@ -1,0 +1,6 @@
+{
+ "ecosysteme": {"population": 6, "generations": 5, "garder": 3, "pas_vie": 300},
+ "composition": {"mu": 20, "lam": 20, "vie": 200, "lot": 64, "rejuge": 256,
+                 "budget_essais": 150000, "max_cands_val": 100, "mur_invocation_s": 480},
+ "fige": true, "fige_le": "2026-09-27, amendement A1"
+}
