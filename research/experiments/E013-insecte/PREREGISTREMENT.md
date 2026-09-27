@@ -129,3 +129,18 @@ séparation (écart entre les valeurs de l'unité pour retenue 0 et 1, minimum s
 ≤ 4 h de calcul (GPU partagé avec d'autres fenêtres) ; invocations ≤ 9 min avec reprise ; si
 nécessaire, réduction des pas ou des variantes, écrite au README. Ordre des commits :
 préenregistrement (poussé seul) < code < valeurs figées après pilote < résultats.
+
+## Amendement A1 — 2026-09-27, valeurs figées après pilote (avant tout run officiel)
+
+Pilote graine 0, VAL-OOD seul (TEST non lu), meilleur exact-match moyen VAL-OOD 6–8 :
+
+| config | lr 3e-3, 3 000 pas | lr 3e-3, 6 000 pas | lr 1e-2, 3 000 pas | lr 1e-2, 6 000 pas |
+|---|---|---|---|---|
+| I1 H = 4 | 1,000 | 1,000 | 1,000 | 1,000 |
+| I2 (2 × pas) | 0,833 | **0,997** | 0,977 | 0,993 |
+
+Le §4 lie lr et pas de I1 et I2 (« même lr, 2 × les pas ») : I1 est à égalité partout, le
+couple est donc départagé par I2 → **lr = 3e-3, 6 000 pas (I1, I3), 12 000 pas (I2)**
+(`hyperparametres.json`). Règle d'égalité non écrite au §4, ajoutée ici avant les runs
+officiels. Durées pilote : I1 ≈ 34 s, I2 ≈ 106 s par run (M1, GPU partagé) : budget 4 h large,
+aucune réduction de variantes.

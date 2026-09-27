@@ -1,0 +1,7 @@
+{
+ "I1": {"lr": 0.003, "pas": 6000},
+ "I2": {"lr": 0.003, "pas": 12000},
+ "lot": 128,
+ "eval_val_tous": 250,
+ "source": "pilote graine 0 (exclue), selection sur VAL-OOD uniquement, amendement A1"
+}
