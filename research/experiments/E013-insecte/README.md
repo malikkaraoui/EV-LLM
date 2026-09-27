@@ -191,8 +191,9 @@ Corrélation de chaque unité de hₜ avec la vraie retenue sortante du pas t
   d'état a suffi à le rendre robuste ici (0 erreur sur 15 graines).
 - **« Avec un rien faire beaucoup »** : oui, **si le rien est bien placé**. Ce qui a été donné
   à la main — l'alignement, le sens, le nombre de pas — est exactement ce qui manquait au
-  transformer d'E008 ; la partie apprise (la retenue et la table) est petite et s'apprend avec
-  ~10³ exemples. Le résultat mesure donc surtout la **valeur de la structure donnée**, pas une
+  transformer d'E008 ; la partie apprise (la retenue et la table) est petite : ~10³ exemples
+  suffisent pour T-LONG à 100 chiffres, mais ~10⁴ sont nécessaires pour la règle complète en
+  propagation pure (ADV-PROPAG, post hoc ; voir la puce I3 ci-dessus). Le résultat mesure donc surtout la **valeur de la structure donnée**, pas une
   capacité à découvrir la procédure seul (I2 montre que la découverte de l'alignement, elle,
   n'est pas acquise).
 - Aucune conclusion au-delà de : addition d'entiers positifs, ces tailles, ces budgets, ces
