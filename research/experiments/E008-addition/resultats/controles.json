@@ -1,0 +1,310 @@
+{
+ "verdict": "VALIDE",
+ "oracle_100_partout": true,
+ "parcoeur_max_T-ID_T-OOD": 0.0,
+ "table_parcoeur": {
+  "graine": 1,
+  "pas": 12000,
+  "lot": 256,
+  "paires_uniques": 2100191,
+  "duree_s": 38.8
+ },
+ "C-ORACLE": {
+  "T-ID1|1": {
+   "n": 100,
+   "justes": 100,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-ID|2": {
+   "n": 500,
+   "justes": 500,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-ID|3": {
+   "n": 500,
+   "justes": 500,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-ID|4": {
+   "n": 500,
+   "justes": 500,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-ID|5": {
+   "n": 500,
+   "justes": 500,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-OOD|6": {
+   "n": 500,
+   "justes": 500,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-OOD|7": {
+   "n": 500,
+   "justes": 500,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-OOD|8": {
+   "n": 500,
+   "justes": 500,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-OOD|10": {
+   "n": 500,
+   "justes": 500,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-OOD|12": {
+   "n": 500,
+   "justes": 500,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-OOD|16": {
+   "n": 500,
+   "justes": 500,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-CARRY|2": {
+   "n": 502,
+   "justes": 502,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-CARRY|3": {
+   "n": 502,
+   "justes": 502,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-CARRY|4": {
+   "n": 502,
+   "justes": 502,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-CARRY|5": {
+   "n": 502,
+   "justes": 502,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-CARRY|6": {
+   "n": 502,
+   "justes": 502,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-CARRY|7": {
+   "n": 502,
+   "justes": 502,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-CARRY|8": {
+   "n": 502,
+   "justes": 502,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-CARRY|10": {
+   "n": 502,
+   "justes": 502,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-CARRY|12": {
+   "n": 502,
+   "justes": 502,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-CARRY|16": {
+   "n": 502,
+   "justes": 502,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  }
+ },
+ "C-PARCOEUR": {
+  "T-ID1|1": {
+   "n": 100,
+   "justes": 100,
+   "faux": 0,
+   "faux_surs": 0,
+   "exact": 1.0
+  },
+  "T-ID|2": {
+   "n": 500,
+   "justes": 0,
+   "faux": 500,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-ID|3": {
+   "n": 500,
+   "justes": 0,
+   "faux": 500,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-ID|4": {
+   "n": 500,
+   "justes": 0,
+   "faux": 500,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-ID|5": {
+   "n": 500,
+   "justes": 0,
+   "faux": 500,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-OOD|6": {
+   "n": 500,
+   "justes": 0,
+   "faux": 500,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-OOD|7": {
+   "n": 500,
+   "justes": 0,
+   "faux": 500,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-OOD|8": {
+   "n": 500,
+   "justes": 0,
+   "faux": 500,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-OOD|10": {
+   "n": 500,
+   "justes": 0,
+   "faux": 500,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-OOD|12": {
+   "n": 500,
+   "justes": 0,
+   "faux": 500,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-OOD|16": {
+   "n": 500,
+   "justes": 0,
+   "faux": 500,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-CARRY|2": {
+   "n": 502,
+   "justes": 0,
+   "faux": 502,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-CARRY|3": {
+   "n": 502,
+   "justes": 0,
+   "faux": 502,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-CARRY|4": {
+   "n": 502,
+   "justes": 0,
+   "faux": 502,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-CARRY|5": {
+   "n": 502,
+   "justes": 0,
+   "faux": 502,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-CARRY|6": {
+   "n": 502,
+   "justes": 0,
+   "faux": 502,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-CARRY|7": {
+   "n": 502,
+   "justes": 0,
+   "faux": 502,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-CARRY|8": {
+   "n": 502,
+   "justes": 0,
+   "faux": 502,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-CARRY|10": {
+   "n": 502,
+   "justes": 0,
+   "faux": 502,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-CARRY|12": {
+   "n": 502,
+   "justes": 0,
+   "faux": 502,
+   "faux_surs": 0,
+   "exact": 0.0
+  },
+  "T-CARRY|16": {
+   "n": 502,
+   "justes": 0,
+   "faux": 502,
+   "faux_surs": 0,
+   "exact": 0.0
+  }
+ }
+}
