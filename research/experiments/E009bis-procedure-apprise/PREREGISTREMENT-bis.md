@@ -121,3 +121,21 @@ information sur la procédure, seulement l'ordre des exemples (tirés du même g
 
 Contrôle de validité en échec ; test final touché avant la fin ; envie de modifier ce document
 après un run officiel (écrite, non appliquée) ; dépassement de budget (partiel publié).
+
+## Amendement B0 — 2026-09-27T14:43:09+0200 (après banc de vitesse et contrôles, AVANT tout run pilote)
+
+Aucun modèle n'a été évalué ; seules la vitesse et la validité des jeux sont connues.
+- Contrôles (§ 4.1, table provisoire : graine 1, flux niveau 5, 20 000 pas, 3 308 648 paires
+  uniques) : **TEST VALIDE** — C-ORACLE 100 % partout, C-PARCŒUR 0 % sur tous les nouveaux jeux,
+  positif T-ID1 = 100 % (`resultats/controles.json`). Recalcul en fin sur le flux réel (§ 4.1).
+- Banc (20 pas, lots de niveau 5 = pire cas, compilation chaude, GPU sans autre entraînement mais
+  contrôles CPU en parallèle sur la fin) : s/pas A1 0,19 / 0,42 / 1,15 ; A2-L 0,38 / 0,75 / 2,40 ;
+  A3 0,53 / 0,65 / 5,5 pour w = 64 / 128 / 256.
+Conséquences (budget 5 h, pilote ≤ 80 min) :
+1. **C4 (w = 256) non lancé** pour aucun système : 2 000 pas > 12 min partout (règle § 3).
+2. **Pilote : 1 000 pas par configuration** au lieu de 2 000 (9 configurations C1–C3 × 3
+   systèmes ; 2 000 pas ≈ 90 min estimés, hors budget pilote). Critère de choix inchangé, mesuré
+   à 1 000 pas.
+3. Le plafond officiel de 20 000 pas est intenable (A3 w128 ≈ 3,6 h par run, A2-L w128 ≈ 4 h) ;
+   il sera réduit par l'amendement B1, identique pour tous les systèmes, selon les largeurs
+   choisies, **avant** tout run officiel.
