@@ -3,6 +3,7 @@
   python evalue_bis.py --run A1-s1 --phase val     # VAL 6-8 (300 / L) + T-ID (200 / L)
   python evalue_bis.py --run A1-s1 --phase final   # TEST + ADV-* : une seule fois, a la fin
   python evalue_bis.py --run pilote-A1-w64-lr0.001 --phase pilote  # T-ID + VAL (100 / L)
+  python evalue_bis.py --run A1-s1 --phase tid     # T-ID (200 / L) des poids finaux, tout run
 """
 import argparse
 import json
@@ -32,7 +33,7 @@ def charge(etat, dossier, fichier):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--run", required=True)
-    ap.add_argument("--phase", required=True, choices=["pilote", "val", "final"])
+    ap.add_argument("--phase", required=True, choices=["pilote", "tid", "val", "final"])
     args = ap.parse_args()
     dossier = os.path.join(ICI, "runs", args.run)
     etat = lire_json(os.path.join(dossier, "etat.json"))
@@ -42,6 +43,10 @@ def main():
         if etat["graine"] != 0:
             raise SystemExit("phase pilote reservee a la graine 0")
         jeux, fichier = {**C.t_id(range(2, 6), 100), **sous_val(100)}, "poids.safetensors"
+    elif args.phase == "tid":  # dans la distribution seulement : permis pour tout run officiel
+        if etat["graine"] == 0:
+            raise SystemExit("graine 0 = pilote, exclue")
+        jeux, fichier = C.t_id(range(2, 6), 200), "poids.safetensors"
     else:
         if etat["graine"] == 0:
             raise SystemExit("graine 0 = pilote, exclue")
