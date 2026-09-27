@@ -9,9 +9,9 @@ import json
 import os
 import time
 
-from controles import systeme_oracle  # E008 : retenue codee a la main
-from evaluate import evaluer, resume
-from m16 import D
+from m16 import D  # en premier : ajoute E014, E013, E008 au chemin
+from controles import systeme_oracle  # noqa: E402  (E008 : retenue codee a la main)
+from evaluate import evaluer, resume  # noqa: E402
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 
