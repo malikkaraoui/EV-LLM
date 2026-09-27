@@ -152,5 +152,30 @@ class Reprise(unittest.TestCase):
             shutil.rmtree(os.path.join(base, f"I1-H2-s7-{tag}"))
 
 
+class AdvPropag(unittest.TestCase):
+    """ADV-PROPAG (post hoc, R010) : rang 0 genere la retenue, tous les autres la propagent."""
+
+    def test_propagation_pure(self):
+        import adv_propag as P
+        jeu = P.jeu_propag()
+        self.assertEqual(jeu, P.jeu_propag())  # deterministe
+        for L, it in jeu.items():
+            self.assertEqual(len(it), 2 + P.N_PROPAG)
+            self.assertEqual(len(set(it)), len(it))
+            self.assertEqual(it[0], (int("9" * L), 1))
+            for a, b in it[2:]:
+                self.assertEqual(a + b, 10 ** L)
+                self.assertTrue(len(str(a)) == L == len(str(b)))
+                da, db = D.chiffres_lsb(a), D.chiffres_lsb(b)
+                self.assertEqual(da[0] + db[0], 10)
+                self.assertTrue(all(x + y == 9 for x, y in zip(da[1:], db[1:])))
+                self.assertEqual(D.e008.chaine_retenue(a, b), L)
+
+    def test_part_propagation(self):
+        import adv_propag as P
+        self.assertEqual(P.rangs_propagation([(45, 55)]), (1, 2))
+        self.assertEqual(P.rangs_propagation([(17, 1)]), (0, 1))
+
+
 if __name__ == "__main__":
     unittest.main()

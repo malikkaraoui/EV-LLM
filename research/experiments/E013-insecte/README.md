@@ -31,12 +31,13 @@ lr 3e-3, **sans L2**, lot 128, 6 000 pas (I2 : 12 000), checkpoint choisi sur **
 PY=$HOME/.venvs/ev-llm-e008/bin/python      # mlx 0.29.3, numpy 2.0.2 (venv E008)
 cd research/experiments/E013-insecte
 export PYTHONDONTWRITEBYTECODE=1           # voir « Incident » plus bas
-$PY -m unittest -v test_e013                # 12 tests
+$PY -m unittest -v test_e013                # 14 tests
 $PY controles13.py                          # C-ORACLE / C-PARCOEUR -> resultats/controles.json
 $PY entraine.py --configs I1-H1 I1-H2 I1-H4 I1-H8 I3-N10 I3-N100 I3-N1000 I3-N10000 I2 \
     --graines 1 2 3 4 5                     # relancer tant que "BUDGET atteint" (<= 8,5 min)
 $PY evalue.py --runs <config>-s<g> ...      # TEST, une seule fois par run
 $PY analyse.py                              # resultats/resultats.json, summary.md
+$PY adv_propag.py                           # POST HOC (R010) : resultats/adv_propag.{json,md}
 ```
 
 GPU MLX partagé, non reproductible au bit près : un rejeu donnera des chiffres très proches.
@@ -53,6 +54,10 @@ GPU MLX partagé, non reproductible au bit près : un rejeu donnera des chiffres
 modèle appris).
 
 ## Résultats — exact-match (%) moyenne ± écart sur 5 graines
+
+Écart = **écart-type de population (ddof 0, n = 5)**, `np.std` dans `analyse.py` (E008 publie
+un écart-type d'échantillon, ddof 1 : les deux ne se comparent pas tels quels ; ex. I2 L = 16 :
+32,3 en ddof 0, 36,1 en ddof 1). Précision ajoutée après le doublage R010 ; aucun chiffre changé.
 
 | config | exemples uniques vus | graines ≥ 90 % à 16 | T-ID 5 | L = 10 | 16 | 32 | 64 | 100 | **1 000** |
 |---|---|---|---|---|---|---|---|---|---|
@@ -72,13 +77,32 @@ transformer ~3,2 M paramètres, 3 M exemples : **0 %** dès 6 chiffres (B-STD), 
 
 **Adverses** (exact-match moyen %, L = 10 / 16 / 32 / 64 / 100 / 1 000) :
 
-| config | ADV-CASCADE (99…9 + 1, retenue partout) | ADV-ZEROS (10…02 + 10…03, creux) | ADV-ASYM (L chiffres + 1–5 chiffres) |
+| config | ADV-CASCADE (99…9 + 1, retenue émise à chaque rang ; ≈ 18 % seulement de rangs de propagation, voir Limites) | ADV-ZEROS (10…02 + 10…03, creux) | ADV-ASYM (L chiffres + 1–5 chiffres) |
 |---|---|---|---|
 | I1 H = 1 | 100 partout | **91,7 / 85,1 / 83,0 / 77,2 / 74,5 / 45,5** | 100 / 100 / 99,8 / 99,8 / 99,8 / 99,8 |
 | I1 H = 2, 4, 8 | 100 partout | 100 partout | 100 partout |
 | I2 | 53,4 / 29,3 / 3,5 / 0,8 / 0,6 / 0,4 | 58,4 / 53,7 / 22,8 / 10,7 / 0,6 / 0,0 | 48,9 / 25,3 / 10,5 / 10,7 / 8,1 / 0,0 |
 | I3 N = 1 000 | 100 / 100 / 99,6 / 98,6 / 99,0 / 91,5 | 100 partout | 100 / 99,8 / 99,8 / 100 / 99,8 / 97,8 |
 | I3 N = 10 000 | 100 partout | 100 partout | 100 partout |
+
+**ADV-PROPAG — propagation pure (AJOUT POST HOC, NON PRÉENREGISTRÉ)**, demandé par le doublage
+R010. Évalué **sans réentraînement** sur les checkpoints retenus des 40 runs I1 et I3
+(`adv_propag.py`, graine de tirage 3019, hors 3013–3018). Par L : 100 paires a + b = 10^L, les
+deux de L chiffres, dernier chiffre non nul (rang 0 = 10, **tous les autres rangs = 9** : la
+retenue ne fait que traverser ; 99,7 % de rangs de propagation) + 99…9 + 1 et 1 + 99…9, soit
+102 items. Détail : [`resultats/adv_propag.md`](resultats/adv_propag.md).
+
+| config | L = 16 | L = 100 | L = 1 000 | graines ≥ 90 % (16 / 100 / 1 000) | justes par graine s1…s5 (L = 16 / 100 / 1 000, sur 102) |
+|---|---|---|---|---|---|
+| I1 H = 1, 2, 4, 8 | 100 | 100 | 100 | 5/5 / 5/5 / 5/5 (×4) | 102/102/102 pour les 20 runs |
+| I3 N = 10 | 0 | 0 | 0 | 0/5 / 0/5 / 0/5 | 0/0/0 ×5 |
+| I3 N = 100 | 0,2 ± 0,4 | 0,2 ± 0,4 | 0,2 ± 0,4 | 0/5 / 0/5 / 0/5 | 1/1/1 ; 0/0/0 ×4 |
+| **I3 N = 1 000** | **95,9 ± 6,1** | **77,1 ± 31,7** | **52,9 ± 40,5** | **4/5 / 3/5 / 1/5** | 102/98/78 ; 97/79/7 ; 102/98/81 ; 102/102/102 ; **86/16/2** |
+| I3 N = 10 000 | 100 | 100 | 100 | 5/5 / 5/5 / 5/5 | 102/102/102 ×5 |
+
+Cohérent avec les chiffres du doublage R010 sur son propre tirage (I3 N = 1 000 s5 : 81/100 à
+16, 11/100 à 100 ; s2 : 75/100 à 100). La graine s5 est aussi celle dont la marge de séparation
+de la retenue est négative (−0,12, section Inspection).
 
 **Autodiagnostic** (5 graines cumulées ; confiance = produit des probabilités des chiffres
 émis ; « faux et sûr » = faux avec confiance ≥ 0,8 ; **aucun système ne s'abstient** : pas de
@@ -126,8 +150,10 @@ Corrélation de chaque unité de hₜ avec la vraie retenue sortante du pas t
 - **P3** (toute graine I1 réussie reste ≥ 90 % à 1 000) : **confirmée** — minimum 98,5 %
   (H = 1 s3) ; 15/15 graines H = 2, 4, 8 à 100 %.
 - **P4** (I2 ≤ 1/5) : **confirmée** — 0/5 ; meilleure graine 83 % à 16, 0 % dès 64.
-- **P5** (I3 : N = 10 → 0/5, N = 10 000 → ≥ 4/5) : **confirmée** — 0/5 et 5/5 ; seuil
-  **entre 100 et 1 000 exemples uniques** (N = 100 : 0/5 ; N = 1 000 : 5/5).
+- **P5** (I3 : N = 10 → 0/5, N = 10 000 → ≥ 4/5) : **confirmée** — 0/5 et 5/5 ; au critère
+  préenregistré (T-LONG à 16 chiffres), seuil **entre 100 et 1 000 exemples uniques**
+  (N = 100 : 0/5 ; N = 1 000 : 5/5). *Post hoc (R010)* : ce seuil dépend du jeu ; en propagation
+  pure, N = 1 000 ne fait que 4/5 à 16 chiffres et 1/5 à 1 000 (voir ADV-PROPAG).
 - **P6** (confiance médiane des erreurs < celle des réussites sur ADV-CASCADE) : **non
   mesurable pour I1** (0 erreur sur 3 090 × 4 tailles) ; mesurable sur I3 N = 1 000 (0,013 contre
   0,82) et I2 (0,003 contre 0,92) : **confirmée** là.
@@ -140,9 +166,16 @@ Corrélation de chaque unité de hₜ avec la vraie retenue sortante du pas t
   1 000 chiffres**, 5/5 graines, sur tous les adverses (retenue en cascade sur 1 000 chiffres,
   nombres creux, 1 000 + 3 chiffres). E008 : un transformer ~2 800 fois plus gros tombait à 0 % dès
   6 chiffres. Dans ce format et cette tâche, **la forme de la machine** compte plus que sa taille.
-- [VÉRIFIÉ] Il suffit de **1 000 exemples uniques** (vus en boucle) pour la règle à 100 chiffres
-  (5/5, ≥ 99,8 %) ; 100 ne suffisent pas (0/5, et même 0,4 % dans la distribution à 5 chiffres :
-  pas d'apprentissage par cœur utile non plus). 10 000 → 100 % à 1 000 chiffres.
+- *Reformulé après le doublage R010.* [VÉRIFIÉ] **1 000 exemples uniques** (vus en boucle)
+  suffisent pour **T-LONG** à 100 chiffres (5/5, ≥ 99,8 %), **pas pour la règle complète** : en
+  propagation pure (ADV-PROPAG, post hoc), N = 1 000 tombe à 77,1 ± 31,7 % à 100 chiffres
+  (3/5 graines ≥ 90 %, graine 5 à 16/102) et 52,9 ± 40,5 % à 1 000 (1/5) ; même à 16 chiffres,
+  la graine 5 est sous le seuil de réussite (86/102). **10 000 exemples suffisent pour les deux**
+  (100 % partout, 5/5, T-LONG, adverses et ADV-PROPAG). 100 ne suffisent pas (0/5, et même
+  0,4 % dans la distribution à 5 chiffres : pas d'apprentissage par cœur utile non plus).
+  [HYPOTHÈSE] le seuil pour la règle complète se situe entre 1 000 et 10 000 ; non mesuré.
+- [VÉRIFIÉ] Le résultat I1 tient aussi en propagation pure : 20/20 runs à 102/102 à 16, 100 et
+  1 000 chiffres.
 - [VÉRIFIÉ] **Le prix de l'alignement donné** : sans lui (I2, même accumulateur, lecture apprise,
   un peu plus de paramètres, 2 × plus de pas), 0/5 graine ; une graine atteint 83 % à 16 chiffres
   mais **toutes** sont à 0 % dès 64. La lecture douce (pointeurs flous) se dégrade avec la
@@ -170,7 +203,16 @@ Corrélation de chaque unité de hₜ avec la vraie retenue sortante du pas t
 - Une seule tâche, un seul format de sortie (poids faible d'abord), nombre de pas donné.
 - I2 : une seule architecture de lecture, un seul réglage (lr choisi au pilote, pas 2 × I1) ;
   son échec ne prouve pas qu'un lecteur appris ne peut pas aligner.
-- I3 : seuls 4 N testés ; le seuil exact entre 100 et 1 000 n'est pas mesuré.
+- I3 : seuls 4 N testés ; ni le seuil T-LONG (entre 100 et 1 000) ni celui de la propagation
+  pure (au-delà de 1 000, au plus 10 000) ne sont mesurés.
+- **L'ADV-CASCADE préenregistré mesure la génération de retenue plus que sa propagation.**
+  Hérité d'E008 (`_paire_toute_retenue` : somme des chiffres ≥ 9 à chaque rang), il ne compte
+  que ≈ 18 % de rangs de propagation (somme = 9) à L = 100 et 1 000 (compte de `adv_propag.py` ;
+  R010 donne ≈ 20 % avec son propre compte) ; la propagation pure n'y figure que par 2 items par
+  L. Son 91,5 % pour I3 N = 1 000 à 1 000 chiffres surestime donc la robustesse de la retenue ;
+  ADV-PROPAG (post hoc) comble ce trou sans remplacer le jeu préenregistré.
+- ADV-PROPAG est **post hoc** : conçu après lecture des résultats et du doublage, donc
+  confirmatoire d'aucune prédiction ; il ne modifie aucun chiffre préenregistré.
 - Confiance = produit sur jusqu'à 1 001 chiffres : elle décroît mécaniquement avec la longueur
   (d'où « faux et sûr » rare aux grandes L) ; la p_min par pas est rapportée dans
   `resultats.json` (`autodiag`).
