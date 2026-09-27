@@ -24,7 +24,7 @@ from boucle import perte_bande, perte_progressive, perte_tn, tirage_progressif  
 from model import lr_schedule  # E008
 
 ICI = os.path.dirname(os.path.abspath(__file__))
-PAS_PILOTE = 2000
+PAS_PILOTE = 1000  # amendement B0
 
 
 def nom_run(systeme, graine, w=None, lr=None):

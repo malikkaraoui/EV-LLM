@@ -1,11 +1,31 @@
 {
- "_statut": "provisoire : systemes vides jusqu'a l'amendement B1 (apres pilote graine 0)",
+ "_statut": "figee apres pilote (graine 0), 2026-09-27T15:12:37+0200 -- voir PREREGISTREMENT-bis, amendement B1",
  "lot": 256,
- "plafond_pas": 20000,
+ "plafond_pas": 10000,
  "lr_min": 1e-05,
  "montee": 500,
  "wd": 0.01,
- "betas": [0.9, 0.98],
+ "betas": [
+  0.9,
+  0.98
+ ],
  "clip": 1.0,
- "systemes": {}
+ "systemes": {
+  "A1": {
+   "w": 128,
+   "lr": 0.001
+  },
+  "A2-L": {
+   "w": 128,
+   "lr": 0.001
+  },
+  "A3": {
+   "w": 128,
+   "lr": 0.001
+  },
+  "A3-T": {
+   "w": 128,
+   "lr": 0.001
+  }
+ }
 }

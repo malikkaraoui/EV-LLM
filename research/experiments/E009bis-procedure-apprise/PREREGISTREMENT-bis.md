@@ -139,3 +139,24 @@ Conséquences (budget 5 h, pilote ≤ 80 min) :
 3. Le plafond officiel de 20 000 pas est intenable (A3 w128 ≈ 3,6 h par run, A2-L w128 ≈ 4 h) ;
    il sera réduit par l'amendement B1, identique pour tous les systèmes, selon les largeurs
    choisies, **avant** tout run officiel.
+
+## Amendement B1 — 2026-09-27T15:12:37+0200 (après pilote graine 0, AVANT tout run officiel)
+
+Pilote (`resultats/pilote.json`, 9 configurations × 1 000 pas, 1 590 s de calcul) : **aucune
+configuration ne franchit le premier palier du curriculum** (niveau 2 partout). T-ID moyen 2–5 /
+T-ID|2 à 1 000 pas : A1 C1 0,3 % / 1 % ; C2 1,0 % / 4 % ; C3 0,5 % / 2 % — A2-L C1 0,7 % / 3 % ;
+**C2 5,0 % / 20 %** ; C3 0,7 % / 3 % — A3 C1 0,5 % / 2 % ; **C2 6,8 % / 26 %** ; C3 1,3 % / 5 %.
+VAL 6–8 = 0 % partout. Perte finale la plus basse : C2 (A2-L 0,21 ; A3 0,21 ; A1 0,80).
+Vitesse au niveau 2 (contrôles compris) : A1 w128 0,105 s/pas ; A2-L w128 0,27 ; A3 w128 0,25.
+
+Figé (critère § 3 appliqué mécaniquement, `hyperparametres_bis.json`) :
+1. **A1, A2-L, A3 : w = 128, lr max = 1e-3** (C2 gagne pour les trois) ; A3-T reprend A3.
+2. **Plafond officiel : 10 000 pas** (au lieu de 20 000), identique pour tous ; calendrier de lr
+   (montée 500, cosinus) calculé sur 10 000. Raison : budget restant ≈ 4 h 20 ; au niveau 2,
+   10 000 pas coûtent ≈ 17 min (A1), 45 min (A2-L), 42 min (A3) ; au niveau 5, jusqu'à 70 / 125
+   / 108 min. 20 000 pas ne tiennent pas même pour les trois graines 1.
+3. Ordre inchangé (§ 4.2) : A1 s1, A2-L s1, A3 s1, puis graines 2, puis A3-T. Budget épuisé :
+   partiel publié et écrit.
+4. Lecture préalable [HYPOTHÈSE] : le pilote suggère que 10 000 pas ne suffiront pas à atteindre
+   T-ID ≥ 95 % ; le résultat attendu le plus probable est « n'apprend pas la distribution à ce
+   budget ». Les runs sont faits pour le mesurer, pas pour l'infirmer.
