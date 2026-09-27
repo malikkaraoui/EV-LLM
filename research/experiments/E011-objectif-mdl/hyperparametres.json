@@ -1,0 +1,10 @@
+{
+ "_statut": "valeurs du preregistrement, non encore confirmees par le pilote",
+ "k": 10.0,
+ "lr": 0.001,
+ "betas": [0.9, 0.999],
+ "lot": 20,
+ "pas": 20000,
+ "lambdas": [0.01, 0.1, 1.0],
+ "controle_val_tous": 10
+}
