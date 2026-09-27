@@ -173,3 +173,26 @@ route : publier le partiel.
 
 Contrôle de validité en échec ; test final touché avant la fin ; envie de modifier ce document
 (écrite en amendement ou au rapport, non appliquée) ; dépassement de budget.
+
+## Amendement A1 — 2026-09-27T10:10:08+0200 (après pilote graine 0, avant tout run officiel et tout contrôle)
+
+Pilote (graine 0, exclue) : vitesse mesurée sur M1 **partagé avec d'autres fenêtres**.
+Largeur 128, non compilé : 0,85–1,2 s/pas (A1, A2, A3) → 6 000 pas ≈ 1 h 30 par run, budget
+intenable (10 runs de criblage). Banc (8 pas, même lot) : largeur 64 + `mx.compile` →
+A1 0,27 ; A2 0,15 ; A3 0,29 s/pas. Coût de l'évaluation finale mesuré sur des paires
+synthétiques de 100 chiffres (pas le jeu TEST) : A3 ≈ 0,6 s/item (plafond 512 sur bande 404),
+soit ≈ 9 min par run A3.
+
+Changements (aucun ne dépend d'un résultat de validation ; VAL = 0 % partout au pilote) :
+1. **S = 2 000 pas** (512 000 exemples, 1/6 d'E008) au lieu de 6 000 provisoires, pour tenir
+   ≤ 4 h avec 10 runs de criblage, les évaluations au plafond 512 et le format standard.
+2. **Largeur 64** au lieu de 128 pour toutes les familles (A3 : d = 64, FFN 256, 4 têtes).
+   Paramètres : A1 76 047 ; A2 / A2-L 107 343 ; A3 / A3-T 51 791.
+3. **Normalisation spectrale : 20 itérations de puissance** au lieu de 3 (mesuré : 5 itérations
+   sous-estiment σ de ~9 % sur un poids initial, 20 de ~3 %).
+4. **ELU sûre** dans A2-L : `nn.elu` de MLX calcule exp(z) sur la branche positive → inf →
+   gradient NaN (reproduit au pas 65 du pilote ; vérifié : grad elu(200) = NaN). Même fonction,
+   calcul borné.
+5. `mx.compile` du pas d'optimisation ; les pas où n + k = M (chaîne progressive identique à la
+   chaîne principale) font planter `mx.compile` 0.29.3 sur A3 (`unordered_map::at`) : ces pas
+   sont exécutés sans compilation. Mathématiquement identique.

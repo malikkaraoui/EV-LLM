@@ -10,7 +10,7 @@ import numpy as np
 from bande import VOCAB
 from model import Bloc  # E008 : bloc pre-LN (attention + FFN)
 
-W = 128
+W = 64  # amendement A1 : 128 -> 64 (vitesse, budget 4 h)
 
 
 # ---------------------------------------------------------------- A1 Neural GPU
@@ -96,7 +96,9 @@ class DeepThinking(nn.Module):
         self.t3 = nn.Conv1d(w // 2, VOCAB, 3, padding=1)
 
     def act(self, z):
-        return nn.elu(z) if self.lipschitz else nn.relu(z)
+        if self.lipschitz:  # ELU sure : nn.elu evalue exp(z) partout -> inf, gradient NaN
+            return mx.where(z > 0, z, mx.exp(mx.minimum(z, 0)) - 1)
+        return nn.relu(z)
 
     def etat0(self, x):
         xt = self.proj(self.emb(x))
@@ -117,7 +119,7 @@ class DeepThinking(nn.Module):
 
 # ---------------------------------------------------------------- A3 Looped transformer NoPE
 class LoopedNoPE(nn.Module):
-    def __init__(self, d=W, tetes=4, ffn=512):
+    def __init__(self, d=W, tetes=4, ffn=4 * W):
         super().__init__()
         self.emb = nn.Embedding(VOCAB, d)
         self.bloc = Bloc(d, tetes, ffn)

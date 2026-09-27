@@ -39,10 +39,10 @@ def perte_progressive(modele, x, y, m, n, k, M=M_ENTRAINEMENT):
     return 0.5 * l_max + 0.5 * ce(modele.lire(g), y, m)
 
 
-def perte_tn(modele, x, y, m, t_n):
+def perte_tn(modele, x, y, m, t_n, t_max):
     h, ctx = modele.etat0(x)
     sel = mx.zeros_like(h)
-    for t in range(1, int(t_n.max().item()) + 1):
+    for t in range(1, t_max + 1):
         h = modele.iterer(h, ctx)
         sel = mx.where((t_n == t)[:, None, None], h, sel)
     return ce(modele.lire(sel), y, m)

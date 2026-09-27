@@ -184,7 +184,7 @@ class TestBoucle(unittest.TestCase):
         old = boucle.ce
         boucle.ce = lambda logits, y, m: mx.argmax(logits[:, 0, :], axis=-1)
         try:
-            v = perte_tn(Compteur(), x, None, None, mx.array([2, 5, 3]))
+            v = perte_tn(Compteur(), x, None, None, mx.array([2, 5, 3]), 5)
             seen = list(np.array(v))
         finally:
             boucle.ce = old
@@ -205,7 +205,7 @@ class TestBoucle(unittest.TestCase):
             mo = d["fabrique"]()
             fn = {"bande": lambda mo_: __import__("boucle").perte_bande(mo_, x, y, m),
                   "confiance": lambda mo_: perte_progressive(mo_, x, y, m, 3, 4),
-                  "t_n": lambda mo_: perte_tn(mo_, x, y, m, t_n)}[d["regle"]]
+                  "t_n": lambda mo_: perte_tn(mo_, x, y, m, t_n, int(t_n.max().item()))}[d["regle"]]
             l, g = nn.value_and_grad(mo, fn)(mo)
             from mlx.utils import tree_flatten
             gn = sum(float((v * v).sum()) for _, v in tree_flatten(g))

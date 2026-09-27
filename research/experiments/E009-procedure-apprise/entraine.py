@@ -10,13 +10,14 @@ import csv
 import json
 import os
 import time
+from functools import partial
 
 import mlx.core as mx
 import mlx.nn as nn
 import mlx.optimizers as optim
 from mlx.utils import tree_flatten, tree_unflatten
 
-from archis import SYSTEMES, nb_parametres
+from archis import M_ENTRAINEMENT, SYSTEMES, nb_parametres
 from bande import d8, ecrire_json, lire_json, lot, sous_val
 from boucle import perte_bande, perte_progressive, perte_tn, tirage_progressif
 from evalue import nom_run, systeme_appris
@@ -54,6 +55,17 @@ def entrainer(systeme, graine, fmt, dossier, hp, budget_s, log=print, avec_jalon
     ex = d8.paires_exclues()
     fn = {"bande": perte_bande, "confiance": perte_progressive, "t_n": perte_tn}[regle]
     loss_and_grad = nn.value_and_grad(modele, fn)
+    st = [modele.state, opt.state]
+
+    def pas_eager(x, y, m, *extra):
+        l, g = loss_and_grad(modele, x, y, m, *extra)
+        g, _ = optim.clip_grad_norm(g, hp["clip"])
+        opt.update(modele, g)
+        return l
+
+    # recompile si (n, k) / t_max / forme changent. Exception : n + k == M (chaine progressive
+    # identique a la chaine principale) fait planter mx.compile 0.29.3 sur A3 -> pas non compile.
+    pas_compile = partial(mx.compile, inputs=st, outputs=st)(pas_eager)
     js = jalons(hp["pas"]) if avec_jalons else []
     jeux_j = sous_val(100) if avec_jalons else None
 
@@ -61,17 +73,16 @@ def entrainer(systeme, graine, fmt, dossier, hp, budget_s, log=print, avec_jalon
     somme, n = 0.0, 0
     fin = hp["pas"] if arret_pas is None else min(hp["pas"], arret_pas)  # arret_pas : tests
     while etat["pas"] < fin and time.time() - t0 < budget_s:
-        x, y, m, t_n = (mx.array(v) for v in lot(graine, etat["pas"], ex, inverse, hp["lot"]))
+        xn, yn, mn, tn = lot(graine, etat["pas"], ex, inverse, hp["lot"])
         if regle == "confiance":
             extra = tirage_progressif(graine, etat["pas"])
         elif regle == "t_n":
-            extra = (t_n,)
+            extra = (mx.array(tn), int(tn.max()))
         else:
             extra = ()
-        l, g = loss_and_grad(modele, x, y, m, *extra)
-        g, _ = optim.clip_grad_norm(g, hp["clip"])
-        opt.update(modele, g)
-        mx.eval(modele.parameters(), opt.state, l)
+        pas_opt = pas_eager if regle == "confiance" and sum(extra) == M_ENTRAINEMENT else pas_compile
+        l = pas_opt(mx.array(xn), mx.array(yn), mx.array(mn), *extra)
+        mx.eval(st, l)
         etat["pas"] += 1
         lv = l.item()
         if lv != lv:  # NaN : arret net, pas de sauvegarde des poids corrompus
