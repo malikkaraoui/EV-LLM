@@ -1,5 +1,5 @@
 {
- "_statut": "valeurs du preregistrement, non encore confirmees par le pilote",
+ "_statut": "figee apres pilote (graine 0, exclue), 2026-09-27T09:41:55+0200 -- aucune valeur changee : 11 configs en 38 s CPU, aucun NaN",
  "k": 10.0,
  "lr": 0.001,
  "betas": [0.9, 0.999],
