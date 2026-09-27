@@ -1,0 +1,665 @@
+{
+ "controles": "VALIDE",
+ "systemes": {
+  "A1-inv": {
+   "graines": [
+    1,
+    2
+   ],
+   "params": 76047,
+   "pas": {
+    "2": 2000,
+    "1": 2000
+   },
+   "calcul_s": {
+    "2": 592.8,
+    "1": 582.4
+   },
+   "checkpoint_retenu": {
+    "2": {
+     "pas": 2000,
+     "val": 0.0
+    },
+    "1": {
+     "pas": 2000,
+     "val": 0.0
+    }
+   },
+   "perte_finale": {
+    "2": 1.272067,
+    "1": 1.276312
+   },
+   "val": {
+    "T-ID|2": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 400,
+     "n": 400
+    },
+    "T-ID|3": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 400,
+     "n": 400
+    },
+    "T-ID|4": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 400
+    },
+    "T-ID|5": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 400
+    },
+    "VAL|6": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 600
+    },
+    "VAL|7": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 600
+    },
+    "VAL|8": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 600
+    }
+   },
+   "final": {},
+   "iterations_retenues_final": {},
+   "graines_reussies_16": null
+  },
+  "A2-inv": {
+   "graines": [
+    1,
+    2
+   ],
+   "params": 107343,
+   "pas": {
+    "1": 2000,
+    "2": 2000
+   },
+   "calcul_s": {
+    "1": 706.6,
+    "2": 674.0
+   },
+   "checkpoint_retenu": {
+    "1": {
+     "pas": 2000,
+     "val": 0.0
+    },
+    "2": {
+     "pas": 2000,
+     "val": 0.0
+    }
+   },
+   "perte_finale": {
+    "1": 0.997752,
+    "2": 0.936209
+   },
+   "val": {
+    "T-ID|2": {
+     "moy": 0.01,
+     "ec": 0.01414213562373095,
+     "par_graine": [
+      0.0,
+      0.02
+     ],
+     "faux": 396,
+     "faux_surs": 0,
+     "non_reponses": 146,
+     "n": 400
+    },
+    "T-ID|3": {
+     "moy": 0.0025,
+     "ec": 0.0035355339059327377,
+     "par_graine": [
+      0.0,
+      0.005
+     ],
+     "faux": 399,
+     "faux_surs": 0,
+     "non_reponses": 17,
+     "n": 400
+    },
+    "T-ID|4": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 400
+    },
+    "T-ID|5": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 172,
+     "n": 400
+    },
+    "VAL|6": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 289,
+     "n": 600
+    },
+    "VAL|7": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 274,
+     "n": 600
+    },
+    "VAL|8": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 268,
+     "n": 600
+    }
+   },
+   "final": {},
+   "iterations_retenues_final": {},
+   "graines_reussies_16": null
+  },
+  "A2-L-inv": {
+   "graines": [
+    1,
+    2
+   ],
+   "params": 107343,
+   "pas": {
+    "1": 2000,
+    "2": 2000
+   },
+   "calcul_s": {
+    "1": 904.0,
+    "2": 883.6
+   },
+   "checkpoint_retenu": {
+    "1": {
+     "pas": 2000,
+     "val": 0.0
+    },
+    "2": {
+     "pas": 2000,
+     "val": 0.0
+    }
+   },
+   "perte_finale": {
+    "1": 1.060107,
+    "2": 0.952196
+   },
+   "val": {
+    "T-ID|2": {
+     "moy": 0.015,
+     "ec": 0.021213203435596427,
+     "par_graine": [
+      0.0,
+      0.03
+     ],
+     "faux": 394,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 400
+    },
+    "T-ID|3": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 400
+    },
+    "T-ID|4": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 400
+    },
+    "T-ID|5": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 1,
+     "n": 400
+    },
+    "VAL|6": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 600
+    },
+    "VAL|7": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 600
+    },
+    "VAL|8": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 600
+    }
+   },
+   "final": {},
+   "iterations_retenues_final": {},
+   "graines_reussies_16": null
+  },
+  "A3-inv": {
+   "graines": [
+    1,
+    2
+   ],
+   "params": 51791,
+   "pas": {
+    "2": 2000,
+    "1": 2000
+   },
+   "calcul_s": {
+    "2": 1275.8,
+    "1": 1232.9
+   },
+   "checkpoint_retenu": {
+    "2": {
+     "pas": 2000,
+     "val": 0.0
+    },
+    "1": {
+     "pas": 2000,
+     "val": 0.0
+    }
+   },
+   "perte_finale": {
+    "2": 1.085363,
+    "1": 1.158374
+   },
+   "val": {
+    "T-ID|2": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 6,
+     "n": 400
+    },
+    "T-ID|3": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 68,
+     "n": 400
+    },
+    "T-ID|4": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 58,
+     "n": 400
+    },
+    "T-ID|5": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 49,
+     "n": 400
+    },
+    "VAL|6": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 73,
+     "n": 600
+    },
+    "VAL|7": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 151,
+     "n": 600
+    },
+    "VAL|8": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 241,
+     "n": 600
+    }
+   },
+   "final": {},
+   "iterations_retenues_final": {},
+   "graines_reussies_16": null
+  },
+  "A3-T-inv": {
+   "graines": [
+    1,
+    2
+   ],
+   "params": 51791,
+   "pas": {
+    "1": 2000,
+    "2": 2000
+   },
+   "calcul_s": {
+    "1": 261.1,
+    "2": 276.8
+   },
+   "checkpoint_retenu": {
+    "1": {
+     "pas": 2000,
+     "val": 0.0
+    },
+    "2": {
+     "pas": 2000,
+     "val": 0.0
+    }
+   },
+   "perte_finale": {
+    "1": 0.820571,
+    "2": 0.798679
+   },
+   "val": {
+    "T-ID|2": {
+     "moy": 0.0125,
+     "ec": 0.01767766952966369,
+     "par_graine": [
+      0.0,
+      0.025
+     ],
+     "faux": 395,
+     "faux_surs": 0,
+     "non_reponses": 7,
+     "n": 400
+    },
+    "T-ID|3": {
+     "moy": 0.0025,
+     "ec": 0.0035355339059327377,
+     "par_graine": [
+      0.0,
+      0.005
+     ],
+     "faux": 399,
+     "faux_surs": 0,
+     "non_reponses": 7,
+     "n": 400
+    },
+    "T-ID|4": {
+     "moy": 0.0025,
+     "ec": 0.0035355339059327377,
+     "par_graine": [
+      0.005,
+      0.0
+     ],
+     "faux": 399,
+     "faux_surs": 0,
+     "non_reponses": 10,
+     "n": 400
+    },
+    "T-ID|5": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 400,
+     "faux_surs": 0,
+     "non_reponses": 11,
+     "n": 400
+    },
+    "VAL|6": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 6,
+     "n": 600
+    },
+    "VAL|7": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 2,
+     "n": 600
+    },
+    "VAL|8": {
+     "moy": 0.0,
+     "ec": 0.0,
+     "par_graine": [
+      0.0,
+      0.0
+     ],
+     "faux": 600,
+     "faux_surs": 0,
+     "non_reponses": 0,
+     "n": 600
+    }
+   },
+   "final": {},
+   "iterations_retenues_final": {},
+   "graines_reussies_16": null
+  }
+ },
+ "exemples_uniques": {
+  "1": {
+   "250": 56825,
+   "500": 110387,
+   "750": 161956,
+   "1000": 212322,
+   "1250": 261815,
+   "1500": 310319,
+   "1750": 358396,
+   "2000": 405818
+  },
+  "2": {
+   "250": 56914,
+   "500": 110114,
+   "750": 161832,
+   "1000": 212403,
+   "1250": 261703,
+   "1500": 310480,
+   "1750": 358659,
+   "2000": 406025
+  }
+ },
+ "E008": {
+  "B-STD": {
+   "T-ID1|1": 1.0,
+   "T-ID|2": 1.0,
+   "T-ID|3": 0.9946666666666667,
+   "T-ID|4": 0.988,
+   "T-ID|5": 0.984,
+   "T-OOD|6": 0.0,
+   "T-OOD|7": 0.0,
+   "T-OOD|8": 0.0,
+   "T-OOD|10": 0.0,
+   "T-OOD|12": 0.0,
+   "T-OOD|16": 0.0,
+   "T-CARRY|2": 1.0,
+   "T-CARRY|3": 0.99734395750332,
+   "T-CARRY|4": 0.9794156706507304,
+   "T-CARRY|5": 0.9780876494023905,
+   "T-CARRY|6": 0.0,
+   "T-CARRY|7": 0.0,
+   "T-CARRY|8": 0.0,
+   "T-CARRY|10": 0.0,
+   "T-CARRY|12": 0.0,
+   "T-CARRY|16": 0.0
+  },
+  "B-REF": {
+   "T-ID1|1": 1.0,
+   "T-ID|2": 1.0,
+   "T-ID|3": 1.0,
+   "T-ID|4": 1.0,
+   "T-ID|5": 1.0,
+   "T-OOD|6": 0.9119999999999999,
+   "T-OOD|7": 0.07933333333333333,
+   "T-OOD|8": 0.0013333333333333333,
+   "T-OOD|10": 0.0,
+   "T-OOD|12": 0.0,
+   "T-OOD|16": 0.0,
+   "T-CARRY|2": 1.0,
+   "T-CARRY|3": 1.0,
+   "T-CARRY|4": 1.0,
+   "T-CARRY|5": 1.0,
+   "T-CARRY|6": 0.8771580345285525,
+   "T-CARRY|7": 0.08632138114209827,
+   "T-CARRY|8": 0.007304116865869854,
+   "T-CARRY|10": 0.00199203187250996,
+   "T-CARRY|12": 0.0,
+   "T-CARRY|16": 0.0
+  }
+ }
+}
