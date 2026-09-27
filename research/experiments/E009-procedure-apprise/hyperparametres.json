@@ -1,0 +1,11 @@
+{
+ "_statut": "PROVISOIRE -- pas a figer apres pilote (graine 0), PREREGISTREMENT section 4",
+ "lot": 256,
+ "pas": 6000,
+ "lr_max": 0.001,
+ "lr_min": 1e-05,
+ "montee": 500,
+ "wd": 0.01,
+ "betas": [0.9, 0.98],
+ "clip": 1.0
+}
