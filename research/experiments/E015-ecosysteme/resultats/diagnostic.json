@@ -1,0 +1,322 @@
+{
+ "EVO-N1-s1": {
+  "score_rendu": 0.0374,
+  "exact_rendu": 0.0185546875,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "EVO-N1-s2": {
+  "score_rendu": 0.035,
+  "exact_rendu": 0.015625,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "EVO-N1-s3": {
+  "score_rendu": 0.0438,
+  "exact_rendu": 0.0244140625,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "EVO-N1-s4": {
+  "score_rendu": 0.0231,
+  "exact_rendu": 0.0087890625,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "EVO-N1-s5": {
+  "score_rendu": 0.05,
+  "exact_rendu": 0.029296875,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ALEA-N1-s1": {
+  "score_rendu": 0.0061,
+  "exact_rendu": 0.0,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ALEA-N1-s2": {
+  "score_rendu": 0.0055,
+  "exact_rendu": 0.0029296875,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ALEA-N1-s3": {
+  "score_rendu": 0.0069,
+  "exact_rendu": 0.001953125,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ALEA-N1-s4": {
+  "score_rendu": 0.0047,
+  "exact_rendu": 0.0,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ALEA-N1-s5": {
+  "score_rendu": 0.0044,
+  "exact_rendu": 0.0,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "SANSVIE-N1-s1": {
+  "score_rendu": 0.0374,
+  "exact_rendu": 0.0185546875,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "SANSVIE-N1-s2": {
+  "score_rendu": 0.035,
+  "exact_rendu": 0.015625,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "SANSVIE-N1-s3": {
+  "score_rendu": 0.0438,
+  "exact_rendu": 0.0244140625,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "SANSVIE-N1-s4": {
+  "score_rendu": 0.037,
+  "exact_rendu": 0.0166015625,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "SANSVIE-N1-s5": {
+  "score_rendu": 0.05,
+  "exact_rendu": 0.029296875,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH0-N1-s1": {
+  "score_rendu": 1.1,
+  "exact_rendu": 1.0,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH0-N1-s2": {
+  "score_rendu": 0.4466,
+  "exact_rendu": 0.37109375,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH0-N1-s3": {
+  "score_rendu": 1.1,
+  "exact_rendu": 1.0,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH0-N1-s4": {
+  "score_rendu": 0.3902,
+  "exact_rendu": 0.3173828125,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH0-N1-s5": {
+  "score_rendu": 0.4059,
+  "exact_rendu": 0.3330078125,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH1-N1-s1": {
+  "score_rendu": 0.0374,
+  "exact_rendu": 0.0185546875,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH1-N1-s2": {
+  "score_rendu": 0.035,
+  "exact_rendu": 0.015625,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH1-N1-s3": {
+  "score_rendu": 0.0438,
+  "exact_rendu": 0.0244140625,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH1-N1-s4": {
+  "score_rendu": 0.0049,
+  "exact_rendu": 0.0,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH1-N1-s5": {
+  "score_rendu": 0.05,
+  "exact_rendu": 0.029296875,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH2-N1-s1": {
+  "score_rendu": 0.0374,
+  "exact_rendu": 0.0185546875,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH2-N1-s2": {
+  "score_rendu": 0.035,
+  "exact_rendu": 0.015625,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH2-N1-s3": {
+  "score_rendu": 0.0438,
+  "exact_rendu": 0.0244140625,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH2-N1-s4": {
+  "score_rendu": 0.037,
+  "exact_rendu": 0.0166015625,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "ECH2-N1-s5": {
+  "score_rendu": 0.05,
+  "exact_rendu": 0.029296875,
+  "score_solution": 1.1,
+  "exact_solution": 1.0
+ },
+ "reutil-N2-s1-n1_tel_quel": {
+  "score": 0.0134,
+  "exact": 0.0
+ },
+ "reutil-N2-s1-copie_a": {
+  "score": 0.0102,
+  "exact": 0.0
+ },
+ "reutil-N2-s1-solution_connue": {
+  "score": 1.1,
+  "exact": 1.0
+ },
+ "reutil-N3-s1-n1_tel_quel": {
+  "score": 0.0041,
+  "exact": 0.0
+ },
+ "reutil-N3-s1-n1_coupe_moins": {
+  "score": 0.0679,
+  "exact": 0.037109375
+ },
+ "reutil-N3-s1-copie_a": {
+  "score": 0.0703,
+  "exact": 0.037109375
+ },
+ "reutil-N3-s1-solution_connue": {
+  "score": 1.1,
+  "exact": 1.0
+ },
+ "reutil-N2-s2-n1_tel_quel": {
+  "score": 0.0138,
+  "exact": 0.0
+ },
+ "reutil-N2-s2-copie_a": {
+  "score": 0.0106,
+  "exact": 0.0
+ },
+ "reutil-N2-s2-solution_connue": {
+  "score": 1.1,
+  "exact": 1.0
+ },
+ "reutil-N3-s2-n1_tel_quel": {
+  "score": 0.0042,
+  "exact": 0.0
+ },
+ "reutil-N3-s2-n1_coupe_moins": {
+  "score": 0.0165,
+  "exact": 0.00390625
+ },
+ "reutil-N3-s2-copie_a": {
+  "score": 0.0773,
+  "exact": 0.04296875
+ },
+ "reutil-N3-s2-solution_connue": {
+  "score": 1.099,
+  "exact": 0.9990234375
+ },
+ "reutil-N2-s3-n1_tel_quel": {
+  "score": 0.0134,
+  "exact": 0.0
+ },
+ "reutil-N2-s3-copie_a": {
+  "score": 0.0101,
+  "exact": 0.0
+ },
+ "reutil-N2-s3-solution_connue": {
+  "score": 1.1,
+  "exact": 1.0
+ },
+ "reutil-N3-s3-n1_tel_quel": {
+  "score": 0.0047,
+  "exact": 0.0
+ },
+ "reutil-N3-s3-n1_coupe_moins": {
+  "score": 0.0583,
+  "exact": 0.0283203125
+ },
+ "reutil-N3-s3-copie_a": {
+  "score": 0.0616,
+  "exact": 0.0283203125
+ },
+ "reutil-N3-s3-solution_connue": {
+  "score": 1.1,
+  "exact": 1.0
+ },
+ "reutil-N2-s4-n1_tel_quel": {
+  "score": 0.0104,
+  "exact": 0.0
+ },
+ "reutil-N2-s4-copie_a": {
+  "score": 0.0108,
+  "exact": 0.0
+ },
+ "reutil-N2-s4-solution_connue": {
+  "score": 1.1,
+  "exact": 1.0
+ },
+ "reutil-N3-s4-n1_tel_quel": {
+  "score": 0.0047,
+  "exact": 0.0
+ },
+ "reutil-N3-s4-n1_coupe_moins": {
+  "score": 0.1055,
+  "exact": 0.06640625
+ },
+ "reutil-N3-s4-copie_a": {
+  "score": 0.081,
+  "exact": 0.0458984375
+ },
+ "reutil-N3-s4-solution_connue": {
+  "score": 1.1,
+  "exact": 1.0
+ },
+ "reutil-N2-s5-n1_tel_quel": {
+  "score": 0.0198,
+  "exact": 0.0078125
+ },
+ "reutil-N2-s5-copie_a": {
+  "score": 0.0127,
+  "exact": 0.001953125
+ },
+ "reutil-N2-s5-solution_connue": {
+  "score": 1.1,
+  "exact": 1.0
+ },
+ "reutil-N3-s5-n1_tel_quel": {
+  "score": 0.0052,
+  "exact": 0.0
+ },
+ "reutil-N3-s5-n1_coupe_moins": {
+  "score": 0.0964,
+  "exact": 0.0595703125
+ },
+ "reutil-N3-s5-copie_a": {
+  "score": 0.0813,
+  "exact": 0.046875
+ },
+ "reutil-N3-s5-solution_connue": {
+  "score": 1.1,
+  "exact": 1.0
+ }
+}

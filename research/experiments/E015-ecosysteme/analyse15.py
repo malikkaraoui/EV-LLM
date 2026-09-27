@@ -9,7 +9,8 @@ import numpy as np
 
 ICI = os.path.dirname(os.path.abspath(__file__))
 GRAINES = [1, 2, 3, 4, 5]
-CONDS = [("EVO", "N1"), ("ALEA", "N1"), ("SANSVIE", "N1"), ("FROID", "N2"), ("CHAUD", "N2"),
+CONDS = [("EVO", "N1"), ("ALEA", "N1"), ("SANSVIE", "N1"), ("ECH0", "N1"), ("ECH1", "N1"),
+         ("ECH2", "N1"), ("FROID", "N2"), ("CHAUD", "N2"),
          ("FROID", "N3"), ("CHAUD", "N3")]
 LONGS = [10, 16, 32, 64, 100, 1000]
 ADV = {"N1": ["ADV-CASCADE", "ADV-ZEROS", "ADV-ASYM", "ADV-PROPAG"],
@@ -65,7 +66,7 @@ def main():
                   med([r["essais_premier_candidat_val99"] for r in R]),
                   f"{int(np.mean([r['exemples_uniques'] for r in R]))}"]
         md.append(" | ".join(ligne) + " |")
-        n1 = [lire(f"EVO-N1-s{g}", "resultat.json") for g in GRAINES]
+        n1 = [lire(f"ECH0-N1-s{g}", "resultat.json") for g in GRAINES]
         out[nom] = {
             "graines_reussies": int(sum(ok)),
             "par_graine": {g: {"T-LONG": {L: T[i]["exact"][f"T-LONG|{L}"] for L in LONGS},

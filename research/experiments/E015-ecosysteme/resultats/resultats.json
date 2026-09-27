@@ -1,0 +1,3562 @@
+{
+ "EVO-N1": {
+  "graines_reussies": 0,
+  "par_graine": {
+   "1": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 152186,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 2519,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '1')",
+       "r3,r4 = DECOUPE(r0, '-')",
+       "r5 = INV(r1)",
+       "r6,r7 = DECOUPE(r2, '5')",
+       "r8,r9 = DECOUPE(r1, '6')",
+       "sortie = r5"
+      ],
+      "max_score": 0.001979166666666667
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "2": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150007,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 15841,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1724,
+      "exemple": [
+       "r1 = INV(r0)",
+       "r2,r3 = DECOUPE(r0, '+')",
+       "r4 = TRQ(r1)",
+       "sortie = r2"
+      ],
+      "max_score": 0.15010416666666668
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "3": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150313,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 16936,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1799,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "r3 = TRQ(r0)",
+       "sortie = r1"
+      ],
+      "max_score": 0.13276041666666666
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "4": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 151143,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 3064,
+    "faux_hors_tid": 5142,
+    "faux_surs": 5142,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 18,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '3')",
+       "r3,r4 = DECOUPE(r2, '1')",
+       "r5 = INV(r1)",
+       "r6 = INV(r1)",
+       "sortie = r1"
+      ],
+      "max_score": 0.0017968749999999999
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1 = M-COPIE|petit#3(r0[0>0 1>9 2>2 3>4 4>4 5>6 6>6 7>7 8>9 9>6 +>1 =>7 _>1])",
+     "r2,r3 = DECOUPE(r1, '1')",
+     "sortie = r2"
+    ]
+   },
+   "5": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150563,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 3369,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 54,
+      "exemple": [
+       "r1 = TRQ(r0)",
+       "r2 = TRQ(r1)",
+       "r3,r4 = DECOUPE(r1, '+')",
+       "r5 = TRQ(r3)",
+       "sortie = r3"
+      ],
+      "max_score": 0.08315104166666666
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   }
+  }
+ },
+ "ALEA-N1": {
+  "graines_reussies": 0,
+  "par_graine": {
+   "1": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150582,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 3497,
+    "faux_hors_tid": 5142,
+    "faux_surs": 5142,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 61,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "r3 = TRQ(r2)",
+       "r4 = INV(r3)",
+       "sortie = r4"
+      ],
+      "max_score": 0.02580729166666667
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1 = M-COMPL|grand#0(r0[0>7 1>1 2>6 3>9 4>6 5>2 6>9 7>0 8>8 9>8 +>6 =>6 _>9])",
+     "r2 = TRQ(r1)",
+     "sortie = r2"
+    ]
+   },
+   "2": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 152497,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 3487,
+    "faux_hors_tid": 5142,
+    "faux_surs": 1005,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 69,
+      "exemple": [
+       "r1 = TRQ(r0)",
+       "r2 = INV(r0)",
+       "r3,r4 = DECOUPE(r1, '+')",
+       "r5 = INV(r4)",
+       "sortie = r5"
+      ],
+      "max_score": 0.025286458333333338
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '_')",
+     "r3 = M-SUCC|petit#9(r2[_>3])",
+     "sortie = r3"
+    ]
+   },
+   "3": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150481,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 3418,
+    "faux_hors_tid": 5142,
+    "faux_surs": 5142,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 53,
+      "exemple": [
+       "r1 = TRQ(r0)",
+       "r2 = INV(r1)",
+       "r3 = TRQ(r0)",
+       "r4 = INV(r0)",
+       "r5,r6 = DECOUPE(r3, '7')",
+       "r7,r8 = DECOUPE(r3, '5')",
+       "r9,r10 = DECOUPE(r0, '4')",
+       "r11,r12 = DECOUPE(r7, '+')",
+       "sortie = r12"
+      ],
+      "max_score": 0.03145833333333334
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '5')",
+     "r3 = M-COMPL|grand#0(r2[0>3 1>3 2>4 3>6 4>3 5>4 6>8 7>9 8>0 9>4 +>5 =>3 _>8])",
+     "sortie = r3"
+    ]
+   },
+   "4": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150776,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 3429,
+    "faux_hors_tid": 5142,
+    "faux_surs": 5142,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 65,
+      "exemple": [
+       "r1 = TRQ(r0)",
+       "r2 = TRQ(r1)",
+       "r3 = INV(r2)",
+       "r4 = INV(r3)",
+       "r5 = TRQ(r2)",
+       "sortie = r5"
+      ],
+      "max_score": 0.04010416666666666
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1 = INV(r0)",
+     "r2 = M-COMPL|grand#0(r1[0>9 1>3 2>0 3>2 4>8 5>5 6>3 7>2 8>4 9>4 +>3 =>9 _>7])",
+     "sortie = r2"
+    ]
+   },
+   "5": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 151051,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 3611,
+    "faux_hors_tid": 5142,
+    "faux_surs": 5142,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 78,
+      "exemple": [
+       "r1 = TRQ(r0)",
+       "r2 = TRQ(r1)",
+       "r3,r4 = DECOUPE(r0, '+')",
+       "r5 = TRQ(r1)",
+       "r6 = TRQ(r3)",
+       "r7,r8 = DECOUPE(r6, '=')",
+       "r9 = TRQ(r5)",
+       "sortie = r9"
+      ],
+      "max_score": 0.056875
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1 = M-COPIE|petit#3(r0[0>7 1>4 2>5 3>3 4>1 5>8 6>2 7>1 8>1 9>6 +>9 =>5 _>5])",
+     "sortie = r1"
+    ]
+   }
+  }
+ },
+ "SANSVIE-N1": {
+  "graines_reussies": 0,
+  "par_graine": {
+   "1": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150020,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 199789,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 24818,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.15255208333333334
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "2": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150020,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 199782,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 23168,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.15010416666666668
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "3": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150020,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 199745,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 24428,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.14020833333333332
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "4": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150020,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 199748,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 24640,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.12143229166666666
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "5": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150020,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 200055,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 24535,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.1359635416666667
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   }
+  }
+ },
+ "ECH0-N1": {
+  "graines_reussies": 2,
+  "par_graine": {
+   "1": {
+    "T-LONG": {
+     "10": 1.0,
+     "16": 1.0,
+     "32": 1.0,
+     "64": 1.0,
+     "100": 1.0,
+     "1000": 1.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 1.0,
+      "16": 1.0,
+      "32": 1.0,
+      "64": 1.0,
+      "100": 1.0,
+      "1000": 1.0
+     },
+     "ADV-ZEROS": {
+      "10": 1.0,
+      "16": 1.0,
+      "32": 1.0,
+      "64": 1.0,
+      "100": 1.0,
+      "1000": 1.0
+     },
+     "ADV-ASYM": {
+      "10": 1.0,
+      "16": 1.0,
+      "32": 1.0,
+      "64": 1.0,
+      "100": 1.0,
+      "1000": 1.0
+     },
+     "ADV-PROPAG": {
+      "10": 1.0,
+      "16": 1.0,
+      "32": 1.0,
+      "64": 1.0,
+      "100": 1.0,
+      "1000": 1.0
+     }
+    },
+    "val": 1.0,
+    "essais": 150274,
+    "n_candidats": 1,
+    "essais_premier_candidat": 32594,
+    "essais_premier_candidat_val99": 32594,
+    "exemples_uniques": 2888,
+    "faux_hors_tid": 0,
+    "faux_surs": 0,
+    "tau": 0.9,
+    "abst_faux": null,
+    "abst_juste": 0.00019447685725398678,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 23,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "r3,r4 = DECOUPE(r2, '=')",
+       "r5 = INV(r1)",
+       "r6 = INV(r3)",
+       "sortie = r1"
+      ],
+      "max_score": 0.05278645833333333
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "r3,r4 = DECOUPE(r2, '=')",
+     "r5 = INV(r1)",
+     "r6 = INV(r3)",
+     "r7 = M-SOMME|grand#6(r5[0>0 1>1 2>2 3>3 4>4 5>5 6>6 7>7 8>8 9>9 _>0], r6[0>0 1>1 2>2 3>3 4>4 5>5 6>6 7>7 8>8 9>9 _>A])",
+     "r8 = INV(r7)",
+     "sortie = r8"
+    ]
+   },
+   "2": {
+    "T-LONG": {
+     "10": 0.138,
+     "16": 0.042,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.1553398058252427,
+      "16": 0.05825242718446602,
+      "32": 0.009708737864077669,
+      "64": 0.009708737864077669,
+      "100": 0.009708737864077669,
+      "1000": 0.009708737864077669
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.13861386138613863,
+      "16": 0.06930693069306931,
+      "32": 0.009900990099009901,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG": {
+      "10": 0.8627450980392157,
+      "16": 0.8431372549019608,
+      "32": 0.9215686274509803,
+      "64": 0.8529411764705882,
+      "100": 0.8431372549019608,
+      "1000": 0.8725490196078431
+     }
+    },
+    "val": 0.292,
+    "essais": 150272,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 2690,
+    "faux_hors_tid": 4474,
+    "faux_surs": 1602,
+    "tau": 0.5,
+    "abst_faux": 0.2089852481001341,
+    "abst_juste": 0.011976047904191617,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 23,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "r3,r4 = DECOUPE(r2, '=')",
+       "r5 = INV(r1)",
+       "r6 = INV(r3)",
+       "r7 = INV(r6)",
+       "r8 = INV(r7)",
+       "r9 = TRQ(r8)",
+       "sortie = r7"
+      ],
+      "max_score": 0.08440104166666666
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "r3,r4 = DECOUPE(r2, '=')",
+     "r5 = INV(r1)",
+     "r6 = INV(r3)",
+     "r7 = M-SOMME|petit#7(r5[0>1 1>2 2>3 3>4 4>5 5>6 6>7 7>8 8>9 9>0 _>1], r6[0>9 1>0 2>1 3>2 4>3 5>4 6>5 7>6 8>7 9>8 _>9])",
+     "r8 = INV(r7)",
+     "sortie = r8"
+    ]
+   },
+   "3": {
+    "T-LONG": {
+     "10": 1.0,
+     "16": 1.0,
+     "32": 1.0,
+     "64": 1.0,
+     "100": 1.0,
+     "1000": 1.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 1.0,
+      "16": 1.0,
+      "32": 1.0,
+      "64": 1.0,
+      "100": 1.0,
+      "1000": 1.0
+     },
+     "ADV-ZEROS": {
+      "10": 1.0,
+      "16": 1.0,
+      "32": 1.0,
+      "64": 1.0,
+      "100": 1.0,
+      "1000": 1.0
+     },
+     "ADV-ASYM": {
+      "10": 1.0,
+      "16": 1.0,
+      "32": 1.0,
+      "64": 1.0,
+      "100": 1.0,
+      "1000": 1.0
+     },
+     "ADV-PROPAG": {
+      "10": 1.0,
+      "16": 0.9803921568627451,
+      "32": 0.9901960784313726,
+      "64": 0.9313725490196079,
+      "100": 0.8725490196078431,
+      "1000": 0.27450980392156865
+     }
+    },
+    "val": 1.0,
+    "essais": 151044,
+    "n_candidats": 1,
+    "essais_premier_candidat": 20108,
+    "essais_premier_candidat_val99": 20108,
+    "exemples_uniques": 4519,
+    "faux_hors_tid": 97,
+    "faux_surs": 17,
+    "tau": 0.9,
+    "abst_faux": 1.0,
+    "abst_juste": 0.015064420218037661,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 48,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "r3 = TRQ(r0)",
+       "r4 = INV(r1)",
+       "r5,r6 = DECOUPE(r2, '3')",
+       "sortie = r1"
+      ],
+      "max_score": 0.12153645833333333
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "r3,r4 = DECOUPE(r2, '=')",
+     "r5 = INV(r1)",
+     "r6 = INV(r3)",
+     "r7 = M-SOMME|grand#6(r5[0>0 1>1 2>2 3>3 4>4 5>5 6>6 7>7 8>8 9>9 _>0], r6[0>0 1>1 2>2 3>3 4>4 5>5 6>6 7>7 8>8 9>9 _>A])",
+     "r8 = INV(r7)",
+     "sortie = r8"
+    ]
+   },
+   "4": {
+    "T-LONG": {
+     "10": 0.002,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.9405940594059405,
+      "16": 0.900990099009901,
+      "32": 0.9108910891089109,
+      "64": 0.6138613861386139,
+      "100": 0.49504950495049505,
+      "1000": 0.019801980198019802
+     },
+     "ADV-ASYM": {
+      "10": 0.22772277227722773,
+      "16": 0.25742574257425743,
+      "32": 0.26732673267326734,
+      "64": 0.19801980198019803,
+      "100": 0.22772277227722773,
+      "1000": 0.2376237623762376
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.012,
+    "essais": 153104,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 2635,
+    "faux_hors_tid": 4606,
+    "faux_surs": 1448,
+    "tau": 0.7,
+    "abst_faux": 0.3200173686495875,
+    "abst_juste": 0.0,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 21,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "r3,r4 = DECOUPE(r2, '=')",
+       "r5 = INV(r1)",
+       "r6 = INV(r3)",
+       "r7 = TRQ(r2)",
+       "r8 = INV(r7)",
+       "sortie = r3"
+      ],
+      "max_score": 0.065703125
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "r3,r4 = DECOUPE(r2, '=')",
+     "r5 = INV(r1)",
+     "r6 = INV(r3)",
+     "r7 = M-DIFF|grand#4(r5[0>4 1>5 2>6 3>7 4>8 5>9 6>0 7>1 8>2 9>3 _>4], r6[0>4 1>3 2>2 3>1 4>0 5>9 6>8 7>7 8>6 9>5 _>4])",
+     "r8 = INV(r7)",
+     "sortie = r8"
+    ]
+   },
+   "5": {
+    "T-LONG": {
+     "10": 0.002,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.9405940594059405,
+      "16": 0.900990099009901,
+      "32": 0.9108910891089109,
+      "64": 0.6138613861386139,
+      "100": 0.49504950495049505,
+      "1000": 0.019801980198019802
+     },
+     "ADV-ASYM": {
+      "10": 0.22772277227722773,
+      "16": 0.25742574257425743,
+      "32": 0.26732673267326734,
+      "64": 0.19801980198019803,
+      "100": 0.22772277227722773,
+      "1000": 0.2376237623762376
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.012,
+    "essais": 152349,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 2693,
+    "faux_hors_tid": 4606,
+    "faux_surs": 4606,
+    "tau": 0.8,
+    "abst_faux": 0.0,
+    "abst_juste": 0.0,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 23,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "r3,r4 = DECOUPE(r2, '4')",
+       "sortie = r1"
+      ],
+      "max_score": 0.11971354166666667
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "r3,r4 = DECOUPE(r2, '=')",
+     "r5 = INV(r1)",
+     "r6 = INV(r3)",
+     "r7 = M-DIFF|petit#5(r5[0>0 1>1 2>2 3>3 4>4 5>5 6>6 7>7 8>8 9>9 _>A], r6[0>0 1>9 2>8 3>7 4>6 5>5 6>4 7>3 8>2 9>1 _>0])",
+     "r8 = INV(r7)",
+     "sortie = r8"
+    ]
+   }
+  }
+ },
+ "ECH1-N1": {
+  "graines_reussies": 0,
+  "par_graine": {
+   "1": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150426,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 15891,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1726,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.12226562499999999
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "2": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150299,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 17003,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1815,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "r3 = INV(r1)",
+       "sortie = r1"
+      ],
+      "max_score": 0.15010416666666668
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "3": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150233,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 14732,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1573,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.13276041666666666
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "4": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150623,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 17473,
+    "faux_hors_tid": 5142,
+    "faux_surs": 5142,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1886,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.10348958333333333
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1 = M-COPIE|petit#3(r0[0>2 1>5 2>9 3>6 4>0 5>1 6>5 7>1 8>9 9>0 +>A =>4 _>8])",
+     "sortie = r1"
+    ]
+   },
+   "5": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150565,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 14609,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1576,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "r3,r4 = DECOUPE(r2, '=')",
+       "r5,r6 = DECOUPE(r4, '5')",
+       "r7 = INV(r1)",
+       "r8 = INV(r4)",
+       "r9 = INV(r3)",
+       "r10 = INV(r3)",
+       "sortie = r1"
+      ],
+      "max_score": 0.11971354166666667
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   }
+  }
+ },
+ "ECH2-N1": {
+  "graines_reussies": 0,
+  "par_graine": {
+   "1": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150179,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 21161,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 2456,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "r3,r4 = DECOUPE(r1, '9')",
+       "sortie = r1"
+      ],
+      "max_score": 0.12226562499999999
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "2": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150169,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 20643,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 2341,
+      "exemple": [
+       "r1 = TRQ(r0)",
+       "r2,r3 = DECOUPE(r0, '+')",
+       "sortie = r2"
+      ],
+      "max_score": 0.15010416666666668
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "3": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150478,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 20228,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 2279,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.14020833333333332
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "4": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150618,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 19993,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 2201,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.10348958333333333
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "5": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ZEROS": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.009900990099009901,
+      "16": 0.019801980198019802,
+      "32": 0.009900990099009901,
+      "64": 0.019801980198019802,
+      "100": 0.0,
+      "1000": 0.009900990099009901
+     },
+     "ADV-PROPAG": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150941,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 20568,
+    "faux_hors_tid": 5135,
+    "faux_surs": 5135,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 2335,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.11971354166666667
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   }
+  }
+ },
+ "FROID-N2": {
+  "graines_reussies": 0,
+  "par_graine": {
+   "1": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150212,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 4414,
+    "faux_hors_tid": 4512,
+    "faux_surs": 4512,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 164,
+      "exemple": [
+       "r1 = INV(r0)",
+       "r2,r3 = DECOUPE(r0, '+')",
+       "r4 = INV(r3)",
+       "sortie = r2"
+      ],
+      "max_score": 0.027500000000000004
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "2": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150412,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 12089,
+    "faux_hors_tid": 4512,
+    "faux_surs": 4512,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1141,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.028437499999999998
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "3": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150271,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 12279,
+    "faux_hors_tid": 4512,
+    "faux_surs": 4512,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1087,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.028489583333333336
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "4": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 151358,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 3136,
+    "faux_hors_tid": 4512,
+    "faux_surs": 4512,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 14,
+      "exemple": [
+       "r1 = INV(r0)",
+       "r2,r3 = DECOUPE(r0, '+')",
+       "r4 = INV(r2)",
+       "r5,r6 = DECOUPE(r2, '4')",
+       "sortie = r4"
+      ],
+      "max_score": 0.007890625000000002
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1 = INV(r0)",
+     "r2 = M-COPIE|petit#3(r1[0>2 1>5 2>8 3>7 4>3 5>5 6>5 7>6 8>9 9>2 +>4 =>1 _>0])",
+     "r3,r4 = DECOUPE(r2, '4')",
+     "sortie = r3"
+    ]
+   },
+   "5": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150735,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 8639,
+    "faux_hors_tid": 4512,
+    "faux_surs": 4512,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 675,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.031953125
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   }
+  }
+ },
+ "CHAUD-N2": {
+  "graines_reussies": 0,
+  "par_graine": {
+   "1": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150555,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 14900,
+    "faux_hors_tid": 4512,
+    "faux_surs": 4512,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1502,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.049114583333333336
+     }
+    },
+    "reutilisation_N1": 0.16666666666666666,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "2": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150135,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 12281,
+    "faux_hors_tid": 4512,
+    "faux_surs": 4512,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1170,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.028437499999999998
+     }
+    },
+    "reutilisation_N1": 0.16666666666666666,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "3": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150256,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 11577,
+    "faux_hors_tid": 4512,
+    "faux_surs": 4512,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1113,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.028489583333333336
+     }
+    },
+    "reutilisation_N1": 0.16666666666666666,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "4": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150244,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 15990,
+    "faux_hors_tid": 4512,
+    "faux_surs": 4512,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1539,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "sortie = r1"
+      ],
+      "max_score": 0.031197916666666665
+     }
+    },
+    "reutilisation_N1": 0.16666666666666666,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   },
+   "5": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-CASCADE3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-PROPAG3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM3": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150002,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 11580,
+    "faux_hors_tid": 4512,
+    "faux_surs": 4512,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1019,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "r3 = TRQ(r2)",
+       "sortie = r1"
+      ],
+      "max_score": 0.043125000000000004
+     }
+    },
+    "reutilisation_N1": 0.16666666666666666,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '+')",
+     "sortie = r1"
+    ]
+   }
+  }
+ },
+ "FROID-N3": {
+  "graines_reussies": 0,
+  "par_graine": {
+   "1": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-EMPRUNT": {
+      "10": 0.049019607843137254,
+      "16": 0.0392156862745098,
+      "32": 0.0,
+      "64": 0.0196078431372549,
+      "100": 0.0196078431372549,
+      "1000": 0.0196078431372549
+     },
+     "ADV-EGAUX": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.03,
+      "16": 0.02,
+      "32": 0.02,
+      "64": 0.01,
+      "100": 0.03,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150006,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 2533,
+    "faux_hors_tid": 4486,
+    "faux_surs": 4486,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 14,
+      "exemple": [
+       "r1 = TRQ(r0)",
+       "r2,r3 = DECOUPE(r1, '5')",
+       "r4 = INV(r2)",
+       "r5,r6 = DECOUPE(r2, '-')",
+       "r7 = TRQ(r2)",
+       "r8,r9 = DECOUPE(r0, '-')",
+       "r10 = INV(r5)",
+       "sortie = r5"
+      ],
+      "max_score": 0.10479166666666667
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '-')",
+     "sortie = r1"
+    ]
+   },
+   "2": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-EMPRUNT": {
+      "10": 0.049019607843137254,
+      "16": 0.0392156862745098,
+      "32": 0.0,
+      "64": 0.0196078431372549,
+      "100": 0.0196078431372549,
+      "1000": 0.0196078431372549
+     },
+     "ADV-EGAUX": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.03,
+      "16": 0.02,
+      "32": 0.02,
+      "64": 0.01,
+      "100": 0.03,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150147,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 8681,
+    "faux_hors_tid": 4486,
+    "faux_surs": 4486,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 799,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '-')",
+       "sortie = r1"
+      ],
+      "max_score": 0.16515625
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '-')",
+     "sortie = r1"
+    ]
+   },
+   "3": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-EMPRUNT": {
+      "10": 0.049019607843137254,
+      "16": 0.0392156862745098,
+      "32": 0.0,
+      "64": 0.0196078431372549,
+      "100": 0.0196078431372549,
+      "1000": 0.0196078431372549
+     },
+     "ADV-EGAUX": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.03,
+      "16": 0.02,
+      "32": 0.02,
+      "64": 0.01,
+      "100": 0.03,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150188,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 13678,
+    "faux_hors_tid": 4486,
+    "faux_surs": 4486,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1475,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '-')",
+       "sortie = r1"
+      ],
+      "max_score": 0.148046875
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '-')",
+     "sortie = r1"
+    ]
+   },
+   "4": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-EMPRUNT": {
+      "10": 0.00980392156862745,
+      "16": 0.00980392156862745,
+      "32": 0.00980392156862745,
+      "64": 0.00980392156862745,
+      "100": 0.00980392156862745,
+      "1000": 0.00980392156862745
+     },
+     "ADV-EGAUX": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 153356,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 2473,
+    "faux_hors_tid": 4506,
+    "faux_surs": 4506,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '0')",
+       "r3 = INV(r2)",
+       "r4 = INV(r2)",
+       "r5 = TRQ(r0)",
+       "r6 = TRQ(r2)",
+       "r7,r8 = DECOUPE(r4, '7')",
+       "sortie = r1"
+      ],
+      "max_score": 0.0008333333333333334
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1 = M-DIFF|petit#5(r0[0>1 1>8 2>7 3>6 4>7 5>5 6>2 7>2 8>0 9>5 =>2 ->9 _>8], r0[0>2 1>8 2>5 3>3 4>3 5>A 6>6 7>8 8>2 9>6 =>2 ->8 _>8])",
+     "r2,r3 = DECOUPE(r1, '1')",
+     "sortie = r2"
+    ]
+   },
+   "5": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-EMPRUNT": {
+      "10": 0.049019607843137254,
+      "16": 0.0392156862745098,
+      "32": 0.0,
+      "64": 0.0196078431372549,
+      "100": 0.0196078431372549,
+      "1000": 0.0196078431372549
+     },
+     "ADV-EGAUX": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.03,
+      "16": 0.02,
+      "32": 0.02,
+      "64": 0.01,
+      "100": 0.03,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150056,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 13201,
+    "faux_hors_tid": 4486,
+    "faux_surs": 4486,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1366,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '-')",
+       "sortie = r1"
+      ],
+      "max_score": 0.16549479166666667
+     }
+    },
+    "reutilisation_N1": null,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '-')",
+     "sortie = r1"
+    ]
+   }
+  }
+ },
+ "CHAUD-N3": {
+  "graines_reussies": 0,
+  "par_graine": {
+   "1": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-EMPRUNT": {
+      "10": 0.049019607843137254,
+      "16": 0.0392156862745098,
+      "32": 0.0,
+      "64": 0.0196078431372549,
+      "100": 0.0196078431372549,
+      "1000": 0.0196078431372549
+     },
+     "ADV-EGAUX": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.03,
+      "16": 0.02,
+      "32": 0.02,
+      "64": 0.01,
+      "100": 0.03,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150287,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 6910,
+    "faux_hors_tid": 4486,
+    "faux_surs": 4486,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 560,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '5')",
+       "r3,r4 = DECOUPE(r0, '-')",
+       "sortie = r3"
+      ],
+      "max_score": 0.146796875
+     }
+    },
+    "reutilisation_N1": 0.0,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '-')",
+     "sortie = r1"
+    ]
+   },
+   "2": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-EMPRUNT": {
+      "10": 0.049019607843137254,
+      "16": 0.0392156862745098,
+      "32": 0.0,
+      "64": 0.0196078431372549,
+      "100": 0.0196078431372549,
+      "1000": 0.0196078431372549
+     },
+     "ADV-EGAUX": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.03,
+      "16": 0.02,
+      "32": 0.02,
+      "64": 0.01,
+      "100": 0.03,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150468,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 11612,
+    "faux_hors_tid": 4486,
+    "faux_surs": 4486,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1239,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '-')",
+       "r3,r4 = DECOUPE(r0, '4')",
+       "sortie = r1"
+      ],
+      "max_score": 0.16515625
+     }
+    },
+    "reutilisation_N1": 0.0,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '-')",
+     "sortie = r1"
+    ]
+   },
+   "3": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-EMPRUNT": {
+      "10": 0.049019607843137254,
+      "16": 0.0392156862745098,
+      "32": 0.0,
+      "64": 0.0196078431372549,
+      "100": 0.0196078431372549,
+      "1000": 0.0196078431372549
+     },
+     "ADV-EGAUX": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.03,
+      "16": 0.02,
+      "32": 0.02,
+      "64": 0.01,
+      "100": 0.03,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150356,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 10826,
+    "faux_hors_tid": 4486,
+    "faux_surs": 4486,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1099,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '-')",
+       "sortie = r1"
+      ],
+      "max_score": 0.148046875
+     }
+    },
+    "reutilisation_N1": 0.0,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '-')",
+     "sortie = r1"
+    ]
+   },
+   "4": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-EMPRUNT": {
+      "10": 0.049019607843137254,
+      "16": 0.0392156862745098,
+      "32": 0.0,
+      "64": 0.0196078431372549,
+      "100": 0.0196078431372549,
+      "1000": 0.0196078431372549
+     },
+     "ADV-EGAUX": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.03,
+      "16": 0.02,
+      "32": 0.02,
+      "64": 0.01,
+      "100": 0.03,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150503,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 8370,
+    "faux_hors_tid": 4486,
+    "faux_surs": 4486,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 803,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '+')",
+       "r3,r4 = DECOUPE(r2, '=')",
+       "r5 = INV(r0)",
+       "r6,r7 = DECOUPE(r5, '-')",
+       "r8 = INV(r3)",
+       "r9 = TRQ(r5)",
+       "r10 = INV(r7)",
+       "sortie = r10"
+      ],
+      "max_score": 0.149140625
+     }
+    },
+    "reutilisation_N1": 0.0,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '-')",
+     "sortie = r1"
+    ]
+   },
+   "5": {
+    "T-LONG": {
+     "10": 0.0,
+     "16": 0.0,
+     "32": 0.0,
+     "64": 0.0,
+     "100": 0.0,
+     "1000": 0.0
+    },
+    "adv": {
+     "ADV-EMPRUNT": {
+      "10": 0.049019607843137254,
+      "16": 0.0392156862745098,
+      "32": 0.0,
+      "64": 0.0196078431372549,
+      "100": 0.0196078431372549,
+      "1000": 0.0196078431372549
+     },
+     "ADV-EGAUX": {
+      "10": 0.0,
+      "16": 0.0,
+      "32": 0.0,
+      "64": 0.0,
+      "100": 0.0,
+      "1000": 0.0
+     },
+     "ADV-ASYM": {
+      "10": 0.03,
+      "16": 0.02,
+      "32": 0.02,
+      "64": 0.01,
+      "100": 0.03,
+      "1000": 0.0
+     }
+    },
+    "val": 0.0,
+    "essais": 150564,
+    "n_candidats": 0,
+    "essais_premier_candidat": null,
+    "essais_premier_candidat_val99": null,
+    "exemples_uniques": 15308,
+    "faux_hors_tid": 4486,
+    "faux_surs": 4486,
+    "tau": null,
+    "abst_faux": null,
+    "abst_juste": null,
+    "triche": {
+     "raccourcis_val_lt_0.1": 0,
+     "sans_champion_score_pos": {
+      "n": 1620,
+      "exemple": [
+       "r1,r2 = DECOUPE(r0, '-')",
+       "sortie = r1"
+      ],
+      "max_score": 0.16549479166666667
+     }
+    },
+    "reutilisation_N1": 0.0,
+    "lisible": [
+     "r1,r2 = DECOUPE(r0, '-')",
+     "sortie = r1"
+    ]
+   }
+  }
+ }
+}
