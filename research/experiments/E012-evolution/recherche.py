@@ -151,7 +151,12 @@ def travaille(args):
     rng = np.random.default_rng()
     rng.bit_generator.state = etat["rng"]
     marque = dernier_ckpt = time.time()
+    budget = hp.get("budget_mur_min", {}).get(exp, 1e9) * 60
     while not etat["fini"] and time.time() - t0 < minutes * 60:
+        if etat["secondes"] + (time.time() - marque) >= budget:  # plafond mur (hyperparametres)
+            R.suivi(etat)
+            etat["fini"], etat["raison"] = True, "budget mur"
+            break
         R.generation(etat, rng)
         if etat["gen"] % hp["suivi"] == 0 or etat["gen"] >= hp["generations"]:
             R.suivi(etat)

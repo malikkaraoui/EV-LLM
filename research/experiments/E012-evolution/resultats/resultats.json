@@ -1,0 +1,1315 @@
+{
+ "X1": {
+  "graines": [
+   {
+    "graine": 1,
+    "exacte": false,
+    "preuve": [
+     "FAUX",
+     {
+      "etat": [
+       "1/4"
+      ],
+      "retenue": 1,
+      "x": 0,
+      "y": 0,
+      "sortie": "1/4"
+     }
+    ],
+    "cachees": 0,
+    "connexions": 2,
+    "biais": 1,
+    "G_bits": 47,
+    "DG_bits": 308.14856834314224,
+    "gen": 12000,
+    "enfants": 19200000,
+    "evaluations": 9696643,
+    "secondes": 3337.2,
+    "raison": "budget de generations",
+    "decouverte": null,
+    "circuit": [
+     "sortie = carre(-1/2 + -2/5*x1 + 7/5*x0)"
+    ],
+    "t16": 0.0
+   },
+   {
+    "graine": 2,
+    "exacte": false,
+    "preuve": [
+     "FAUX",
+     {
+      "etat": [
+       "1/4"
+      ],
+      "retenue": 1,
+      "x": 0,
+      "y": 0,
+      "sortie": "1/4"
+     }
+    ],
+    "cachees": 0,
+    "connexions": 2,
+    "biais": 1,
+    "G_bits": 47,
+    "DG_bits": 308.14856834314224,
+    "gen": 12000,
+    "enfants": 19200000,
+    "evaluations": 9666212,
+    "secondes": 3324.3,
+    "raison": "budget de generations",
+    "decouverte": null,
+    "circuit": [
+     "sortie = carre(1/2 + -7/5*x1 + 2/5*x0)"
+    ],
+    "t16": 0.0
+   },
+   {
+    "graine": 3,
+    "exacte": false,
+    "preuve": [
+     "FAUX",
+     {
+      "etat": [
+       "1/4"
+      ],
+      "retenue": 1,
+      "x": 0,
+      "y": 0,
+      "sortie": "1/4"
+     }
+    ],
+    "cachees": 0,
+    "connexions": 2,
+    "biais": 1,
+    "G_bits": 47,
+    "DG_bits": 308.14856834314224,
+    "gen": 12000,
+    "enfants": 19200000,
+    "evaluations": 9664247,
+    "secondes": 3324.6,
+    "raison": "budget de generations",
+    "decouverte": null,
+    "circuit": [
+     "sortie = carre(1/2 + 2/5*x1 + -7/5*x0)"
+    ],
+    "t16": 0.0
+   },
+   {
+    "graine": 4,
+    "exacte": false,
+    "preuve": [
+     "FAUX",
+     {
+      "etat": [
+       "1/4"
+      ],
+      "retenue": 1,
+      "x": 0,
+      "y": 0,
+      "sortie": "1/4"
+     }
+    ],
+    "cachees": 0,
+    "connexions": 2,
+    "biais": 1,
+    "G_bits": 47,
+    "DG_bits": 308.14856834314224,
+    "gen": 12000,
+    "enfants": 19200000,
+    "evaluations": 9656757,
+    "secondes": 3321.8,
+    "raison": "budget de generations",
+    "decouverte": null,
+    "circuit": [
+     "sortie = carre(1/2 + 2/5*x0 + -7/5*x1)"
+    ],
+    "t16": 0.0
+   },
+   {
+    "graine": 5,
+    "exacte": false,
+    "preuve": [
+     "FAUX",
+     {
+      "etat": [
+       "289/900"
+      ],
+      "retenue": 1,
+      "x": 0,
+      "y": 0,
+      "sortie": "9/25"
+     }
+    ],
+    "cachees": 0,
+    "connexions": 2,
+    "biais": 1,
+    "G_bits": 47,
+    "DG_bits": 313.8363285583287,
+    "gen": 12000,
+    "enfants": 19200000,
+    "evaluations": 9624069,
+    "secondes": 3312.0,
+    "raison": "budget de generations",
+    "decouverte": null,
+    "circuit": [
+     "sortie = carre(-3/5 + -1/3*x1 + 3/2*x0)"
+    ],
+    "t16": 0.0
+   }
+  ],
+  "par_jeu": {
+   "A-ASYM|10": {
+    "moy": 0.25,
+    "ecart": 0.0,
+    "min": 0.25,
+    "faux_surs_total": 0
+   },
+   "A-ASYM|16": {
+    "moy": 0.34,
+    "ecart": 0.0,
+    "min": 0.34,
+    "faux_surs_total": 0
+   },
+   "A-ASYM|32": {
+    "moy": 0.3,
+    "ecart": 0.0,
+    "min": 0.3,
+    "faux_surs_total": 0
+   },
+   "A-ASYM|64": {
+    "moy": 0.26,
+    "ecart": 0.0,
+    "min": 0.26,
+    "faux_surs_total": 0
+   },
+   "A-ASYM|100": {
+    "moy": 0.24,
+    "ecart": 0.0,
+    "min": 0.24,
+    "faux_surs_total": 0
+   },
+   "A-ASYM|1000": {
+    "moy": 0.29,
+    "ecart": 0.0,
+    "min": 0.29,
+    "faux_surs_total": 0
+   },
+   "A-CASCADE|10": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-CASCADE|16": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-CASCADE|32": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-CASCADE|64": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-CASCADE|100": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-CASCADE|1000": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|10": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|16": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|32": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|64": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|100": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|1000": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|10": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|16": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|32": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|64": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|100": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|1000": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "V-OOD|6": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "V-OOD|7": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "V-OOD|8": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   }
+  },
+  "n_exactes": 0,
+  "n_ge90_16": 0,
+  "verdict": "non",
+  "exemples_uniques": 100
+ },
+ "X2-100": {
+  "graines": [
+   {
+    "graine": 1,
+    "exacte": false,
+    "preuve": [
+     "FAUX",
+     {
+      "etat": [
+       "0"
+      ],
+      "retenue": 0,
+      "x": 1,
+      "y": 9,
+      "sortie": "10"
+     }
+    ],
+    "cachees": 0,
+    "connexions": 3,
+    "biais": 0,
+    "G_bits": 50,
+    "DG_bits": 2060.0,
+    "gen": 3739,
+    "enfants": 5982400,
+    "evaluations": 4673087,
+    "secondes": 2700.6,
+    "raison": "budget mur",
+    "decouverte": null,
+    "circuit": [
+     "sortie = floor(1*x0 + 1*x1 + 1/10*sortie(t-1))"
+    ],
+    "t16": 0.0
+   },
+   {
+    "graine": 2,
+    "exacte": true,
+    "preuve": [
+     "PROUVE",
+     "38 etats atteignables, 3800 transitions verifiees"
+    ],
+    "cachees": 2,
+    "connexions": 8,
+    "biais": 0,
+    "G_bits": 144,
+    "DG_bits": 0.0,
+    "gen": 775,
+    "enfants": 1240000,
+    "evaluations": 1107380,
+    "secondes": 1033.3,
+    "raison": "arret anticipe (exact train+val, MDL stable)",
+    "decouverte": {
+     "gen": 350,
+     "enfants": 560000,
+     "evaluations": 484642,
+     "mdl": 177.0,
+     "G": 177,
+     "DG": 0.0,
+     "train_exact": true,
+     "val_exact": 1.0,
+     "cachees": 2,
+     "connexions": 9,
+     "biais": 1
+    },
+    "circuit": [
+     "h1 = id(-1/5*x1 + -1/5*x0 + -1/3*h2(t-1))",
+     "h2 = floor(-1/2*h1)",
+     "sortie = relu(1*x0 + 1*x1 + -10*h2 + 1*h2(t-1))"
+    ],
+    "t16": 1.0
+   },
+   {
+    "graine": 3,
+    "exacte": true,
+    "preuve": [
+     "PROUVE",
+     "20 etats atteignables, 2000 transitions verifiees"
+    ],
+    "cachees": 1,
+    "connexions": 7,
+    "biais": 0,
+    "G_bits": 116,
+    "DG_bits": 0.0,
+    "gen": 3025,
+    "enfants": 4840000,
+    "evaluations": 3909606,
+    "secondes": 2566.3,
+    "raison": "arret anticipe (exact train+val, MDL stable)",
+    "decouverte": {
+     "gen": 2375,
+     "enfants": 3800000,
+     "evaluations": 2973842,
+     "mdl": 203.51353637136467,
+     "G": 154,
+     "DG": 49.513536371364665,
+     "train_exact": true,
+     "val_exact": 1.0,
+     "cachees": 2,
+     "connexions": 8,
+     "biais": 0
+    },
+    "circuit": [
+     "h1 = floor(1/10*x1 + 1/6*h1(t-1) + 1/10*x0)",
+     "sortie = relu(1*x1 + 1*x0 + -10*h1 + 1*h1(t-1))"
+    ],
+    "t16": 1.0
+   },
+   {
+    "graine": 4,
+    "exacte": false,
+    "preuve": [
+     "FAUX",
+     {
+      "etat": [
+       "0"
+      ],
+      "retenue": 0,
+      "x": 1,
+      "y": 9,
+      "sortie": "10"
+     }
+    ],
+    "cachees": 0,
+    "connexions": 3,
+    "biais": 0,
+    "G_bits": 50,
+    "DG_bits": 2000.0,
+    "gen": 3764,
+    "enfants": 6022400,
+    "evaluations": 4721070,
+    "secondes": 2700.5,
+    "raison": "budget mur",
+    "decouverte": null,
+    "circuit": [
+     "sortie = floor(1*x1 + 1*x0 + 1/10*sortie(t-1))"
+    ],
+    "t16": 0.0
+   },
+   {
+    "graine": 5,
+    "exacte": false,
+    "preuve": [
+     "FAUX",
+     {
+      "etat": [
+       "0"
+      ],
+      "retenue": 0,
+      "x": 1,
+      "y": 9,
+      "sortie": "10"
+     }
+    ],
+    "cachees": 0,
+    "connexions": 3,
+    "biais": 0,
+    "G_bits": 50,
+    "DG_bits": 2720.0,
+    "gen": 3761,
+    "enfants": 6017600,
+    "evaluations": 4699908,
+    "secondes": 2700.5,
+    "raison": "budget mur",
+    "decouverte": null,
+    "circuit": [
+     "sortie = floor(1*x0 + 1*x1 + 1/10*sortie(t-1))"
+    ],
+    "t16": 0.0
+   }
+  ],
+  "par_jeu": {
+   "A-ASYM|10": {
+    "moy": 0.4840000000000001,
+    "ecart": 0.4213122357587066,
+    "min": 0.14,
+    "faux_surs_total": 258
+   },
+   "A-ASYM|16": {
+    "moy": 0.502,
+    "ecart": 0.4066152973020075,
+    "min": 0.17,
+    "faux_surs_total": 249
+   },
+   "A-ASYM|32": {
+    "moy": 0.55,
+    "ecart": 0.3674234614174767,
+    "min": 0.25,
+    "faux_surs_total": 225
+   },
+   "A-ASYM|64": {
+    "moy": 0.4840000000000001,
+    "ecart": 0.4213122357587066,
+    "min": 0.14,
+    "faux_surs_total": 258
+   },
+   "A-ASYM|100": {
+    "moy": 0.4539999999999999,
+    "ecart": 0.44580713318653836,
+    "min": 0.09,
+    "faux_surs_total": 273
+   },
+   "A-ASYM|1000": {
+    "moy": 0.4779999999999999,
+    "ecart": 0.42621121524427297,
+    "min": 0.13,
+    "faux_surs_total": 261
+   },
+   "A-CASCADE|10": {
+    "moy": 0.4,
+    "ecart": 0.48989794855663565,
+    "min": 0.0,
+    "faux_surs_total": 6
+   },
+   "A-CASCADE|16": {
+    "moy": 0.4,
+    "ecart": 0.48989794855663565,
+    "min": 0.0,
+    "faux_surs_total": 6
+   },
+   "A-CASCADE|32": {
+    "moy": 0.4,
+    "ecart": 0.48989794855663565,
+    "min": 0.0,
+    "faux_surs_total": 6
+   },
+   "A-CASCADE|64": {
+    "moy": 0.4,
+    "ecart": 0.48989794855663565,
+    "min": 0.0,
+    "faux_surs_total": 6
+   },
+   "A-CASCADE|100": {
+    "moy": 0.4,
+    "ecart": 0.48989794855663565,
+    "min": 0.0,
+    "faux_surs_total": 6
+   },
+   "A-CASCADE|1000": {
+    "moy": 0.4,
+    "ecart": 0.48989794855663565,
+    "min": 0.0,
+    "faux_surs_total": 6
+   },
+   "A-ZEROS|10": {
+    "moy": 1.0,
+    "ecart": 0.0,
+    "min": 1.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|16": {
+    "moy": 1.0,
+    "ecart": 0.0,
+    "min": 1.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|32": {
+    "moy": 1.0,
+    "ecart": 0.0,
+    "min": 1.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|64": {
+    "moy": 1.0,
+    "ecart": 0.0,
+    "min": 1.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|100": {
+    "moy": 1.0,
+    "ecart": 0.0,
+    "min": 1.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|1000": {
+    "moy": 1.0,
+    "ecart": 0.0,
+    "min": 1.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|10": {
+    "moy": 0.4024,
+    "ecart": 0.48793835676240904,
+    "min": 0.004,
+    "faux_surs_total": 1494
+   },
+   "T-OOD|16": {
+    "moy": 0.4,
+    "ecart": 0.48989794855663565,
+    "min": 0.0,
+    "faux_surs_total": 1500
+   },
+   "T-OOD|32": {
+    "moy": 0.4,
+    "ecart": 0.48989794855663565,
+    "min": 0.0,
+    "faux_surs_total": 1500
+   },
+   "T-OOD|64": {
+    "moy": 0.4,
+    "ecart": 0.48989794855663565,
+    "min": 0.0,
+    "faux_surs_total": 1500
+   },
+   "T-OOD|100": {
+    "moy": 0.4,
+    "ecart": 0.48989794855663565,
+    "min": 0.0,
+    "faux_surs_total": 1500
+   },
+   "T-OOD|1000": {
+    "moy": 0.4,
+    "ecart": 0.48989794855663565,
+    "min": 0.0,
+    "faux_surs_total": 600
+   },
+   "V-OOD|6": {
+    "moy": 0.418,
+    "ecart": 0.4752010100999366,
+    "min": 0.03,
+    "faux_surs_total": 1455
+   },
+   "V-OOD|7": {
+    "moy": 0.40599999999999986,
+    "ecart": 0.4849989690710692,
+    "min": 0.01,
+    "faux_surs_total": 1485
+   },
+   "V-OOD|8": {
+    "moy": 0.4024,
+    "ecart": 0.48793835676240904,
+    "min": 0.004,
+    "faux_surs_total": 1494
+   }
+  },
+  "n_exactes": 2,
+  "n_ge90_16": 2,
+  "verdict": "parfois",
+  "exemples_uniques": 100
+ },
+ "X2-1000": {
+  "graines": [
+   {
+    "graine": 1,
+    "exacte": true,
+    "preuve": [
+     "NON_PROUVABLE",
+     "activation non exacte (sig/tanh)"
+    ],
+    "cachees": 4,
+    "connexions": 12,
+    "biais": 3,
+    "G_bits": 239,
+    "DG_bits": 0.0,
+    "gen": 700,
+    "enfants": 1120000,
+    "evaluations": 1033112,
+    "secondes": 2520.0,
+    "raison": "arret anticipe (exact train+val, MDL stable)",
+    "decouverte": {
+     "gen": 375,
+     "enfants": 600000,
+     "evaluations": 540514,
+     "mdl": 354.0,
+     "G": 354,
+     "DG": 0.0,
+     "train_exact": true,
+     "val_exact": 1.0,
+     "cachees": 7,
+     "connexions": 16,
+     "biais": 4
+    },
+    "circuit": [
+     "h1 = carre(-2/5 + 1/5*x1)",
+     "h2 = sig(1 + -1/2*x1)",
+     "h3 = marche(-9/7 + 1/2*x0 + -5*h2 + 1/2*h3(t-1) + 1/2*h1)",
+     "h4 = floor(2*h3)",
+     "sortie = id(1*x0 + 1*x1 + 1*h3(t-1) + -4*h3 + -3*h4)"
+    ],
+    "t16": 1.0
+   },
+   {
+    "graine": 2,
+    "exacte": true,
+    "preuve": [
+     "NON_PROUVABLE",
+     "activation non exacte (sig/tanh)"
+    ],
+    "cachees": 5,
+    "connexions": 13,
+    "biais": 0,
+    "G_bits": 244,
+    "DG_bits": 0.0,
+    "gen": 945,
+    "enfants": 1512000,
+    "evaluations": 1341971,
+    "secondes": 2703.2,
+    "raison": "budget mur",
+    "decouverte": {
+     "gen": 800,
+     "enfants": 1280000,
+     "evaluations": 1120456,
+     "mdl": 908.5362671705291,
+     "G": 480,
+     "DG": 428.5362671705291,
+     "train_exact": true,
+     "val_exact": 1.0,
+     "cachees": 12,
+     "connexions": 21,
+     "biais": 4
+    },
+    "circuit": [
+     "h1 = id(1/6*x0 + -1/10*x1)",
+     "h2 = floor(1*x1 + 11/9*h5(t-1))",
+     "h3 = relu(2*h5(t-1))",
+     "h4 = sig(1/2*h1 + 1/3*h3)",
+     "h5 = floor(1/7*x1 + 1/2*h1 + 1/3*h4)",
+     "sortie = id(1*x0 + 1*h2 + -10*h5)"
+    ],
+    "t16": 1.0
+   },
+   {
+    "graine": 3,
+    "exacte": true,
+    "preuve": [
+     "PROUVE",
+     "111 etats atteignables, 11100 transitions verifiees"
+    ],
+    "cachees": 2,
+    "connexions": 9,
+    "biais": 2,
+    "G_bits": 176,
+    "DG_bits": 0.0,
+    "gen": 820,
+    "enfants": 1312000,
+    "evaluations": 1226115,
+    "secondes": 2702.0,
+    "raison": "budget mur",
+    "decouverte": {
+     "gen": 350,
+     "enfants": 560000,
+     "evaluations": 511836,
+     "mdl": 1304.1348715016006,
+     "G": 235,
+     "DG": 1069.1348715016006,
+     "train_exact": true,
+     "val_exact": 1.0,
+     "cachees": 3,
+     "connexions": 11,
+     "biais": 3
+    },
+    "circuit": [
+     "h1 = floor(-1/2 + 1/2*x1 + -1/2*x0 + -1/2*h2(t-1))",
+     "h2 = floor(1/3 + 1/9*x1 + -1/9*h1)",
+     "sortie = floor(1*x1 + 1*x0 + -10*h2 + 1*h2(t-1))"
+    ],
+    "t16": 1.0
+   },
+   {
+    "graine": 4,
+    "exacte": false,
+    "preuve": [
+     "FAUX",
+     {
+      "etat": [
+       "0"
+      ],
+      "retenue": 0,
+      "x": 1,
+      "y": 9,
+      "sortie": "10"
+     }
+    ],
+    "cachees": 0,
+    "connexions": 3,
+    "biais": 0,
+    "G_bits": 50,
+    "DG_bits": 22600.0,
+    "gen": 1683,
+    "enfants": 2692800,
+    "evaluations": 2165248,
+    "secondes": 2700.1,
+    "raison": "budget mur",
+    "decouverte": null,
+    "circuit": [
+     "sortie = floor(1*x1 + 1*x0 + 1/10*sortie(t-1))"
+    ],
+    "t16": 0.0
+   },
+   {
+    "graine": 5,
+    "exacte": true,
+    "preuve": [
+     "PROUVE",
+     "20 etats atteignables, 2000 transitions verifiees"
+    ],
+    "cachees": 1,
+    "connexions": 7,
+    "biais": 1,
+    "G_bits": 117,
+    "DG_bits": 0.0,
+    "gen": 816,
+    "enfants": 1305600,
+    "evaluations": 1210362,
+    "secondes": 2701.9,
+    "raison": "budget mur",
+    "decouverte": {
+     "gen": 150,
+     "enfants": 240000,
+     "evaluations": 210546,
+     "mdl": 402.0,
+     "G": 402,
+     "DG": 0.0,
+     "train_exact": true,
+     "val_exact": 1.0,
+     "cachees": 9,
+     "connexions": 19,
+     "biais": 2
+    },
+    "circuit": [
+     "h1 = marche(-9 + 1*x1 + 1*x0 + 1*h1(t-1))",
+     "sortie = id(1*x1 + 1*x0 + -10*h1 + 1*h1(t-1))"
+    ],
+    "t16": 1.0
+   }
+  ],
+  "par_jeu": {
+   "A-ASYM|10": {
+    "moy": 0.8280000000000001,
+    "ecart": 0.344,
+    "min": 0.14,
+    "faux_surs_total": 86
+   },
+   "A-ASYM|16": {
+    "moy": 0.834,
+    "ecart": 0.33199999999999996,
+    "min": 0.17,
+    "faux_surs_total": 83
+   },
+   "A-ASYM|32": {
+    "moy": 0.85,
+    "ecart": 0.3,
+    "min": 0.25,
+    "faux_surs_total": 75
+   },
+   "A-ASYM|64": {
+    "moy": 0.8280000000000001,
+    "ecart": 0.344,
+    "min": 0.14,
+    "faux_surs_total": 86
+   },
+   "A-ASYM|100": {
+    "moy": 0.818,
+    "ecart": 0.364,
+    "min": 0.09,
+    "faux_surs_total": 91
+   },
+   "A-ASYM|1000": {
+    "moy": 0.826,
+    "ecart": 0.348,
+    "min": 0.13,
+    "faux_surs_total": 87
+   },
+   "A-CASCADE|10": {
+    "moy": 0.8,
+    "ecart": 0.4,
+    "min": 0.0,
+    "faux_surs_total": 2
+   },
+   "A-CASCADE|16": {
+    "moy": 0.8,
+    "ecart": 0.4,
+    "min": 0.0,
+    "faux_surs_total": 2
+   },
+   "A-CASCADE|32": {
+    "moy": 0.8,
+    "ecart": 0.4,
+    "min": 0.0,
+    "faux_surs_total": 2
+   },
+   "A-CASCADE|64": {
+    "moy": 0.8,
+    "ecart": 0.4,
+    "min": 0.0,
+    "faux_surs_total": 2
+   },
+   "A-CASCADE|100": {
+    "moy": 0.8,
+    "ecart": 0.4,
+    "min": 0.0,
+    "faux_surs_total": 2
+   },
+   "A-CASCADE|1000": {
+    "moy": 0.8,
+    "ecart": 0.4,
+    "min": 0.0,
+    "faux_surs_total": 2
+   },
+   "A-ZEROS|10": {
+    "moy": 1.0,
+    "ecart": 0.0,
+    "min": 1.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|16": {
+    "moy": 1.0,
+    "ecart": 0.0,
+    "min": 1.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|32": {
+    "moy": 1.0,
+    "ecart": 0.0,
+    "min": 1.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|64": {
+    "moy": 1.0,
+    "ecart": 0.0,
+    "min": 1.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|100": {
+    "moy": 1.0,
+    "ecart": 0.0,
+    "min": 1.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|1000": {
+    "moy": 1.0,
+    "ecart": 0.0,
+    "min": 1.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|10": {
+    "moy": 0.8008,
+    "ecart": 0.39840000000000003,
+    "min": 0.004,
+    "faux_surs_total": 498
+   },
+   "T-OOD|16": {
+    "moy": 0.8,
+    "ecart": 0.4,
+    "min": 0.0,
+    "faux_surs_total": 500
+   },
+   "T-OOD|32": {
+    "moy": 0.8,
+    "ecart": 0.4,
+    "min": 0.0,
+    "faux_surs_total": 500
+   },
+   "T-OOD|64": {
+    "moy": 0.8,
+    "ecart": 0.4,
+    "min": 0.0,
+    "faux_surs_total": 500
+   },
+   "T-OOD|100": {
+    "moy": 0.8,
+    "ecart": 0.4,
+    "min": 0.0,
+    "faux_surs_total": 500
+   },
+   "T-OOD|1000": {
+    "moy": 0.8,
+    "ecart": 0.4,
+    "min": 0.0,
+    "faux_surs_total": 200
+   },
+   "V-OOD|6": {
+    "moy": 0.8059999999999998,
+    "ecart": 0.388,
+    "min": 0.03,
+    "faux_surs_total": 485
+   },
+   "V-OOD|7": {
+    "moy": 0.8019999999999999,
+    "ecart": 0.396,
+    "min": 0.01,
+    "faux_surs_total": 495
+   },
+   "V-OOD|8": {
+    "moy": 0.8008,
+    "ecart": 0.39840000000000003,
+    "min": 0.004,
+    "faux_surs_total": 498
+   }
+  },
+  "n_exactes": 4,
+  "n_ge90_16": 4,
+  "verdict": "decouvre",
+  "exemples_uniques": 1000
+ },
+ "X3": {
+  "graines": [
+   {
+    "graine": 1,
+    "exacte": false,
+    "preuve": [
+     "SANS_OBJET",
+     "format plat"
+    ],
+    "cachees": 1,
+    "connexions": 4,
+    "biais": 1,
+    "G_bits": 87,
+    "DG_bits": 5873.4865571903265,
+    "gen": 229,
+    "enfants": 366400,
+    "evaluations": 218502,
+    "secondes": 2702.8,
+    "raison": "budget mur",
+    "decouverte": null,
+    "circuit": [
+     "h1 = id(1*x3 + -4/7*h1(t-1))",
+     "sortie = carre(1/2 + -1*h1 + -3*h1(t-1))"
+    ],
+    "t16": 0.0
+   },
+   {
+    "graine": 2,
+    "exacte": false,
+    "preuve": [
+     "SANS_OBJET",
+     "format plat"
+    ],
+    "cachees": 1,
+    "connexions": 6,
+    "biais": 1,
+    "G_bits": 115,
+    "DG_bits": 5568.648681932337,
+    "gen": 133,
+    "enfants": 212800,
+    "evaluations": 163792,
+    "secondes": 2704.9,
+    "raison": "budget mur",
+    "decouverte": null,
+    "circuit": [
+     "h1 = floor(-5*x3 + -2/3*h1(t-1) + -2*x1 + 1/2*x2)",
+     "sortie = carre(1/3 + 1/2*h1(t-1) + 5*x2)"
+    ],
+    "t16": 0.0
+   },
+   {
+    "graine": 3,
+    "exacte": false,
+    "preuve": [
+     "SANS_OBJET",
+     "format plat"
+    ],
+    "cachees": 2,
+    "connexions": 5,
+    "biais": 1,
+    "G_bits": 107,
+    "DG_bits": 6013.852261857971,
+    "gen": 114,
+    "enfants": 182400,
+    "evaluations": 147064,
+    "secondes": 2702.9,
+    "raison": "budget mur",
+    "decouverte": null,
+    "circuit": [
+     "h1 = tanh(1*sortie(t-1))",
+     "h2 = carre(-1/10 + 5*x3 + -2*h1(t-1))",
+     "sortie = relu(1/7*h2(t-1) + 2*x2)"
+    ],
+    "t16": 0.0
+   },
+   {
+    "graine": 4,
+    "exacte": false,
+    "preuve": [
+     "SANS_OBJET",
+     "format plat"
+    ],
+    "cachees": 1,
+    "connexions": 4,
+    "biais": 2,
+    "G_bits": 92,
+    "DG_bits": 5668.801186181836,
+    "gen": 169,
+    "enfants": 270400,
+    "evaluations": 180489,
+    "secondes": 2718.2,
+    "raison": "budget mur",
+    "decouverte": null,
+    "circuit": [
+     "h1 = tanh(1/6 + 1*x3 + -1/2*x2 + -1/5*sortie(t-1))",
+     "sortie = carre(-1/2 + -3*h1(t-1))"
+    ],
+    "t16": 0.0
+   },
+   {
+    "graine": 5,
+    "exacte": false,
+    "preuve": [
+     "SANS_OBJET",
+     "format plat"
+    ],
+    "cachees": 1,
+    "connexions": 2,
+    "biais": 1,
+    "G_bits": 51,
+    "DG_bits": 6018.052114435111,
+    "gen": 108,
+    "enfants": 172800,
+    "evaluations": 139454,
+    "secondes": 2705.8,
+    "raison": "budget mur",
+    "decouverte": null,
+    "circuit": [
+     "h1 = tanh(-2*x3)",
+     "sortie = carre(1/3 + 2*h1(t-1))"
+    ],
+    "t16": 0.0
+   }
+  ],
+  "par_jeu": {
+   "A-ASYM|10": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ASYM|16": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ASYM|32": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ASYM|64": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ASYM|100": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ASYM|1000": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-CASCADE|10": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-CASCADE|16": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-CASCADE|32": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-CASCADE|64": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-CASCADE|100": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-CASCADE|1000": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|10": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|16": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|32": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|64": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|100": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "A-ZEROS|1000": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|10": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|16": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|32": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|64": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|100": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "T-OOD|1000": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "V-OOD|6": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "V-OOD|7": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   },
+   "V-OOD|8": {
+    "moy": 0.0,
+    "ecart": 0.0,
+    "min": 0.0,
+    "faux_surs_total": 0
+   }
+  },
+  "n_exactes": 0,
+  "n_ge90_16": 0,
+  "verdict": "non",
+  "exemples_uniques": 100
+ }
+}
