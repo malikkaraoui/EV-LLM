@@ -1,0 +1,11 @@
+{
+ "_statut": "provisoire : systemes vides jusqu'a l'amendement B1 (apres pilote graine 0)",
+ "lot": 256,
+ "plafond_pas": 20000,
+ "lr_min": 1e-05,
+ "montee": 500,
+ "wd": 0.01,
+ "betas": [0.9, 0.98],
+ "clip": 1.0,
+ "systemes": {}
+}
