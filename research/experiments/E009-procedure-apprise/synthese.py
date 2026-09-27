@@ -60,6 +60,24 @@ def agrege(dossiers, phase):
     return res, iters
 
 
+def diagnostic(dossier, phase="val"):
+    """Sur les reponses donnees : bonne longueur, chiffre de poids faible juste, chiffres justes."""
+    par = defaultdict(lambda: [0, 0, 0, 0, 0])  # n, longueur ok, poids faible ok, chiffres ok, chiffres
+    with open(os.path.join(dossier, f"eval_{phase}.jsonl")) as f:
+        for l in f:
+            r = json.loads(l)
+            k = f"{r['jeu']}|{r['L']}"
+            p, a = r["rep"] or "", r["attendu"]
+            c = par[k]
+            c[0] += 1
+            c[1] += len(p) == len(a)
+            c[2] += bool(p) and p[-1] == a[-1]
+            c[3] += sum(x == y for x, y in zip(p[::-1], a[::-1]))
+            c[4] += len(a)
+    return {k: {"longueur_ok": c[1] / c[0], "poids_faible_ok": c[2] / c[0],
+                "chiffres_ok": c[3] / c[4]} for k, c in sorted(par.items(), key=lambda kv: cle_tri(kv[0]))}
+
+
 def main():
     hp = lire_json(os.path.join(ICI, "hyperparametres.json"))
     rs = runs()
@@ -82,7 +100,10 @@ def main():
             "calcul_s": {g: round(e["calcul_s"], 1) for g, e in etats.items()},
             "checkpoint_retenu": {g: e.get("meilleur") for g, e in etats.items()},
             "perte_finale": pertes, "val": val, "final": fin,
-            "iterations_retenues_final": it_fin, "graines_reussies_16": reussies}
+            "iterations_retenues_final": it_fin, "graines_reussies_16": reussies,
+            "diagnostic": {ph: {g: diagnostic(d, ph) for g, d in sorted(dossiers.items())
+                                if os.path.exists(os.path.join(d, f"eval_{ph}.jsonl"))}
+                           for ph in ("val", "final")}}
     # exemples uniques vus aux jalons (flux deterministe, graines 1 et 2)
     js = jalons(hp["pas"])
     out["exemples_uniques"] = {g: uniques(g, hp["pas"], js)[1] for g in (1, 2)}
