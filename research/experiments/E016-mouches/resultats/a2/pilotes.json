@@ -1,0 +1,106 @@
+{
+ "IND-dense": {
+  "decolle": false,
+  "max_paires_90": 1,
+  "meilleur": {
+   "pas": 4000,
+   "val": 0.1397
+  },
+  "mat_meilleur": [
+   [
+    0.008,
+    0.0013,
+    0.0
+   ],
+   [
+    0.0,
+    1.0,
+    0.2367
+   ],
+   [
+    0.0047,
+    0.0,
+    0.0067
+   ]
+  ],
+  "C_fin": 0,
+  "paires_90_par_checkpoint": {
+   "250": 0,
+   "500": 0,
+   "750": 0,
+   "1000": 0,
+   "1250": 1,
+   "1500": 1,
+   "1750": 1,
+   "2000": 1,
+   "2250": 1,
+   "2500": 1,
+   "2750": 1,
+   "3000": 1,
+   "3250": 1,
+   "3500": 1,
+   "3750": 1,
+   "4000": 1
+  },
+  "credit_moyen_fin_ph1": 0.521,
+  "items_exacts_fin_ph1": 0.1653,
+  "tours_exacts_ph2": 0.0045,
+  "items_exacts_fin_ph2": 0.23,
+  "entropie_emetteurs": 0.002,
+  "entropie_recepteurs": 0.272,
+  "entropie_uniforme": 3.871
+ },
+ "IND-01-curric": {
+  "decolle": false,
+  "max_paires_90": 1,
+  "meilleur": {
+   "pas": 4000,
+   "val": 0.1113
+  },
+  "mat_meilleur": [
+   [
+    0.0,
+    1.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0,
+    0.0013
+   ],
+   [
+    0.0007,
+    0.0,
+    0.0
+   ]
+  ],
+  "C_fin": 0,
+  "paires_90_par_checkpoint": {
+   "250": 0,
+   "500": 0,
+   "750": 0,
+   "1000": 0,
+   "1250": 0,
+   "1500": 0,
+   "1750": 0,
+   "2000": 0,
+   "2250": 0,
+   "2500": 0,
+   "2750": 0,
+   "3000": 1,
+   "3250": 1,
+   "3500": 1,
+   "3750": 1,
+   "4000": 1
+  },
+  "credit_moyen_fin_ph1": 0.051,
+  "items_exacts_fin_ph1": 0.051,
+  "tours_exacts_ph2": 0.0001,
+  "items_exacts_fin_ph2": 0.1245,
+  "entropie_emetteurs": 0.018,
+  "entropie_recepteurs": 0.242,
+  "entropie_uniforme": 3.871,
+  "items_exacts_1chiffre_pas_750_1000": 0.2458,
+  "items_exacts_pas_1000_1250": 0.0524
+ }
+}

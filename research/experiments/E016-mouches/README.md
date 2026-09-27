@@ -3,6 +3,7 @@
 Mandat M0031, 2026-09-27, branche `exp/e016-mouches` (depuis `exp/e014-reperage` @ `fc698b4`).
 Préenregistrement : [`PREREGISTREMENT.md`](PREREGISTREMENT.md) (poussé seul avant le code,
 amendement A1 après le pilote). Code E008, E013, E014 importé, non modifié.
+**Amendement A2 (M0032)** : section [A2](#a2--la-récompense-comme-seule-variable-m0032-2709--stop-au-pilote-garde) en fin de page — STOP au pilote-garde, aucun régime où une équipe apprend.
 
 ## En une phrase
 
@@ -208,3 +209,63 @@ python analyse16.py
 
 Calcul : ≈ 1 h 10 au total (pilote 6 min, 15 runs officiels ≈ 33 min, exploratoire ≈ 19 min,
 évaluation 5 min, analyse 6 min), GPU partagé avec d'autres fenêtres.
+
+## A2 — la récompense comme seule variable (M0032, 27/09) : STOP au pilote-garde
+
+Amendement A2 préenregistré et poussé seul (`PREREGISTREMENT.md`, § « Amendement A2 ») avant tout
+run. Code : `entraine16a2.py` (importe `m16` / `entraine16` sans les modifier), `test_e016a2.py`
+(4 tests), `pilotes16a2.py` ; résultats `resultats/a2/pilotes.json`.
+
+**Pourquoi A2.** M0031 ne permettait pas d'attribuer un effet à la règle de Malik : IND et COLL
+brassent tous deux les partenaires (ce qui, d'après Tieleman 2019 et Mahaut 2023, suffit déjà à
+réduire les idiolectes), et COLL diffère d'IND par deux choses (tout-ou-rien **et** rejeu). A2
+prévoyait FIXE / IND / TOR (tout-ou-rien sans rejeu) / COLL à tirage de partenaires identique —
+mais **seulement si** une équipe apprend : sous le signal de M0031, (iv) − (ii) comparerait des zéros.
+
+**Ce que change le signal dense par rapport à la littérature** : Mahaut et Tieleman entraînent le
+message par un jeu référentiel ou une perte différentiable. Ici, le signal dense reste un **succès
+de calcul** (fraction des colonnes justes de la somme), scalaire, par REINFORCE : aucune supervision
+de la forme du message, aucun gradient à travers le partenaire.
+
+### Pilotes-gardes (graine 0, exclue ; critère préenregistré : ≥ 5 paires sur 9 à ≥ 90 % VAL-OOD)
+
+| pilote | seule différence avec IND de M0031 | paires ≥ 90 % VAL-OOD (max sur 16 checkpoints) | meilleur VAL 9 paires | émetteurs : entropie fin (uniforme 3,87 nat) | décolle ? |
+|---|---|---|---|---|---|
+| IND-dense | récompense = fraction des colonnes justes | **1/9** (A2B2, dès 1 250 pas) | 0,140 | **0,002** | ❌ |
+| IND-01-curric | opérandes à 1 chiffre pendant 1 000 pas, puis 1–5 | **1/9** (A1B2, à 3 000 pas) | 0,111 | 0,018 | ❌ |
+| *réf. M0031 IND, 5 graines (TEST 16)* | — | 0 ; 2 ; 2 ; 1 ; 2 | — | 0,03–0,16 | — |
+
+[VÉRIFIÉ, `resultats/a2/pilotes.json`] Détail : IND-dense, crédit moyen fin de phase 1 = 0,52
+(0,38 au pas 250), additions exactes 16,5 % des tours ; la seule autre paire au-dessus du hasard
+(A2B3) plafonne à 24 % VAL. IND-01-curric : 24,6 % d'additions exactes sur 1 chiffre (pas
+750–1 000), qui tombent à 5,2 % au passage à 1–5 chiffres (pas 1 000–1 250).
+
+**Verdict (règle préenregistrée A2.1) : STOP propre.** Aucune des deux variantes ne décolle ; les
+conditions FIXE / IND / TOR / COLL / REJEU **n'ont pas été lancées** (pas de budget brûlé sur des
+zéros). Nouveaux venus A4/B4 : non faits (conditionnés aux conditions). Calcul A2 : ≈ 3 min.
+
+Prédiction Q0 (décollage en < 2 000 pas) : ❌. Q1–Q7 : sans objet.
+
+### Lecture A2
+
+- [VÉRIFIÉ] **La question « règle de Malik ou brassage ? » reste sans réponse dans ce montage** :
+  avec la récompense par paire et le brassage (IND), sous un signal rare (M0031) comme sous un
+  signal dense par colonne ou un curriculum (A2), une équipe de 3 + 3 n'apprend qu'**une** paire
+  sur 9. Il n'existe pas de régime où comparer les règles ; rien n'est donc attribué ni à la règle
+  de Malik ni au brassage.
+- [VÉRIFIÉ] Le signal dense **n'a pas levé le verrouillage**, il l'a rendu plus rapide et plus
+  dur : entropie des émetteurs 0,002 nat en fin de run (contre 0,03–0,16 en M0031), une paire
+  apprise dès 1 250 pas, puis plus rien. L'hypothèse de M0031 (« ce qui manque : un signal dense »)
+  est **réfutée pour cette forme de signal dense** (crédit scalaire par item).
+- [VÉRIFIÉ] Le curriculum 1 chiffre apprend quelque chose (≈ 25 % d'additions exactes à 1 chiffre)
+  mais ne se transfère pas aux 1–5 chiffres.
+- [HYPOTHÈSE] Le goulot n'est pas la **densité** mais l'**attribution du mérite** et
+  l'**exploration** : le crédit dense reste un scalaire appliqué à toutes les colonnes et aux deux
+  tables (émetteur et récepteur), sans distinguer quel symbole a causé quelle erreur ; avec 6 tables
+  qui s'adaptent en même temps et lr 0,05, chaque émetteur fige son code sur le premier récepteur
+  qui le récompense un peu. Variantes **non testées** (hors mandat, une seule variante de repli
+  autorisée) : crédit **par colonne** (la récompense de la colonne t ne pousse que les choix de la
+  colonne t), plancher d'entropie / lr plus faible, partenaire gelé en alternance
+  (un côté apprend pendant que l'autre est figé).
+- Limites : une graine pilote par variante, un seul lr (A1), tables tabulaires. Aucune conclusion
+  générale sur la pression sociale ni sur les signaux denses.
