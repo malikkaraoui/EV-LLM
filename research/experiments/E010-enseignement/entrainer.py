@@ -35,8 +35,8 @@ def plans(hp):
     return {"crible": crible, "courbe": courbe}
 
 
-def entrainer(fmt, pos, n, graine, hp, budget_s, log=print):
-    nom = nom_run(fmt, pos, n, graine)
+def entrainer(fmt, pos, n, graine, hp, budget_s, log=print, etiquette=""):
+    nom = nom_run(fmt, pos, n, graine) + etiquette
     dossier = os.path.join(ICI, "runs", nom)
     os.makedirs(dossier, exist_ok=True)
     f_etat = os.path.join(dossier, "etat.json")
@@ -98,6 +98,7 @@ def main():
                     help="plan graines : conditions FMT-POS a porter aux graines 3, 4, 5")
     ap.add_argument("--budget-min", type=float, default=8.5)
     ap.add_argument("--hp", default="hyperparametres.json")
+    ap.add_argument("--etiquette", default="", help="suffixe du nom de run (pilote)")
     args = ap.parse_args()
     if args.budget_min > 9:
         raise SystemExit("budget par invocation plafonne a 9 min (mandat)")
@@ -116,7 +117,7 @@ def main():
         reste = args.budget_min * 60 - (time.time() - t0)
         if reste < 20:
             break
-        etat = entrainer(f, p, n, g, hp, reste)
+        etat = entrainer(f, p, n, g, hp, reste, etiquette=args.etiquette)
         if not etat.get("fini"):
             break
     faits = [nom_run(*r) for r in file

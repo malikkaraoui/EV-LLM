@@ -1,8 +1,8 @@
 {
- "_statut": "provisoire (PREREGISTREMENT section 7) -- a figer apres pilote graine 0",
+ "_statut": "figee apres pilote (graine 0), 2026-09-27T10:12+0200 -- PREREGISTREMENT, amendement A1",
  "lot": 256,
- "pas": 1500,
- "lr_max": 0.001,
+ "pas": 1000,
+ "lr_max": 0.003,
  "lr_min": 1e-05,
  "montee": 150,
  "wd": 0.01,

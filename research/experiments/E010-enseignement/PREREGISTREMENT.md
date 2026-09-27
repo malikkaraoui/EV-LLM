@@ -172,3 +172,28 @@ Aucun index de colonne, aucun opérande pré-aligné, aucun couplage de position
 
 Préenregistrement (seul, poussé) < code + tests < contrôles de validité < valeurs figées après
 pilote (amendement A1) < résultats.
+
+## Amendement A1 — 2026-09-27T10:12+0200 — valeurs figées après pilote (avant tout run officiel)
+
+Pilote graine 0 (exclue), 1 500 pas, réserve 384 000, `resultats/pilote.json` ; GPU **partagé**
+avec une autre fenêtre pendant le pilote (processus `entraine.py` d'une autre expérience observé).
+
+| run pilote | lr | calcul | T-ID 5 | V-OOD 6 | V-OOD 7 | V-OOD 8 |
+|---|---|---|---|---|---|---|
+| F0-NoPE | 1e-3 | 262 s | 57,5 % | 19,0 % | 0,0 % | 0,0 % |
+| F0-NoPE | 3e-3 | 236 s | 37,5 % | 18,0 % | 3,0 % | 0,0 % |
+| F1-NoPE | 1e-3 | 513 s | 100 % | 54,0 % | 0,5 % | 0,0 % |
+| F1-NoPE | 3e-3 | 567 s | 100 % | 68,0 % | 0,0 % | 0,0 % |
+
+1. **lr = 3e-3** par la règle §7 (V-OOD moyen des deux runs : 0,148 contre 0,123).
+   **Biais connu, signalé d'avance** : à 3e-3, F0-NoPE est nettement moins bon *dans la
+   distribution* (T-ID 5 : 37,5 % contre 57,5 %). Le choix défavorise F0 sur la question Q1
+   (exemples nécessaires) ; toute conclusion Q1 devra le mentionner.
+2. **S = 1 000 pas** (N_max = 256 000 exemples uniques, chacun vu une fois) par la règle §7 :
+   temps mesurés sous partage ≈ 0,17 s / pas (F0), 0,36 (F1), ≈ 0,25 (F2, estimé), 0,36 (F3) ;
+   plan criblage + courbe ≈ 7,7 s par pas de S ; S = 1 500 → 192 min + 30 de réserve + 26 de
+   pilote = 248 min > 240 ; S = 1 000 → 128 + 30 + 26 = 184 min.
+3. Montée inchangée (150 pas). Réserves de la courbe : 1 000 / 10 000 / 100 000 / 256 000.
+4. `resultats/controles.json` recalculé avec la table C-PARCŒUR de la réserve 256 000.
+5. Pendant le pilote, ajout d'une option `--etiquette` (suffixe de nom de run) à
+   `entrainer.py`, pour loger les runs pilotes à lr 3e-3 ; aucun autre changement de code.
