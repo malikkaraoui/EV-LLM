@@ -161,3 +161,113 @@ Observation du pilote, non utilisée pour choisir : la case retenue apprend **2 
 (A1→B2 et A2→B3 à 100 % en VAL-OOD), lexiques de A1 et A2 sans aucun symbole commun (C = 0/11) ;
 en phase 2 (3 paires, tout-ou-rien) plus aucun tour n'est réussi et les tables ne bougent plus.
 Aucune autre modification du protocole.
+
+## Amendement A2 (mandat M0032, 2026-09-27, branche `exp/e016-a2` depuis `exp/e016-mouches` @ `867ccaf`) — écrit et poussé AVANT tout run A2
+
+Question : l'effet propre de la règle de Malik (tout-ou-rien collectif + tout le monde recommence),
+**séparé** de celui du seul brassage des partenaires. Code M0031 (`m16.py`, `entraine16.py`,
+`evalue16.py`) **importé, non modifié** ; A2 ajoute des fichiers `*a2.py`, runs sous `runs/a2/`,
+résultats sous `resultats/a2/`. Mêmes agents, canal (V = 48), données, VAL/TEST, graines 1–5,
+lr 0,05, β = 0, 4 000 pas, 128 tours par pas, rejeu ≤ 4 essais (A1).
+
+### A2.0 Antériorité (relecture ≈ 10 min des sources de la veille orchestrateur)
+
+- **Déjà fait** [VÉRIFIÉ, résumés relus] : Tieleman et al. 2019 (arXiv 1912.06208) — population
+  d'encodeurs/décodeurs **appariés au hasard à chaque itération** : plus la communauté est grande,
+  moins il y a d'idiosyncrasies ; signal = reconstruction (différentiable). Mahaut et al. (arXiv
+  2302.08913) — réseaux visuels **gelés hétérogènes**, protocole commun, **nouveau venu** qui
+  l'adopte vite (jeu référentiel). Marincat 2026 (arXiv 2609.11365) — sociétés indépendantes sur une
+  tâche algorithmique : pas de langue unifiée, transfert négatif de l'interface héritée.
+  Michel et al. ICLR 2023 (« Revisiting populations ») : page non accessible ici, cité d'après la
+  veille orchestrateur [NON RELU] — l'échange de partenaires limite la co-adaptation par paire.
+- **Conséquence** : « le brassage des partenaires réduit les idiolectes » et « un nouveau venu
+  apprend le protocole » sont **connus** ; A2 ne les présente pas comme neufs. FIXE et IND servent de
+  **réplication** de ce connu dans notre montage.
+- **Ce qu'A2 ajoute** [HYPOTHÈSE sur la nouveauté, veille non exhaustive] : (a) la comparaison
+  **à brassage identique** (mêmes tirages de partenaires) d'une récompense par paire, d'un
+  tout-ou-rien collectif sans rejeu et du tout-ou-rien **avec rejeu collectif** — non trouvé dans
+  la veille ; (b) un signal de **succès de calcul** (par colonne) sur un calcul coupé en deux entre
+  compétences procédurales gelées, jugé jusqu'à 1 000 chiffres ; (c) des nouveaux venus A4/B4 comme
+  test de langue commune **côté émission et côté réception séparément**.
+- Signal dense vs littérature : Mahaut et Tieleman ont un jeu référentiel / une perte différentiable
+  sur le message. Ici le signal reste un **succès de calcul par colonne**, sans aucune supervision de
+  la forme du message ni gradient à travers le partenaire (REINFORCE sur un scalaire).
+
+### A2.1 Mission 0-ter : pilote-garde « signal dense » (graine 0, exclue ; ≤ 30 min)
+
+- **IND-dense** = IND de M0031 à **une seule** différence : récompense d'un item = **fraction des
+  colonnes de sortie correctes**, (1/n) Σ_{t<n} [chiffre émis par B_j à la colonne t = chiffre t de
+  a+b, poids faible d'abord] avec n = n_pas = max(ℓa, ℓb) + 1 (cibles = `encode_aligne` d'E013,
+  0 au-delà de la somme). [VÉRIFIÉ, `m16.echantillonne`] B_j produit bien un chiffre par colonne
+  (`dig`, n × T), comparé ici aux cibles avant `decode` : aucun module gelé n'est touché. Même
+  ligne de base (moyenne du lot par n_pas).
+- **Critère de décollage** : graine 0, **≥ 5 paires sur 9 à ≥ 90 %** exact VAL-OOD (6–8 chiffres)
+  à au moins un checkpoint (tous les 250 pas) en ≤ 4 000 pas.
+- **Sinon, UNE seule autre variante** : **CURRIC** = IND, récompense 0/1 d'origine, opérandes à
+  **1 chiffre** (a, b ∈ 0–9 uniformes, rng [18 000 + graine, pas]) pendant les 1 000 premiers pas,
+  puis flux 1–5 d'origine ; mêmes 4 000 pas au total, même critère. Si CURRIC ne décolle pas non
+  plus : **STOP propre**, aucune condition A2.2 lancée.
+- Prédiction Q0 : IND-dense décolle (≥ 5/9) — confiance modérée (≈ 60 %) ; si oui, en **moins de
+  2 000 pas**.
+
+### A2.2 Conditions (seulement si Q0 décolle ; sinon avec la variante qui décolle)
+
+Toutes sous la récompense du pilote qui a décollé. Tirage des partenaires **identique** entre IND,
+TOR, COLL, REJEU (même générateur `rng([17 000 + graine, pas])` qu'M0031, mêmes problèmes neufs
+`paires_flux`). Phase 1 (pas 0–1 999) : 1 paire / tour ; phase 2 (2 000–3 999) : 3 paires / tour
+(appariement parfait aléatoire), comme M0031.
+
+| cond. | partenaires | récompense d'un item | rejeu d'un tour raté (≠ tous exacts) |
+|---|---|---|---|
+| (i) FIXE | A_k↔B_k seulement : phase 1 k tiré au hasard ; phase 2 les 3 paires fixes | par paire (crédit par colonne) | non |
+| (ii) IND | rotation (M0031) | par paire | non |
+| (iii) TOR | rotation | **min sur les paires du tour** du crédit par colonne (traduction dense de « tout le monde ou personne ») | non |
+| (iv) COLL | rotation | min sur les paires du tour | **oui** (mêmes problèmes, nouveau tirage, ≤ 4 essais) |
+| (v) REJEU (si budget) | rotation | par paire | oui |
+
+- Écrit d'avance [VÉRIFIÉ par construction] : en phase 1 (1 paire / tour), le min sur le tour est
+  la récompense de la paire : **TOR ≡ IND en phase 1**, COLL ≡ REJEU en phase 1. L'effet
+  « tout-ou-rien » n'agit qu'en phase 2 ; l'effet « rejeu » agit dans les deux phases.
+- Un tour « raté » (déclencheur du rejeu) = au moins une réponse non **exacte** (addition entière),
+  comme M0031 — la règle « si une ne donne pas la bonne réponse, tout le monde recommence ».
+- Lignes de référence « signal rare » **sans rerun** : IND et COLL de M0031 (`resultats/resultats.json`).
+- 5 graines par condition (i)–(iv) ; (v) seulement s'il reste du budget (≤ 3 h au total A2).
+  Si le budget manque : réduire d'abord les graines de (ii) IND (seule condition déjà proche de
+  M0031), jamais celles de TOR/COLL. Tout écart sera écrit.
+- Sélection du checkpoint : meilleur exact VAL-OOD moyen sur les 9 paires (inchangé, y compris pour
+  FIXE : écrit d'avance, cela ne favorise aucune condition rotative).
+
+### A2.3 Mesures (en plus de M0031)
+
+- TEST (lu une fois, 9 paires, jeux E014) : graine réussie = 9 paires ≥ 90 % à 16 chiffres ;
+  matrice 3 × 3 à 16 et 100 chiffres **pour les 9 paires y compris FIXE** (paires croisées de FIXE
+  = test d'idiolecte) ; extrapolation 16 → 100 → 1 000 ; adverses ; C (M0031) ; faux et sûrs,
+  abstention (règles M0031).
+- **Nouveaux venus (officiel)**, pour chaque condition (i)–(iv) × 5 graines, sur le checkpoint
+  retenu, population **gelée** :
+  - **A4** (lecteur `R1L-s2`, jamais vu, code privé neuf = 7e permutation de `codes_prives`) : seule
+    sa table E_4 apprend, paires A4↔B_j (j uniforme), récompense du régime (crédit par colonne,
+    par paire), ≤ 1 000 pas, lot 128, lr 0,05 ; VAL-OOD sur ses 3 paires tous les 50 pas.
+    **Zero-shot (0 pas)** : E_4 = 0 ⇒ émission uniforme / argmax symbole 0 — attendu ≈ 0 **par
+    construction** (rapporté, sans valeur informative). Mesure : premier pas où les 3 paires
+    A4↔B_j sont ≥ 90 % (sinon « > 1 000 »). A4 ne peut réussir que si, pour chaque sens, **un même
+    symbole** est compris par les 3 B : c'est le test côté réception d'une langue commune.
+  - **B4** (I1 H = 4 graine 4, jamais vu, code privé = 8e permutation) : seule R_4 apprend face à A1–A3 gelés ; même mesure.
+    B4 peut être multilingue (48 symboles) : il ne peut échouer que si deux A emploient le même
+    symbole pour deux sens différents (conflit). Test plus faible, côté émission.
+- Décomposition préenregistrée de l'effet de la règle, sur (a) nombre de paires ≥ 90 % à 16 par
+  graine, (b) C, (c) pas de A4 : (iv) − (ii) = [(iii) − (ii)] (tout-ou-rien) + [(iv) − (iii)] (rejeu).
+  n = 5 : on rapporte les 5 valeurs et la médiane, aucune conclusion générale.
+
+### A2.4 Prédictions (écrites avant tout run A2)
+
+| | énoncé |
+|---|---|
+| Q0 | IND-dense graine 0 décolle (≥ 5/9 paires ≥ 90 % VAL-OOD), en < 2 000 pas |
+| Q1 | FIXE : les 3 paires fixes ≥ 90 % à 16 dans ≥ 4/5 graines ; paires croisées ≤ 20 % à 16 (idiolectes) ; C ≤ 2 |
+| Q2 | IND (rotation) : médiane ≥ 7/9 paires ≥ 90 % à 16 ; lexique **synonyme** plutôt que commun (médiane C ≤ 4/11) — contre-pied de Tieleman, parce que V = 48 laisse la place à 3 dialectes |
+| Q3 | Effet tout-ou-rien (iii) − (ii) : ≤ 0 paire en médiane (le min sur le tour dilue le crédit) ; \|ΔC\| ≤ 1 |
+| Q4 | Effet rejeu (iv) − (iii) : ≤ 0 paire en médiane (moins de problèmes neufs) ; \|ΔC\| ≤ 1 |
+| Q5 | Ce qui fait la langue commune (C, A4) est dû au brassage, pas à la règle : C(IND) − C(FIXE) > \|C(COLL) − C(IND)\| en médiane |
+| Q6 | A4 atteint 90 % en ≤ 1 000 pas : 0/5 en FIXE ; moins de graines que B4 dans chaque condition |
+| Q7 | Les paires apprises restent ≥ 90 % à 100 chiffres (comme M0031, 13/13) |
