@@ -1,243 +1,245 @@
-# EV-LLM — journal de recherche
+# 🧠🐜 EV-LLM — a public research log
 
-**En une phrase.** EV-LLM est une exploration, conduite en public, d'une architecture cognitive « post-transformer » : un système qui **apprend une procédure** à partir de peu d'exemples, la **transfère** et l'**assemble** avec d'autres. Ce n'est ni un produit ni un modèle à télécharger. C'est un carnet d'expériences, réussites et échecs compris.
+*A French version of this file exists in git history (commit 99ccc79); the README is maintained in English.*
 
-État au 28/09/2026 : 21 expériences ou amendements, menés du 25 au 27/09. Quatre sont relus et fusionnés dans `main`, les autres vivent sur leur branche (liens ci-dessous). Les échecs sont publiés au même titre que les réussites : chacun épargne à d'autres un cycle.
+**In one sentence.** EV-LLM is an exploration, conducted in public, of a "post-transformer" cognitive architecture: a system that **learns a procedure** from few examples, **transfers** it and **assembles** it with others. It is neither a product nor a model to download. It is a lab notebook, successes and failures included.
 
-- L'hypothèse de départ : [`architecture_cognitive_post_transformer.md`](architecture_cognitive_post_transformer.md). En bref : l'intelligence serait moins la quantité d'entraînement subie que la capacité à faire beaucoup avec presque rien ; connaître une règle n'est pas l'avoir acquise ; il manque la boucle qui transforme une règle explicite en réflexe fiable, et un réflexe en règle. Le document est une exploration, pas une architecture retenue.
-- Le cheminement, jour par jour, avec les erreurs : [`GENESE.md`](GENESE.md) (jusqu'au 26/09). La suite (26–27/09) est dans une note de l'orchestrateur, `vault/notes/2026-09-27-genese-suite.md`, pas encore versionnée.
+Status as of 28/09/2026: 21 experiments or amendments, run from 25 to 27/09. Four have been reviewed and merged into `main`; the others live on their branch (links below). Failures are published on the same footing as successes: each one spares someone else a cycle.
 
----
-
-## La méthode
-
-C'est la partie qui compte le plus. Les résultats en découlent.
-
-1. **Antériorité avant chaque expérience.** On cherche d'abord ce qui est publié : sources lues, verdict écrit dans le mandat (« fait », « partiellement fait », « non trouvé »). Au début, ce fut une veille de 10 à 20 minutes ; depuis le 27/09 au soir, c'est une recherche approfondie par des agents dédiés, avant tout lancement.
-2. **Ne pas refaire le publié pour arriver au même résultat.** Si c'est déjà fait, on cherche la variante, le contre-pied. Une brique connue (MAP-Elites, MDL, REINFORCE…) n'est qu'un outil ; la question testée doit être nouvelle.
-3. **Préenregistrement avant le code.** Hypothèses, prédictions chiffrées et seuils de réussite sont commités et poussés seuls, avant la première ligne de code. Un écart constaté ensuite est un résultat : il est rapporté, pas corrigé en douce. Toute modification passe par un amendement daté.
-4. **Garde-fous de mesure** (durcis le 27/09 après une revue hostile) :
-   - pilote sur la graine 0, exclue des résultats ;
-   - au moins 5 graines (2 à 3 pour les premières expériences, dit à chaque fois) ;
-   - validation hors distribution (6 à 8 chiffres) séparée du test final (10 à 1 000 chiffres), lu **une seule fois** ;
-   - contrôles de validité : un oracle doit obtenir 100 %, un système « par cœur » 0 % ;
-   - tests adverses (retenues en cascade, nombres pleins de zéros, longueurs asymétriques) ;
-   - **budget de structure** : on écrit ce qui est donné à la main (alignement, sens de lecture, nombre de pas…) et ce qui est réellement appris.
-5. **Relecture indépendante (« doublage ») avant toute fusion.** Un autre agent rejoue, recalcule et relit. Verdicts : GO, RÉSERVE ou CASSÉ. Seul GO fusionne ; « mergeable avec réserve » ne fusionne pas.
-6. **Itération rapide, petit calcul.** Une machine : un Mac M1 16 Go (Python, numpy, MLX). Une expérience dure de 3 minutes à 4 heures. Les modèles vont de 22 paramètres (un réseau récurrent construit à la main) à ~3,2 millions (un petit transformer). Chaque README d'expérience donne sa durée de calcul.
-
-Étiquettes utilisées partout : **[VÉRIFIÉ]** = relu dans une source du dépôt ; **[HYPOTHÈSE]** = interprétation non établie. Aucune conclusion générale n'est tirée : les échantillons vont de 7 cas à quelques centaines de milliers d'items, sur une seule tâche à la fois.
+- The starting hypothesis: [`architecture_cognitive_post_transformer.md`](architecture_cognitive_post_transformer.md). In short: intelligence would be less the amount of training undergone than the ability to do a lot with almost nothing; knowing a rule is not having acquired it; what is missing is the loop that turns an explicit rule into a reliable reflex, and a reflex into a rule. The document is an exploration, not an adopted architecture.
+- The path taken, day by day, with the mistakes: [`GENESE.md`](GENESE.md) (up to 26/09). The continuation (26–27/09) is in an orchestrator note, [`vault/notes/2026-09-27-genese-suite.md`](vault/notes/2026-09-27-genese-suite.md).
 
 ---
 
-## Journal des expériences
+## Method 🧠
 
-Chaque entrée : la question, ce qui existait, ce qu'on a changé, le résultat chiffré, le verdict, ce qu'on retient, la relecture. Les chiffres sont recopiés du README de l'expérience, au tip de sa branche.
+This is the part that matters most. The results follow from it.
 
-Statut de relecture : **relu GO** (fusionné dans `main`), **relu avec réserve** (non fusionné), **pas encore relu**. « Contre-vérifié par l'orchestrateur » veut dire que les chiffres ont été recalculés depuis les données par la fenêtre d'orchestration ; ce n'est pas un doublage indépendant.
+1. **Prior-art search before each experiment.** We first look for what is published: sources read, verdict written into the mandate ("done", "partially done", "not found"). At first this was a 10 to 20 minute scan; since the evening of 27/09 it has been an in-depth search by dedicated agents, before any launch.
+2. **Do not redo published work to reach the same result.** If it has been done, we look for the variant, the opposite tack. A known building block (MAP-Elites, MDL, REINFORCE…) is only a tool; the question tested must be new.
+3. **Preregistration before code.** Hypotheses, numerical predictions and success thresholds are committed and pushed on their own, before the first line of code. A deviation found afterwards is a result: it is reported, not quietly corrected. Any change goes through a dated amendment.
+4. **Measurement safeguards** (tightened on 27/09 after a hostile review):
+   - pilot on seed 0, excluded from the results;
+   - at least 5 seeds (2 to 3 for the first experiments, stated each time);
+   - out-of-distribution validation (6 to 8 digits) kept separate from the final test (10 to 1,000 digits), read **only once**;
+   - validity controls: an oracle must score 100 %, a "memorising" system 0 %;
+   - adversarial tests (cascading carries, numbers full of zeros, asymmetric lengths);
+   - **structure budget**: we write down what is given by hand (alignment, reading direction, number of steps…) and what is actually learned.
+5. **Independent review ("doublage") before any merge.** Another agent replays, recomputes and rereads. Verdicts: GO, RESERVATION or BROKEN. Only GO merges; "mergeable with reservation" does not merge.
+6. **Fast iteration, small compute.** One machine: a Mac M1 16 GB (Python, numpy, MLX). An experiment takes from 3 minutes to 4 hours. Models range from 22 parameters (a hand-built recurrent network) to ~3.2 million (a small transformer). Each experiment README gives its compute time.
 
-### Partie 1 — Un déclencheur externe : Jev sait-il quand il se trompe ? (25–26/09)
-
-L'idée : pour savoir *quand* vérifier, il faut une confiance honnête, surtout sur les erreurs « invisibles » (fausses mais fluides). Jev (TypeSafe AI) se présente comme un modèle qui rend des décisions typées avec une probabilité calibrée. On l'a sondé par API.
-
-**1. Première sonde de Jev (E001)** — [dossier](research/experiments/E001-jev-sonde/) · relu GO (R001), fusionné
-- Question : sur 7 cas préenregistrés (logique à règle donnée, fautes d'orthographe fluides), Jev est-il « faux et sûr » ?
-- Antériorité : annonce de l'éditeur (15/09/2026) ; ses chiffres ne sont pas vérifiés de façon indépendante.
-- Résultat : 1er lancement, 21 appels sur 21 refusés (HTTP 403, carte bancaire exigée). Puis logique : 6 questions conformes sur 6 ; contradiction et indétermination distinguées 3 fois sur 3. Fautes fréquentes (« il a manger », « ils sont tombé ») : 4/4 conformes, 13 appels sur 13, 0 « faux et sûr ».
-- Verdict : **réussi comme sonde, mais la question n'est pas tranchée** : ces fautes fréquentes n'ont piégé personne.
-- Retenu : un service annoncé « gratuit » peut exiger une carte ; tester l'accès réel par un appel à blanc avant de lancer.
-
-**2. Étalon LLM sur les mêmes cas (E003)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e003-etalon-llm/research/experiments/E003-etalon-llm) · relu avec réserve (R005), correctifs pas encore relus
-- Question : deux LLM génératifs (`gpt-4.1-mini`, `gemini-2.5-flash`) font-ils mieux ou moins bien que Jev ?
-- Résultat : conformité Jev 10/10, `gpt-4.1-mini` 9/10, `gemini-2.5-flash` 10/10. Seul « faux et sûr » : `gpt-4.1-mini` nie E > D 3 fois sur 3, avec une confiance verbalisée de 0,9 à 1.
-- Verdict : **mesuré, mais backend non contrôlé** : le fournisseur de la passerelle n'était ni imposé ni journalisé. Le rejeu prévu a été annulé avec l'arrêt des tests Jev.
-- Retenu : une confiance verbalisée n'est pas une probabilité ([HYPOTHÈSE]) ; imposer et journaliser le fournisseur de tout modèle témoin.
-
-**3. Jev hors distribution (E005)** — [dossier](research/experiments/E005-jev-hors-distribution/) · relu CASSÉ (R004, total HTTP faux), corrigé, puis relu GO (R007), fusionné
-- Question : sur des règles rares (accords savants, homophones, logique avec distracteurs ou à 4 pas), Jev se trompe-t-il avec assurance ?
-- Changé : 32 cas en paires minimales, préenregistrés et poussés avant le premier appel.
-- Résultat : 151 appels, 34 réponses utiles. **9 évaluations « faux et sûr » sur 42, portant sur 6 questions.** Les 13 phrases justes sont jugées justes ; sur les phrases fausses, 7 évaluations sur 13 jugent correcte une phrase fautive. Au-dessus de 0,8 de probabilité, Jev est conforme 19 fois sur 28.
-- Verdict : **négatif pour la calibration sur ce corpus.**
-- Retenu : [HYPOTHÈSE] Jev jugerait la plausibilité de surface plutôt que la règle.
-
-**4. Réplication et frontière (E006)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e006-replication-frontiere/research/experiments/E006-replication-frontiere) · relu avec réserve (R008), correctif pas encore relu
-- Question : les « faux et sûr » d'E005 se reproduisent-ils ? Où est la frontière ?
-- Résultat : 103 appels, tous servis. **5 « faux et sûr » non contestés, reproduits 5 fois sur 5**, plus 1 réponse reclassée « contestée » (question ambiguë, R008). Chaîne logique de 2 à 6 pas : P entre 0,85 et 0,97, pas de pente. Distracteurs : P(contradiction) 0,73 → 0,34 → 0,14 → 0,08 pour 0 à 3 distracteurs. Contamination par une contradiction sans rapport : écart moyen −0,005, non observée.
-- Verdict : **réplication réussie** ; la longueur de chaîne n'est pas la frontière, un seul distracteur suffit.
-- Retenu : « peut-on déduire X » est ambigu quand une règle interdit X ; préciser le sens de « déduire » dans les corpus.
-
-**5. Jev lit-il les règles écrites ? (E007)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e007-regles/research/experiments/E007-regles) · pas encore relu
-- Résultat : écrire la règle d'accord dans l'énoncé corrige les 3 paires (forme fautive de 0,84–0,86 à 0,05–0,09). Inverser une règle est suivi (0,77 → 0,34 ; 0,95 → 0,28). La retirer ne change presque rien (0,70 ; 0,90) : Jev complète avec le sens usuel des symboles.
-- Verdict : **« partiellement »**, au sens du critère préenregistré.
-- Retenu : [HYPOTHÈSE] Jev part d'un a priori ; une règle écrite qui le contredit le fait bouger, une règle absente ne l'arrête pas.
-
-**Fin de cette partie (26/09, 18:17).** Décision de Malik : arrêter les tests Jev et travailler sur de petits modèles que l'on entraîne soi-même.
-
-### Partie 2 — Acquérir des règles cachées : la chambre aux relations opaques (26/09)
-
-**6. Le banc et trois étalons (E002)** — [dossier](research/experiments/E002-relations-opaques/) · relu GO (R002), fusionné
-- Question : un banc où les propriétés des relations sont cachées, bruitées (5 à 10 %) et piégées sépare-t-il « savoir », « acquérir naïvement » et le hasard ? Gain mesuré en bits économisés (R).
-- Antériorité : non documentée dans le README.
-- Résultat : même l'étalon qui **connaît** les propriétés a un R moyen de −0,003, positif dans 8 mondes sur 20 seulement. Le ratio à ce plafond est donc indéfini dans 12 mondes sur 20. Sans bruit, son R vaut +0,016, positif partout.
-- Verdict : **négatif sur la mesure**, écart rapporté et non corrigé.
-- Retenu : déduire juste à partir d'une observation fausse propage la faute.
-
-**7. Réparer la mesure (E002-bis)** — [dossier](research/experiments/E002bis-mesure/) · relu GO (R003), fusionné
-- Changé : un plafond qui vérifie ses prémisses auprès du monde avant de conclure ; mesure en différence (R − R_plafond).
-- Résultat : R > 0 dans **20 mondes sur 20** (moyenne +0,0122, minimum +0,0067), au prix de 28 à 45 requêtes par monde.
-- Verdict : **réussi** (mesure réparée, pour ce banc et ces paramètres).
-
-**8. Premier candidat « acquérir » (A0)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0-candidat/research/candidats/A0) · relu avec réserve (R009)
-- Question : une mémoire entre mondes, un déclencheur calibré et un autodiagnostic font-ils résoudre le monde n+1 plus vite que le monde n ?
-- Résultat : accélération dans 1 famille sur 4 (il en fallait 3). Meilleur système sans propriétés données (écart au plafond −0,0110), mais son déclencheur n'a **jamais** vérifié : 0 requête sur 20 mondes, coût de vérification mal posé.
-- Verdict : **négatif**, cause identifiée.
-
-**9. Candidat corrigé (A0-bis)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0bis-candidat/research/candidats/A0bis) · relu avec réserve (R009 : lecture dépendante d'une seule graine)
-- Résultat : coût marginal, les vérifications deviennent actives (22,6 requêtes par monde), mais 0 famille sur 4. L'ablation « sans bruit estimé » fait mieux que le système complet (−0,0076 contre −0,0105).
-- Verdict : **négatif**.
-
-**10. Le critère était-il atteignable ? (A0-ter, oracle)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0ter-candidat/research/candidats/A0ter) · pas encore relu
-- Changé : un « acquéreur parfait », qui reçoit la connaissance exacte de chaque famille après son premier monde.
-- Résultat : **2 familles sur 4**. Même l'acquisition parfaite échoue au critère. Le seuil mesurait surtout à quel point le premier monde était raté.
-- Verdict : **le critère ne mesurait pas l'apprentissage.** Les échecs d'A0 et A0-bis ne disent donc rien sur ces candidats.
-- Retenu, et appliqué depuis à toutes les expériences : **prouver qu'un test est réussissable par un oracle avant d'y juger un candidat.**
-
-### Partie 3 — Apprendre une procédure : l'addition (26–27/09)
-
-La cible est redéfinie : apprendre l'addition sur des nombres de 1 à 5 chiffres, puis réussir sur des nombres bien plus longs. Toutes les expériences de cette partie partent d'E008 et réutilisent son évaluateur.
-
-**11. Le test est-il juste, et où casse un transformer ? (E008)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e008-addition/research/experiments/E008-addition) · relu avec réserve (R010–R012, réserve portant sur E013, doublé avec), non fusionné
-- Antériorité : la littérature prédit l'effondrement au-delà des longueurs vues ; « NoPE + sortie inversée » est un correctif connu.
-- Résultat : test valide (oracle 100 %, par cœur 0 %). Transformer de ~3,2 M paramètres, 3 M exemples : 98–100 % dans la distribution, **0,0 % dès 6 chiffres** (3 graines). Avec le correctif : 91,2 % à 6 chiffres, 7,9 % à 7, 0,1 % à 8. 65 à 68 % de ses erreurs à 6–7 chiffres ont une confiance ≥ 0,8. Calcul : 2 h 11.
-- Verdict : **référence posée.** Le correctif connu repousse la frontière d'un chiffre.
-
-**12. L'architecture seule (E009)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e009-procedure-apprise/research/experiments/E009-procedure-apprise) · pas encore relu
-- Antériorité : Neural GPU, Deep Thinking, Looped Transformer (veille du 27/09, note `vault/notes/2026-09-27-veille-procedure.md`, pas encore versionnée).
-- Résultat : 5 architectures de 50 à 110 k paramètres, 512 000 exemples : ≤ 3 % même dans la distribution.
-- Verdict : **non mesuré.** Budget trop court, et GPU partagé par quatre fenêtres (erreur d'orchestration, assumée).
-- Retenu : un pilote doit vérifier que le modèle apprend la distribution, pas seulement la vitesse de calcul.
-
-**13. L'architecture seule, avec un budget suffisant (E009-bis)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e009bis-procedure-apprise/research/experiments/E009bis-procedure-apprise) · pas encore relu
-- Résultat : curriculum, largeur 128, jusqu'à 10 000 pas : **1 run sur 5** apprend la distribution (96,8 %), puis 17,3 % à 6 chiffres et 0 % au-delà.
-- Verdict : **négatif** à ce budget. Calcul : ≈ 3 h 52.
-
-**14. Enseigner comme à l'école : le brouillon de colonnes (E010)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e010-enseignement/research/experiments/E010-enseignement) · pas encore relu
-- Changé : le modèle écrit chaque colonne (chiffres, retenue entrante, chiffre écrit, retenue sortante) avant la somme.
-- Résultat : **10 000 exemples** suffisent pour 99,9 % dans la distribution ; sans brouillon, jamais 95 % avec jusqu'à 256 000, soit au moins 25 fois moins d'exemples. Énoncer la règle en une phrase n'apporte rien. Hors distribution : 33,1 % à 6 chiffres, **0 % dès 7**.
-- Verdict : **réussi pour l'efficacité, négatif pour la longueur.**
-- Retenu : la retenue est bien calculée, l'échec vient du **repérage** (quel chiffre lire, quand s'arrêter). Et une confiance prise sur la recopie finale est aveugle : 606 erreurs sur 669 sont « sûres ».
-
-**15. L'objectif d'entraînement casse-t-il la règle ? (E011)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e011-objectif-mdl/research/experiments/E011-objectif-mdl) · pas encore relu
-- Antériorité : Lan et al. (TACL 2022) obtiennent l'addition binaire exacte avec un objectif MDL ; arXiv 2505.13398 rapporte que la régularisation s'éloigne de la solution parfaite (sur d'autres tâches). Deux chiffres relayés par la veille étaient faux ; l'expérience les a corrigés.
-- Changé : on part d'un réseau de 22 paramètres, exact par construction, et on l'entraîne.
-- Résultat : entropie croisée seule, règle gardée **5/5** jusqu'à 1 000 bits. Pénalité L2 λ = 1 : 0/5 ; L1 λ = 1 : 2/5. MDL discret : 5/5, et le réseau se compresse (206 → 204 bits). Mon approximation différentiable de MDL : 4/5. Calcul : ~4 min sur CPU.
-- Verdict : **réussi** (question tranchée pour ce réseau et cette tâche).
-- Retenu : l'objectif n'est pas le plafond caché ; les fortes pénalités de poids le sont.
-
-**16. L'évolution découvre-t-elle le circuit ? (E012)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e012-evolution/research/experiments/E012-evolution) · pas encore relu
-- Changé : recherche évolutive guidée par MDL, avec moins de 0,6 % du budget de Lan et al.
-- Résultat : binaire 0/5 ; décimal aligné 2/5 avec 100 exemples, **4/5 avec 1 000**, exact jusqu'à 1 000 chiffres ; entrée plate 0/5. Le plus court circuit trouvé est l'algorithme d'école, avec une seule unité qui est la retenue : `h = marche(a + b + h − 9)`, `sortie = a + b + h − 10·h`. Il est prouvé exact pour toute longueur. Calcul : ~204 min.
-- Verdict : **réussi quand l'alignement est donné.**
-- Retenu : dans les échecs, le circuit exact a un MDL bien plus bas que celui rendu. C'est la **recherche** qui échoue, pas l'objectif.
-
-**17. Un accumulateur minuscule, « l'insecte » (E013)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e013-insecte/research/experiments/E013-insecte) · relu avec réserve (R010, R011, R012), non fusionné
-- Antériorité : intégration de trajet chez l'abeille (Stone et al. 2017), un petit état mis à jour à chaque pas. L'analogie est la nôtre, pas celle des auteurs.
-- Budget de structure : l'alignement des chiffres, le sens (poids faible d'abord) et le nombre de pas sont donnés.
-- Résultat : **1 131 paramètres**, état d'un seul nombre : 100 % de 16 à 100 chiffres (5/5 graines), 99,3 % à 1 000. Avec deux nombres d'état : **100 % à 1 000 chiffres**, 5/5 graines, sur tous les adverses. Avec 1 000 exemples, les nombres longs passent (98,6 % à 1 000 chiffres) mais la propagation pure d'une retenue tombe à 52,9 % (1 graine sur 5) ; avec 10 000, 100 % partout. Sans alignement donné : 0/5. Calcul : 65 min.
-- Verdict : **réussi, alignement donné.** Premier succès de longueur du projet.
-- Retenu : avec un seul nombre d'état, le réseau se trompe « sûr de lui » sur les nombres creux (28 % de ses erreurs) : rien dans les données courtes n'y force « pas de retenue » à rester stable.
-- Réserve : la synthèse du README a été contestée trois fois de suite (seuil d'exemples redit sans source). Elle est à reconcevoir avant fusion.
-
-**18. Apprendre OÙ lire, puis composer (E014)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e014-reperage/research/experiments/E014-reperage) · pas encore relu (contre-vérifié par l'orchestrateur)
-- Antériorité : non documentée dans le README. L'orchestrateur note après coup qu'une interface discrète partagée entre modules est connue (stitching, symboles partagés).
-- Changé : un lecteur appris seul à « poser en colonnes », sans aucune addition dans sa perte, puis branché **gelé** devant l'accumulateur **gelé** d'E013, sans entraînement commun.
-- Résultat : addition exacte à 16 et 100 chiffres sur **4 graines sur 5** ; 1/5 à 1 000 chiffres. Appris de bout en bout, le même lecteur échoue : 0/5, 1/5 avec curriculum, 0/5 avec pointeurs durs. En s'abstenant sous un seuil de confiance, il écarte 77 % de ses erreurs pour 1,4 % de ses réponses justes.
-- Verdict : **réussi** pour la composition sans réentraînement.
-- Retenu : la composition ne perd rien tant que la lecture est juste ; à 1 000 chiffres, c'est la lecture qui casse. Mais **quelqu'un a défini la tâche intermédiaire** et l'interface entre les deux modules.
-
-### Partie 4 — Sans interface écrite par nous (27/09, soir)
-
-Consigne de Malik à 20:35 : ne plus refaire du connu, prendre le contre-pied.
-
-**19. Écosystème : des compétences s'assemblent-elles seules ? (E015)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e015-ecosysteme/research/experiments/E015-ecosysteme) · pas encore relu (contre-vérifié par l'orchestrateur)
-- Antériorité (veille de 15 min) : PathNet, modular meta-learning, NPI, model stitching. Aucun ne demande à la fois de découvrir quels modules gelés enchaîner, l'ordre des opérations **et** l'interface symbole à symbole, avec pour seul signal un juge final.
-- Résultat : assemblage libre **0/5** sur trois tâches nouvelles. Câblage donné, interface à inventer : **2/5**, exact jusqu'à 1 000 chiffres, avec une interface que nous n'aurions pas écrite. Qu'il manque une seule instruction au câblage : 0/5. Réutiliser une interface gagnante sur une autre tâche : aucun gain. Calcul : ≈ 1 h.
-- Verdict : **négatif.**
-- Retenu : la solution connue vaut 1,100 au juge, les programmes rendus entre 0,004 et 0,45. C'est encore la recherche qui échoue : un paysage en aiguille, où aucun câblage partiel n'est mieux noté que « recopier a ». Certaines interfaces fausses détournent un circuit de soustraction en additionneur sans retenue.
-
-**20. « Mouches » : une langue commune par pression sociale ? (E016)** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e016-mouches/research/experiments/E016-mouches) · pas encore relu (contre-vérifié par l'orchestrateur)
-- Idée de Malik : 3 agents « lecteurs » et 3 « additionneurs » gelés, aux codes privés incompatibles, un canal libre et un but commun. Récompense collective tout-ou-rien ; si un agent se trompe, tout le monde recommence.
-- Antériorité : **déjà fait en partie.** Des réseaux gelés hétérogènes construisent un protocole commun (Mahaut et al., arXiv 2302.08913). Part nouvelle visée : des compétences procédurales, un calcul coupé en deux par le canal, un jugement jusqu'à 1 000 chiffres.
-- Résultat : aucune langue commune (0 symbole partagé par les trois émetteurs, 25 runs sur 25). Règle collective : 0/5 graines, 1 ou 2 paires sur 9 par graine. Chaque graine produit un ou deux **idiolectes** de paire, parfaits. Les 13 paires apprises restent ≥ 90 % à 100 chiffres (13/13).
-- Verdict : **négatif** pour la langue commune.
-- Retenu : le tout-ou-rien collectif **coupe le signal** (0,0 à 0,1 % de tours réussis en équipe) ; le rejeu divise par 3,5 le nombre de problèmes neufs vus.
-
-**21. E016, amendement A2 : un signal plus dense suffit-il ?** — [branche](https://github.com/malikkaraoui/EV-LLM/tree/exp/e016-a2/research/experiments/E016-mouches) (section A2 du README) · pas encore relu (contre-vérifié par l'orchestrateur)
-- Antériorité (recherche approfondie, verdict « partiellement fait ») : Tieleman 2019 et Michel et al. 2023 (ce dernier non relu), où l'échange aléatoire de partenaires réduit déjà les idiolectes ; Mahaut et al. ; Marincat 2026.
-- Changé : récompense = fraction des colonnes justes, ou curriculum à 1 chiffre. Pilote-garde préenregistré avant tout run.
-- Résultat : **1 paire sur 9** dans les deux cas. Les émetteurs se figent encore plus vite (entropie 0,002 nat). Les conditions prévues n'ont pas été lancées. Calcul : ≈ 3 min.
-- Verdict : **arrêt propre au pilote-garde.**
-- Retenu : « il manque un signal dense » est réfuté sous cette forme (crédit scalaire par item). [HYPOTHÈSE] Le goulot serait l'attribution du mérite et l'exploration.
+Labels used throughout: **[VERIFIED]** = checked against a source in the repository; **[HYPOTHESIS]** = interpretation not established. No general conclusion is drawn: samples range from 7 cases to a few hundred thousand items, on a single task at a time.
 
 ---
 
-## Ce qu'on croit savoir aujourd'hui
+## Experiment log
 
-- [VÉRIFIÉ — E011, E012, E013] **Calculer est facile avec presque rien.** Une fois les chiffres alignés, la retenue se découvre par évolution (E012 : une unité cachée) ou s'apprend (E013 : 1 131 paramètres) avec 100 à 10 000 exemples, reste stable sous entropie croisée (E011), et tient jusqu'à 1 000 chiffres.
-- [VÉRIFIÉ — E008, E009-bis, E010, E013 I2, E014 R0] **Le mur, c'est repérer, aligner, brancher.** Chaque fois que le système doit trouver seul quel chiffre lire, il échoue hors des longueurs vues, quelle que soit sa taille (de ~1 900 paramètres à ~3,2 millions).
-- [VÉRIFIÉ — E014, E015 ECH0, E016 DONNÉ] **Ce qui a franchi le mur : une interface symbolique discrète donnée.** Deux compétences gelées, reliées par des symboles, composent sans perte jusqu'à 100 chiffres, et souvent jusqu'à 1 000. Les limites restantes viennent de la lecture, pas du calcul.
-- [VÉRIFIÉ — E012 X1, E015, E016, E016-A2] **Ce qui ne l'a pas franchi :** l'évolution aveugle sans alignement, l'assemblage libre, la pression sociale tout-ou-rien, un signal dense scalaire.
-- [VÉRIFIÉ — E005, E006, E008, E010, E013, E015] **Une confiance mal placée est aveugle.** Les erreurs sont souvent « sûres » quand la confiance porte sur la mauvaise étape : la recopie, le calcul sans la lecture, les champions sans l'interface. Une confiance prise à chaque étape, lecture comprise, sépare beaucoup mieux (E014).
-- [HYPOTHÈSE] Le levier manquant serait un **signal intermédiaire que la machine se donne elle-même** (cohérence entre modules, prédiction de ses propres flux), plutôt que le seul verdict final. Rien de cela n'a été testé.
+Each entry: the question, what already existed, what we changed, the numerical result, the verdict, what we take away, the review status. Figures are copied from the experiment's README, at the tip of its branch.
+
+Review status: **reviewed GO** (merged into `main`), **reviewed with reservation** (not merged), **not yet reviewed**. "Cross-checked by the orchestrator" means the figures were recomputed from the data by the orchestration window; this is not an independent review.
+
+### Part 1 — An external trigger: does Jev know when it is wrong? (25–26/09)
+
+The idea: to know *when* to verify, one needs honest confidence, especially on "invisible" errors (wrong but fluent). Jev (TypeSafe AI) presents itself as a model that returns typed decisions with a calibrated probability. We probed it through its API.
+
+**1. First probe of Jev (E001)** — [folder](research/experiments/E001-jev-sonde/) · reviewed GO (R001), merged
+- Question: on 7 preregistered cases (logic with a given rule, fluent French spelling mistakes), is Jev "wrong and confident"?
+- Prior art: the vendor's announcement (15/09/2026); its figures are not independently verified.
+- Result: 1st launch, 21 calls out of 21 refused (HTTP 403, credit card required). Then logic: 6 questions compliant out of 6; contradiction and indeterminacy distinguished 3 times out of 3. Common mistakes ("il a manger", "ils sont tombé"): 4/4 compliant, 13 calls out of 13, 0 "wrong and confident".
+- Verdict: **successful as a probe, but the question is not settled**: these common mistakes fooled no one.
+- Takeaway: a service announced as "free" may require a card; test real access with a dry-run call before launching.
+
+**2. LLM baseline on the same cases (E003)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e003-etalon-llm/research/experiments/E003-etalon-llm) · reviewed with reservation (R005), fixes not yet reviewed
+- Question: do two generative LLMs (`gpt-4.1-mini`, `gemini-2.5-flash`) do better or worse than Jev?
+- Result: compliance Jev 10/10, `gpt-4.1-mini` 9/10, `gemini-2.5-flash` 10/10. The only "wrong and confident": `gpt-4.1-mini` denies E > D 3 times out of 3, with a verbalised confidence of 0.9 to 1.
+- Verdict: **measured, but backend not controlled**: the gateway provider was neither enforced nor logged. The planned replay was cancelled when the Jev tests were stopped.
+- Takeaway: a verbalised confidence is not a probability ([HYPOTHESIS]); enforce and log the provider of any baseline model.
+
+**3. Jev out of distribution (E005)** — [folder](research/experiments/E005-jev-hors-distribution/) · reviewed BROKEN (R004, wrong HTTP total), fixed, then reviewed GO (R007), merged
+- Question: on rare rules (learned agreement rules, homophones, logic with distractors or 4 steps), is Jev confidently wrong?
+- Changed: 32 cases as minimal pairs, preregistered and pushed before the first call.
+- Result: 151 calls, 34 usable responses. **9 "wrong and confident" evaluations out of 42, covering 6 questions.** The 13 correct sentences are judged correct; on the incorrect sentences, 7 evaluations out of 13 judge an erroneous sentence correct. Above a probability of 0.8, Jev is compliant 19 times out of 28.
+- Verdict: **negative for calibration on this corpus.**
+- Takeaway: [HYPOTHESIS] Jev would judge surface plausibility rather than the rule.
+
+**4. Replication and boundary (E006)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e006-replication-frontiere/research/experiments/E006-replication-frontiere) · reviewed with reservation (R008), fix not yet reviewed
+- Question: do the "wrong and confident" cases of E005 reproduce? Where is the boundary?
+- Result: 103 calls, all served. **5 uncontested "wrong and confident", reproduced 5 times out of 5**, plus 1 response reclassified as "contested" (ambiguous question, R008). Logical chain of 2 to 6 steps: P between 0.85 and 0.97, no slope. Distractors: P(contradiction) 0.73 → 0.34 → 0.14 → 0.08 for 0 to 3 distractors. Contamination by an unrelated contradiction: mean difference −0.005, not observed.
+- Verdict: **replication successful**; chain length is not the boundary, a single distractor is enough.
+- Takeaway: "can X be deduced" is ambiguous when a rule forbids X; specify the meaning of "deduce" in corpora.
+
+**5. Does Jev read written rules? (E007)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e007-regles/research/experiments/E007-regles) · not yet reviewed
+- Result: writing the agreement rule into the prompt corrects all 3 pairs (erroneous form from 0.84–0.86 to 0.05–0.09). Inverting a rule is followed (0.77 → 0.34; 0.95 → 0.28). Removing it changes almost nothing (0.70; 0.90): Jev fills in with the usual meaning of the symbols.
+- Verdict: **"partially"**, in the sense of the preregistered criterion.
+- Takeaway: [HYPOTHESIS] Jev starts from a prior; a written rule that contradicts it moves it, an absent rule does not stop it.
+
+**End of this part (26/09, 18:17).** Malik's decision: stop the Jev tests and work on small models we train ourselves.
+
+### Part 2 — Acquiring hidden rules: the opaque-relations chamber (26/09)
+
+**6. The bench and three baselines (E002)** — [folder](research/experiments/E002-relations-opaques/) · reviewed GO (R002), merged
+- Question: does a bench where the properties of relations are hidden, noisy (5 to 10 %) and trapped separate "knowing", "naive acquisition" and chance? Gain measured in bits saved (R).
+- Prior art: not documented in the README.
+- Result: even the baseline that **knows** the properties has a mean R of −0.003, positive in only 8 worlds out of 20. The ratio to this ceiling is therefore undefined in 12 worlds out of 20. Without noise, its R is +0.016, positive everywhere.
+- Verdict: **negative on the measure**, deviation reported and not corrected.
+- Takeaway: deducing correctly from a false observation propagates the error.
+
+**7. Repairing the measure (E002-bis)** — [folder](research/experiments/E002bis-mesure/) · reviewed GO (R003), merged
+- Changed: a ceiling that checks its premises with the world before concluding; measure as a difference (R − R_ceiling).
+- Result: R > 0 in **20 worlds out of 20** (mean +0.0122, minimum +0.0067), at the cost of 28 to 45 queries per world.
+- Verdict: **successful** (measure repaired, for this bench and these parameters).
+
+**8. First "acquire" candidate (A0)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0-candidat/research/candidats/A0) · reviewed with reservation (R009)
+- Question: do a memory across worlds, a calibrated trigger and a self-diagnosis make world n+1 solved faster than world n?
+- Result: speed-up in 1 family out of 4 (3 were required). Best system without given properties (gap to ceiling −0.0110), but its trigger **never** verified: 0 queries over 20 worlds, verification cost badly specified.
+- Verdict: **negative**, cause identified.
+
+**9. Corrected candidate (A0-bis)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0bis-candidat/research/candidats/A0bis) · reviewed with reservation (R009: reading depends on a single seed)
+- Result: marginal cost, verifications become active (22.6 queries per world), but 0 families out of 4. The "no estimated noise" ablation does better than the full system (−0.0076 versus −0.0105).
+- Verdict: **negative**.
+
+**10. Was the criterion reachable? (A0-ter, oracle)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0ter-candidat/research/candidats/A0ter) · not yet reviewed
+- Changed: a "perfect acquirer", which receives the exact knowledge of each family after its first world.
+- Result: **2 families out of 4**. Even perfect acquisition fails the criterion. The threshold mostly measured how badly the first world went.
+- Verdict: **the criterion did not measure learning.** The failures of A0 and A0-bis therefore say nothing about those candidates.
+- Takeaway, applied to every experiment since: **prove that a test can be passed by an oracle before judging a candidate on it.**
+
+### Part 3 — Learning a procedure: addition (26–27/09)
+
+The target is redefined: learn addition on numbers of 1 to 5 digits, then succeed on much longer numbers. Every experiment in this part starts from E008 and reuses its evaluator.
+
+**11. Is the test sound, and where does a transformer break? (E008)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e008-addition/research/experiments/E008-addition) · reviewed with reservation (R010–R012, reservation concerning E013, reviewed together), not merged
+- Prior art: the literature predicts collapse beyond seen lengths; "NoPE + reversed output" is a known fix.
+- Result: valid test (oracle 100 %, memorisation 0 %). Transformer of ~3.2 M parameters, 3 M examples: 98–100 % in distribution, **0.0 % from 6 digits on** (3 seeds). With the fix: 91.2 % at 6 digits, 7.9 % at 7, 0.1 % at 8. 65 to 68 % of its errors at 6–7 digits have a confidence ≥ 0.8. Compute: 2 h 11.
+- Verdict: **baseline established.** The known fix pushes the boundary out by one digit.
+
+**12. Architecture alone (E009)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e009-procedure-apprise/research/experiments/E009-procedure-apprise) · not yet reviewed
+- Prior art: Neural GPU, Deep Thinking, Looped Transformer (scan of 27/09, note [`vault/notes/2026-09-27-veille-procedure.md`](vault/notes/2026-09-27-veille-procedure.md)).
+- Result: 5 architectures of 50 to 110 k parameters, 512,000 examples: ≤ 3 % even in distribution.
+- Verdict: **not measured.** Budget too short, and a GPU shared by four windows (an orchestration error, acknowledged).
+- Takeaway: a pilot must check that the model learns the distribution, not only the compute speed.
+
+**13. Architecture alone, with a sufficient budget (E009-bis)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e009bis-procedure-apprise/research/experiments/E009bis-procedure-apprise) · not yet reviewed
+- Result: curriculum, width 128, up to 10,000 steps: **1 run out of 5** learns the distribution (96.8 %), then 17.3 % at 6 digits and 0 % beyond.
+- Verdict: **negative** at this budget. Compute: ≈ 3 h 52.
+
+**14. Teaching as at school: the column scratchpad (E010)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e010-enseignement/research/experiments/E010-enseignement) · not yet reviewed
+- Changed: the model writes each column (digits, incoming carry, written digit, outgoing carry) before the sum.
+- Result: **10,000 examples** are enough for 99.9 % in distribution; without a scratchpad, never 95 % with up to 256,000, i.e. at least 25 times fewer examples. Stating the rule in one sentence brings nothing. Out of distribution: 33.1 % at 6 digits, **0 % from 7 on**.
+- Verdict: **successful for efficiency, negative for length.**
+- Takeaway: the carry is computed correctly, the failure comes from **locating** (which digit to read, when to stop). And a confidence taken on the final copy is blind: 606 errors out of 669 are "confident".
+
+**15. Does the training objective break the rule? (E011)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e011-objectif-mdl/research/experiments/E011-objectif-mdl) · not yet reviewed
+- Prior art: Lan et al. (TACL 2022) obtain exact binary addition with an MDL objective; arXiv 2505.13398 reports that regularisation drifts away from the perfect solution (on other tasks). Two figures relayed by the scan were wrong; the experiment corrected them.
+- Changed: we start from a 22-parameter network, exact by construction, and train it.
+- Result: cross-entropy alone, rule kept **5/5** up to 1,000 bits. L2 penalty λ = 1: 0/5; L1 λ = 1: 2/5. Discrete MDL: 5/5, and the network compresses (206 → 204 bits). Our differentiable approximation of MDL: 4/5. Compute: ~4 min on CPU.
+- Verdict: **successful** (question settled for this network and this task).
+- Takeaway: the objective is not the hidden ceiling; strong weight penalties are.
+
+**16. Does evolution discover the circuit? (E012)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e012-evolution/research/experiments/E012-evolution) · not yet reviewed
+- Changed: evolutionary search guided by MDL, with less than 0.6 % of the budget of Lan et al.
+- Result: binary 0/5; aligned decimal 2/5 with 100 examples, **4/5 with 1,000**, exact up to 1,000 digits; flat input 0/5. The shortest circuit found is the school algorithm, with a single unit that is the carry: `h = step(a + b + h − 9)`, `output = a + b + h − 10·h`. It is proven exact for any length. Compute: ~204 min.
+- Verdict: **successful when the alignment is given.**
+- Takeaway: in the failures, the exact circuit has a much lower MDL than the one returned. It is the **search** that fails, not the objective.
+
+**17. A tiny accumulator, "the insect" 🐜 (E013)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e013-insecte/research/experiments/E013-insecte) · reviewed with reservation (R010, R011, R012), not merged
+- Prior art: path integration in the bee (Stone et al. 2017), a small state updated at each step. The analogy is ours, not the authors'.
+- Structure budget: digit alignment, direction (least significant first) and number of steps are given.
+- Result: **1,131 parameters**, a single-number state: 100 % from 16 to 100 digits (5/5 seeds), 99.3 % at 1,000. With two state numbers: **100 % at 1,000 digits**, 5/5 seeds, on all adversarial sets. With 1,000 examples, long numbers pass (98.6 % at 1,000 digits) but pure carry propagation drops to 52.9 % (1 seed out of 5); with 10,000, 100 % everywhere. Without given alignment: 0/5. Compute: 65 min.
+- Verdict: **successful, alignment given.** The project's first length success.
+- Takeaway: with a single state number, the network is wrong "with confidence" on sparse numbers (28 % of its errors): nothing in the short data forces "no carry" to remain stable.
+- Reservation: the README's synthesis was contested three times in a row (example threshold restated without a source). It must be redesigned before merging.
+
+**18. Learning WHERE to read, then composing (E014)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e014-reperage/research/experiments/E014-reperage) · not yet reviewed (cross-checked by the orchestrator)
+- Prior art: not documented in the README. The orchestrator notes after the fact that a discrete interface shared between modules is known (stitching, shared symbols).
+- Changed: a reader trained alone to "set out in columns", with no addition at all in its loss, then plugged in **frozen** in front of the **frozen** accumulator of E013, with no joint training.
+- Result: exact addition at 16 and 100 digits on **4 seeds out of 5**; 1/5 at 1,000 digits. Trained end to end, the same reader fails: 0/5, 1/5 with curriculum, 0/5 with hard pointers. By abstaining below a confidence threshold, it rejects 77 % of its errors for 1.4 % of its correct answers.
+- Verdict: **successful** for composition without retraining.
+- Takeaway: composition loses nothing as long as the reading is correct; at 1,000 digits, it is the reading that breaks. But **someone defined the intermediate task** and the interface between the two modules.
+
+### Part 4 — Without an interface written by us (27/09, evening)
+
+Malik's instruction at 20:35: stop redoing known work, take the opposite tack.
+
+**19. Ecosystem: do skills assemble on their own? (E015)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e015-ecosysteme/research/experiments/E015-ecosysteme) · not yet reviewed (cross-checked by the orchestrator)
+- Prior art (15 min scan): PathNet, modular meta-learning, NPI, model stitching. None requires at once discovering which frozen modules to chain, the order of operations **and** the symbol-to-symbol interface, with a final judge as the only signal.
+- Result: free assembly **0/5** on three new tasks. Wiring given, interface to be invented: **2/5**, exact up to 1,000 digits, with an interface we would not have written. With a single instruction missing from the wiring: 0/5. Reusing a winning interface on another task: no gain. Compute: ≈ 1 h.
+- Verdict: **negative.**
+- Takeaway: the known solution scores 1.100 with the judge, the returned programs between 0.004 and 0.45. Again it is the search that fails: a needle-in-a-haystack landscape, where no partial wiring scores better than "copy a". Some wrong interfaces divert a subtraction circuit into an adder without carry.
+
+**20. "Flies": a common language through social pressure? (E016)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e016-mouches/research/experiments/E016-mouches) · not yet reviewed (cross-checked by the orchestrator)
+- Malik's idea: 3 "reader" agents and 3 frozen "adder" agents, with incompatible private codes, a free channel and a common goal. All-or-nothing collective reward; if one agent is wrong, everyone starts over.
+- Prior art: **already partly done.** Heterogeneous frozen networks build a common protocol (Mahaut et al., arXiv 2302.08913). New part aimed at: procedural skills, a computation split in two by the channel, judging up to 1,000 digits.
+- Result: no common language (0 symbols shared by the three senders, 25 runs out of 25). Collective rule: 0/5 seeds, 1 or 2 pairs out of 9 per seed. Each seed produces one or two pair **idiolects**, perfect ones. The 13 learned pairs stay ≥ 90 % at 100 digits (13/13).
+- Verdict: **negative** for the common language.
+- Takeaway: collective all-or-nothing **cuts the signal** (0.0 to 0.1 % of team rounds succeed); replay divides by 3.5 the number of fresh problems seen.
+
+**21. E016, amendment A2: is a denser signal enough?** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e016-a2/research/experiments/E016-mouches) (A2 section of the README) · not yet reviewed (cross-checked by the orchestrator)
+- Prior art (in-depth search, verdict "partially done"): Tieleman 2019 and Michel et al. 2023 (the latter not read), where random partner swapping already reduces idiolects; Mahaut et al.; Marincat 2026.
+- Changed: reward = fraction of correct columns, or a 1-digit curriculum. Guard pilot preregistered before any run.
+- Result: **1 pair out of 9** in both cases. Senders freeze even faster (entropy 0.002 nat). The planned conditions were not launched. Compute: ≈ 3 min.
+- Verdict: **clean stop at the guard pilot.**
+- Takeaway: "a dense signal is missing" is refuted in this form (scalar per-item credit). [HYPOTHESIS] The bottleneck would be credit assignment and exploration.
 
 ---
 
-## Ce qui n'a pas marché, et pourquoi c'est utile
+## What we believe we know today
 
-Pour ne pas refaire ces cycles :
-
-1. **Critère non atteignable** (A0, A0-bis, A0-ter). Même un oracle échouait. Cause : le critère récompensait un progrès continu et dépendait de la chance du premier monde. Remède adopté : oracle à 100 % et « par cœur » à 0 % avant toute mesure.
-2. **Plafond au ratio sous bruit** (E002). Un ratio à un plafond négatif est indéfini. Remède : mesurer une différence à un plafond qui vérifie ses prémisses (E002-bis).
-3. **Déclencheur inerte** (A0). Un coût de vérification exprimé en bits absolus, alors que R est un rapport, rendait toute vérification non rentable.
-4. **Sous-budget et GPU partagé** (E009). Aucun apprentissage même dans la distribution : la question n'est pas tranchée, elle n'a pas été posée. Remède : un pilote qui vérifie qu'on apprend la distribution.
-5. **Architecture seule sans alignement** (E009-bis). Un run sur cinq apprend, et il ne généralise pas.
-6. **Règle énoncée en une phrase** (E010). Un modèle qui ne lit pas la langue n'en tire rien.
-7. **Confiance sur la mauvaise étape** (E010, E014, E015). Voir ci-dessus.
-8. **MDL différentiable approché** (E011). Il se comporte comme une pénalité de poids et casse une graine : à ne pas réutiliser tel quel.
-9. **Évolution en binaire** (E012). Toutes les graines tombent dans un piège « hésitant » qu'il faudrait quitter en passant par des étapes plus coûteuses : la sélection par troncature l'interdit.
-10. **État d'un seul nombre** (E013). Parfait dans la distribution, faux et sûr sur les nombres creux ; un deuxième nombre d'état suffit ici.
-11. **Pointeurs durs appris** (E014 R2). 0 même dans la distribution : [HYPOTHÈSE] une instabilité d'optimisation, pas une preuve contre les pointeurs.
-12. **Assemblage libre** (E015). Paysage en aiguille : plus d'essais (400 000 au pilote) ne changent pas l'attracteur « recopier a ».
-13. **Tout-ou-rien collectif avec rejeu** (E016). Il gèle l'équipe au lieu de fabriquer un pont.
-14. **Signal dense scalaire et curriculum court** (E016-A2). Verrouillage plus rapide, pas de décollage.
-15. **Accès aux API** (E001, E003). Carte bancaire exigée malgré « gratuit », limite de 5 requêtes par minute pour le compte, modèles fermés au niveau gratuit, fournisseur non imposé.
-16. **Incidents d'outillage.** Ordre d'itération dépendant de `PYTHONHASHSEED` (E002-bis). Bytecode `.pyc` obsolète après une mutation de même taille restaurée dans la même seconde (E013 : `PYTHONDONTWRITEBYTECODE=1`). Fichier d'état partagé écrasé par une fenêtre (26/09).
+- [VERIFIED — E011, E012, E013] **Computing is easy with almost nothing.** Once the digits are aligned, the carry is discovered by evolution (E012: one hidden unit) or learned (E013: 1,131 parameters) with 100 to 10,000 examples, stays stable under cross-entropy (E011), and holds up to 1,000 digits.
+- [VERIFIED — E008, E009-bis, E010, E013 I2, E014 R0] **The wall is locating, aligning, wiring.** Every time the system must find on its own which digit to read, it fails beyond seen lengths, whatever its size (from ~1,900 parameters to ~3.2 million).
+- [VERIFIED — E014, E015 ECH0, E016 DONNÉ] **What got over the wall: a given discrete symbolic interface.** Two frozen skills, connected by symbols, compose without loss up to 100 digits, and often up to 1,000. The remaining limits come from reading, not from computing.
+- [VERIFIED — E012 X1, E015, E016, E016-A2] **What did not get over it:** blind evolution without alignment, free assembly, all-or-nothing social pressure, a dense scalar signal.
+- [VERIFIED — E005, E006, E008, E010, E013, E015] **Misplaced confidence is blind.** Errors are often "confident" when confidence bears on the wrong step: the copy, the computation without the reading, the champions without the interface. A confidence taken at each step, reading included, separates much better (E014).
+- [HYPOTHESIS] The missing lever would be an **intermediate signal the machine gives itself** (consistency between modules, prediction of its own flows), rather than the final verdict alone. None of this has been tested.
 
 ---
 
-## Pistes ouvertes (non lancées, sans promesse)
+## What did not work, and why that is useful
 
-- **Reconcevoir la synthèse d'E013**, une source par chiffre, puis la faire relire. E008 et E013 pourront alors être fusionnés.
-- **Crédit par colonne** (E016). La récompense de la colonne t ne pousse que les choix de la colonne t ; d'autres variantes sont nommées dans le README d'E016 (plancher d'entropie, partenaire gelé en alternance).
-- **E015-A2 : l'interface comme objet de premier rang.** Une archive d'interfaces co-évoluée, jugée sur sa réutilisation, gelée, sur des tâches jamais vues. Antériorité faite par l'orchestrateur (verdict « partiellement fait ») : PathNet, BounceGrad, Braylan 2016, Guijt et al. 2024, Cully 2015, Schug 2024, MAGELLAN, DreamCoder / Voyager / FunSearch. Non trouvé : une mesure de la réutilisation de l'interface elle-même. La piste voisine, faire co-évoluer les problèmes avec les solveurs, a aussi fait l'objet d'une recherche de l'orchestrateur le 27/09 (novelty search, MCC de Brant & Stanley, PowerPlay, DreamCoder, HOUDINI, CRL). Son verdict, « chaque brique existe, l'assemblage non », n'est pas encore versionné dans le dépôt [HYPOTHÈSE jusqu'à publication des sources].
-- **Critère ACQUÉRIR v2** (A0-ter) : contraste avec un jumeau amnésique, seuil calibré sur le bruit, validé d'abord sur l'oracle.
+So that these cycles need not be repeated:
+
+1. **Unreachable criterion** (A0, A0-bis, A0-ter). Even an oracle failed. Cause: the criterion rewarded continuous progress and depended on the luck of the first world. Remedy adopted: oracle at 100 % and "memorising" at 0 % before any measurement.
+2. **Ratio to a ceiling under noise** (E002). A ratio to a negative ceiling is undefined. Remedy: measure a difference to a ceiling that checks its premises (E002-bis).
+3. **Inert trigger** (A0). A verification cost expressed in absolute bits, while R is a ratio, made every verification unprofitable.
+4. **Under-budget and shared GPU** (E009). No learning even in distribution: the question was not settled, it was not asked. Remedy: a pilot that checks the distribution is being learned.
+5. **Architecture alone without alignment** (E009-bis). One run out of five learns, and it does not generalise.
+6. **Rule stated in one sentence** (E010). A model that does not read language gets nothing from it.
+7. **Confidence on the wrong step** (E010, E014, E015). See above.
+8. **Approximate differentiable MDL** (E011). It behaves like a weight penalty and breaks one seed: not to be reused as is.
+9. **Evolution in binary** (E012). All seeds fall into a "hesitant" trap that could only be left by passing through more costly steps: truncation selection forbids it.
+10. **Single-number state** (E013). Perfect in distribution, wrong and confident on sparse numbers; a second state number is enough here.
+11. **Learned hard pointers** (E014 R2). 0 even in distribution: [HYPOTHESIS] an optimisation instability, not evidence against pointers.
+12. **Free assembly** (E015). Needle-in-a-haystack landscape: more trials (400,000 in the pilot) do not change the "copy a" attractor.
+13. **Collective all-or-nothing with replay** (E016). It freezes the team instead of building a bridge.
+14. **Dense scalar signal and short curriculum** (E016-A2). Faster lock-in, no take-off.
+15. **API access** (E001, E003). Credit card required despite "free", a limit of 5 requests per minute for the account, models closed at the free tier, provider not enforced.
+16. **Tooling incidents.** Iteration order depending on `PYTHONHASHSEED` (E002-bis). Stale `.pyc` bytecode after a same-size mutation restored within the same second (E013: `PYTHONDONTWRITEBYTECODE=1`). Shared state file overwritten by a window (26/09).
 
 ---
 
-## Reproduire
+## Open leads (not launched, no promises)
 
-Machine utilisée : Mac Apple M1 (16 Go), Python 3, MLX 0.29.3, numpy 2.0.2. Les expériences E001 à E007 appellent une API payante par la passerelle Vercel ; il faut une clé dans un fichier `.env` (modèle : [`.env.example`](.env.example)), jamais versionné. Les autres expériences tournent hors ligne.
+- **Redesign the E013 synthesis**, one source per figure, then have it reviewed. E008 and E013 can then be merged.
+- **Per-column credit** (E016). The reward of column t only pushes the choices of column t; other variants are named in the E016 README (entropy floor, alternating frozen partner).
+- **E015-A2: the interface as a first-class object.** A co-evolved archive of interfaces, judged on their reuse, frozen, on never-seen tasks. Prior-art search done by the orchestrator (verdict "partially done"): PathNet, BounceGrad, Braylan 2016, Guijt et al. 2024, Cully 2015, Schug 2024, MAGELLAN, DreamCoder / Voyager / FunSearch. Not found: a measure of the reuse of the interface itself. The neighbouring lead, co-evolving problems with solvers, was also the subject of an orchestrator search on 27/09 (novelty search, MCC by Brant & Stanley, PowerPlay, DreamCoder, HOUDINI, CRL). Its verdict, "every building block exists, the assembly does not", is recorded with its sources in [`vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md`](vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md) [VERIFIED — sources listed in the note].
+- **ACQUIRE criterion v2** (A0-ter): contrast with an amnesic twin, threshold calibrated on noise, validated first on the oracle.
 
-Environnement (README d'E008 ; `requirements.txt` est sur la branche `exp/e008-addition`) :
+---
+
+## Reproduce
+
+Machine used: Apple M1 Mac (16 GB), Python 3, MLX 0.29.3, numpy 2.0.2. Experiments E001 to E007 call a paid API through the Vercel gateway; they need a key in a `.env` file (template: [`.env.example`](.env.example)), never versioned. The other experiments run offline.
+
+Environment (E008 README; `requirements.txt` is on the `exp/e008-addition` branch):
 
 ```
 python3 -m venv $HOME/.venvs/ev-llm-e008
 $HOME/.venvs/ev-llm-e008/bin/pip install -r research/experiments/E008-addition/requirements.txt
 ```
 
-Pour une expérience sur branche : `git checkout <branche>`, puis les commandes ci-dessous depuis la racine. Seules les commandes de **tests** sont reprises ici ; les commandes complètes (entraînement, évaluation, analyse) sont dans le README de chaque expérience.
+For an experiment on a branch: `git checkout <branch>`, then the commands below from the repository root. Only the **test** commands are listed here; the full commands (training, evaluation, analysis) are in each experiment's README.
 
-| expérience | branche | tests (commande du README) |
+| experiment | branch | tests (command from the README) |
 |---|---|---|
 | E001 | `main` | `cd research/experiments/E001-jev-sonde && python3 -m unittest test_aggregate` |
 | E002 | `main` | `cd research/experiments/E002-relations-opaques && python3 -m unittest discover` |
@@ -255,28 +257,28 @@ Pour une expérience sur branche : `git checkout <branche>`, puis les commandes 
 | E012 | `exp/e012-evolution` | `cd research/experiments/E012-evolution && $PY -m unittest -v test_e012` |
 | E013 | `exp/e013-insecte` | `cd research/experiments/E013-insecte && $PY -m unittest -v test_e013` |
 
-`$PY` désigne `$HOME/.venvs/ev-llm-e008/bin/python`. Pour E013, les README demandent aussi `export PYTHONDONTWRITEBYTECODE=1`.
+`$PY` stands for `$HOME/.venvs/ev-llm-e008/bin/python`. For E013, the READMEs also require `export PYTHONDONTWRITEBYTECODE=1`.
 
-Commandes données telles quelles par leur README, sans `cd` :
-- E005 (`main`) : pas de commande de test propre ; le rejeu passe par ses scripts et par `run.py` / `aggregate.py` d'E001 (voir son README).
-- E009-bis : `python -m unittest test_e009bis` (dans son dossier).
-- E014 : `python -m unittest test_e014`.
-- E015 : `python -m unittest test_e015`.
-- E016 : `source $HOME/.venvs/ev-llm-e008/bin/activate`, `cd research/experiments/E016-mouches`, `python test_e016.py`.
-- E016-A2 : le README cite `test_e016a2.py` (4 tests) sans commande ; aucune n'est donc donnée ici.
+Commands given as is by their README, without `cd`:
+- E005 (`main`): no test command of its own; replay goes through its scripts and through E001's `run.py` / `aggregate.py` (see its README).
+- E009-bis: `python -m unittest test_e009bis` (in its folder).
+- E014: `python -m unittest test_e014`.
+- E015: `python -m unittest test_e015`.
+- E016: `source $HOME/.venvs/ev-llm-e008/bin/activate`, `cd research/experiments/E016-mouches`, `python test_e016.py`.
+- E016-A2: the README cites `test_e016a2.py` (4 tests) without a command; none is therefore given here.
 
-Le GPU MLX n'est pas reproductible au bit près : un rejeu donne des chiffres très proches, pas forcément identiques. Les expériences numpy sur CPU (E011, E012) et les bancs E002 / A0 sont déterministes, graines ou `PYTHONHASHSEED` fixés.
-
----
-
-## Comment le projet est conduit
-
-Une fenêtre d'orchestration, qui ne code pas, écrit des mandats autonomes. Un superviseur déterministe lance chaque fenêtre de travail, et chaque rendu est doublé par une relecture indépendante avant toute fusion. Le dépôt est public, et aucune donnée secrète n'y est versionnée (la clé d'API reste dans un `.env` ignoré par git). Mandats, rapports, revues et tableau de bord : [`vault/`](vault/) (index : [`vault/reprise/00_INDEX.md`](vault/reprise/00_INDEX.md) ; revues : [`vault/revues/`](vault/revues/)).
+The MLX GPU is not bit-for-bit reproducible: a replay gives very close figures, not necessarily identical ones. The numpy experiments on CPU (E011, E012) and the E002 / A0 benches are deterministic, with seeds or `PYTHONHASHSEED` fixed.
 
 ---
 
-## Licence et citation
+## How the project is run
 
-Licence : à définir. Aucun fichier de licence n'est présent dans le dépôt à ce jour.
+An orchestration window, which does not write code, writes autonomous mandates. A deterministic supervisor launches each working window, and each deliverable goes through an independent review before any merge. The repository is public, and no secret data is versioned in it (the API key stays in a `.env` ignored by git). Mandates, reports, reviews and dashboard: [`vault/`](vault/) (index: [`vault/reprise/00_INDEX.md`](vault/reprise/00_INDEX.md); reviews: [`vault/revues/`](vault/revues/)).
 
-Pour citer une expérience, pointer le README de son dossier et le SHA du commit lu : les chiffres y sont rattachés à leurs fichiers de résultats.
+---
+
+## License and citation
+
+License: to be decided. No license file is present in the repository to date.
+
+To cite an experiment, point to the README of its folder and the SHA of the commit read: the figures there are tied to their result files.
