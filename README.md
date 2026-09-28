@@ -66,7 +66,7 @@ Legend — verdict: ✅ success · ◐ partial / mixed · ❌ negative · ⏹ st
 | 15 | [E011](https://github.com/malikkaraoui/EV-LLM/tree/exp/e011-objectif-mdl/research/experiments/E011-objectif-mdl) · does the objective break the rule? | Cross-entropy keeps the rule 5/5; L2 λ = 1: 0/5 | ✅ | — |
 | 16 | [E012](https://github.com/malikkaraoui/EV-LLM/tree/exp/e012-evolution/research/experiments/E012-evolution) · evolution guided by MDL | Aligned decimal 4/5 with 1,000 examples, exact up to 1,000 digits; binary 0/5 | ✅ alignment given | — |
 | 17 | [E013](https://github.com/malikkaraoui/EV-LLM/tree/exp/e013-insecte/research/experiments/E013-insecte) · "the insect" 🐜 | Single-number state (1,131 params): 99.3 % at 1,000 digits; two state numbers: 100 % at 1,000 digits, 5/5 seeds | ✅ alignment given | Reservation |
-| 18 | [E014](https://github.com/malikkaraoui/EV-LLM/tree/exp/e014-reperage/research/experiments/E014-reperage) · learning where to read | Frozen reader + frozen accumulator: exact at 16 and 100 digits, 4/5 seeds; end to end 0/5 | ✅ composition | —\* |
+| 18 | [E014](https://github.com/malikkaraoui/EV-LLM/tree/exp/e014-reperage/research/experiments/E014-reperage) · learning where to read | Frozen reader + frozen accumulator: ≥ 98.4 % at 16 and 100 digits, 4/5 seeds; end to end 0/5 | ✅ composition | —\* |
 | | **Part 4 — Without an interface written by us** | | | |
 | 19 | [E015](https://github.com/malikkaraoui/EV-LLM/tree/exp/e015-ecosysteme/research/experiments/E015-ecosysteme) · ecosystem | Free assembly 0/5; wiring given, interface invented: 2/5 | ❌ | —\* |
 | 20 | [E016](https://github.com/malikkaraoui/EV-LLM/tree/exp/e016-mouches/research/experiments/E016-mouches) · "flies", common language | No common language; collective rule 0/5 seeds | ❌ | —\* |
@@ -117,7 +117,7 @@ The idea: to know *when* to verify, one needs honest confidence, especially on "
 #### 2. LLM baseline on the same cases (E003) — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e003-etalon-llm/research/experiments/E003-etalon-llm) · reviewed with reservation (R005), fixes not yet reviewed
 - **Question:** do two generative LLMs (`gpt-4.1-mini`, `gemini-2.5-flash`) do better or worse than Jev?
 - **Result:** compliance Jev 10/10, `gpt-4.1-mini` 9/10, `gemini-2.5-flash` 10/10. The only "wrong and confident": `gpt-4.1-mini` denies E > D 3 times out of 3, with a verbalised confidence of 0.9 to 1.
-- **Verdict:** measured, but backend not controlled: the gateway provider was neither enforced nor logged. The planned replay was cancelled when the Jev tests were stopped.
+- **Verdict:** measured, but backend not controlled: the gateway provider was neither enforced nor logged. The planned replay was never run; the Jev tests were stopped on 26/09 (18:17).
 - **Takeaway:** a verbalised confidence is not a probability ([HYPOTHESIS]); enforce and log the provider of any baseline model.
 
 #### 3. Jev out of distribution (E005) — [folder](research/experiments/E005-jev-hors-distribution/) · reviewed BROKEN (R004, wrong HTTP total), fixed, then reviewed GO (R007), merged
@@ -171,7 +171,7 @@ The idea: to know *when* to verify, one needs honest confidence, especially on "
 #### 10. Was the criterion reachable? (A0-ter, oracle) — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0ter-candidat/research/candidats/A0ter) · not yet reviewed
 - **Changed:** a "perfect acquirer", which receives the exact knowledge of each family after its first world.
 - **Result:** **2 families out of 4**. Even perfect acquisition fails the criterion. The threshold mostly measured how badly the first world went.
-- **Verdict:** the criterion did not measure acquisition. The failures of A0 and A0-bis therefore say nothing about those candidates.
+- **Verdict:** the criterion did not measure acquisition. [HYPOTHESIS] Their ACQUIRE failures therefore cannot be read as "these candidates do not acquire"; their other results (M1, M4, queries) stand.
 - **Takeaway, applied to every experiment since:** prove that a test can be passed by an oracle before judging a candidate on it.
 
 </details>
@@ -228,9 +228,9 @@ The target is redefined: learn addition on numbers of 1 to 5 digits, then succee
 #### 18. Learning WHERE to read, then composing (E014) — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e014-reperage/research/experiments/E014-reperage) · not yet reviewed (cross-checked by the orchestrator)
 - **Prior art:** not documented in the README. The orchestrator notes after the fact that a discrete interface shared between modules is known (stitching, shared symbols).
 - **Changed:** a reader trained alone to "set out in columns", with no addition at all in its loss, then plugged in **frozen** in front of the **frozen** accumulator of E013, with no joint training.
-- **Result:** exact addition at 16 and 100 digits on **4 seeds out of 5**; 1/5 at 1,000 digits. Trained end to end, the same reader fails: 0/5, 1/5 with curriculum, 0/5 with hard pointers. By abstaining below a confidence threshold, it rejects 77 % of its errors for 1.4 % of its correct answers.
+- **Result:** ≥ 98.4 % at 16 and 100 digits on **4 seeds out of 5** (100 % on 3); 1/5 at 1,000 digits. Trained end to end, the same reader fails: 0/5, 1/5 with curriculum, 0/5 with hard pointers. By abstaining below a confidence threshold, it rejects 77 % of its errors for 1.4 % of its correct answers.
 - **Verdict:** successful for composition without retraining.
-- **Takeaway:** composition loses nothing as long as the reading is correct; at 1,000 digits, it is the reading that breaks. But **someone defined the intermediate task** and the interface between the two modules.
+- **Takeaway:** from 10 to 100 digits, composition follows the reading within 0.8 point; at 1,000 digits the reading breaks, and the soft interface adds a loss (P4 failed). But **someone defined the intermediate task** and the interface between the two modules.
 
 </details>
 
@@ -242,13 +242,13 @@ The target is redefined: learn addition on numbers of 1 to 5 digits, then succee
 Malik's instruction at 20:35: stop redoing known work, take the opposite tack.
 
 #### 19. Ecosystem: do skills assemble on their own? (E015) — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e015-ecosysteme/research/experiments/E015-ecosysteme) · not yet reviewed (cross-checked by the orchestrator)
-- **Prior art (15 min scan):** PathNet, modular meta-learning, NPI, model stitching. None requires at once discovering which frozen modules to chain, the order of operations **and** the symbol-to-symbol interface, with a final judge as the only signal.
+- **Prior art (15 min scan):** PathNet, modular meta-learning, NPI, model stitching. None requires at once discovering which frozen modules to chain, the order of operations **and** the symbol-to-symbol interface, with a final judge as the only signal. [HYPOTHESIS: the scan lasted 15 min.]
 - **Result:** free assembly **0/5** on three new tasks. Wiring given, interface to be invented: **2/5**, exact up to 1,000 digits, with an interface we would not have written. With a single instruction missing from the wiring: 0/5. Reusing a winning interface on another task: no gain. Compute: ≈ 1 h.
 - **Verdict:** negative.
 - **Takeaway:** the known solution scores 1.100 with the judge, the returned programs between 0.004 and 0.45. Again it is the search that fails: a needle-in-a-haystack landscape, where no partial wiring scores better than "copy a". Some wrong interfaces divert a subtraction circuit into an adder without carry.
 
 #### 20. "Flies": a common language through social pressure? (E016) — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e016-mouches/research/experiments/E016-mouches) · not yet reviewed (cross-checked by the orchestrator)
-- **Malik's idea:** 3 "reader" agents and 3 frozen "adder" agents, with incompatible private codes, a free channel and a common goal. All-or-nothing collective reward; if one agent is wrong, everyone starts over.
+- **Malik's idea:** 3 frozen "reader" agents and 3 frozen "adder" agents, with incompatible private codes, a free channel and a common goal. All-or-nothing collective reward; if one agent is wrong, everyone starts over.
 - **Prior art:** already partly done. Heterogeneous frozen networks build a common protocol (Mahaut et al., arXiv 2302.08913). New part aimed at: procedural skills, a computation split in two by the channel, judging up to 1,000 digits.
 - **Result:** no common language (0 symbols shared by the three senders, 25 runs out of 25). Collective rule: 0/5 seeds, 1 or 2 pairs out of 9 per seed. Each seed produces one or two pair **idiolects**, perfect ones. The 13 learned pairs stay ≥ 90 % at 100 digits (13/13).
 - **Verdict:** negative for the common language.
@@ -267,9 +267,9 @@ Malik's instruction at 20:35: stop redoing known work, take the opposite tack.
 
 ## What we believe we know today
 
-- [VERIFIED — E011, E012, E013] **Computing is easy with almost nothing.** Once the digits are aligned, the carry is discovered by evolution (E012: one hidden unit; 2/5 seeds with 100 examples, 4/5 with 1,000) or learned (E013: 1,131 parameters), stays stable under cross-entropy (E011), and holds up to 1,000 digits (E013: 100 % with two state numbers, or with 10,000 examples).
+- [VERIFIED — E011, E012, E013] **Computing is easy with almost nothing.** Once the digits are aligned, the carry is discovered by evolution (E012: 2/5 seeds with 100 examples, 4/5 with 1,000; the shortest circuit has a single hidden unit, the carry) or learned (E013: 1,131 parameters), stays stable under cross-entropy (E011), and holds up to 1,000 digits (E013: 100 % with two state numbers, or with 10,000 examples).
 - [VERIFIED — E008, E009-bis, E010, E013 I2, E014 R0] **The wall is locating, aligning, wiring.** Whenever the system must find on its own which digit to read, no seed reaches 90 % at 16 digits, whatever its size (from ~1,900 parameters to ~3.2 million), except one seed out of five with a curriculum (E014 R0b, 1/5 at 16 and 100 digits); the known fix (E008 B-REF) holds only one digit beyond (91.2 % at 6).
-- [VERIFIED — E014, E015 ECH0, E016 DONNÉ] **What got over the wall: a symbolic interface between frozen skills.** Two frozen skills compose without retraining: at least 90 % exact at 16 and 100 digits on 4/5 seeds when the interface is given (E014 R1G, which passes probabilities), 100 % on 2/5 seeds when the wiring is given and the interface must be invented (E015 ECH0), and on 9/9 pairs × 5/5 seeds when the interface is given (E016 DONNÉ, 100 % at 100 digits). At 1,000 digits: 1/5 (E014) and 71.7 % (DONNÉ), limited by reading; ECH0 keeps its 2/5, its limit being the champion on pure carry propagation.
+- [VERIFIED — E014, E015 ECH0, E016 DONNÉ] **What got over the wall: a symbolic interface between frozen skills.** Frozen skills compose without retraining: at least 90 % exact at 16 and 100 digits on 4/5 seeds when the interface is given (E014 R1G, which passes probabilities), 100 % on 2/5 seeds when the wiring is given and the interface to a single frozen champion must be invented (E015 ECH0), and on 9/9 pairs × 5/5 seeds when the interface is given (E016 DONNÉ, 100 % at 100 digits). At 1,000 digits: 1/5 (E014: reading 2/5, the soft interface costs one seed — post hoc) and 71.7 % (DONNÉ, limited by the reader); ECH0 keeps its 2/5, its limit being the champion on pure carry propagation.
 - [VERIFIED — E012 X3, E015, E016, E016-A2] **What did not get over it:** blind evolution without alignment, free assembly, all-or-nothing social pressure, a dense scalar signal.
 - [VERIFIED — E005, E006, E008, E010, E014, E015] **Misplaced confidence is blind.** Errors are often "confident" when confidence bears on the wrong step: the copy, the computation without the reading, the champions without the interface. A confidence taken at each step, reading included, separates much better (E014, post hoc).
 - [HYPOTHESIS] The missing lever would be an **intermediate signal the machine gives itself** (consistency between modules, prediction of its own flows), rather than the final verdict alone. None of this has been tested.
@@ -306,8 +306,9 @@ So that these cycles need not be repeated.
 *Not launched, no promises.*
 
 - **Redesign the E013 synthesis**, one source per figure, then have it reviewed. E008 and E013 can then be merged.
-- **Per-column credit** (E016). The reward of column t only pushes the choices of column t; other variants are named in the E016 README (entropy floor, alternating frozen partner).
-- **E015-A2: the interface as a first-class object.** A co-evolved archive of interfaces, judged on their reuse, frozen, on never-seen tasks. A prior-art list is being prepared with its mandate (M0033), not yet in the repository. The neighbouring lead, an intermediate signal the machine gives itself (co-evolving problems with solvers being its counter-tack), was the subject of an orchestrator search on 27/09 (novelty search, MCC by Brant & Stanley, PowerPlay, DreamCoder, HOUDINI, CRL); its verdict, "every building block exists, the assembly does not", is recorded with its sources in [`vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md`](vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md) [VERIFIED — sources listed in the note].
+- **Per-column credit** (E016). The reward of column t only pushes the choices of column t; other variants are named in the A2 section of the E016 README (branch `exp/e016-a2`) (entropy floor, alternating frozen partner).
+- **E015-A2: an intermediate signal the machine gives itself** (consistency between champions, prediction of its own flows) instead of the final verdict alone; counter-tack: co-evolving test instances with the programs (MCC). Orchestrator prior-art search on 27/09 (novelty search, MCC by Brant & Stanley, PowerPlay, DreamCoder, HOUDINI, CRL): "every building block exists, the assembly does not", recorded with its sources in [`vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md`](vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md) [VERIFIED — sources listed in the note]. Not launched.
+- **The interface as a first-class object.** [HYPOTHESIS] A co-evolved archive of interfaces, judged on their reuse, frozen, on never-seen tasks. Not launched; prior art to be documented.
 - **ACQUIRE criterion v2** (A0-ter): contrast with an amnesic twin, threshold calibrated on noise, validated first on the oracle.
 
 ---
