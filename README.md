@@ -279,6 +279,6 @@ An orchestration window, which does not write code, writes autonomous mandates. 
 
 ## License and citation
 
-License: to be decided. No license file is present in the repository to date.
+MIT License — see [`LICENSE`](LICENSE). Code, experiment reports and this log are all under MIT.
 
 To cite an experiment, point to the README of its folder and the SHA of the commit read: the figures there are tied to their result files.
