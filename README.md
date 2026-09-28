@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Type](https://img.shields.io/badge/type-research%20log-8A2BE2)
-![Experiments](https://img.shields.io/badge/experiments-21-informational)
+![Experiments](https://img.shields.io/badge/experiments%20%26%20amendments-21-informational)
 ![Compute](https://img.shields.io/badge/compute-1%C3%97%20Mac%20M1%2016%20GB-lightgrey)
 
 Not a product, not a model to download: a lab notebook, **failures published on the same footing as successes**. Each failure spares someone else a cycle.
@@ -18,9 +18,9 @@ Not a product, not a model to download: a lab notebook, **failures published on 
 | | What we found | Evidence |
 |---|---|---|
 | ✅ | **Computing is easy with almost nothing.** Once the digits are aligned, a tiny network (1,131 parameters) or an evolved circuit with a single carry unit holds up to 1,000 digits. | E011 · E012 · E013 |
-| 🧱 | **The wall is locating, aligning, wiring.** Whenever the system must find on its own which digit to read, it fails beyond seen lengths, from ~1,900 to ~3.2 M parameters. | E008 · E009-bis · E010 · E013 · E014 |
-| 🔌 | **What got over the wall: a discrete symbolic interface between frozen skills.** They compose without retraining — but the interface or the wiring was still given by us. | E014 · E015 · E016 |
-| 🙈 | **Misplaced confidence is blind.** Errors are "confident" when confidence bears on the wrong step. | E005 · E006 · E010 · E013 · E015 |
+| 🧱 | **The wall is locating, aligning, wiring.** Whenever the system must find on its own which digit to read, it fails beyond seen lengths, from ~1,900 to ~3.2 M parameters — one exception: 1 seed out of 5 with a curriculum (E014 R0b). | E008 · E009-bis · E010 · E013 I2 · E014 R0 |
+| 🔌 | **What got over the wall: a discrete symbolic interface between frozen skills.** They compose without retraining — but the interface or the wiring was still given by us. | E014 · E015 ECH0 · E016 DONNÉ |
+| 🙈 | **Misplaced confidence is blind.** Errors are often "confident" when confidence bears on the wrong step. | E005 · E006 · E008 · E010 · E013 · E015 |
 | ❓ | **Open:** an intermediate signal the machine gives itself. *[HYPOTHESIS] — not tested.* | — |
 
 ---
@@ -50,27 +50,27 @@ Legend — verdict: ✅ success · ◐ partial / mixed · ❌ negative · ⏹ st
 | 1 | [E001](research/experiments/E001-jev-sonde/) · first probe of Jev | 0 "wrong and confident" out of 13 calls on common mistakes | ◐ probe OK, question open | GO |
 | 2 | [E003](https://github.com/malikkaraoui/EV-LLM/tree/exp/e003-etalon-llm/research/experiments/E003-etalon-llm) · LLM baseline | Compliance: Jev 10/10, `gpt-4.1-mini` 9/10, `gemini-2.5-flash` 10/10 | ◐ backend not controlled | Reservation |
 | 3 | [E005](research/experiments/E005-jev-hors-distribution/) · Jev out of distribution | 9 "wrong and confident" evaluations out of 42, over 6 questions | ❌ calibration | GO |
-| 4 | [E006](https://github.com/malikkaraoui/EV-LLM/tree/exp/e006-replication-frontiere/research/experiments/E006-replication-frontiere) · replication and boundary | 5 uncontested cases, reproduced 5/5; a single distractor is enough | ✅ replicated | Reservation |
+| 4 | [E006](https://github.com/malikkaraoui/EV-LLM/tree/exp/e006-replication-frontiere/research/experiments/E006-replication-frontiere) · replication and boundary | 5 uncontested "wrong and confident", reproduced 5/5; a single distractor is enough | ✅ replicated | Reservation |
 | 5 | [E007](https://github.com/malikkaraoui/EV-LLM/tree/exp/e007-regles/research/experiments/E007-regles) · does Jev read written rules? | A written rule corrects 3/3 pairs; an absent rule changes almost nothing | ◐ partially | — |
 | | **Part 2 — Acquiring hidden rules** | | | |
 | 6 | [E002](research/experiments/E002-relations-opaques/) · opaque-relations bench | Even the baseline that *knows*: mean R −0.003, positive in 8/20 worlds | ❌ measure | GO |
 | 7 | [E002-bis](research/experiments/E002bis-mesure/) · repaired measure | R > 0 in 20/20 worlds | ✅ | GO |
 | 8 | [A0](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0-candidat/research/candidats/A0) · first "acquire" candidate | Speed-up in 1/4 families (3 required); trigger never verified (0 queries) | ❌ | Reservation |
-| 9 | [A0-bis](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0bis-candidat/research/candidats/A0bis) · corrected candidate | 0/4 families | ❌ | Reservation |
-| 10 | [A0-ter](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0ter-candidat/research/candidats/A0ter) · oracle | Even a perfect acquirer: 2/4 families | ❌ criterion invalid | — |
+| 9 | [A0-bis](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0bis-candidat/research/candidats/A0bis) · corrected candidate | 0/4 families (single seed) | ❌ | Reservation |
+| 10 | [A0-ter](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0ter-candidat/research/candidats/A0ter) · oracle | Even a perfect acquirer: 2/4 families | ◐ criterion did not measure learning | — |
 | | **Part 3 — Learning a procedure: addition** | | | |
 | 11 | [E008](https://github.com/malikkaraoui/EV-LLM/tree/exp/e008-addition/research/experiments/E008-addition) · transformer baseline | ~3.2 M params: 98–100 % in distribution, 0.0 % from 6 digits | ✅ baseline set | Reservation |
-| 12 | [E009](https://github.com/malikkaraoui/EV-LLM/tree/exp/e009-procedure-apprise/research/experiments/E009-procedure-apprise) · architecture alone | ≤ 3 % even in distribution | ⏹ not measured | — |
+| 12 | [E009](https://github.com/malikkaraoui/EV-LLM/tree/exp/e009-procedure-apprise/research/experiments/E009-procedure-apprise) · architecture alone | ≤ 3 % even in distribution | ◐ not measured (budget too short) | — |
 | 13 | [E009-bis](https://github.com/malikkaraoui/EV-LLM/tree/exp/e009bis-procedure-apprise/research/experiments/E009bis-procedure-apprise) · same, sufficient budget | 1/5 runs learns; 0 % beyond 6 digits | ❌ | — |
 | 14 | [E010](https://github.com/malikkaraoui/EV-LLM/tree/exp/e010-enseignement/research/experiments/E010-enseignement) · column scratchpad | 99.9 % with 10,000 examples (≥ 25× fewer); 0 % from 7 digits | ◐ efficiency ✅ length ❌ | — |
 | 15 | [E011](https://github.com/malikkaraoui/EV-LLM/tree/exp/e011-objectif-mdl/research/experiments/E011-objectif-mdl) · does the objective break the rule? | Cross-entropy keeps the rule 5/5; L2 λ = 1: 0/5 | ✅ | — |
-| 16 | [E012](https://github.com/malikkaraoui/EV-LLM/tree/exp/e012-evolution/research/experiments/E012-evolution) · evolution guided by MDL | Aligned decimal 4/5, exact up to 1,000 digits; binary 0/5 | ✅ alignment given | — |
-| 17 | [E013](https://github.com/malikkaraoui/EV-LLM/tree/exp/e013-insecte/research/experiments/E013-insecte) · "the insect" 🐜 | 1,131 params, two state numbers: 100 % at 1,000 digits, 5/5 seeds | ✅ alignment given | Reservation |
+| 16 | [E012](https://github.com/malikkaraoui/EV-LLM/tree/exp/e012-evolution/research/experiments/E012-evolution) · evolution guided by MDL | Aligned decimal 4/5 with 1,000 examples, exact up to 1,000 digits; binary 0/5 | ✅ alignment given | — |
+| 17 | [E013](https://github.com/malikkaraoui/EV-LLM/tree/exp/e013-insecte/research/experiments/E013-insecte) · "the insect" 🐜 | Single-number state (1,131 params): 99.3 % at 1,000 digits; two state numbers: 100 % at 1,000 digits, 5/5 seeds | ✅ alignment given | Reservation |
 | 18 | [E014](https://github.com/malikkaraoui/EV-LLM/tree/exp/e014-reperage/research/experiments/E014-reperage) · learning where to read | Frozen reader + frozen accumulator: exact at 16 and 100 digits, 4/5 seeds; end to end 0/5 | ✅ composition | —\* |
 | | **Part 4 — Without an interface written by us** | | | |
 | 19 | [E015](https://github.com/malikkaraoui/EV-LLM/tree/exp/e015-ecosysteme/research/experiments/E015-ecosysteme) · ecosystem | Free assembly 0/5; wiring given, interface invented: 2/5 | ❌ | —\* |
 | 20 | [E016](https://github.com/malikkaraoui/EV-LLM/tree/exp/e016-mouches/research/experiments/E016-mouches) · "flies", common language | No common language; collective rule 0/5 seeds | ❌ | —\* |
-| 21 | [E016-A2](https://github.com/malikkaraoui/EV-LLM/tree/exp/e016-a2/research/experiments/E016-mouches) · denser signal | 1 pair out of 9 in both conditions | ⏹ stopped at guard pilot | —\* |
+| 21 | [E016-A2](https://github.com/malikkaraoui/EV-LLM/tree/exp/e016-a2/research/experiments/E016-mouches) · denser signal | 1 pair out of 9 in both guard pilots | ⏹ stopped at guard pilot | —\* |
 
 ---
 
@@ -78,7 +78,7 @@ Legend — verdict: ✅ success · ◐ partial / mixed · ❌ negative · ⏹ st
 
 This is the part that matters most; the results follow from it.
 
-1. **Prior art first.** Before each experiment, we look for what is published and write the verdict into the mandate ("done", "partially done", "not found"). A 10–20 min scan at first; since the evening of 27/09, an in-depth search by dedicated agents before any launch.
+1. **Prior art first.** Before each experiment, we look for what is published: sources read, verdict written into the mandate ("done", "partially done", "not found"). A 10–20 min scan at first; since the evening of 27/09, an in-depth search by dedicated agents before any launch.
 2. **Never redo published work to reach the same result.** If it exists, we look for the variant or the opposite tack. A known building block (MAP-Elites, MDL, REINFORCE…) is only a tool; the question tested must be new.
 3. **Preregistration before code.** Hypotheses, numerical predictions and success thresholds are committed and pushed on their own, before the first line of code. A deviation found afterwards is a result: reported, not quietly corrected. Any change goes through a dated amendment.
 4. **Measurement safeguards** (tightened on 27/09 after a hostile review):
@@ -87,7 +87,7 @@ This is the part that matters most; the results follow from it.
    - validity controls: an oracle must score 100 %, a "memorising" system 0 %;
    - adversarial tests: cascading carries, numbers full of zeros, asymmetric lengths;
    - **structure budget**: what is given by hand (alignment, reading direction, number of steps…) is written down, separately from what is actually learned.
-5. **Independent review ("doublage") before any merge.** Another agent replays, recomputes and rereads. Verdicts: GO, RESERVATION or BROKEN. Only GO merges.
+5. **Independent review ("doublage") before any merge.** Another agent replays, recomputes and rereads. Verdicts: GO, RESERVATION or BROKEN. Only GO merges; "mergeable with reservation" does not merge.
 6. **Fast iteration, small compute.** One Mac M1 16 GB (Python, numpy, MLX). 3 minutes to 4 hours per experiment. Models from 22 parameters (a hand-built recurrent network) to ~3.2 million (a small transformer). Each experiment README gives its compute time.
 
 Labels: **[VERIFIED]** = checked against a source in the repository · **[HYPOTHESIS]** = interpretation not established. No general conclusion is drawn: samples range from 7 cases to a few hundred thousand items, on a single task at a time.
@@ -307,7 +307,7 @@ So that these cycles need not be repeated.
 
 - **Redesign the E013 synthesis**, one source per figure, then have it reviewed. E008 and E013 can then be merged.
 - **Per-column credit** (E016). The reward of column t only pushes the choices of column t; other variants are named in the E016 README (entropy floor, alternating frozen partner).
-- **E015-A2: the interface as a first-class object.** A co-evolved archive of interfaces, judged on their reuse, frozen, on never-seen tasks. Prior-art search by the orchestrator (verdict "partially done"): PathNet, BounceGrad, Braylan 2016, Guijt et al. 2024, Cully 2015, Schug 2024, MAGELLAN, DreamCoder / Voyager / FunSearch. Not found: a measure of the reuse of the interface itself. The neighbouring lead, co-evolving problems with solvers, was also searched on 27/09 (novelty search, MCC by Brant & Stanley, PowerPlay, DreamCoder, HOUDINI, CRL); its verdict, "every building block exists, the assembly does not", is recorded with its sources in [`vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md`](vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md) [VERIFIED — sources listed in the note].
+- **E015-A2: the interface as a first-class object.** A co-evolved archive of interfaces, judged on their reuse, frozen, on never-seen tasks. Prior-art search done by the orchestrator (verdict "partially done"): PathNet, BounceGrad, Braylan 2016, Guijt et al. 2024, Cully 2015, Schug 2024, MAGELLAN, DreamCoder / Voyager / FunSearch. Not found: a measure of the reuse of the interface itself. The neighbouring lead, co-evolving problems with solvers, was also the subject of an orchestrator search on 27/09 (novelty search, MCC by Brant & Stanley, PowerPlay, DreamCoder, HOUDINI, CRL); its verdict, "every building block exists, the assembly does not", is recorded with its sources in [`vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md`](vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md) [VERIFIED — sources listed in the note].
 - **ACQUIRE criterion v2** (A0-ter): contrast with an amnesic twin, threshold calibrated on noise, validated first on the oracle.
 
 ---
@@ -382,7 +382,7 @@ EV-LLM/
 │   ├── notes/ · decisions/ · lecons/           notes, decisions, lessons learned
 │   └── runtime/                                supervisor doctrine (state files are git-ignored)
 ├── config/harnais.json                         orchestration settings
-├── scripts/harnais-hooks/                      git hooks (signature, review gate on main)
+├── scripts/harnais-hooks/                      git hooks (index size limit, signature, review gate on main)
 └── .claude/skills/orchestration-bureau/        orchestration convention
 ```
 
