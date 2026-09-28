@@ -11,7 +11,7 @@
 
 > **Version 2 — 2026-09-25 — passe « défi → piste » (Claude)**
 >
-> La v1 (discussion avec GPT) est conservée intacte dans `architecture_cognitive_post_transformer.v1-gpt.md`.
+> La v1 (discussion avec GPT) est conservée intacte dans `architecture_cognitive_post_transformer.v1-gpt.md` (déplacé le 28/09/2026 dans [`docs/archive/`](docs/archive/architecture_cognitive_post_transformer.v1-gpt.md)).
 >
 > Cette v2 ne retire rien de la v1. Elle ajoute des blocs **« v2 — Défi → Piste »** aux endroits où la v1 bute sur un vrai problème.
 >

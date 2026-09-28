@@ -40,3 +40,7 @@ vault/runtime/events.jsonl
 
 # E001 : sorties brutes completes (en-tetes de reponse) jamais versionnees
 research/experiments/*/results/**/raw.jsonl
+
+# Bruit local : fichiers macOS et worktrees des fenêtres (jamais versionnés)
+.DS_Store
+.claude/worktrees/
