@@ -17,10 +17,10 @@ Not a product, not a model to download: a lab notebook, **failures published on 
 
 | | What we found | Evidence |
 |---|---|---|
-| ✅ | **Computing is easy with almost nothing.** Once the digits are aligned, a tiny network (1,131 parameters) or an evolved circuit with a single carry unit holds up to 1,000 digits. | E011 · E012 · E013 |
-| 🧱 | **The wall is locating, aligning, wiring.** Whenever the system must find on its own which digit to read, it fails beyond seen lengths, from ~1,900 to ~3.2 M parameters — one exception: 1 seed out of 5 with a curriculum (E014 R0b). | E008 · E009-bis · E010 · E013 I2 · E014 R0 |
-| 🔌 | **What got over the wall: a discrete symbolic interface between frozen skills.** They compose without retraining — but the interface or the wiring was still given by us. | E014 · E015 ECH0 · E016 DONNÉ |
-| 🙈 | **Misplaced confidence is blind.** Errors are often "confident" when confidence bears on the wrong step. | E005 · E006 · E008 · E010 · E013 · E015 |
+| ✅ | **Computing is easy with almost nothing.** Once the digits are aligned, a tiny network (1,196 parameters, two state numbers) or an evolved circuit with a single carry unit is exact up to 1,000 digits. | E011 · E012 · E013 |
+| 🧱 | **The wall is locating, aligning, wiring.** Whenever the system must find on its own which digit to read, no seed reaches 90 % at 16 digits, from ~1,900 to ~3.2 M parameters — except 1 seed out of 5 with a curriculum (E014 R0b). | E008 · E009-bis · E010 · E013 I2 · E014 R0 |
+| 🔌 | **What got over the wall: a symbolic interface between frozen skills.** They compose without retraining — but the interface or the wiring was still given by us. | E014 · E015 ECH0 · E016 DONNÉ |
+| 🙈 | **Misplaced confidence is blind.** Errors are often "confident" when confidence bears on the wrong step. | E005 · E006 · E008 · E010 · E014 · E015 |
 | ❓ | **Open:** an intermediate signal the machine gives itself. *[HYPOTHESIS] — not tested.* | — |
 
 ---
@@ -47,7 +47,7 @@ Legend — verdict: ✅ success · ◐ partial / mixed · ❌ negative · ⏹ st
 | # | Experiment | Key result | Verdict | Review |
 |---|---|---|---|---|
 | | **Part 1 — Does Jev know when it is wrong?** | | | |
-| 1 | [E001](research/experiments/E001-jev-sonde/) · first probe of Jev | 0 "wrong and confident" out of 13 calls on common mistakes | ◐ probe OK, question open | GO |
+| 1 | [E001](research/experiments/E001-jev-sonde/) · first probe of Jev | 0 "wrong and confident" out of 13 calls on common mistakes and their controls | ◐ probe OK, question open | GO |
 | 2 | [E003](https://github.com/malikkaraoui/EV-LLM/tree/exp/e003-etalon-llm/research/experiments/E003-etalon-llm) · LLM baseline | Compliance: Jev 10/10, `gpt-4.1-mini` 9/10, `gemini-2.5-flash` 10/10 | ◐ backend not controlled | Reservation |
 | 3 | [E005](research/experiments/E005-jev-hors-distribution/) · Jev out of distribution | 9 "wrong and confident" evaluations out of 42, over 6 questions | ❌ calibration | GO |
 | 4 | [E006](https://github.com/malikkaraoui/EV-LLM/tree/exp/e006-replication-frontiere/research/experiments/E006-replication-frontiere) · replication and boundary | 5 uncontested "wrong and confident", reproduced 5/5; a single distractor is enough | ✅ replicated | Reservation |
@@ -56,8 +56,8 @@ Legend — verdict: ✅ success · ◐ partial / mixed · ❌ negative · ⏹ st
 | 6 | [E002](research/experiments/E002-relations-opaques/) · opaque-relations bench | Even the baseline that *knows*: mean R −0.003, positive in 8/20 worlds | ❌ measure | GO |
 | 7 | [E002-bis](research/experiments/E002bis-mesure/) · repaired measure | R > 0 in 20/20 worlds | ✅ | GO |
 | 8 | [A0](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0-candidat/research/candidats/A0) · first "acquire" candidate | Speed-up in 1/4 families (3 required); trigger never verified (0 queries) | ❌ | Reservation |
-| 9 | [A0-bis](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0bis-candidat/research/candidats/A0bis) · corrected candidate | 0/4 families (single seed) | ❌ | Reservation |
-| 10 | [A0-ter](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0ter-candidat/research/candidats/A0ter) · oracle | Even a perfect acquirer: 2/4 families | ◐ criterion did not measure learning | — |
+| 9 | [A0-bis](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0bis-candidat/research/candidats/A0bis) · corrected candidate | 0/4 families | ❌ | Reservation |
+| 10 | [A0-ter](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0ter-candidat/research/candidats/A0ter) · oracle | Even a perfect acquirer: 2/4 families | ◐ criterion did not measure acquisition | — |
 | | **Part 3 — Learning a procedure: addition** | | | |
 | 11 | [E008](https://github.com/malikkaraoui/EV-LLM/tree/exp/e008-addition/research/experiments/E008-addition) · transformer baseline | ~3.2 M params: 98–100 % in distribution, 0.0 % from 6 digits | ✅ baseline set | Reservation |
 | 12 | [E009](https://github.com/malikkaraoui/EV-LLM/tree/exp/e009-procedure-apprise/research/experiments/E009-procedure-apprise) · architecture alone | ≤ 3 % even in distribution | ◐ not measured (budget too short) | — |
@@ -165,13 +165,13 @@ The idea: to know *when* to verify, one needs honest confidence, especially on "
 - **Verdict:** negative, cause identified.
 
 #### 9. Corrected candidate (A0-bis) — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0bis-candidat/research/candidats/A0bis) · reviewed with reservation (R009: reading depends on a single seed)
-- **Result:** marginal cost, verifications become active (22.6 queries per world), but 0 families out of 4. The "no estimated noise" ablation does better than the full system (−0.0076 versus −0.0105).
+- **Result:** marginal cost, verifications become active (22.6 queries per world), but 0 families out of 4. The "no estimated noise" ablation does better than the full system (−0.0076 versus −0.0105), but this gap comes from a single world (seed 19); without it, the full system does better (−0.0074 versus −0.0078) (R009).
 - **Verdict:** negative.
 
 #### 10. Was the criterion reachable? (A0-ter, oracle) — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/a0ter-candidat/research/candidats/A0ter) · not yet reviewed
 - **Changed:** a "perfect acquirer", which receives the exact knowledge of each family after its first world.
 - **Result:** **2 families out of 4**. Even perfect acquisition fails the criterion. The threshold mostly measured how badly the first world went.
-- **Verdict:** the criterion did not measure learning. The failures of A0 and A0-bis therefore say nothing about those candidates.
+- **Verdict:** the criterion did not measure acquisition. The failures of A0 and A0-bis therefore say nothing about those candidates.
 - **Takeaway, applied to every experiment since:** prove that a test can be passed by an oracle before judging a candidate on it.
 
 </details>
@@ -267,11 +267,11 @@ Malik's instruction at 20:35: stop redoing known work, take the opposite tack.
 
 ## What we believe we know today
 
-- [VERIFIED — E011, E012, E013] **Computing is easy with almost nothing.** Once the digits are aligned, the carry is discovered by evolution (E012: one hidden unit) or learned (E013: 1,131 parameters) with 100 to 10,000 examples, stays stable under cross-entropy (E011), and holds up to 1,000 digits.
-- [VERIFIED — E008, E009-bis, E010, E013 I2, E014 R0] **The wall is locating, aligning, wiring.** Whenever the system must find on its own which digit to read, it fails beyond seen lengths, whatever its size (from ~1,900 parameters to ~3.2 million) — the single exception being one seed out of five with a curriculum (E014 R0b, 1/5 at 16 and 100 digits).
-- [VERIFIED — E014, E015 ECH0, E016 DONNÉ] **What got over the wall: a discrete symbolic interface between frozen skills.** Two frozen skills connected by symbols compose without retraining: at least 90 % exact at 16 and 100 digits on 4/5 seeds when the interface is given (E014 R1G), 100 % on 2/5 seeds when the wiring is given and the interface must be invented (E015 ECH0), and on 9/9 pairs × 5/5 seeds when the interface is given (E016 DONNÉ, 100 % at 100 digits). At 1,000 digits it holds only sometimes: 1/5 (E014), 2/5 (ECH0), 71.7 % (DONNÉ). The remaining limits come from reading, not from computing.
-- [VERIFIED — E012 X1, E015, E016, E016-A2] **What did not get over it:** blind evolution without alignment, free assembly, all-or-nothing social pressure, a dense scalar signal.
-- [VERIFIED — E005, E006, E008, E010, E013, E015] **Misplaced confidence is blind.** Errors are often "confident" when confidence bears on the wrong step: the copy, the computation without the reading, the champions without the interface. A confidence taken at each step, reading included, separates much better (E014).
+- [VERIFIED — E011, E012, E013] **Computing is easy with almost nothing.** Once the digits are aligned, the carry is discovered by evolution (E012: one hidden unit; 2/5 seeds with 100 examples, 4/5 with 1,000) or learned (E013: 1,131 parameters), stays stable under cross-entropy (E011), and holds up to 1,000 digits (E013: 100 % with two state numbers, or with 10,000 examples).
+- [VERIFIED — E008, E009-bis, E010, E013 I2, E014 R0] **The wall is locating, aligning, wiring.** Whenever the system must find on its own which digit to read, no seed reaches 90 % at 16 digits, whatever its size (from ~1,900 parameters to ~3.2 million), except one seed out of five with a curriculum (E014 R0b, 1/5 at 16 and 100 digits); the known fix (E008 B-REF) holds only one digit beyond (91.2 % at 6).
+- [VERIFIED — E014, E015 ECH0, E016 DONNÉ] **What got over the wall: a symbolic interface between frozen skills.** Two frozen skills compose without retraining: at least 90 % exact at 16 and 100 digits on 4/5 seeds when the interface is given (E014 R1G, which passes probabilities), 100 % on 2/5 seeds when the wiring is given and the interface must be invented (E015 ECH0), and on 9/9 pairs × 5/5 seeds when the interface is given (E016 DONNÉ, 100 % at 100 digits). At 1,000 digits: 1/5 (E014) and 71.7 % (DONNÉ), limited by reading; ECH0 keeps its 2/5, its limit being the champion on pure carry propagation.
+- [VERIFIED — E012 X3, E015, E016, E016-A2] **What did not get over it:** blind evolution without alignment, free assembly, all-or-nothing social pressure, a dense scalar signal.
+- [VERIFIED — E005, E006, E008, E010, E014, E015] **Misplaced confidence is blind.** Errors are often "confident" when confidence bears on the wrong step: the copy, the computation without the reading, the champions without the interface. A confidence taken at each step, reading included, separates much better (E014, post hoc).
 - [HYPOTHESIS] The missing lever would be an **intermediate signal the machine gives itself** (consistency between modules, prediction of its own flows), rather than the final verdict alone. None of this has been tested.
 
 ---
@@ -295,7 +295,7 @@ So that these cycles need not be repeated.
 | 11 | Learned hard pointers | E014 R2 | 0 even in distribution. [HYPOTHESIS] Optimisation instability, not evidence against pointers. |
 | 12 | Free assembly | E015 | Needle-in-a-haystack landscape: more trials (400,000 in the pilot) do not change the "copy a" attractor. |
 | 13 | Collective all-or-nothing with replay | E016 | Freezes the team instead of building a bridge. |
-| 14 | Dense scalar signal and short curriculum | E016-A2 | Faster lock-in, no take-off. |
+| 14 | Dense scalar signal and short curriculum | E016-A2 | Harder lock-in (lower sender entropy), no take-off. |
 | 15 | API access | E001, E003 | Credit card required despite "free", 5 requests per minute for the account, models closed at the free tier, provider not enforced. |
 | 16 | Tooling incidents | E002-bis, E013, 26/09 | Iteration order depending on `PYTHONHASHSEED` (E002-bis). Stale `.pyc` after a same-size mutation restored within the same second (E013 → `PYTHONDONTWRITEBYTECODE=1`). Shared state file overwritten by a window (26/09). |
 
@@ -307,7 +307,7 @@ So that these cycles need not be repeated.
 
 - **Redesign the E013 synthesis**, one source per figure, then have it reviewed. E008 and E013 can then be merged.
 - **Per-column credit** (E016). The reward of column t only pushes the choices of column t; other variants are named in the E016 README (entropy floor, alternating frozen partner).
-- **E015-A2: the interface as a first-class object.** A co-evolved archive of interfaces, judged on their reuse, frozen, on never-seen tasks. Prior-art search done by the orchestrator (verdict "partially done"): PathNet, BounceGrad, Braylan 2016, Guijt et al. 2024, Cully 2015, Schug 2024, MAGELLAN, DreamCoder / Voyager / FunSearch. Not found: a measure of the reuse of the interface itself. The neighbouring lead, co-evolving problems with solvers, was also the subject of an orchestrator search on 27/09 (novelty search, MCC by Brant & Stanley, PowerPlay, DreamCoder, HOUDINI, CRL); its verdict, "every building block exists, the assembly does not", is recorded with its sources in [`vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md`](vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md) [VERIFIED — sources listed in the note].
+- **E015-A2: the interface as a first-class object.** A co-evolved archive of interfaces, judged on their reuse, frozen, on never-seen tasks. A prior-art list is being prepared with its mandate (M0033), not yet in the repository. The neighbouring lead, an intermediate signal the machine gives itself (co-evolving problems with solvers being its counter-tack), was the subject of an orchestrator search on 27/09 (novelty search, MCC by Brant & Stanley, PowerPlay, DreamCoder, HOUDINI, CRL); its verdict, "every building block exists, the assembly does not", is recorded with its sources in [`vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md`](vault/notes/2026-09-27-anteriorite-signal-intermediaire-e015-a2.md) [VERIFIED — sources listed in the note].
 - **ACQUIRE criterion v2** (A0-ter): contrast with an amnesic twin, threshold calibrated on noise, validated first on the oracle.
 
 ---
