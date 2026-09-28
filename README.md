@@ -58,7 +58,7 @@ The idea: to know *when* to verify, one needs honest confidence, especially on "
 **3. Jev out of distribution (E005)** — [folder](research/experiments/E005-jev-hors-distribution/) · reviewed BROKEN (R004, wrong HTTP total), fixed, then reviewed GO (R007), merged
 - Question: on rare rules (learned agreement rules, homophones, logic with distractors or 4 steps), is Jev confidently wrong?
 - Changed: 32 cases as minimal pairs, preregistered and pushed before the first call.
-- Result: 151 calls, 34 usable responses. **9 "wrong and confident" evaluations out of 42, covering 6 questions.** The 13 correct sentences are judged correct; on the incorrect sentences, 7 evaluations out of 13 judge an erroneous sentence correct. Above a probability of 0.8, Jev is compliant 19 times out of 28.
+- Result: 151 calls, 34 usable responses. **9 "wrong and confident" evaluations out of 42, covering 6 questions.** The 13 evaluations of correct sentences are all conforming (13/13); on the incorrect sentences, 7 evaluations out of 13 judge an erroneous sentence correct. Above a probability of 0.8, Jev is compliant 19 times out of 28.
 - Verdict: **negative for calibration on this corpus.**
 - Takeaway: [HYPOTHESIS] Jev would judge surface plausibility rather than the rule.
 
@@ -138,14 +138,14 @@ The target is redefined: learn addition on numbers of 1 to 5 digits, then succee
 
 **16. Does evolution discover the circuit? (E012)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e012-evolution/research/experiments/E012-evolution) · not yet reviewed
 - Changed: evolutionary search guided by MDL, with less than 0.6 % of the budget of Lan et al.
-- Result: binary 0/5; aligned decimal 2/5 with 100 examples, **4/5 with 1,000**, exact up to 1,000 digits; flat input 0/5. The shortest circuit found is the school algorithm, with a single unit that is the carry: `h = step(a + b + h − 9)`, `output = a + b + h − 10·h`. It is proven exact for any length. Compute: ~204 min.
+- Result: binary 0/5; aligned decimal 2/5 with 100 examples, **4/5 with 1,000**, exact up to 1,000 digits; flat input 0/5. The shortest circuit found is the school algorithm, with a single unit that is the carry: `h(t) = step(a + b + h(t−1) − 9)`, `output = a + b + h(t−1) − 10·h(t)`. It is proven exact for any length. Compute: ~204 min.
 - Verdict: **successful when the alignment is given.**
 - Takeaway: in the failures, the exact circuit has a much lower MDL than the one returned. It is the **search** that fails, not the objective.
 
 **17. A tiny accumulator, "the insect" 🐜 (E013)** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e013-insecte/research/experiments/E013-insecte) · reviewed with reservation (R010, R011, R012), not merged
 - Prior art: path integration in the bee (Stone et al. 2017), a small state updated at each step. The analogy is ours, not the authors'.
 - Structure budget: digit alignment, direction (least significant first) and number of steps are given.
-- Result: **1,131 parameters**, a single-number state: 100 % from 16 to 100 digits (5/5 seeds), 99.3 % at 1,000. With two state numbers: **100 % at 1,000 digits**, 5/5 seeds, on all adversarial sets. With 1,000 examples, long numbers pass (98.6 % at 1,000 digits) but pure carry propagation drops to 52.9 % (1 seed out of 5); with 10,000, 100 % everywhere. Without given alignment: 0/5. Compute: 65 min.
+- Result: **1,131 parameters**, a single-number state: 100 % from 16 to 100 digits (5/5 seeds), 99.3 % at 1,000. With two state numbers: **100 % at 1,000 digits**, 5/5 seeds, on all adversarial sets. With 1,000 examples, long numbers pass (98.6 % at 1,000 digits) but pure carry propagation drops to 52.9 % on average (± 40.5) at 1,000 digits, with 1 seed out of 5 above 90 %; with 10,000, 100 % everywhere. Without given alignment: 0/5. Compute: 65 min.
 - Verdict: **successful, alignment given.** The project's first length success.
 - Takeaway: with a single state number, the network is wrong "with confidence" on sparse numbers (28 % of its errors): nothing in the short data forces "no carry" to remain stable.
 - Reservation: the README's synthesis was contested three times in a row (example threshold restated without a source). It must be redesigned before merging.
@@ -177,7 +177,7 @@ Malik's instruction at 20:35: stop redoing known work, take the opposite tack.
 **21. E016, amendment A2: is a denser signal enough?** — [branch](https://github.com/malikkaraoui/EV-LLM/tree/exp/e016-a2/research/experiments/E016-mouches) (A2 section of the README) · not yet reviewed (cross-checked by the orchestrator)
 - Prior art (in-depth search, verdict "partially done"): Tieleman 2019 and Michel et al. 2023 (the latter not read), where random partner swapping already reduces idiolects; Mahaut et al.; Marincat 2026.
 - Changed: reward = fraction of correct columns, or a 1-digit curriculum. Guard pilot preregistered before any run.
-- Result: **1 pair out of 9** in both cases. Senders freeze even faster (entropy 0.002 nat). The planned conditions were not launched. Compute: ≈ 3 min.
+- Result: **1 pair out of 9** in both cases. Senders freeze even faster (entropy 0.002 nat for the dense-signal pilot, 0.018 for the curriculum one, against 0.03–0.16 for IND in E016). The planned conditions were not launched. Compute: ≈ 3 min.
 - Verdict: **clean stop at the guard pilot.**
 - Takeaway: "a dense signal is missing" is refuted in this form (scalar per-item credit). [HYPOTHESIS] The bottleneck would be credit assignment and exploration.
 
@@ -186,8 +186,8 @@ Malik's instruction at 20:35: stop redoing known work, take the opposite tack.
 ## What we believe we know today
 
 - [VERIFIED — E011, E012, E013] **Computing is easy with almost nothing.** Once the digits are aligned, the carry is discovered by evolution (E012: one hidden unit) or learned (E013: 1,131 parameters) with 100 to 10,000 examples, stays stable under cross-entropy (E011), and holds up to 1,000 digits.
-- [VERIFIED — E008, E009-bis, E010, E013 I2, E014 R0] **The wall is locating, aligning, wiring.** Every time the system must find on its own which digit to read, it fails beyond seen lengths, whatever its size (from ~1,900 parameters to ~3.2 million).
-- [VERIFIED — E014, E015 ECH0, E016 DONNÉ] **What got over the wall: a given discrete symbolic interface.** Two frozen skills, connected by symbols, compose without loss up to 100 digits, and often up to 1,000. The remaining limits come from reading, not from computing.
+- [VERIFIED — E008, E009-bis, E010, E013 I2, E014 R0] **The wall is locating, aligning, wiring.** Whenever the system must find on its own which digit to read, it fails beyond seen lengths, whatever its size (from ~1,900 parameters to ~3.2 million) — the single exception being one seed out of five with a curriculum (E014 R0b, 1/5 at 16 and 100 digits).
+- [VERIFIED — E014, E015 ECH0, E016 DONNÉ] **What got over the wall: a discrete symbolic interface between frozen skills.** Two frozen skills connected by symbols compose without retraining: at least 90 % exact at 16 and 100 digits on 4/5 seeds when the interface is given (E014 R1G), 100 % on 2/5 seeds when the wiring is given and the interface must be invented (E015 ECH0), and on 9/9 pairs × 5/5 seeds when the interface is given (E016 DONNÉ, 100 % at 100 digits). At 1,000 digits it holds only sometimes: 1/5 (E014), 2/5 (ECH0), 71.7 % (DONNÉ). The remaining limits come from reading, not from computing.
 - [VERIFIED — E012 X1, E015, E016, E016-A2] **What did not get over it:** blind evolution without alignment, free assembly, all-or-nothing social pressure, a dense scalar signal.
 - [VERIFIED — E005, E006, E008, E010, E013, E015] **Misplaced confidence is blind.** Errors are often "confident" when confidence bears on the wrong step: the copy, the computation without the reading, the champions without the interface. A confidence taken at each step, reading included, separates much better (E014).
 - [HYPOTHESIS] The missing lever would be an **intermediate signal the machine gives itself** (consistency between modules, prediction of its own flows), rather than the final verdict alone. None of this has been tested.
