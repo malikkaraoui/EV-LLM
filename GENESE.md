@@ -19,7 +19,7 @@ convention: une entrée par moment clé, horodatée (heure de Paris). Qui a dit 
   - « On ne l'entraîne pas. On lui donne naissance. »
   - Le Transformer est un organe, pas le cerveau.
   - Token → état ; prédiction → transformation ; modèle final → organisme en évolution.
-- Produit : `architecture_cognitive_post_transformer.md` (v1, 62 sections), conservé intact sous le nom `architecture_cognitive_post_transformer.v1-gpt.md`.
+- Produit : `architecture_cognitive_post_transformer.md` (v1, 62 sections), conservé intact sous le nom `architecture_cognitive_post_transformer.v1-gpt.md` (déplacé le 28/09/2026 dans [`docs/archive/`](docs/archive/architecture_cognitive_post_transformer.v1-gpt.md)).
 
 ## 2026-09-25 10:40 — Lancement avec Claude
 
