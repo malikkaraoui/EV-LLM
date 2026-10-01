@@ -232,3 +232,14 @@ Exemple (à supprimer à la première entrée réelle) :
 - Décision Malik 14:36 : on applique, version du canon pour les 2 DIVERGE (--force-skill --dry-run, réel, puis --maj rc 0 → v1.1.0).
 - Décision Malik : branche `chore/harnais-v1.1.0` depuis origin/main (pre-push refuse main hors vault/, #41) ; R016 + merge en mandats séparés.
 
+## 2026-10-01T14:56:11+02:00 — M0041 traité : STOP propre étape 1
+
+- `--force-skill --dry-run` rc 0 : 1 FORCE, 2 POSE skill, **5 POSE .gitignore** (mêmes lignes que M0040), 12 DEJA, 1 SAUTE, 1 IGNORE. Critère « POSE seulement sous le skill » non tenu → STOP. Rien écrit.
+- Branche locale `chore/harnais-v1.1.0` = a3e9d07 (ancêtre de main), non poussée. Main 79c8559.
+- En attente de Malik : admettre les 5 POSE .gitignore aux étapes 1–2 ?
+
+## 2026-10-01T16:43:42+02:00 — M0042 posé (F01) : harnais TEMPS 2 bis
+
+- Malik 16:42 « reprend » → 5 POSE .gitignore admises (à l'identique) aux étapes 1–2, SAUTE/IGNORE admis ; reste inchangé. Branche locale existante reprise (ff-only origin/main).
+- Signalé à Malik : aucun mandat F02 dans EV-LLM (F02 = M0032 du 27/09, aucun événement F02 le 01/10).
+
