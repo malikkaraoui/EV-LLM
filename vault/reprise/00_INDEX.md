@@ -220,3 +220,15 @@ Exemple (à supprimer à la première entrée réelle) :
 
 - Mission 0 (carnet, index, passation, gabarits, décision, note, 22 archives) puis gardes G0–G5 ; garde « propre hors F0x.md et runtime/journal|log|entretien.lock » (décision Malik 01/10).
 - F01/M0039 archivé : `vault/echanges/archive/2026-09-29-F01-M0039-readme-reconception-synthese.md`.
+
+## 2026-10-01T14:20:37+02:00 — M0040 traité : STOP propre (rc=1)
+
+- Mission 0 `8910d3a` + reprise `afc5d03` sur main. Passe à blanc : 5 POSE (.gitignore), 16 DEJA, 2 DIVERGE (SKILL.md, gabarits.md : identiques au canon v1.0.0, jamais adaptés), 0 OBSOLETE, 0 ECHEC ; GARDEE version v1.0.0 ; rien écrit.
+- Faute orchestrateur : « rc ≠ 0 → STOP » incompatible avec un dry-run qui rencontre un DIVERGE (bootstrap sort rc 1 par conception).
+- En attente de Malik : appliquer ? DIVERGE : projet ou canon (--force-skill) ?
+
+## 2026-10-01T14:46:23+02:00 — M0041 posé (F01) : harnais TEMPS 2
+
+- Décision Malik 14:36 : on applique, version du canon pour les 2 DIVERGE (--force-skill --dry-run, réel, puis --maj rc 0 → v1.1.0).
+- Décision Malik : branche `chore/harnais-v1.1.0` depuis origin/main (pre-push refuse main hors vault/, #41) ; R016 + merge en mandats séparés.
+
