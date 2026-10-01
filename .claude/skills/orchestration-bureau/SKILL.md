@@ -24,6 +24,16 @@ lue avant chaque mandat, jamais contredite.
 
 ## 1. Reprise de session — NON NÉGOCIABLE
 
+```
+PREMIER GESTE, avant toute lecture ou réponse :
+ToolSearch query="select:mcp__remote-devices__device_bash,mcp__remote-devices__device_list_dir,mcp__remote-devices__get_device_info,SendUserMessage,mcp__claude-code-remote__send_later,mcp__claude-code-remote__list_triggers" max_results=10
+Si device_bash n'apparaît pas dans la réponse : le dire tel quel à l'utilisateur avec la liste des outils remote-devices visibles. Ne jamais proposer de consigne non vérifiée.
+```
+
+(Décision du fondateur, 30/09 10:57 : une session Cowork de reprise cherchait les outils du Mac,
+chargés à la demande, par mots-clés, et ne les trouvait pas. Le chargement se fait par leur nom
+exact, d'abord.)
+
 Lire, dans l'ordre : `<racine>/vault/reprise/CARNET_DE_BORD.md` (instantané court, écrasé) →
 `00_INDEX.md` (index court, rotation) → `<runtime>/state.json` + `tail` d'`events.jsonl` →
 `CARTOGRAPHIE_BRANCHES.md` (régénérer si les branches ont changé). Réconcilier CHAQUE affirmation
@@ -46,6 +56,7 @@ fois** (deux sessions sur la même branche ou le même worktree = interdit). All
 toujours le plus petit numéro libre, jamais un numéro sauté. Parallèle SEULEMENT si branches ET
 fichiers disjoints, sinon séquentiel avec garde de précondition (§3). Plafond simultané :
 `superviseur.plafond`. La numérotation peut dépasser le plafond (fenêtres réutilisées).
+**`F99` et `M0000` sont réservés à l'essai du guichet** (§14) : jamais alloués par l'orchestrateur.
 
 ## 3. Poser un mandat — le cœur
 
@@ -81,10 +92,13 @@ tout le contexte nécessaire est dans le fichier.
 - **Mission 0** (scope git strict, gabarit §2) : commit pathspec des fichiers de l'orchestrateur
   (archives, carnet, index, `reprise/`) — PAS les registres de `<runtime>` (hors git, §10) ; jamais
   `git add -A`/`-a`, jamais `<echanges>/*.md` hors `archive/`, jamais un fichier généré.
-- **Sous-agents** (4 règles, gabarit §3) si le mandat parallélise : lecture/recherche = agents
+- **Sous-agents** (5 règles, gabarit §3) si le mandat parallélise : lecture/recherche = agents
   FRAIS, jamais `fork` ; aucun sous-agent ne commit, ne pousse, ne modifie `<runtime>`/`reprise/`,
   ni ne tue un autre agent ; leur rapport est VÉRIFIÉ (fichier:ligne recontrôlés) avant le
-  livrable ; après incident : `git status`/`diff`/`log`/`reflog` AVANT toute autre action.
+  livrable ; après incident : `git status`/`diff`/`log`/`reflog` AVANT toute autre action ;
+  ATTENDRE le retour de tous les sous-agents avant le premier rituel de fin (rendre la main
+  jusqu'à leur notification, jamais `sleep` ni sondage) — échec ou arrêt de l'un = STOP propre,
+  dit au rapport.
 - **Preuve d'écran** si le mandat touche l'affichage : captures RÉELLES avant/après dans
   `vault/revues/captures-<id>/`, citées au rapport — un harnais local, un composant isolé ou un
   `git diff` n'en tiennent jamais lieu. Impossible → axe UX **pas GO** (⚠️ « non vérifié à
@@ -310,3 +324,27 @@ que le `CLAUDE.md` racine. Un mandat qui change un comportement décrit dans l'u
 **Source de vérité unique** : la convention vit dans le dépôt du projet. Un skill de compte n'en est
 qu'un **POINTEUR** (texte exact : `references/gabarits.md` §12), qui STOP si le dépôt n'est pas
 accessible, et qui ne change que si le CHEMIN de la source change — aucune version ne s'y grave.
+
+## 14. Équiper un projet — le guichet
+
+Un projet s'équipe par le **guichet** du superviseur : le fondateur colle dans Cowork le prompt
+versionné `templates/guichet/prompt-cowork.md` (une ligne à modifier, `PROJET`) ; Cowork dépose une
+demande, un exécutant déterministe du Mac pose, publie, inscrit, lance un mandat test, et n'active
+les hooks git qu'après ce test réussi. Voie de secours, au Terminal du Mac : le skill
+`equiper-projet` (qui passe lui aussi par le guichet pour inscription → essai → hooks). Un mandat de
+l'orchestrateur peut au plus **préparer** la pose (skill en mode mandat : pose et publication, hooks
+inactifs, aucun dépôt au guichet) : l'inscription, l'essai et les hooks passent toujours par le guichet. Principe : sur le périmètre de l'utilisateur, le guichet **informe, il ne bloque
+pas**. Autorité : `superviseur/README.md` § Guichet d'équipement.
+
+**`F99` et `M0000` sont réservés à l'essai du guichet.** Le mandat test d'un équipement est posé
+par le Mac sous `<echanges>/F99.md`, `mandat_id: M0000`, y compris dans un projet déjà servi,
+pendant que son orchestrateur travaille. En conséquence :
+
+- l'orchestrateur n'alloue **jamais** `F99` ni `M0000` (§2, §3) ; aucune numérotation réelle ne
+  commence à `0000` ;
+- la **réconciliation** (§1, §6, §7) **ignore** les événements `f=F99` et `M0000` d'`events.jsonl`
+  et **n'attend pas** de `windows.F99` dans `state.json` : ni fenêtre fantôme, ni mandat perdu ;
+- `<echanges>/F99.md` et son archive `…/archive/*-F99-M0000-essai-equipement-*.md` sont ignorés par
+  git (fragment `.gitignore` du bootstrap) : jamais dans une Mission 0, jamais committés ;
+- un `F99` coincé n'est **pas** libéré à la main par l'orchestrateur : le superviseur le liquide
+  lui-même (`ESSAI_LIQUIDE`) ; un doute se signale au fondateur.

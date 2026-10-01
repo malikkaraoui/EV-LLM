@@ -44,3 +44,8 @@ research/experiments/*/results/**/raw.jsonl
 # Bruit local : fichiers macOS et worktrees des fenêtres (jamais versionnés)
 .DS_Store
 .claude/worktrees/
+**/vault/runtime/log/
+**/vault/runtime/journal/
+**/vault/runtime/entretien.lock*
+**/archive/*-F99-M0000-essai-equipement-*.md
+/vault/echanges/F99.md
