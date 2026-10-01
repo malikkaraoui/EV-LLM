@@ -1,0 +1,54 @@
+# __ID__ — Doublage indépendant de __BR__ (tip __TIP7__), puis merge si GO
+
+Modèle : `opus --effort medium` (barème `doublage_adversarial` — la rigueur vient du mandat, pas de l'effort).
+
+## 0. Rôle et contexte
+Tu es le **doubleur**, indépendant de l'auteur. Tu vérifies, tu ne crois rien sur parole. Branche doublée : `__BR__`, tip attendu `__TIP__`. Rapports d'auteur à lire EN ENTIER : __RAPPORTS__. Documents : `architecture_cognitive_post_transformer.md` (§29 v2/v2.1, §56 v2, §63) et le README de l'expérience (lu au tip : `git show __TIP__:<chemin>`).
+
+## 1. Gardes — tout écart : STOP + rapport (footer BLOCKED)
+1. `git -C /Users/malik/Documents/EV-LLM fetch origin` ; `git rev-parse origin/__BR__` = `__TIP__`.
+2. Fichiers de la branche **intacts côté main depuis le merge-base** : `git log $(git merge-base origin/main __TIP__)..origin/main -- __CHEMIN__` → vide.
+3. `vault/revues/` ne contient pas déjà un rapport __ID__.
+
+## 2. Mission 1 — doublage (worktree DÉTACHÉ, lecture seule)
+`git -C /Users/malik/Documents/EV-LLM worktree add --detach /Users/malik/Documents/EV-LLM/.claude/worktrees/__F__-__ID__ __TIP__`. Tu n'y modifies RIEN.
+
+Axes, chacun avec verdict ✅ GO / ⚠️ réserve / ⛔ CASSÉ et la RAISON vérifiée (commande + sortie) :
+1. **Rejeu** : relance TOI-MÊME les tests (`python3 -m unittest …` dans le dossier de l'expérience) et compare au rapport. __REJEU__
+2. **Préenregistrement / attentes figées** : sha256 des fichiers d'attentes = valeurs citées ; le préenregistrement (s'il existe) est ANTÉRIEUR aux commits de code (`git merge-base --is-ancestor`) et non modifié ensuite (`git log --follow`).
+3. **Chiffres** : recalcule depuis les données publiées (`raw.public.jsonl` / `resultats.json`) au moins 3 chiffres du tableau du README (script Python ad hoc dans le scratchpad, sortie collée). Tout écart = ⛔.
+4. **Lecture honnête** : chaque affirmation [VÉRIFIÉ] du README est-elle soutenue par les données ? Une conclusion générale sur trop peu de cas = ⚠️ minimum.
+5. **Sécurité dépôt public** : `git grep -nIiE 'set-cookie|x-vercel-id|cf-ray|bearer [a-z0-9]{8}|sk-[a-z0-9]{10}|team_[a-z0-9]{6}' __TIP__ -- research/` → rien ; aucun fichier `.env` ni `raw.jsonl` suivi (`git ls-tree -r --name-only __TIP__`).
+6. **Hygiène git** : trailer `Co-Authored-By: Malik & Claude` sur chaque commit de la branche (`git log --format=%B origin/main..__TIP__`) ; périmètre du diff (`git diff --name-only $(git merge-base origin/main __TIP__) __TIP__`) limité au dossier de l'expérience + `.gitignore`/`.env.example` le cas échéant.
+7. **CLAUDE.md imbriqués / rules à `paths:`** : le diff touche-t-il un comportement décrit dans un CLAUDE.md imbriqué ou une rule à `paths:` ? Si oui, sont-ils à jour dans le même commit ?
+
+Rapport : `vault/revues/2026-09-26-__ID__-__SLUG__.md` (écrit dans le worktree de merge, voir §3) avec frontmatter EXACT :
+```
+---
+date: 2026-09-26
+revue: __ID__
+branche: __BR__
+tip: __TIP__
+verdict: <GO | RESERVE | CASSE>
+---
+```
+(une seule ligne `verdict:`, une seule ligne `tip:` avec le SHA 40 caractères), puis un tableau des 7 axes et les preuves. **Verdict global GO seulement si les 7 axes sont ✅.** Réserve ou CASSÉ → pas de merge : écris le rapport dans `vault/revues/` à la RACINE, committe-le sur main (vault seul), push, et rends (footer READY/BLOCKED selon le cas).
+
+## 3. Mission 2 — merge (SEULEMENT si verdict GO)
+```
+R=/Users/malik/Documents/EV-LLM ; S=$R/.claude/worktrees/__F__-merge
+git -C $R fetch origin && git -C $R worktree add --detach $S origin/main
+git -C $S merge --no-ff __TIP__ -m "Merge __BR__ [__ID__]" -m "Co-Authored-By: Malik & Claude"
+# tests SUR ce résultat : relance les tests de l'expérience dans $S ; rouge = STOP, pas de push
+# écris le rapport GO dans $S/vault/revues/2026-09-26-__ID__-__SLUG__.md
+git -C $S add -- vault/revues/2026-09-26-__ID__-__SLUG__.md && git -C $S commit -m "docs(revues): __ID__ -- GO" -m "Co-Authored-By: Malik & Claude"
+git -C $R merge --ff-only $(git -C $S rev-parse HEAD)
+git -C $R push origin main && git -C $R ls-remote origin refs/heads/main
+git -C $R worktree remove $S ; git -C $R worktree remove $R/.claude/worktrees/__F__-__ID__
+```
+- Le `ff-only` à la racine peut être refusé si la racine a des modifications locales touchées par le merge, ou si `origin/main` a bougé (une autre fenêtre merge peut-être en même temps) : **refais le scratch UNE fois** depuis `origin/main` à jour ; second refus = STOP, rapport, jamais de force.
+- Le hook `pre-push` refuse un merge sans rapport GO citant le tip : c'est normal, c'est la garde.
+- `git ls-remote` de main collé ; vérifie `git merge-base --is-ancestor __TIP__ origin/main`.
+
+## 4. Mission 3 — issue GitHub
+Si `gh auth status` réussit : `gh issue comment __ISSUE__ -R malikkaraoui/EV-LLM --body "<verdict __ID__ + lien du rapport + SHA de merge>"`, et si mergé GO : `gh issue close __ISSUE__ -R malikkaraoui/EV-LLM`. Sinon, note-le au rapport.
