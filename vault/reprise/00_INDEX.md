@@ -243,3 +243,12 @@ Exemple (à supprimer à la première entrée réelle) :
 - Malik 16:42 « reprend » → 5 POSE .gitignore admises (à l'identique) aux étapes 1–2, SAUTE/IGNORE admis ; reste inchangé. Branche locale existante reprise (ff-only origin/main).
 - Signalé à Malik : aucun mandat F02 dans EV-LLM (F02 = M0032 du 27/09, aucun événement F02 le 01/10).
 
+## 2026-10-01T16:59:53+02:00 — M0042 traité : harnais v1.1.0 sur `chore/harnais-v1.1.0` (f7e74ae), READY_FOR_INTEGRATION
+
+- --force-skill rc 0 (1 FORCE, 7 POSE, 12 DEJA) ; --maj rc 0 (MAJ version, 0 DIVERGE, 0 ECHEC). Commit f7e74ae : SKILL.md, gabarits.md, .gitignore (+5), config/harnais.json (v1.1.0). Poussé (ls-remote collé).
+- main = c0d7b76, toujours v1.0.0. Reste : doublage R016 puis merge (décision Malik à demander).
+
+## 2026-10-02T08:34:37+02:00 — R016 posé (F01) : doublage harnais v1.1.0 + merge si GO
+
+- Malik 02/10 08:33 : « oui ». Tip f7e74ae ; 8 axes (périmètre, conformité canon, .gitignore, version, rejeu dry-run, sécurité, trailer, CLAUDE.md).
+
