@@ -52,7 +52,7 @@ générique : ce gabarit est un filet de sécurité, pas un blanc-seing. Jamais 
 exclusive de la fenêtre qui le rédige. Jamais les registres de `<chemins.runtime>` : ils sont hors
 git.
 
-## 3. Sous-agents — les 4 règles
+## 3. Sous-agents — les 5 règles
 
 ```
 Un sous-agent `fork` herite du CONTEXTE ENTIER de la session (mandat complet, objectif final)
@@ -63,7 +63,13 @@ instruction de portee, pas une restriction d'outils.
     ni ne tue un autre agent -- ces actes restent a la session mere ;
 (3) tout rapport de sous-agent est VERIFIE (citations fichier:ligne recontrolees) avant
     d'entrer dans un livrable ;
-(4) apres tout incident : git status/diff/log/reflog AVANT toute autre action.
+(4) apres tout incident : git status/diff/log/reflog AVANT toute autre action ;
+(5) ATTENDRE LE RETOUR DE TOUS les sous-agents lances AVANT le premier rituel de fin
+    (rapport, events.jsonl, statut) -- jamais un livrable "complet" ecrit sur un travail
+    a moitie rendu. Attendre = rendre la main jusqu'a la notification du sous-agent,
+    jamais `sleep` ni sondage (relecture periodique d'une sortie). Ne revient pas =
+    notification d'echec ou d'arret du sous-agent : le dire au rapport (lequel, pour
+    quoi faire, ce qui manque de ce fait), ne rien livrer qui dependait de lui, STOP propre.
 ```
 
 ## 4. Footer de statut — toute dernière ligne du rapport
@@ -88,7 +94,21 @@ devrait être bon ». `PROJECT STATUS: INTEGRATED` **uniquement** si `Merge main
 `gardes_deploiement[]`, ajouter la ligne de garde correspondante (§11) : elle conditionne
 `INTEGRATED` au même titre.
 
-**Le tableau se vérifie, il ne se croit pas** (#28, #35) : l'orchestrateur, à chaque rapport traité, lance `node scripts/verifier-rendu.mjs effet --rapport <chemins.echanges>/Fxx.md` depuis la racine, après un `git fetch origin` ; le doubleur le relance, puis, pour un correctif, `node scripts/verifier-rendu.mjs rouge --branche <branche> --base <merge-base> --test '<commande de test>'`. Tout `ECART` se résout avant le doublage ou le GO.
+**Déclarations de l'auteur d'un correctif** (#35, R061) : dans `## Rapport Mxxxx`, avant le tableau, deux lignes (en puce ou non) :
+
+```
+Scellé tests : <empreinte> (node scripts/verifier-rendu.mjs scelle --base <sha-base> --tip <sha-rendu>)
+Contre-témoins : `<regex des tests neufs voulus verts sur la base (gardes de non-régression)>`
+```
+
+`<empreinte>` = les 64 caractères hexadécimaux que la commande entre parenthèses imprime (`SCELLE <empreinte> (…)`),
+lancée sur le commit rendu. `Contre-témoins : aucun` quand tout test neuf est un témoin rouge→vert ; sinon la regex
+entre accents graves, qui couvre les noms exacts des gardes (un test neuf déjà vert sur la base et non couvert = `ECART`).
+Une seule valeur par ligne dans la section ; mandat sans test : lignes sans objet.
+
+**Le tableau se vérifie, il ne se croit pas** (#28, #35) : l'orchestrateur, à chaque rapport traité, lance `node scripts/verifier-rendu.mjs effet --rapport <chemins.echanges>/Fxx.md` depuis la racine, après un `git fetch origin` ; le doubleur le relance, puis, pour un correctif, `node scripts/verifier-rendu.mjs rouge --branche <branche> --base <merge-base> --test '<commande de test>' --rapport <chemins.echanges>/Fxx.md` : `--rapport` lit les deux lignes ci-dessus dans la section du rapport (ligne absente = `ECART` ; forme manuelle équivalente : `--scelle <empreinte du rapport> --contre-temoins '<regex du rapport>'`, jamais avec `--rapport`). Tout `ECART` se résout avant le doublage ou le GO.
+
+**SHA de bac marqués `bac:`** (#53) : dans un rapport, un SHA d'un dépôt jetable (faux origin d'un témoin, fixture de bac) s'écrit `bac:<sha>`, collé, sans espace, `bac:` en minuscules (`BAC:` / `Bac:` ne marquent rien). `effet` ne le cherche pas dans le dépôt et le compte à part (ligne `BAC`, sans effet sur le rc) ; un SHA introuvable écrit nu reste un `ECART`. **Jamais dans le tableau de fin** : `bac:` dans une case est un `ECART` (R053), le tableau ne cite que des SHA du dépôt réel. Toute ligne qui commence par un libellé du footer (`Implementation` … `PROJECT STATUS`), quel que soit son statut (✅ ❌ ⚠️ ⛔ N/A), est une case : chacun de ses SHA est contrôlé strictement (#54).
 
 ## 5. Bloc de lancement manuel + panneau ⚠️
 
