@@ -252,3 +252,8 @@ Exemple (à supprimer à la première entrée réelle) :
 
 - Malik 02/10 08:33 : « oui ». Tip f7e74ae ; 8 axes (périmètre, conformité canon, .gitignore, version, rejeu dry-run, sécurité, trailer, CLAUDE.md).
 
+## 2026-10-02T08:50:49+02:00 — R016 traité : GO 8/8, harnais v1.1.0 sur main (INTEGRATED)
+
+- Merge `f4ae6ea` (parents 6c817c4 + f7e74ae, 4 fichiers), rapport `b17f8c2` (verdict GO, tip f7e74ae), reprise `5125e41`. Skill identique au canon HEAD et au tag v1.1.0 (e506f6d). Rejeu --maj --dry-run : 20 DEJA, rc 0.
+- Effet .gitignore constaté : runtime/journal, log, entretien.lock sortent de git status.
+

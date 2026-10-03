@@ -1,6 +1,6 @@
 # CARNET DE BORD — instantané (1 minute)
 
-Dernière mise à jour : 2026-10-01T14:15:50+02:00 (orchestrateur) — mise à jour du harnais v1.0.0 → v1.1.0 en deux temps
+Dernière mise à jour : 2026-10-02T08:50:49+02:00 (orchestrateur) — harnais v1.1.0 intégré sur main
 
 ## Où on en est
 
@@ -16,7 +16,7 @@ Dernière mise à jour : 2026-10-01T14:15:50+02:00 (orchestrateur) — mise à j
 - **Cap Malik (27/09 20:35)** : ne jamais refaire du connu pour arriver au même résultat ; prendre le contre-pied ; veille d'abord, différence écrite.
 - **E015 (M0030) : négatif** — assemblage autonome 0/5 ; câblage donné 2/5 exact à 1 000 ; la recherche échoue (juge OK), la réutilisation n'a pas de prise. **E016 (M0031) : négatif** — aucune langue commune, 1–2 idiolectes ; la règle tout-ou-rien coupe le signal. Les deux contre-vérifiés par l'orchestrateur.
 - **Cap semaine (Malik 28/09 07:55)** : le week-end sert à explorer, la semaine le CPU est à d'autres projets → **aucun calcul en semaine**, documentation seulement. Publier les échecs comme succès d'exploration ; afficher la méthode (antériorité, contre-pied, itération rapide, quelques neurones, petit CPU).
-- **En vol (01/10)** : **M0040** (F01) = harnais TEMPS 1, `bootstrap --maj --dry-run` à blanc + Mission 0 ; TEMPS 2 (`--maj`) seulement après le oui de Malik. Constat 01/10 : README déjà sur `main` (merge 4ea9bd0, R015 GO) ; M0039 (tip ab352a5) rendu, non traité ; state.json périmé (next_revue_id R015 déjà pris, projet.main a1231e5 ≠ c117209).
+- **Harnais (02/10)** : v1.1.0 sur `main` (merge f4ae6ea, R016 GO 8/8). Rien en vol. M0039 (README, tip ab352a5) rendu le 29/09, toujours non traité.
 - (Historique) **M0039** = reconception bottom-up des puces de synthèse du README (après R013 + R014 RÉSERVE, même classe de défaut) ; puis R015 (relecture + fusion). README pas encore sur `main`.
 - 28/09 07:42 : R012 RÉSERVE (défaut de formulation venu de l'orchestrateur, M0034) ; M0032 STOP propre (signal dense scalaire réfuté) ; F05 M0033 retenu (prémisse réfutée par M0030).
 - **Décisions attendues de Malik** : (1) E013 : mandat de reconception de la synthèse puis R013 → merge E008+E013 ; (2) E016 : troisième pilote « crédit par colonne » (proposition auteur M0032) ou arrêt de la piste ; (3) E015-A2 : version contre-pied (antériorité faite : co-évolution d'instances MCC sans signal intermédiaire, puis cohérence inter-champions) ou autre cap.
